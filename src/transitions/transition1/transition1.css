@@ -1,0 +1,101 @@
+.transition1{
+    background-color:#5B43EF;
+    color:white;
+}
+
+.globe{
+    position: absolute;
+    left:30vw;
+    top:10vh;
+}
+
+.content{
+    margin:20vh;
+    margin-bottom:10vh;
+    margin-left:5vw;
+    position:relative;
+    z-index:10;
+    width:50vw;
+    height:90vh;
+}
+
+.content h1{
+    font-size:3rem;
+    font-weight:500;
+    letter-spacing: 2px;
+    line-height: 3.5rem;
+}
+
+.content p{
+    font-size:1.3rem;
+    font-weight:400;
+    line-height: 2rem;
+}
+
+.button{
+    margin-top:2rem;
+    color:white;
+    padding:10px 20px;
+    margin-right:10vw;
+    width:15vw;
+    border-radius:5px;
+    font-size:1.3rem;
+    position:relative;
+    text-decoration: none;
+    border:none;
+  }
+
+.button1{
+    color:#5B43EF;
+    background-color:white;
+}
+
+.button2{
+    border:2px solid white;
+    background-color:transparent;
+}
+
+@media screen and (max-width: 750px){
+    .globe{
+        left:0vw;
+        top:60vh;
+    }
+    
+    .content{
+        margin:5vh;
+        margin-left:5vw;
+        width:90vw;
+        text-align:center;
+        height:140vh;
+    }
+    
+.content h1{
+    font-size:2rem;
+    font-weight:500;
+    letter-spacing: 1px;
+    line-height: 2.5rem;
+}
+
+.content p{
+    font-size:1rem;
+    font-weight:400;
+    line-height: 1.2rem;
+}
+
+.button{
+    margin-top:1rem;
+    padding:2vw 1vw;
+    margin-right:0vw;
+    width:35vw;
+    border-radius:5px;
+    font-size:1.3rem;
+    position:relative;
+  }
+
+.button1{
+    margin-right:10vw;
+    color:#5B43EF;
+    background-color:white;
+}
+
+}
