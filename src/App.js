@@ -1,6 +1,6 @@
 import React from "react";
 
-import Transition1 from "./transitions/transition1/transition1.js"
+import Transition1 from "./pages/Home/home.js"
 
 import './App.css';
 

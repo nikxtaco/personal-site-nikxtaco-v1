@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import './index.css';
 import FullPage from './App.js';
-import Team from './Team.js';
+import Team from './pages/Blog/blog.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -11,7 +11,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route exact path="/" component={FullPage} />
-          <Route path="/team" component={Team} />
+          <Route path="/blog" component={Team} />
         </Switch>
       </div>
     </Router>,

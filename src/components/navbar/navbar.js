@@ -8,13 +8,6 @@ import UseAnimations from "react-useanimations";
 
 
 const Navbar = () => {
-
-   const links = [
-      { id: 1, Name: 'Home', to: '/#home' },
-      { id: 2, Name: 'Team', to: '/team' },
-      { id: 3, Name: 'Contact', to: '/#contact' },
-      // { id: 4, Name: 'Log In', to: 'https://dash.alrt.ai' },
-   ];
    
    const [navbarVisibility, setNavbarVisibility] = useState(false);
 
@@ -33,7 +26,8 @@ const Navbar = () => {
       left: 0,
       overflowX: "hidden",
       transition: "0.5s",
-      paddingTop: "50vh",
+      paddingTop: "45vh",
+      textAlign: "left",
       width: navbarVisibility ? "100vw" : "0",
    }
 
@@ -62,36 +56,36 @@ const Navbar = () => {
        </div>
 
        <div className="navbar" style={customNavbar}>
-         <a href="" style={customNavbarA} onHover={""}>Home</a>
+         <a href="/#" style={customNavbarA} onHover={""}>Home</a>
          <a href="" style={customNavbarA} onHover={""}>About</a>
-         <a href="" style={customNavbarA} onHover={""}>Blog</a>
+         <HLink to="/blog" style={customNavbarA} onHover={""}>Blog</HLink>
          <a href="" style={customNavbarA} onHover={""}>Contact</a>
-         <span>
-         <a href="" style={customNavbarA}>
+         <span style={{}}>
+         <a href="https://www.github.com/nikxtaco">
          <UseAnimations
         animationKey="github"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" }}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "3vh" }}
       />
          </a>
-         <a href="" style={customNavbarA}>
+         <a href="">
             <UseAnimations
         animationKey="instagram"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px" }}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
       /></a>
-         <a href="" style={customNavbarA}>
+         <a href="">
          <UseAnimations
         animationKey="linkedin"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px" }}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
       />
          </a>
-         <a href="" style={customNavbarA}>
+         <a href="">
          <UseAnimations
         animationKey="twitter"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px" }}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
       />
          </a>
          </span>
