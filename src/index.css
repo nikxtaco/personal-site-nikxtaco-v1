@@ -1,20 +1,11 @@
-body {
-  color:black;
-  overflow-y:auto;
-  overflow-x:hidden;
-  font-size:10px;
-  font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
-  width:100vw;
-  margin: 0;
-  padding: 0;
-  background: white;
-  display: block;
-  font-weight: 400;
-  word-wrap: break-word;
-  line-height: 1.4;
+body{
+  margin:0;
+  padding:0;
+  background-color:black;
+  color:white;
+  font-size:15px;
 }
 
-* {
-  box-sizing: border-box;
+canvas{
+  outline:0;
 }
