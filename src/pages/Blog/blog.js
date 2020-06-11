@@ -52,11 +52,11 @@ return(
       
       <div className="main_container">
       <h1 className="main_quote">
-        " Whether you have a dancing itch or an actual itch, the screens will make it look darn good. "
+      “ The very substance of the ambitious is merely the shadow of a dream. ”
       </h1>      
 
       <h2 className="blog_text_big">
-      ...The Featured Few
+      ...A Featured Few
       </h2>
 
 
@@ -71,7 +71,7 @@ return(
         </h3>
 
         <h5 className="blog_text_small">
-        Dogstudio is a technology.
+        Idk idk
         </h5>
       </a>
       </div>

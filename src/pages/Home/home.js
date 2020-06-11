@@ -23,7 +23,7 @@ export default () => {
       <h2 className="home_text_big">
       I'm a person with multiple, ordinary interests and very little patience, not much unlike every other 
       GenZ kid out there. I like spending time stalking art and music pages and not once have I stopped wishing for 
-      a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization
+      a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization, 
       that having deep and wise thoughts all the time isn't gonna get me anywhere, dawns on me.
       </h2>
 
@@ -32,8 +32,8 @@ export default () => {
       </h3>
 
       <h5 className="home_text_small">
-      I'm Nikita, a CS undergrad student, currently studying in MEC, Kochi. For the longest time I wanted to 
-      be an astrophysict cuz duh, it's cool. But well, what ever goes according to plan anyway?
+      I'm a CS undergrad student, currently studying in MEC, Kochi. For the longest time I wanted to 
+      be an astrophysict cuz duh, it's cool. But well, does anything ever go according to plan? Sigh.
       <br/>
       <p style={{textAlign:"center"}}>¯\_(ツ)_/¯</p>
       At the moment, I'm quite interested in technology as well. Still a Rookie though.
@@ -65,10 +65,11 @@ export default () => {
 
       <h3 className="filler_text">
         Poetry and prose. <br/>
-        Does it get any better than this?
+        Does it get any better than this? 
       </h3>
 
       <button className="home_button home_button_1">
+        <a href="/blog">
         <h6 classname="home_button_text">
         Read away
         <UseAnimations
@@ -77,6 +78,7 @@ export default () => {
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
       />
         </h6>
+        </a>
       </button>
 
       <h5 className="home_text_small">

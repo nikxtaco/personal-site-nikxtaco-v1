@@ -40,7 +40,7 @@ h6{
   padding:0;
 }
 
-.home_button{
+.home_button, .home_button a{
   background-color:transparent;
   text-decoration: none;
   border:none;
@@ -48,7 +48,7 @@ h6{
   color:white;
   padding: 10px 0 10px 0;
   font-size:1rem;
-  margin-bottom:2vh;
+  margin-bottom:1vh;
 }
 
 .home_button_text{

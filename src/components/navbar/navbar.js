@@ -46,12 +46,18 @@ const Navbar = () => {
 
    return (
       <div className="navbar">
+
+      <UseAnimations
+        animationKey="infinity"
+        size={30}
+        style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-13vh", position: "absolute", zIndex: "5" }}
+      />
         
         <div onClick={toggleVisibility}>
       <UseAnimations
         animationKey="menu2"
         size={30}
-        style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "3vh", position: "relative", zIndex: "5" }}
+        style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "-13vh", position: "absolute", zIndex: "5" }}
       />
        </div>
 
