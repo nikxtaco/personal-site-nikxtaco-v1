@@ -17,29 +17,22 @@ export default () => {
       </h1>
 
       <h4 className="home_text_red">
-        Let's start with this.
+        Let's start with random facts.
       </h4>
 
       <h2 className="home_text_big">
-      Dogstudio is a multidisciplinary
-      creative studio at the intersection
-      of art, design and technology.
-      Our goal is to deliver amazing experiences that make
-      people talk, and build strategic value for brands, tech,
-      entertainment, arts & culture.
+      I'm a person with multiple, ordinary interests and very little patience, not much unlike every other 
+      GenZ kid out there. I like spending time stalking art and music pages and not once have I stopped wishing for 
+      a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization
+      that having deep and wise thoughts all the time isn't gonna get me anywhere, dawns on me.
       </h2>
 
       <h3 className="filler_text">
-        So... what?
+        Now for the basics.
       </h3>
 
       <h5 className="home_text_small">
-      Dogstudio is a multidisciplinary
-      creative studio at the intersection
-      of art, design and technology.
-      Our goal is to deliver amazing experiences that make
-      people talk, and build strategic value for brands, tech,
-      entertainment, arts & culture.
+      I'm Nikita, a CS undergrad currently studying in MEC, Kochi. 
       <br/><br/>
       Dogstudio is a multidisciplinary
       creative studio at the intersection
