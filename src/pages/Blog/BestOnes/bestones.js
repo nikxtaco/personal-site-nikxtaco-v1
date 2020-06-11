@@ -1,24 +1,37 @@
 import React from "react"
 
-import "./blog.css"
+import "./bestones.css"
 
-import Navbar from "../../components/navbar/navbar.js"
+import Navbar from "../../../components/navbar/navbar.js"
 
 import UseAnimations from "react-useanimations";
 
-import first_featured from "../../img/featured2.jpg"
+import first_featured from "../../../img/featured2.jpg"
 
-import featured from "./featured.json"
+const blog_posts = [
+  {
+    id: 1,
+    title: "So... what?",
+    desc: "I have no idea",
+    imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.JLypco-p9w6bxGNHiFaz1AHaFj%26pid%3DApi&f=1",
+    body: "yo",
+  },
+  {
+    id: 2,
+    title: "hey2",
+    desc: "ya",
+    imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Mymf469Kp128whMVkHRQ5AHaFj%26pid%3DApi&f=1",
+    body: "yo",
+  },
+]
 
 const SecondPage = () => {
 
-  var imageUrl;
-
-  const posts = featured.map(function(data, id) {
+  const posts = blog_posts.map(function(data, id) {
     return (
         <div className="blog_post">
         <a href="/blog/1">
-         <img src={require("../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
+        <img src={data.imageUrl} className="featured_image"></img>
 
         <h3 className="filler_text_blog">
         {data.title}
@@ -28,19 +41,6 @@ const SecondPage = () => {
         {data.desc}
         </h5>
       </a>
-
-      <h5 className="filler_text_unlinked">
-        {data.moreText}
-      </h5>
-
-      <h5 className="blog_text_red">
-        {data.moreLinkText}
-        <UseAnimations
-        animationKey="skipForward"
-        size={20}
-        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
-      />
-      </h5>
       </div>
     );
  });
@@ -62,6 +62,20 @@ return(
 
      {posts}
 
+      <div className="blog_post">
+      <a href="/blog/1">
+        <img src={first_featured} className="featured_image"></img>
+
+        <h3 className="filler_text_blog">
+          My Favorite City
+        </h3>
+
+        <h5 className="blog_text_small">
+        If I were to fangirl over my own words, these would undoubtedly be at the top of my list
+        </h5>
+      </a>
+      </div>
+
       <button className="home_button home_button_1 blog_button">
         <h6 classname="home_button_text">
           To Browse More
@@ -73,7 +87,7 @@ return(
         </h6>
       </button>
 
-      <h5 className="blog_text_white">
+      <h5 className="blog_text_red">
         Check out my instagram page.
         <UseAnimations
         animationKey="instagram"
@@ -82,7 +96,7 @@ return(
       />
       </h5>
 
-      <h5 className="blog_text_white">
+      <h5 className="blog_text_red">
         I also write on Medium, at times.
         <UseAnimations
         animationKey="skipForward"

@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "section": "bestones",
+      "title": "My Favorite City",
+      "desc": "...is one that does not exist yet.",
+      "imageUrl": "myfavoritecity",
+      "body": "yo",
+      "moreText": "If I were to fangirl over my own words, these would undoubtedly be at the top of my list...",
+      "moreLinkText": "So here's my absolute best.",
+      "moreLink": ""
+    },
+    {
+        "id": 2,
+        "section": "poetry",
+        "title": "Topsy Turvy",
+        "desc": "...a world we can only imagine.",
+        "imageUrl": "topsyturvy",
+        "body": "yo",
+        "moreText": "I used to like rhyming. But not anymore. Expect drastic changes in writing style...",
+        "moreLinkText": "Here's my poetry series.",
+        "moreLink": ""
+      },
+      {
+        "id": 3,
+        "section": "thinkingoutloud",
+        "title": "Haven't yet decided",
+        "desc": "...",
+        "imageUrl": "myfavoritecity",
+        "body": "yo",
+        "moreText": "Thinking out loud is just a fancy phrase for me endless pointless ranting. So if you have nothing better to do...",
+        "moreLinkText": "Here are my unyielding rants.",
+        "moreLink": ""
+      }
+  ]

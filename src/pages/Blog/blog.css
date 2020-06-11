@@ -41,4 +41,18 @@
     margin-top:0vh;
     padding: 0;
     width:84vw;
+    border-bottom: 2px solid red;
+    padding: 10px 0 10px 0;
+}
+
+.filler_text_unlinked{
+    margin-top:5vh;
+    color:white;
+}
+
+.blog_text_white{
+    color:white;
+    margin-top:0vh;
+    padding: 0;
+    width:84vw;
 }
