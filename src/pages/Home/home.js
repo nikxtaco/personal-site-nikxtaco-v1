@@ -32,14 +32,11 @@ export default () => {
       </h3>
 
       <h5 className="home_text_small">
-      I'm Nikita, a CS undergrad currently studying in MEC, Kochi. 
-      <br/><br/>
-      Dogstudio is a multidisciplinary
-      creative studio at the intersection
-      of art, design and technology.
-      Our goal is to deliver amazing experiences that make
-      people talk, and build strategic value for brands, tech,
-      entertainment, arts & culture.
+      I'm Nikita, a CS undergrad student, currently studying in MEC, Kochi. For the longest time I wanted to 
+      be an astrophysict cuz duh, it's cool. But well, what ever goes according to plan anyway?
+      <br/>
+      <p style={{textAlign:"center"}}>¯\_(ツ)_/¯</p>
+      At the moment, I'm quite interested in technology as well. Still a Rookie though.
       </h5>
 
       <button className="home_button home_button_1">
@@ -54,15 +51,16 @@ export default () => {
       </button>
 
       <h4 className="home_text_red">
-        it's time to shine.
+        But hey, there are things I'm moderately good at too!
       </h4>
 
       <h1 className="main_text">
-        Now coming to my creative side!
+        Coming to my creative side!
       </h1>
 
       <h5 className="home_text_small">
-      ...and on that note, here's a list of things I enjoy.
+      I like playing the keyboard, and sometimes succeed in hiding the impatience that resonates through it. 
+      Sketching is also a stress-buster for me from time to time. On that note, here's a list of things I enjoy...
       </h5>
 
       <h3 className="filler_text">
