@@ -17,10 +17,28 @@
     margin-top:3vh;
     color:white;
     text-align:center;
+    margin-bottom:2vh;
 }
 
 .blog_text_small{
     margin-top:0vh;
     color:#4a4a67;
     text-align: center;
+}
+
+.blog_post a{
+    text-decoration: none;
+}
+
+.blog_button{
+    margin-left:10vw;
+    width:64vw;
+    border:none;
+}
+
+.blog_text_red{
+    color:white;
+    margin-top:0vh;
+    padding: 0;
+    width:84vw;
 }

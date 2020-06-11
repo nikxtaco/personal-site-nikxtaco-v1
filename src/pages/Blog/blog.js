@@ -6,9 +6,46 @@ import Navbar from "../../components/navbar/navbar.js"
 
 import UseAnimations from "react-useanimations";
 
-import first_featured from "../../img/claus.jpg"
+import first_featured from "../../img/featured2.jpg"
 
-const SecondPage = () => (
+const blog_posts = [
+  {
+    id: 1,
+    title: "So... what?",
+    desc: "I have no idea",
+    imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.JLypco-p9w6bxGNHiFaz1AHaFj%26pid%3DApi&f=1",
+    body: "yo",
+  },
+  {
+    id: 2,
+    title: "hey2",
+    desc: "ya",
+    imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Mymf469Kp128whMVkHRQ5AHaFj%26pid%3DApi&f=1",
+    body: "yo",
+  },
+]
+
+const SecondPage = () => {
+
+  const posts = blog_posts.map(function(data, id) {
+    return (
+        <div className="blog_post">
+        <a href="/blog/1">
+        <img src={data.imageUrl} className="featured_image"></img>
+
+        <h3 className="filler_text_blog">
+        {data.title}
+        </h3>
+
+        <h5 className="blog_text_small">
+        {data.desc}
+        </h5>
+      </a>
+      </div>
+    );
+ });
+
+return(
   <div>
 
       <Navbar />
@@ -22,61 +59,50 @@ const SecondPage = () => (
       ...The Featured Few
       </h2>
 
-      <img src={first_featured} className="featured_image"></img>
 
-      <h3 className="filler_text_blog">
-        So... what?
-      </h3>
+     {posts}
 
-      <h5 className="blog_text_small">
-      Dogstudio is a multidisciplinary
-      creative studio at the intersection
-      of art, design and technology.
-      </h5>
+      <div className="blog_post">
+      <a href="/blog/1">
+        <img src={first_featured} className="featured_image"></img>
 
-      <button className="home_button home_button_1">
+        <h3 className="filler_text_blog">
+          So... what?
+        </h3>
+
+        <h5 className="blog_text_small">
+        Dogstudio is a technology.
+        </h5>
+      </a>
+      </div>
+
+      <button className="home_button home_button_1 blog_button">
         <h6 classname="home_button_text">
-          Check out my projects
+          To Browse More
         <UseAnimations
-        animationKey="skipForward"
+        animationKey="arrowDown"
         size={20}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
       />
         </h6>
       </button>
 
-      <h4 className="home_text_red">
-        it's time to shine.
-      </h4>
-
-      <h1 className="main_text">
-        Now coming to my creative side!
-      </h1>
-
-      <h5 className="home_text_small">
-      ...and on that note, here's a list of things I enjoy.
+      <h5 className="blog_text_red">
+        Check out my instagram page.
+        <UseAnimations
+        animationKey="instagram"
+        size={20}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />
       </h5>
 
-      <h3 className="filler_text">
-        Poetry and prose. <br/>
-        Does it get any better than this?
-      </h3>
-
-      <button className="home_button home_button_1">
-        <h6 classname="home_button_text">
-        Read away
+      <h5 className="blog_text_red">
+        I also write on Medium, at times.
         <UseAnimations
         animationKey="skipForward"
         size={20}
-        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />
-        </h6>
-      </button>
-
-      <h5 className="home_text_small">
-      Yes, I know there's 
-      only one item on it so it's not exactly a list but bear with me. 
-      I hope to add more of them someday.
       </h5>
 
     </div>
@@ -84,6 +110,7 @@ const SecondPage = () => (
     </div>
 
 )
+}
 
 export default SecondPage
 
