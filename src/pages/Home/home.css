@@ -16,10 +16,11 @@
 .home_text_big{
     margin-top:5vh;
     color:#8888a2;
+    margin-bottom:5vh;
 }
 
 .filler_text{
-    margin-top:5vh;
+    margin-top:2vh;
     color:white;
 }
 
@@ -29,5 +30,11 @@
 }
 
 .home_button_1{
-    margin-bottom:4vh;
+    margin-bottom:6vh;
+}
+
+.home_section_2{
+    margin-top: 7vh;
+    margin-bottom: 3vh;
+    font-size: 1rem;
 }

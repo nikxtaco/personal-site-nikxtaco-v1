@@ -47,11 +47,13 @@ const Navbar = () => {
    return (
       <div className="navbar">
 
+      <HLink to="/home">
       <UseAnimations
         animationKey="infinity"
         size={30}
         style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-13vh", position: "absolute", zIndex: "5" }}
       />
+      </HLink>
         
         <div onClick={toggleVisibility}>
       <UseAnimations
@@ -62,7 +64,7 @@ const Navbar = () => {
        </div>
 
        <div className="navbar" style={customNavbar}>
-         <a href="/#" style={customNavbarA} onHover={""}>Home</a>
+         <HLink to="/home" style={customNavbarA} onHover={""}>Home</HLink>
          <a href="" style={customNavbarA} onHover={""}>About</a>
          <HLink to="/blog" style={customNavbarA} onHover={""}>Blog</HLink>
          <a href="" style={customNavbarA} onHover={""}>Contact</a>
@@ -74,20 +76,20 @@ const Navbar = () => {
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "3vh" }}
       />
          </a>
-         <a href="">
+         <a href="https://instagram.com/nikxtaco">
             <UseAnimations
         animationKey="instagram"
         size={30}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
       /></a>
-         <a href="">
+         <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
          <UseAnimations
         animationKey="linkedin"
         size={30}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
       />
          </a>
-         <a href="">
+         <a href="https://twitter.com/nikxtaco">
          <UseAnimations
         animationKey="twitter"
         size={30}

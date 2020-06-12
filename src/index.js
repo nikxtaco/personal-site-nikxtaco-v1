@@ -10,7 +10,7 @@ ReactDOM.render(
     <Router basename="">
       <div>
         <Switch>
-          <Route exact path="/" component={FullPage} />
+          <Route exact path="/home" component={FullPage} />
           <Route path="/blog" component={Team} />
         </Switch>
       </div>

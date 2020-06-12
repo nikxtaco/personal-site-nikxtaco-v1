@@ -74,12 +74,14 @@ return(
       </button>
 
       <h5 className="blog_text_white">
-        Check out my instagram page.
+        Click here to check out my instagram (@cryptic.tales).
+        <a href="https://instagram.com/cryptic.tales">
         <UseAnimations
         animationKey="instagram"
         size={20}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />
+      </a>
       </h5>
 
       <h5 className="blog_text_white">
