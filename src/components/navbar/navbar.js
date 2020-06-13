@@ -51,7 +51,7 @@ const Navbar = () => {
       <UseAnimations
         animationKey="infinity"
         size={30}
-        style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-13vh", position: "absolute", zIndex: "5" }}
+        style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}
       />
       </HLink>
         
@@ -59,7 +59,7 @@ const Navbar = () => {
       <UseAnimations
         animationKey="menu2"
         size={30}
-        style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "-13vh", position: "absolute", zIndex: "5" }}
+        style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}
       />
        </div>
 

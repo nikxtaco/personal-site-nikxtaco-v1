@@ -15,7 +15,7 @@ const SecondPage = () => {
   const posts = featured.map(function(data, id) {
     return (
         <div className="blog_post">
-        <HLink to="/blog/bestonesList">
+        <HLink to={"/blog/" + String(data.section)}>
          <img src={require("../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
 
         <h3 className="filler_text_blog">
@@ -31,7 +31,7 @@ const SecondPage = () => {
         {data.moreText}
       </h5>
 
-      <HLink to="/bestones">
+      <HLink to={"/blog/" + String(data.section)}>
       <h5 className="blog_text_red">
         {data.moreLinkText}
         <UseAnimations

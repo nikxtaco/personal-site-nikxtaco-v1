@@ -1,13 +1,7 @@
-import React, {useState, useEffect} from "react"
-
-import "./bestonesList.css"
-
+import React, {useState} from "react"
+import "./bestones.css"
 import Navbar from "../../../components/navbar/navbar.js"
-
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-
-import { HashLink as HLink } from 'react-router-hash-link';
-
+import UseAnimations from "react-useanimations";
 import bestones from "./bestones.json"
 
 const BestOnes = () => {
@@ -72,9 +66,16 @@ const BestOnes = () => {
    <Navbar />
    <div className="main_container">
 
-     <button onClick={() => {setPost_id(0)}}>back to list</button>
-
    {post}
+
+   <h5 className="blog_text_red" onClick={() => {setPost_id(0)}}>
+        Back To List
+        <UseAnimations
+        animationKey="skipBack"
+        size={20}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />
+      </h5>
 
  </div>
  
