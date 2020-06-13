@@ -6,18 +6,16 @@ import Navbar from "../../components/navbar/navbar.js"
 
 import UseAnimations from "react-useanimations";
 
-import first_featured from "../../img/featured2.jpg"
+import { HashLink as HLink } from 'react-router-hash-link';
 
 import featured from "./featured.json"
 
 const SecondPage = () => {
 
-  var imageUrl;
-
   const posts = featured.map(function(data, id) {
     return (
         <div className="blog_post">
-        <a href="/blog/1">
+        <HLink to="/blog/bestonesList">
          <img src={require("../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
 
         <h3 className="filler_text_blog">
@@ -27,12 +25,13 @@ const SecondPage = () => {
         <h5 className="blog_text_small">
         {data.desc}
         </h5>
-      </a>
+      </HLink>
 
       <h5 className="filler_text_unlinked">
         {data.moreText}
       </h5>
 
+      <HLink to="/bestones">
       <h5 className="blog_text_red">
         {data.moreLinkText}
         <UseAnimations
@@ -41,6 +40,7 @@ const SecondPage = () => {
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />
       </h5>
+      </HLink>
       </div>
     );
  });

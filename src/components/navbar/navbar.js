@@ -47,7 +47,7 @@ const Navbar = () => {
    return (
       <div className="navbar">
 
-      <HLink to="/home">
+      <HLink to="/">
       <UseAnimations
         animationKey="infinity"
         size={30}
@@ -64,7 +64,7 @@ const Navbar = () => {
        </div>
 
        <div className="navbar" style={customNavbar}>
-         <HLink to="/home" style={customNavbarA} onHover={""}>Home</HLink>
+         <HLink to="/" style={customNavbarA} onHover={""}>Home</HLink>
          <a href="" style={customNavbarA} onHover={""}>About</a>
          <HLink to="/blog" style={customNavbarA} onHover={""}>Blog</HLink>
          <a href="" style={customNavbarA} onHover={""}>Contact</a>

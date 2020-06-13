@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import './index.css';
-import FullPage from './App.js';
-import Team from './pages/Blog/blog.js';
+import Landing from './App.js';
+import Blog from './pages/Blog/blog_landing.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <Router basename="">
+    <Router basename="/">
       <div>
         <Switch>
-          <Route exact path="/home" component={FullPage} />
-          <Route path="/blog" component={Team} />
+          <Route exact path="/" component={Landing} />
+          <Route path="/blog" component={Blog} />]
         </Switch>
       </div>
     </Router>,
