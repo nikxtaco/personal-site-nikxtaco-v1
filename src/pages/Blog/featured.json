@@ -24,12 +24,12 @@
       {
         "id": 3,
         "section": "thinkingoutloud",
-        "title": "Haven't yet decided",
-        "desc": "...",
-        "imageUrl": "myfavoritecity",
+        "title": "A Generation Gap",
+        "desc": "...what would you choose?",
+        "imageUrl": "agenerationgap",
         "body": "yo",
-        "moreText": "Thinking out loud is just a fancy phrase for me endless pointless ranting. So if you have nothing better to do...",
-        "moreLinkText": "Here are my unyielding rants.",
+        "moreText": "Thinking out loud is just a fancy phrase for my endless pointless ranting. So if you have nothing better to do...",
+        "moreLinkText": "Here's me thinking out loud.",
         "moreLink": ""
       }
   ]

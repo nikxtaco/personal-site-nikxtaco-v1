@@ -64,7 +64,19 @@ const BestOnes = () => {
    <div>
 
    <Navbar />
+
+   
    <div className="main_container">
+     
+   <h5 className="blog_text_red" onClick={() => {setPost_id(0)}}>
+        Back To List
+        <UseAnimations
+        animationKey="skipBack"
+        size={20}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />
+      </h5>
+      
 
    {post}
 

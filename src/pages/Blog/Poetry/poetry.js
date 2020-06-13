@@ -49,7 +49,7 @@ const Poetry = () => {
       
       <div className="main_container">
       <h1 className="main_quote">
-      The Best Ones . . .
+      Trying To Be Poetic . . .
       </h1> 
       <hr/>     
 
@@ -65,6 +65,16 @@ const Poetry = () => {
 
    <Navbar />
    <div className="main_container">
+
+           
+   <h5 className="blog_text_red" onClick={() => {setPost_id(0)}}>
+        Back To List
+        <UseAnimations
+        animationKey="skipBack"
+        size={20}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />
+      </h5>
 
    {post}
 

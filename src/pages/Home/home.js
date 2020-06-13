@@ -36,7 +36,7 @@ export default () => {
 
       <h2 className="home_text_big">
       I'm a CS undergrad student, currently studying in MEC, Kochi. For the longest time I wanted to 
-      be an astrophysict cuz duh, it's cool. But well, does anything ever go according to plan? Sigh.
+      be an astrophysicist cuz duh, it's cool. But well, does anything ever go according to plan? Sigh.
       <br/>
       <p style={{textAlign:"center"}}>¯\_(ツ)_/¯</p>
       At the moment, I'm quite interested in technology as well. Still a Rookie though.
