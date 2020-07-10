@@ -1,6 +1,19 @@
-.main_quote{
+.main_heading{
     color: white;
     font-size:1.6rem;
+    margin: 5vh 0;
+}
+
+.title{
+    color: white;
+    font-size:1.2rem;
+   
+}
+
+.hr_title{
+    width:20vw;
+    margin-left:0;
+    border-bottom: 2px solid white;
 }
 
 .blog_text_big{
@@ -21,9 +34,10 @@
 }
 
 .blog_text_small{
-    margin-top:0vh;
-    color:#8888a2;
-    text-align: center;
+    margin:0;
+    margin-top:1vh;
+    color:white;
+    text-align: left;
 }
 
 .blog_post a{
@@ -36,18 +50,16 @@
     border:none;
 }
 
-.blog_text_red{
+.read_more{
     color:white;
-    margin-top:0vh;
-    padding: 0;
-    width:84vw;
-    border-bottom: 2px solid red;
-    padding: 10px 0 10px 0;
+    margin-top:1vh;
 }
 
 .filler_text_unlinked{
-    margin-top:5vh;
+    margin-top:1vh;
+    margin-bottom:0;
     color:white;
+    font-size:0.8rem;
 }
 
 .blog_text_white{
