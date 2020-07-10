@@ -37,7 +37,7 @@
     margin-top:0vh;
     padding: 0;
     width:84vw;
-    border-bottom: 2px solid #8888a2;
+    border-bottom: 2px solid white;
     padding: 10px 0 10px 0;
 }
 
@@ -143,10 +143,10 @@
 
 .back_to_list{
     color:white;
-    margin-top:7vh;
+    margin-top:3vh;
     padding: 0;
     width:84vw;
-    border-top: 2px solid #8888a2;
-    border-bottom: 2px solid #8888a2;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
     padding: 10px 0 10px 0;
 }
