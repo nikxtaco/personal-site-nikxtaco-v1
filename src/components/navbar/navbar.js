@@ -99,7 +99,7 @@ const Navbar = () => {
          </span>
        </div>
        
-       <div className="look_up_bg">
+       {/* <div className="look_up_bg">
       <h6 className="look_up" onClick={() => {window.scrollTo(0, 0)}}>
         <UseAnimations
         animationKey="arrowUp"
@@ -107,7 +107,7 @@ const Navbar = () => {
         style={{ color: "black", cursor: "pointer", padding:"5px", margin:"0", float:"left", paddingBottom:"0"  }}
       />
       </h6>
-      </div>
+      </div> */}
 
       </div>
    )

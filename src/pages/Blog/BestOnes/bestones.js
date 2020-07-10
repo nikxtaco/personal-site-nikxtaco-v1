@@ -23,11 +23,17 @@ const BestOnes = () => {
     {
       return(
         <div>
-          <h1 className="blog_text_small_list">
-          {data.title}
-          </h1> 
-          <img alt="" src={require("../../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
-          <h3>
+          <h3 className="main_heading">
+          Favorites
+          </h3>
+          <h3 className="main_title">
+          {data.title} 
+          </h3> 
+          <h3 className="post_date">
+          {data.date}
+          </h3>
+          {/* <img alt="" src={require("../../../img/blog/" + String(data.imageUrl) + ".jpg")} className="post_image"></img> */}
+          <h3 className="post_body">
           {/* {JSON.stringify(data.body).replace("|","/n")} */}
           {data.body.split('\n').map((item, key) => {
   return <span key={key}>{item}<br/></span>
@@ -36,7 +42,7 @@ const BestOnes = () => {
         </div>
       )
     }
-  return 0;
+  return null;
 });
 
 useEffect(() => {
@@ -73,9 +79,9 @@ useEffect(() => {
    <div className="main_container">
 
      
-   <h5 className="blog_text_red make_fixed" onClick={() => {setPost_id(0)}}>
+   <h5 className="blog_text_red back" onClick={() => {setPost_id(0)}}>
         Back To List
-      </h5>
+   </h5>
 
    {post}
 
