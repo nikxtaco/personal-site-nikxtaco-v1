@@ -11,10 +11,9 @@ const BestOnes = () => {
   const posts = bestones.map(function(data, id) {
     return (
         <div className="blog_post" onClick={() => {setPost_id(data.id) && setShow_post(1)}}>
-        <h3 className="blog_text_small_list">
+        <h3 className="title_list">
         {data.title}
         </h3>
-        <hr/>
       </div>
     );
  });
@@ -24,10 +23,10 @@ const BestOnes = () => {
     {
       return(
         <div>
-          <h1 className="main_quote">
+          <h1 className="blog_text_small_list">
           {data.title}
           </h1> 
-          <img src={require("../../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
+          <img alt="" src={require("../../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
           <h3>
           {/* {JSON.stringify(data.body).replace("|","/n")} */}
           {data.body.split('\n').map((item, key) => {
@@ -37,6 +36,7 @@ const BestOnes = () => {
         </div>
       )
     }
+  return 0;
 });
 
   return (
@@ -48,10 +48,9 @@ const BestOnes = () => {
       <Navbar />
       
       <div className="main_container">
-      <h1 className="main_quote">
-      The Best Ones . . .
+      <h1 className="main_heading">
+      The Best Ones
       </h1> 
-      <hr/>     
 
      {posts}
 

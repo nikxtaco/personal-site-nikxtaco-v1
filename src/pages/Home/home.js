@@ -43,7 +43,7 @@ export default () => {
       </h2>
 
       <button className="home_button home_button_1">
-        <h6 classname="home_button_text">
+        <h6 className="home_button_text">
           Check out my projects
         <UseAnimations
         animationKey="skipForward"
@@ -73,7 +73,7 @@ export default () => {
 
       <button className="home_button home_button_1">
         <HLink to="/blog">
-        <h6 classname="home_button_text">
+        <h6 className="home_button_text">
         Read away
         <UseAnimations
         animationKey="skipForward"

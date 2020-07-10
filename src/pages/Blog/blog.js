@@ -10,11 +10,11 @@ import { HashLink as HLink } from 'react-router-hash-link';
 
 import featured from "./featured.json"
 
-const SecondPage = () => {
+const Blog = () => {
 
   const blog_sections = featured.map(function(data, id) {
     return (
-        <div className="blog_post">
+        <div className="blog_post" key={id}>
         <HLink to={"/blog/" + String(data.section)}>
          {/* <img src={require("../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img> */}
 
@@ -63,7 +63,7 @@ return(
      {blog_sections}
 
       <button className="home_button home_button_1 blog_button">
-        <h6 classname="home_button_text">
+        <h6 className="home_button_text">
           To Browse More
         <UseAnimations
         animationKey="arrowDown"
@@ -100,7 +100,7 @@ return(
 )
 }
 
-export default SecondPage
+export default Blog
 
 /*<span>
 <img src="" alt=""/>

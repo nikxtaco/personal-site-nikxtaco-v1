@@ -40,9 +40,9 @@ const Navbar = () => {
       transition: "0.3s",
    }
 
-   const customNavbarAHover = {
-      color: "#f1f1f1",
-   }
+   // const customNavbarAHover = {
+   //    color: "#f1f1f1",
+   // }
 
    return (
       <div className="navbar">
@@ -64,10 +64,10 @@ const Navbar = () => {
        </div>
 
        <div className="navbar" style={customNavbar}>
-         <HLink to="/" style={customNavbarA} onHover={""}>Home</HLink>
-         <a href="" style={customNavbarA} onHover={""}>About</a>
-         <HLink to="/blog" style={customNavbarA} onHover={""}>Blog</HLink>
-         <a href="" style={customNavbarA} onHover={""}>Contact</a>
+         <HLink to="/" style={customNavbarA}>Home</HLink>
+         <a href="/about" style={customNavbarA}>About</a>
+         <HLink to="/blog" style={customNavbarA} >Blog</HLink>
+         <a href="/contact" style={customNavbarA} >Contact</a>
          <span style={{}}>
          <a href="https://www.github.com/nikxtaco">
          <UseAnimations

@@ -4,8 +4,6 @@ import "./featured.css"
 
 import Navbar from "../../../components/navbar/navbar.js"
 
-import UseAnimations from "react-useanimations";
-
 import { HashLink as HLink } from 'react-router-hash-link';
 
 import featured from "./featured.json"
