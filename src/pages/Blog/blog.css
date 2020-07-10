@@ -61,7 +61,7 @@
 .section_name{
     color: white;
     font-size:1.6rem;
-    margin: 5vh 0;
+    margin: 7vh 0;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
     line-height: 25px;
@@ -134,8 +134,19 @@
 }
 
 .back{
+    visibility:hidden;
     position:absolute;
     top:2vh;
     text-align: center;
     border:0;
+}
+
+.back_to_list{
+    color:white;
+    margin-top:7vh;
+    padding: 0;
+    width:84vw;
+    border-top: 2px solid #8888a2;
+    border-bottom: 2px solid #8888a2;
+    padding: 10px 0 10px 0;
 }

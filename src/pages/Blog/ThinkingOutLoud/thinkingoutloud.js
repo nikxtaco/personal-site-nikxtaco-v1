@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react"
-import "./thinkingoutloud.css"
 import Navbar from "../../../components/navbar/navbar.js"
 import UseAnimations from "react-useanimations";
 import thinkingoutloud from "./thinkingoutloud.json"
@@ -38,9 +37,11 @@ const ThinkingOutLoud = () => {
           <div>
 
             <br/>
-            <h3 className="main_title">{data.title}</h3> 
+            <h3 className="individual_post_title">{data.title}</h3> 
             
             <h3 className="post_date">{data.date}</h3>
+
+            <hr className = "individual_post_hr"/>
             
             {/* <img alt="" src={require("../../../img/blog/" + String(data.imageUrl) + ".jpg")} className="post_image"></img> */}
             
@@ -85,7 +86,7 @@ const ThinkingOutLoud = () => {
 
         {post}
 
-        <h5 className="blog_text_red" onClick={() => {setPost_id(0)}}>
+        <h5 className="back_to_list" onClick={() => {setPost_id(0)}}>
           Back To List
           <UseAnimations
               animationKey="skipBack"

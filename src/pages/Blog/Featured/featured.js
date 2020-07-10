@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react"
-import "./featured.css"
 import Navbar from "../../../components/navbar/navbar.js"
 import UseAnimations from "react-useanimations";
 import bestones from "./featured.json"
@@ -87,7 +86,7 @@ const Featured = () => {
 
         {post}
 
-        <h5 className="blog_text_red" onClick={() => {setPost_id(0)}}>
+        <h5 className="back_to_list" onClick={() => {setPost_id(0)}}>
           Back To List
           <UseAnimations
               animationKey="skipBack"
