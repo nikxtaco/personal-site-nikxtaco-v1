@@ -65,7 +65,7 @@ const Navbar = () => {
 
        <div className="navbar" style={customNavbar}>
          <HLink to="/" style={customNavbarA}>Home</HLink>
-         <a href="/about" style={customNavbarA}>About</a>
+         <a href="/projects" style={customNavbarA}>Projects</a>
          <HLink to="/blog" style={customNavbarA} >Blog</HLink>
          <a href="/contact" style={customNavbarA} >Contact</a>
          <span style={{}}>
@@ -98,6 +98,16 @@ const Navbar = () => {
          </a>
          </span>
        </div>
+       
+       <div className="look_up_bg">
+      <h6 className="look_up" onClick={() => {window.scrollTo(0, 0)}}>
+        <UseAnimations
+        animationKey="arrowUp"
+        size={20}
+        style={{ color: "black", cursor: "pointer", padding:"5px", margin:"0", float:"left", paddingBottom:"0"  }}
+      />
+      </h6>
+      </div>
 
       </div>
    )

@@ -10,3 +10,10 @@
     font-size:1.6rem;
     margin: 5vh 0;
 }
+
+.make_fixed{
+    position:fixed;
+    top:2vh;
+    text-align: center;
+    border:0;
+}

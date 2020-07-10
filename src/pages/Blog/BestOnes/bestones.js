@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import "./bestones.css"
 import Navbar from "../../../components/navbar/navbar.js"
 import UseAnimations from "react-useanimations";
@@ -39,6 +39,10 @@ const BestOnes = () => {
   return 0;
 });
 
+useEffect(() => {
+  window.scrollTo(0, 0)
+}, [post_id])
+
   return (
     <div>
  
@@ -53,6 +57,7 @@ const BestOnes = () => {
       </h1> 
 
      {posts}
+     
 
     </div>
     
@@ -66,16 +71,11 @@ const BestOnes = () => {
 
    
    <div className="main_container">
+
      
-   <h5 className="blog_text_red" onClick={() => {setPost_id(0)}}>
+   <h5 className="blog_text_red make_fixed" onClick={() => {setPost_id(0)}}>
         Back To List
-        <UseAnimations
-        animationKey="skipBack"
-        size={20}
-        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
-      />
       </h5>
-      
 
    {post}
 
