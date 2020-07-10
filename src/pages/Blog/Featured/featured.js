@@ -1,8 +1,8 @@
 import React from "react"
 
-import "./blog.css"
+import "./featured.css"
 
-import Navbar from "../../components/navbar/navbar.js"
+import Navbar from "../../../components/navbar/navbar.js"
 
 import UseAnimations from "react-useanimations";
 
@@ -12,28 +12,28 @@ import featured from "./featured.json"
 
 const SecondPage = () => {
 
-  const blog_sections = featured.map(function(data, id) {
+  const posts = featured.map(function(data, id) {
     return (
         <div className="blog_post">
         <HLink to={"/blog/" + String(data.section)}>
          {/* <img src={require("../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img> */}
 
-        {/* <h3 className="filler_text_blog">
+        <h3 className="filler_text_blog">
         {data.title}
         </h3>
 
         <h5 className="blog_text_small">
         {data.desc}
-        </h5> */}
+        </h5>
       </HLink>
 
-      {/* <h5 className="filler_text_unlinked">
+      <h5 className="filler_text_unlinked">
         {data.moreText}
-      </h5> */}
+      </h5>
 
       <HLink to={"/blog/" + String(data.section)}>
       <h5 className="blog_text_red">
-        {data.title}
+        {data.moreLinkText}
         <UseAnimations
         animationKey="skipForward"
         size={20}
@@ -60,7 +60,7 @@ return(
       </h2> */}
 
 
-     {blog_sections}
+     {posts}
 
       <button className="home_button home_button_1 blog_button">
         <h6 classname="home_button_text">

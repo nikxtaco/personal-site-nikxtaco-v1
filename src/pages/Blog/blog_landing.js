@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Blog from './blog.js';
+import Featured from './Featured/featured.js';
 import BestOnes from './BestOnes/bestones.js';
 import Poetry from './Poetry/poetry.js';
 import ThinkingOutLoud from './ThinkingOutLoud/thinkingoutloud.js';
@@ -12,6 +13,7 @@ import ThinkingOutLoud from './ThinkingOutLoud/thinkingoutloud.js';
            <div>
         <Switch>
           <Route exact path="/blog" component={Blog} />
+          <Route path="/blog/featured" component={Featured} />
           <Route path="/blog/bestones" component={BestOnes} />
           <Route path="/blog/poetry" component={Poetry} />
           <Route path="/blog/thinkingoutloud" component={ThinkingOutLoud} />

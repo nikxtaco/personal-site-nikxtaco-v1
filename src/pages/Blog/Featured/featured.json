@@ -1,19 +1,8 @@
 [
     {
       "id": 1,
-      "section": "featured",
-      "title": "Featured",
-      "desc": "...is one that does not exist yet.",
-      "imageUrl": "myfavoritecity",
-      "body": "yo",
-      "moreText": "If I were to fangirl over my own words, these would undoubtedly be at the top of my list...",
-      "moreLinkText": "So here's my absolute best.",
-      "moreLink": ""
-    },
-    {
-      "id": 2,
       "section": "bestones",
-      "title": "Best Ones",
+      "title": "My Favorite City",
       "desc": "...is one that does not exist yet.",
       "imageUrl": "myfavoritecity",
       "body": "yo",
@@ -22,9 +11,9 @@
       "moreLink": ""
     },
     {
-        "id": 3,
+        "id": 2,
         "section": "poetry",
-        "title": "Poetry",
+        "title": "Topsy Turvy",
         "desc": "...a world we can only imagine.",
         "imageUrl": "topsyturvy",
         "body": "yo",
@@ -33,9 +22,9 @@
         "moreLink": ""
       },
       {
-        "id": 4,
+        "id": 3,
         "section": "thinkingoutloud",
-        "title": "Thinking Out Loud",
+        "title": "A Generation Gap",
         "desc": "...what would you choose?",
         "imageUrl": "agenerationgap",
         "body": "yo",
