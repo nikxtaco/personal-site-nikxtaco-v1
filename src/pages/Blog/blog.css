@@ -56,10 +56,15 @@
 
 /*Common CSS*/
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .section_name{
     color: white;
     font-size:1.6rem;
     margin: 5vh 0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    line-height: 25px;
 }
 
 .blog_post a{
@@ -70,6 +75,9 @@
     color: white;
     font-size:1.2rem;
     margin-bottom:2vh;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    line-height: 25px;
 }
 
 .post_hr{
@@ -83,6 +91,9 @@
     margin-top:1vh;
     color:white;
     text-align: left;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    line-height: 25px;
 }
 
 .post_desc{
@@ -105,7 +116,6 @@
 .post_body{
     font-size:0.9rem;
 }
-
 
 .back{
     position:absolute;
