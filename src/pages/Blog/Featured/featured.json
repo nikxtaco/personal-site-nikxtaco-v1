@@ -1,32 +1,26 @@
-[
+  [
     {
       "id": 1,
-      "section": "bestones",
-      "title": "My Favorite City",
-      "year": "2020",
-      "imageUrl": "myfavoritecity",
-      "body": "yo",
-      "moreText": "Our poetic impulse to make a good story better, has always led to exaggerated tales of beauty and wonder and the truth is, that history is but a blend of facts and fiction and I know nothing.",
-      "moreLink": ""
+      "title":"A Letter To My Favorite City",
+      "date":"May 2020",
+      "year":"2020",
+      "desc":"Our poetic impulse to make a good story better, has always led to exaggerated tales of beauty and wonder and the truth is, that history is but a blend of facts and fiction and I know nothing.",
+      "body":"They tell me you are dangerous and I believe them.\n\nBecause I grew up reading not only about cities of dreamers, mystics and alchemists but also of battle arenas, invading armies and civil war. Because when I tell them about the enchanting folklore and timeless art, they narrate the long histories of passion, suffering and insatiable greed, and I cannot disagree when they say - that our poetic impulse to make a good story better, has always led to exaggerated tales of beauty and wonder and the truth is, that history is but a blend of facts and fiction and I know nothing.\n\nI know nothing of war or spite or vanity.\n\nSo when they say that people take you over and rob you blind, that amidst all the energy and aggression all that you are is a ghost of a place where smoke means progress and the rush, a proof of life, I believe them.\n\nI believe them in disbelief.\n\nBecause we still imagine, that London is an independent man holding a cigar while Paris is a woman broken by love, but can't explain why a city is man or woman and yet are sure that you, are not much unlike people, fickle and uncertain, because we can't bear to think that you're any better than us. \n\nAnd yet.\n\nAs our lives sway like mist over all that we love, one coaxing whisper will be all it takes for people like us to chase a shadow of a place that holds no grudges and keeps no secrets. All but in vain, because if people began to live their most surreal dreams, the carousel of fantasies would cease their endless looping around dazzling lights that make a city seem like a theatre you never have to leave.\n\nBut you will.\n\nBecause reality is adorned with imperfections and for now we must settle for fan fiction and figments of people's imagination as we might not see our city of dreams with gleaming pink skies, crystalline streams and not a glimpse of chaos during our lifetimes. But someday, someone might. But for now we'll have to settle.\n\nSettle.\n\nFor the countless twin headlights that gleam in the night and trains that vibrate beneath the surface with the same frequency as they always have, until we realise that you, are not real. That you are not real until we make you."
     },
     {
-        "id": 2,
-        "section": "poetry",
-        "title": "Topsy Turvy",
-        "year": "2019",
-        "imageUrl": "topsyturvy",
-        "body": "yo",
-        "moreText": "I used to like rhyming. But not anymore. Expect drastic changes in writing style...",
-        "moreLink": ""
-      },
-      {
-        "id": 3,
-        "section": "thinkingoutloud",
-        "title": "A Generation Gap",
-        "year": "2017",
-        "imageUrl": "agenerationgap",
-        "body": "yo",
-        "moreText": "Thinking out loud is just a fancy phrase for my endless pointless ranting. So if you have nothing better to do...",
-        "moreLink": ""
-      }
+      "id": 2,
+      "title":"Topsy Turvy",
+      "date":"June 2018",
+      "year":"2018",
+      "desc":"Where the sea leaves burns and fire cools its flame.\nPeople see your passion, nobody asks your name.",
+      "body":"We chase logic. And we seek reason.\nTry to control, both the ship and its captain.\nNightmares turned to dreams, dreams into reality.\nHow long until another impossible's made to happen?\n\nBut a little too often, these dreams turn ridiculous.\nLike a longing to be dragged, into a parallel universe.\nWhere gravity pulls us up, everything else, nebulous.\nWhere things'd be different, for better or for worse.\n\nFor when space and time, neither stretch nor bend,\nTrees grow into seeds, and thunder sounds first,\nThere will be no end to life, and yet, no life to end.\nAs the law of reverse effect, itself would be reversed.\n\nWhere it's tropical at the poles, freezing at sea level.\nHomes built from lego, clouds our riding vessel.\nWhere the sea leaves burns and fire cools its flame.\nPeople see your passion, nobody asks your name.\n\nAnd if stars could talk, they'd let you in on this secret.\nThat nothing is a mystery and nothing is amiss.\nAnd yet, trying to make sense of it, do try & tell me,\nHow could a world, get any topsy-turvier than this?"
+    },
+    {
+      "id": 3,
+      "title":"A Generation Gap",
+      "date":"June 2018",
+      "year":"2018",
+      "desc":"What if we are the last generation to grow overly attached to people, and seemingly meaningless objects?",
+      "body":"The world is changing, and it's changing rapidly. What used to be hip and trendy is now more or less laughable. And yet we find a connection to people, surprisingly randomly - a cousin in his 30s, an aunt in her 40s. Strange. But then again, 'history isn't always punctuatated.' Because it's only new to you if you've seen the old. Just as we will never be able to relate to 9/11 as our forerunners, they will never be able to, to the second world war, as theirs.\n\nAnd we, the so called 'iGen' (and the one before it, to a certain degree), with our significantly shorter attention spans, better multitasking capabilities, less value for money and more for independence, we're born into a world that's been overrun by technology. A world where sophistication is prime and it's cost, meaningless.\n\nAnd not very far in the future, when you ask your domestic robot, 'Pepper', to help you out in watering your natural-looking artificial plants, just for the feel of it, or when you go to see Sophia in the museum that she's been in for the last decade, perhaps you won't be under the constant fear of the evil AI taking over the world unlike your parents. But the tiny conservative part in us, might just get the better of us at that point. For what if we are the last generation to grow overly attached to people, and seemingly meaningless objects?\n\nBecause when we become parents, there might as well be holograms in the air and actual ditto pokemon who can replicate ourselves and fool others, while we telepathically relive the historical moment of the sinking of the titanic, from our backyard which is apparently another hologram. A tangible hologram.\n\nMaybe I went a bit far with that one but who knows?\n\nGradual change is easy to adapt to. But at some point, the gap will have been too wide. And at that point, you will have to choose between the way that you were, and the way that people are going to be in about 30 years. And that is not going to be an easy choice to make.\n\nWe all work for the future that we want. But isn't it possible that what the future holds is not only a mystery, but way crazier than even our wildest imagination? Afterall, hasn't evolution shocked us enough already?"
+    }
   ]

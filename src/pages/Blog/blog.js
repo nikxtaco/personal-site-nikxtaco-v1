@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 
 import "./blog.css"
 
@@ -11,6 +11,10 @@ import { HashLink as HLink } from 'react-router-hash-link';
 import featured from "./featured.json"
 
 const Blog = () => {
+
+useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
 
   const blog_sections = featured.map(function(data, id) {
     return (
