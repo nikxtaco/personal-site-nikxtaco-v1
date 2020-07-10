@@ -38,9 +38,11 @@ const Featured = () => {
           <div>
 
             <br/>
-            <h3 className="main_title">{data.title}</h3> 
+            <h3 className="individual_post_title">{data.title}</h3> 
             
             <h3 className="post_date">{data.date}</h3>
+
+            <hr className = "individual_post_hr"/>
             
             {/* <img alt="" src={require("../../../img/blog/" + String(data.imageUrl) + ".jpg")} className="post_image"></img> */}
             
