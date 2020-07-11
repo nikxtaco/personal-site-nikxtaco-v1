@@ -1,0 +1,19 @@
+.footer_line{
+    border-bottom: 1px solid white;
+    padding: 0;
+    width:88vw;
+}
+
+.footer_link{
+    text-align: center;
+    color:white;
+    border: none;
+}
+
+.footer{
+    text-decoration: none;
+}
+
+span{
+    margin-top:30vw;
+}

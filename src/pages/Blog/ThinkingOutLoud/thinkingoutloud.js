@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from "react"
 import Navbar from "../../../components/navbar/navbar.js"
+import Footer from "../../../components/footer/footer.js"
+
 import UseAnimations from "react-useanimations";
 import thinkingoutloud from "./thinkingoutloud.json"
 
@@ -99,6 +101,8 @@ const ThinkingOutLoud = () => {
     
     </div>
     : null }
+
+    <Footer />
 
     </div>
   )
