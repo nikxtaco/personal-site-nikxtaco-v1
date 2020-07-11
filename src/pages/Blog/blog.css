@@ -1,11 +1,12 @@
 .main_quote{
     color: white;
     font-size:1.6rem;
+    margin-bottom:7vh;
 }
 
 
 .blog_button{
-    margin-top:2vh;
+    margin-top:7vh;
     margin-left:10vw;
     width:84vw;
     border:none;
