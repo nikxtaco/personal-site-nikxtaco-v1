@@ -16,7 +16,7 @@ const AllTimeFavorites = () => {
 
   const posts = bestones.map(function(data, id) {
     return (
-      <div className="blog_post" onClick={() => {setPost_id(data.id) && setShow_post(1)}}>
+      <div key={id} className="blog_post" onClick={() => {setPost_id(data.id) && setShow_post(1)}}>
         
         <h3 className="post_title">{data.title}</h3>
 
@@ -36,7 +36,7 @@ const AllTimeFavorites = () => {
     if(data.id === post_id)
       {
         return(
-          <div>
+          <div key={id}>
 
             <br/>
             <h3 className="individual_post_title">{data.title}</h3> 

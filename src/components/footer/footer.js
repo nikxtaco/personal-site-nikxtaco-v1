@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-
-import { HashLink as HLink } from 'react-router-hash-link';
+import React from 'react'
 
 import "./footer.css"
 
