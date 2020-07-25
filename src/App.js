@@ -8,8 +8,6 @@ class FullPage extends React.Component {
   render() {
     return (
         <Transition1 />           
-       
-      
     );
   }
 }

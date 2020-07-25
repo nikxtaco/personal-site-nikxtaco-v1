@@ -1,12 +1,8 @@
-body{
+html, body{
   margin:0;
   padding:0;
   background-color:black;
   color:white;
-  font-size:15px;
-}
-
-html{
   font-size:15px;
 }
 
