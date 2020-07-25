@@ -7,10 +7,8 @@ import './App.css';
 class FullPage extends React.Component {
   render() {
     return (
-      <body>
         <Transition1 />           
        
-      </body>
       
     );
   }

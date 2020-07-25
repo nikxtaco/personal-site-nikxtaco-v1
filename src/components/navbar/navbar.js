@@ -46,7 +46,7 @@ const Navbar = () => {
    //    color: "#f1f1f1",
    // }
 
-   const { height, width } = useWindowDimensions();
+   const { width } = useWindowDimensions();
 
    return (
       <div className="navbar">
