@@ -2,12 +2,15 @@ import React from "react";
 
 import Transition1 from "./pages/Home/home.js"
 
-import './App.css';
+// import './App.css';
 
 class FullPage extends React.Component {
   render() {
     return (
-        <Transition1 />           
+      <div style={{fontSize:"300px"}}>
+        heyya
+        {/* <Transition1 />  */}
+      </div>          
     );
   }
 }

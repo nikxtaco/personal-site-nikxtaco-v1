@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import './index.css';
+// import './index.css';
 import Landing from './App.js';
 import Blog from './pages/Blog/blog_landing.js';
 import * as serviceWorker from './serviceWorker';
