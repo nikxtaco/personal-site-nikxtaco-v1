@@ -17,7 +17,7 @@ export default () => {
   useEffect(() => {
     if(width>750)
     new Rellax(".animate", { // <---- Via class name
-      speed: -10,
+      speed: -3,
       center: false,
       wrapper: null,
       round: true,
@@ -31,7 +31,6 @@ export default () => {
   return (
     <div>
       <Navbar/>
-      
     <div className="main_container">
       <h1 className="main_text animate">
         Hey there! <br/>
