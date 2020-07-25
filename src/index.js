@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 // import './index.css';
 import Landing from './App.js';
-import Blog from './pages/Blog/blog_landing.js';
+// import Blog from './pages/Blog/blog_landing.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -11,7 +11,7 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/blog" component={Blog} />
+          {/* <Route path="/blog" component={Blog} /> */}
         </Switch>
       </div>
     </Router>,
