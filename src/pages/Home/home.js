@@ -17,7 +17,7 @@ export default () => {
   useEffect(() => {
     if(width>750)
     new Rellax(".animate", { // <---- Via class name
-      speed: -3,
+      speed: -3, //-10
       center: false,
       wrapper: null,
       round: true,
