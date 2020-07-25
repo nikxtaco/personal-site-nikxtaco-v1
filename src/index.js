@@ -8,12 +8,12 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <Router basename="/">
-      <div>
+      <body>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/blog" component={Blog} />]
         </Switch>
-      </div>
+      </body>
     </Router>,
     document.getElementById("root"),
   );

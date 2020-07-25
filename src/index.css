@@ -6,6 +6,10 @@ body{
   font-size:15px;
 }
 
+html{
+  font-size:15px;
+}
+
 canvas{
   outline:0;
 }
