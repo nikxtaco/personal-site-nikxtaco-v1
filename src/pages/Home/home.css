@@ -9,11 +9,11 @@
 }
 
 .home_text_red{
-    color:red;
+    color:rgb(236, 65, 65);
     margin-top:4vh;
 }
 
-.home_text_big{
+.home_text_big1, .home_text_big2{
     margin-top:5vh;
     color:#8888a2;
     margin-bottom:5vh;
@@ -37,4 +37,54 @@
     margin-top: 7vh;
     margin-bottom: 3vh;
     font-size: 1rem;
+}
+
+@media screen and (min-width: 750px){
+    .main_container{
+        margin-left:8vw; /**/
+        margin-right:8vw; /**/
+        margin-top:10vw;
+    }
+    .main_text{
+        font-size: 25rem;
+        padding-top:8vh;
+    }
+    .home_text_red{
+        margin-top:34vh;
+        margin-bottom:4vh;
+        font-size: 15rem;
+        text-align:right;
+    }
+    .home_text_big1{
+        margin-top:3vh;
+        margin-bottom:5vh;
+        font-size: 5rem;
+        text-align:right;
+        width:60vw;
+        margin-left:24vw;
+    }
+    .filler_text{
+        margin-top:2vh;
+        font-size: 10rem;
+    }
+    .home_text_big2{
+        margin-top:3vh;
+        margin-bottom:5vh;
+        font-size: 5rem;
+        width:60vw;
+    }
+    .home_text_small{
+        margin-top:4vh;
+        color:#8888a2;
+    }
+
+    .home_button_1{
+        margin-bottom:6vh;
+    }
+
+    .home_section_2{
+        margin-top: 7vh;
+        margin-bottom: 3vh;
+        font-size: 1rem;
+    }
 }

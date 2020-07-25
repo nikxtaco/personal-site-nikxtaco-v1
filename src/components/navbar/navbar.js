@@ -6,6 +6,8 @@ import "./navbar.css"
 
 import UseAnimations from "react-useanimations";
 
+import useWindowDimensions from "../../helpers/WindowDimensions.js"
+
 
 const Navbar = () => {
    
@@ -44,23 +46,41 @@ const Navbar = () => {
    //    color: "#f1f1f1",
    // }
 
+   const { height, width } = useWindowDimensions();
+
    return (
       <div className="navbar">
 
       <HLink to="/">
+      {
+      width>750?
       <UseAnimations
-        animationKey="infinity"
-        size={30}
-        style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}
+      animationKey="infinity"
+      size={150}
+      style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
+      />:
+      <UseAnimations
+         animationKey="infinity"
+         size={30}
+         style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}
       />
+      }
       </HLink>
         
         <div onClick={toggleVisibility}>
+        {
+      width>750?
+      <UseAnimations
+        animationKey="menu2"
+        size={120}
+        style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
+      />:
       <UseAnimations
         animationKey="menu2"
         size={30}
         style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}
       />
+      }
        </div>
 
        <div className="navbar" style={customNavbar}>
