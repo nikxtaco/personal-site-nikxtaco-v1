@@ -4,6 +4,7 @@ html, body{
   background-color:black;
   color:white;
   font-size:15px;
+  overflow-x:hidden;
 }
 
 canvas{
