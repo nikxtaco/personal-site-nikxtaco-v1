@@ -56,7 +56,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
       animationKey="infinity"
-      size={150}
+      size={50}
       style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
       />:
       <UseAnimations
@@ -72,7 +72,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="menu2"
-        size={120}
+        size={30}
         style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
       />:
       <UseAnimations
