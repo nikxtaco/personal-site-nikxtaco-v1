@@ -1,7 +1,7 @@
 .footer_line{
     border-bottom: 1px solid white;
     padding: 0;
-    width:88vw;
+    width:84vw;
 }
 
 .footer_link{
@@ -16,4 +16,17 @@
 
 span{
     margin-top:30vw;
+}
+
+@media screen and (min-width: 750px){
+    .footer_line{
+        border-bottom: 5px solid white;
+    }
+    .footer_link{
+        text-align: center;
+        color:white;
+        border: none;
+        font-size: 5rem;
+        width:90vw;
+    }
 }

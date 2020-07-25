@@ -16,14 +16,40 @@ export default () => {
 
   useEffect(() => {
     if(width>750)
-    new Rellax(".animate", { // <---- Via class name
-      speed: -3, //-10
+    {
+      new Rellax(".hi_animate", { // <---- Via class name
+      speed: -5, 
       center: false,
       wrapper: null,
       round: true,
       vertical: true,
       horizontal: false
     })
+    new Rellax(".random_animate", { // <---- Via class name
+      speed: 5, 
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    })
+    new Rellax(".hey_animate", { // <---- Via class name
+      speed: -3, 
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    })
+    new Rellax(".creative_animate", { // <---- Via class name
+      speed: 3, 
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    })
+    }
   });
 
   const { width } = useWindowDimensions();
@@ -32,12 +58,13 @@ export default () => {
     <div>
       <Navbar/>
     <div className="main_container">
-      <h1 className="main_text animate">
+      <h1 className="hi_text hi_animate">
         Hey there! <br/>
         I'm Nikita.
       </h1>
 
-      <h4 className="home_text_red rellax" data-rellax-speed="7" data-rellax-percentage="0.5">
+      <div className="random_animate">
+      <h4 className="home_text_red1">
         Let's start with random facts.
       </h4>
 
@@ -60,54 +87,76 @@ export default () => {
       Still a Rookie though.
       <p>¯\_(ツ)_/¯</p>
       </h2>
-      
+
       <button className="home_button home_button_1">
-        <h6 className="home_button_text">
+        <h6 className="link_text">
           Check out my projects
-        <UseAnimations
-        animationKey="skipForward"
-        size={20}
-        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
+      {
+      width>750?
+      <UseAnimations
+      animationKey="skipForward"
+      size={120}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
+      />:
+      <UseAnimations
+      animationKey="skipForward"
+      size={20}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
       />
+      }
         </h6>
       </button>
 
-      <h4 className="home_text_red home_section_2">
-        But hey, there are things <br/>I'm moderately good at too!
+      </div>
+
+      <h4 className="home_text_red2 hey_animate">
+        But hey, there are things&nbsp;
+        {width<750?<br/>:null}
+        I'm moderately good at too!
       </h4>
 
+      <div className="creative_animate">
       <h1 className="main_text">
         Coming to my creative side!
       </h1>
 
-      <h2 className="home_text_big">
+      <h2 className="home_text_big2">
       I like playing the keyboard, and sometimes succeed in hiding the impatience that resonates through it. 
       Sketching is also a stress-buster for me from time to time. On that note, here's a list of things I enjoy...
       </h2>
 
-      <h3 className="filler_text">
+      <h3 className="filler_text interests_text">
         Poetry and prose. <br/>
         Does it get any better than this? 
       </h3>
 
       <button className="home_button home_button_1">
         <HLink to="/blog">
-        <h6 className="home_button_text">
+        <h6 className="link_text">
         Read away
-        <UseAnimations
-        animationKey="skipForward"
-        size={20}
-        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
+        {
+      width>750?
+      <UseAnimations
+      animationKey="skipForward"
+      size={120}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
+      />:
+      <UseAnimations
+      animationKey="skipForward"
+      size={20}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
       />
+      }
         </h6>
         </HLink>
       </button>
 
-      <h2 className="home_text_big">
-      Yes, I know there's 
-      only one item on it so it's not exactly a list but bear with me. 
+      <h2 className="home_text_big2">
+      Yes, I know there's only one item on it so it's not exactly a list but bear with me. 
       I hope to add more of them someday.
       </h2>
+
+      </div>
 
     </div>
 

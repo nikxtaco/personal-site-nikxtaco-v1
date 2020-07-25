@@ -10,6 +10,8 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 
 const Navbar = () => {
+
+   const { width } = useWindowDimensions();
    
    const [navbarVisibility, setNavbarVisibility] = useState(false);
 
@@ -28,25 +30,19 @@ const Navbar = () => {
       left: 0,
       overflowX: "hidden",
       transition: "0.5s",
-      paddingTop: "45vh",
-      textAlign: "left",
+      paddingTop: width<750?"45vh":"30vh",
+      textAlign: width<750?"left":"center",
       width: navbarVisibility ? "100vw" : "0",
    }
 
    const customNavbarA = {
       padding: "8px 8px 8px 32px",
       textDecoration: "none",
-      fontSize: "25px",
+      fontSize: width<750?"25px":"10rem",
       color: "white",
       display: "block",
       transition: "0.3s",
    }
-
-   // const customNavbarAHover = {
-   //    color: "#f1f1f1",
-   // }
-
-   const { width } = useWindowDimensions();
 
    return (
       <div className="navbar">
@@ -56,7 +52,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
       animationKey="infinity"
-      size={50} //150
+      size={150} //50
       style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
       />:
       <UseAnimations
@@ -72,7 +68,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="menu2"
-        size={30} //120
+        size={120} //30
         style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
       />:
       <UseAnimations
@@ -90,31 +86,64 @@ const Navbar = () => {
          <a href="/contact" style={customNavbarA} >Contact</a>
          <span style={{}}>
          <a href="https://www.github.com/nikxtaco">
-         <UseAnimations
+       {
+      width>750?
+      <UseAnimations
+        animationKey="github"
+        size={150}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"38vw", paddingTop: "10vh" }}
+      />:
+      <UseAnimations
         animationKey="github"
         size={30}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "3vh" }}
       />
+      }
          </a>
          <a href="https://instagram.com/nikxtaco">
-            <UseAnimations
+         {
+      width>750?
+      <UseAnimations
+        animationKey="instagram"
+        size={150}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}
+      />:
+      <UseAnimations
         animationKey="instagram"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
-      /></a>
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "3vh" }}
+      />
+      }
+      </a>
          <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
-         <UseAnimations
+        {
+      width>750?
+      <UseAnimations
+        animationKey="linkedin"
+        size={150}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}
+      />:
+      <UseAnimations
         animationKey="linkedin"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "3vh" }}
       />
+      }
          </a>
          <a href="https://twitter.com/nikxtaco">
-         <UseAnimations
+         {
+      width>750?
+      <UseAnimations
+        animationKey="twitter"
+        size={150}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}
+      />:
+      <UseAnimations
         animationKey="twitter"
         size={30}
-        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10px", paddingTop: "3vh"  }}
+        style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "3vh" }}
       />
+      }
          </a>
          </span>
        </div>

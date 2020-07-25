@@ -5,7 +5,11 @@ import Footer from "../../../components/footer/footer.js"
 import UseAnimations from "react-useanimations";
 import thinkingoutloud from "./thinkingoutloud.json"
 
+import useWindowDimensions from "../../../helpers/WindowDimensions.js"
+
 const ThinkingOutLoud = () => {
+
+  const { width } = useWindowDimensions();
 
   const [post_id, setPost_id] = useState(0)
   const [show_post, setShow_post] = useState(0)
@@ -90,11 +94,19 @@ const ThinkingOutLoud = () => {
 
         <h5 className="back_to_list" onClick={() => {setPost_id(0)}}>
           Back To List
-          <UseAnimations
-              animationKey="skipBack"
-              size={20}
-              style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
-          />
+          {
+      width>750?
+      <UseAnimations
+      animationKey="skipBack"
+      size={120}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />:
+      <UseAnimations
+      animationKey="skipBack"
+      size={20}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />
+      }
         </h5>
 
       </div>

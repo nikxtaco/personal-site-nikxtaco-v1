@@ -4,7 +4,6 @@
     margin-bottom:7vh;
 }
 
-
 .blog_button{
     margin-top:7vh;
     margin-left:10vw;
@@ -21,8 +20,6 @@
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
     line-height: 30px;
-    /* border-bottom: 2px solid white;
-    padding: 10px 0 10px 0; */
 }
 
 .blog_text_white{
@@ -30,6 +27,11 @@
 }
 
 .home_button_text{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    line-height: 25px;
+}
+.link_text{
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
     line-height: 25px;
@@ -135,4 +137,103 @@
     width:84vw;
     border-top: 2px solid white;
     padding: 10px 0 10px 0;
+}
+
+@media screen and (min-width: 750px){
+    .main_quote{
+        font-size:14rem;
+        margin-bottom:7vh;
+    }
+    .blog_text_red{
+        margin-bottom:13vh;
+        padding: 0;
+        width:84vw;
+        font-size: 20rem;
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 4px;
+        line-height: 30px;
+    }
+    .blog_button{
+        margin-top:7vh;
+        margin-left:0vw;
+        width:auto;
+        margin-bottom: 5rem;
+    }
+    .home_button_text{
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 4px;
+        line-height: 25px;
+        margin:0;        
+        font-size: 15rem;
+        padding:0;
+    }
+    .link_text{
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 4px;
+        line-height: 25px;
+        margin:0;        
+        padding:0;
+    }
+    .blog_text_white{
+        font-size: 5rem;
+        width:50vw;
+    }
+
+/*Common CSS*/
+
+.section_name{
+    font-size:20rem;
+    margin: 20vh 0 15vh 0;
+    letter-spacing: 10px;
+}
+.post_title{
+    font-size:10rem;
+    margin-bottom:8rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    margin-top:15rem;
+}
+.individual_post_title{
+    font-size:20rem;
+    margin: 8vh 0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+}
+.post_hr{
+    width:30vw;
+    border-bottom: 5px solid white;
+}
+.individual_post_hr{
+    width:84vw;
+    margin-bottom:8vh;
+    border-bottom: 10px solid white;
+}
+.post_year{
+    margin-top:3vh;
+    font-size: 5rem;
+    letter-spacing: 4px;
+}
+.post_desc{
+    margin-top:2vh;
+    margin-bottom:0;
+    font-size:5rem;
+    width:50vw;
+}
+.post_read_more{
+    margin-top:1vh;
+    font-size:5rem;
+}
+.post_date{
+    font-size:5rem;
+}
+.post_body{
+    font-size:5rem;
+}
+.back_to_list{
+    margin-top:10vh;
+    font-size: 5rem;
+    border-top: 10px solid white;
+    padding: 5rem 0;
+    text-align: center;
+}
 }

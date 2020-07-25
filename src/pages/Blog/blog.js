@@ -12,6 +12,8 @@ import { HashLink as HLink } from 'react-router-hash-link';
 
 import sections from "./blog_sections.json"
 
+import useWindowDimensions from "../../helpers/WindowDimensions.js"
+
 const Blog = () => {
 
 useEffect(() => {
@@ -39,6 +41,8 @@ useEffect(() => {
     );
  });
 
+ const { width } = useWindowDimensions();
+
 return(
   <div>
 
@@ -53,38 +57,61 @@ return(
       ...A Featured Few
       </h2> */}
 
-
      {blog_sections}
 
       <button className="home_button home_button_1 blog_button">
         <h6 className="home_button_text">
           To Browse More
+        {
+        width>750?
+        <UseAnimations
+        animationKey="arrowDown"
+        size={140}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
+        />:
         <UseAnimations
         animationKey="arrowDown"
         size={20}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
-      />
+        />
+        }
         </h6>
       </button>
 
       <h5 className="blog_text_white">
         Click here to check out my instagram (@cryptic.tales).
         <a href="https://instagram.com/cryptic.tales">
+       {
+        width>750?
+        <UseAnimations
+        animationKey="instagram"
+        size={120}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />:
         <UseAnimations
         animationKey="instagram"
         size={20}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />
+        }
       </a>
       </h5>
 
       <h5 className="blog_text_white">
         I also write on Medium, at times.
+          {
+        width>750?
+        <UseAnimations
+        animationKey="skipForward"
+        size={120}
+        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
+      />:
         <UseAnimations
         animationKey="skipForward"
         size={20}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />
+        }
       </h5>
 
     </div>
