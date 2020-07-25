@@ -1,4 +1,5 @@
-.main_container{
+@media screen and (max-width: 750px){
+    .main_container{
     margin-left:8vw;
     margin-right:8vw;
     margin-top:25vw;
@@ -40,7 +41,8 @@
 }
 
 .try{
-    font-size:300px;
+    font-size:30px;
+}
 }
 
 @media screen and (min-width: 750px){
