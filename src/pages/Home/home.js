@@ -31,8 +31,7 @@ export default () => {
   return (
     <div>
       <Navbar/>
-      <h1 className="try">hey</h1>
-
+      
     <div className="main_container">
       <h1 className="main_text animate">
         Hey there! <br/>

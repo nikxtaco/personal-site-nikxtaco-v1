@@ -1,8 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@media screen and (max-width: 750px){
 h1, h2, h3, h5, h6{
   font-family:"Poppins",sans-serif;
 }
@@ -59,7 +58,6 @@ h6{
 p{
   font-family:"Quicksand",sans-serif;
 }
-}
 
 @media screen and (min-width: 750px){
   .home_button, .home_button a{
@@ -75,4 +73,4 @@ p{
     padding: 0 80px 0 0;
     font-size:10rem;
   }
-} */
+}
