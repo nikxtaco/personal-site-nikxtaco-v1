@@ -67,9 +67,9 @@ p{
   .home_button, .home_button a{
     text-decoration: none;
     border:none;
-    border-bottom: 12px solid red;
+    border-bottom: 4px solid red;
     color:white;
-    padding: 10px 0 30px 0;
+    padding: 10px 0 5px 0;
     margin-bottom:0vh;
     margin-top:6vh;
   }

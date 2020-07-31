@@ -66,7 +66,7 @@ return(
         width>750?
         <UseAnimations
         animationKey="arrowDown"
-        size={140}
+        size={50}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
         />:
         <UseAnimations
@@ -85,7 +85,7 @@ return(
         width>750?
         <UseAnimations
         animationKey="instagram"
-        size={120}
+        size={30}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />:
         <UseAnimations
@@ -103,7 +103,7 @@ return(
         width>750?
         <UseAnimations
         animationKey="skipForward"
-        size={120}
+        size={30}
         style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />:
         <UseAnimations

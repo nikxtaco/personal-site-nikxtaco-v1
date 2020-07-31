@@ -98,7 +98,7 @@ const Poetry = () => {
       width>750?
       <UseAnimations
       animationKey="skipBack"
-      size={120}
+      size={40}
       style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
       />:
       <UseAnimations

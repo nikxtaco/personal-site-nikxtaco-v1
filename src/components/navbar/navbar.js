@@ -52,7 +52,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
       animationKey="infinity"
-      size={150} //50
+      size={50}
       style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
       />:
       <UseAnimations
@@ -68,7 +68,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="menu2"
-        size={120} //30
+        size={40}
         style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}
       />:
       <UseAnimations
@@ -90,7 +90,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="github"
-        size={150}
+        size={50}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"38vw", paddingTop: "10vh" }}
       />:
       <UseAnimations
@@ -105,7 +105,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="instagram"
-        size={150}
+        size={50}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}
       />:
       <UseAnimations
@@ -120,7 +120,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="linkedin"
-        size={150}
+        size={50}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}
       />:
       <UseAnimations
@@ -135,7 +135,7 @@ const Navbar = () => {
       width>750?
       <UseAnimations
         animationKey="twitter"
-        size={150}
+        size={50}
         style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}
       />:
       <UseAnimations

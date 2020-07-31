@@ -54,7 +54,7 @@ const Navbar = () => {
       style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh"}}
       />:
       <UseAnimations
-      animationKey="instagram"
+      animationKey="linkedin"
       size={"10vw"}
       style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"2vw", paddingTop: "3vh"}}
        />
@@ -77,7 +77,7 @@ const Navbar = () => {
          </a>
 
         <div>
-        <h5 className="footer_link">Copyright © 2020</h5>
+        <h5 className="footer_link">Copyright © Made by Nikita</h5>
         </div>
 
       </div>

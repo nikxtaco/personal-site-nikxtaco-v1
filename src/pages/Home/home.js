@@ -18,22 +18,6 @@ export default () => {
     if(width>750)
     {
       new Rellax(".hi_animate", { // <---- Via class name
-      speed: -5, 
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    })
-    new Rellax(".random_animate", { // <---- Via class name
-      speed: 5, 
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    })
-    new Rellax(".hey_animate", { // <---- Via class name
       speed: -3, 
       center: false,
       wrapper: null,
@@ -41,8 +25,24 @@ export default () => {
       vertical: true,
       horizontal: false
     })
+    new Rellax(".random_animate", { // <---- Via class name
+      speed: 0, 
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    })
+    new Rellax(".hey_animate", { // <---- Via class name
+      speed: -1, 
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    })
     new Rellax(".creative_animate", { // <---- Via class name
-      speed: 3, 
+      speed: 1, 
       center: false,
       wrapper: null,
       round: true,
@@ -95,7 +95,7 @@ export default () => {
       width>750?
       <UseAnimations
       animationKey="skipForward"
-      size={120}
+      size={45}
       style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
       />:
       <UseAnimations
@@ -138,7 +138,7 @@ export default () => {
       width>750?
       <UseAnimations
       animationKey="skipForward"
-      size={120}
+      size={45}
       style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
       />:
       <UseAnimations
