@@ -12,6 +12,8 @@ import Rellax from "rellax";
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
+import top_image from "../../media/acrylic.jpg"
+
 export default () => {
 
   useEffect(() => {
@@ -59,14 +61,8 @@ export default () => {
       <Navbar/>
     <div className="main_container">
 
-    <div class="foreground"></div>
-
-<div class="midground">
-  <div class="tuna"></div>
-</div>
-
-<div class="background">
-</div>
+      <div className="top_image"></div>
+      <img className="top_image" alt="" src={top_image}></img>
 
       <h1 className="hi_text hi_animate">
         Hey there! <br/>

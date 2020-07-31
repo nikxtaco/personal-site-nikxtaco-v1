@@ -185,17 +185,18 @@
     font-size:20rem;
     margin: 20vh 0 15vh 0;
     letter-spacing: 10px;
+    color:#8888a2;
 }
 .post_title{
     font-size:10rem;
     margin-bottom:8rem;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
-    margin-top:15rem;
+    margin-top:8vh;
 }
 .individual_post_title{
     font-size:20rem;
-    margin: 8vh 0;
+    margin: 10vh 0;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 2px;
 }
@@ -235,5 +236,40 @@
     border-top: 5px solid white;
     padding: 5rem 0;
     text-align: center;
+}
+
+
+
+
+
+.notmob_side_container1{
+    width:33vw;
+    margin-left:4vw;
+    height:80vh;
+}
+
+.notmob_side_container2{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    width:55vw;
+    position: absolute;
+    top:10vh;
+    left:40vw;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    height:90vh;
+}
+
+.notmob_side_container2::-webkit-scrollbar {
+    display: none;
+  }
+
+  .notmob_post_title{
+    font-size:10rem;
+    margin-bottom:0rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    margin-top:0;
 }
 }

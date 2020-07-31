@@ -69,10 +69,23 @@ const Featured = () => {
     return null;
   });
 
+  const notmob_posts = bestones.map(function(data, id) {
+    return (
+      <div key={id} className="blog_post" onClick={() => {setPost_id(data.id) && setShow_post(1)}}>
+        
+        <h3 className="notmob_post_title">{data.title}</h3>
+
+      </div>
+    );
+  });
+
   return (
     <div>
 
-      {initializeReactGA()}
+{initializeReactGA()}
+  
+  {
+      width<750?<div>
  
     {!post_id && !show_post &&
     <div>
@@ -124,6 +137,46 @@ const Featured = () => {
     : null }
 
     <Footer />
+
+  </div>:
+
+
+
+
+
+<div>
+ 
+ <div>
+
+   <Navbar />
+       
+   <div className="notmob_side_container1">
+
+     <h3 className="section_name">Featured</h3> 
+
+     {notmob_posts}
+     
+   </div>
+     
+ </div>
+ 
+
+ <div>
+
+   <div className="notmob_side_container2">
+
+     {post}
+
+   </div>
+ 
+ </div>
+
+ <Footer />
+
+</div>
+
+
+  }
 
     </div>
   )
