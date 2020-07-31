@@ -58,6 +58,16 @@ export default () => {
     <div>
       <Navbar/>
     <div className="main_container">
+
+    <div class="foreground"></div>
+
+<div class="midground">
+  <div class="tuna"></div>
+</div>
+
+<div class="background">
+</div>
+
       <h1 className="hi_text hi_animate">
         Hey there! <br/>
         I'm Nikita.
