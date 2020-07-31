@@ -14,6 +14,13 @@ import sections from "./blog_sections.json"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
+import ReactGA from 'react-ga';
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-173520154-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
+
 const Blog = () => {
 
 useEffect(() => {
@@ -45,6 +52,8 @@ useEffect(() => {
 
 return(
   <div>
+
+    {initializeReactGA()}
 
       <Navbar />
       

@@ -7,6 +7,13 @@ import bestones from "./featured.json"
 
 import useWindowDimensions from "../../../helpers/WindowDimensions.js"
 
+import ReactGA from 'react-ga';
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-173520154-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
+
 const Featured = () => {
 
   const { width } = useWindowDimensions();
@@ -64,6 +71,8 @@ const Featured = () => {
 
   return (
     <div>
+
+      {initializeReactGA()}
  
     {!post_id && !show_post &&
     <div>
