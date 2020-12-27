@@ -12,7 +12,7 @@ import Rellax from "rellax";
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import top_image from "../../media/acrylic.jpg"
+import top_image from "../../media/redwoman.png"
 
 export default () => {
 
@@ -70,7 +70,7 @@ export default () => {
       </h1>
 
       <div className="random_animate">
-      <h4 className="home_text_red1">
+      <h4 className="home_text_red1" style={{textAlign: "right"}}>
         Let's start with random facts.
       </h4>
 

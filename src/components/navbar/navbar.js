@@ -6,12 +6,8 @@ import "./navbar.css"
 
 import UseAnimations from "react-useanimations";
 
-import useWindowDimensions from "../../helpers/WindowDimensions.js"
-
 
 const Navbar = () => {
-
-   const { width } = useWindowDimensions();
    
    const [navbarVisibility, setNavbarVisibility] = useState(false);
 
@@ -29,16 +25,12 @@ const Navbar = () => {
       top: 0,
       left: 0,
       overflowX: "hidden",
-      transition: "0.5s",
-      paddingTop: width<750?"45vh":"30vh",
-      textAlign: width<750?"left":"center",
       width: navbarVisibility ? "100vw" : "0",
    }
 
    const customNavbarA = {
       padding: "8px 8px 8px 32px",
       textDecoration: "none",
-      fontSize: width<750?"25px":"10rem",
       color: "white",
       display: "block",
       transition: "0.3s",
@@ -49,7 +41,7 @@ const Navbar = () => {
 
       <HLink to="/">
       {
-      width>750?
+      400>750?
       <UseAnimations
       animationKey="infinity"
       size={50}
@@ -65,7 +57,7 @@ const Navbar = () => {
         
         <div onClick={toggleVisibility}>
         {
-      width>750?
+      400>750?
       <UseAnimations
         animationKey="menu2"
         size={40}
@@ -87,7 +79,7 @@ const Navbar = () => {
          <span style={{}}>
          <a href="https://www.github.com/nikxtaco">
        {
-      width>750?
+      400>750?
       <UseAnimations
         animationKey="github"
         size={50}
@@ -102,7 +94,7 @@ const Navbar = () => {
          </a>
          <a href="https://instagram.com/nikxtaco">
          {
-      width>750?
+      400>750?
       <UseAnimations
         animationKey="instagram"
         size={50}
@@ -117,7 +109,7 @@ const Navbar = () => {
       </a>
          <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
         {
-      width>750?
+      400>750?
       <UseAnimations
         animationKey="linkedin"
         size={50}
@@ -132,7 +124,7 @@ const Navbar = () => {
          </a>
          <a href="https://twitter.com/nikxtaco">
          {
-      width>750?
+      400>750?
       <UseAnimations
         animationKey="twitter"
         size={50}
