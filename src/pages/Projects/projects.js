@@ -13,6 +13,7 @@ import Rellax from "rellax";
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 import alrtai from "../../img/projects/alrtai.jpg"
+import filterbubble from "../../img/projects/filterbubble.png"
 
 export default () => {
 
@@ -66,21 +67,36 @@ export default () => {
       </h1>
 
       <div className="random_animate">
-      {/* <h4 className="home_text_red1" style={{textAlign: "right"}}>
-        PS: There's more to come ;)
-      </h4> */}
+      
+      <img src={filterbubble} className="project_image" alt="filterbubble"></img>
+
+      <h3 className="filler_text">
+       Website For Filter Bubble.
+      </h3>
+
+      <button className="home_button home_button_1">
+        <h6 className="link_text">
+          Visit The Site
+      {
+      width>750?
+      <UseAnimations
+      animationKey="skipForward"
+      size={45}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", marginTop:"-3.5rem", paddingLeft:"10rem" }}
+      />:
+      <UseAnimations
+      animationKey="skipForward"
+      size={20}
+      style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0", paddingLeft:"60px" }}
+      />
+      }
+        </h6>
+      </button>
 
       <img src={alrtai} className="project_image" alt="alrt.ai"></img>
 
-      {/* <h2 className="home_text_big1">
-      I'm a person with multiple, ordinary interests and very little patience, not much unlike every other 
-      GenZ kid out there. I like spending time stalking art and music pages and not once have I stopped wishing for 
-      a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization, 
-      that having deep and wise thoughts all the time isn't gonna get me anywhere, dawns on me.
-      </h2> */}
-
       <h3 className="filler_text">
-       Landing Page For alrt.ai
+       Landing Page For alrt.ai, a UK Based Startup.
       </h3>
 
       <button className="home_button home_button_1">
