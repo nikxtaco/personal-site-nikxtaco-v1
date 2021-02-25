@@ -74,7 +74,8 @@ export default () => {
        Website For Filter Bubble.
       </h3>
 
-      <button className="home_button home_button_1">
+      <a href="https://vigorous-ptolemy-37aad6.netlify.app/">
+      <button className="home_button home_button_1 project_button">
         <h6 className="link_text">
           Visit The Site
       {
@@ -92,6 +93,7 @@ export default () => {
       }
         </h6>
       </button>
+      </a>
 
       <img src={alrtai} className="project_image" alt="alrt.ai"></img>
 
@@ -99,7 +101,7 @@ export default () => {
        Landing Page For alrt.ai, a UK Based Startup.
       </h3>
 
-      <button className="home_button home_button_1">
+      <button className="home_button home_button_1" project_button>
         <h6 className="link_text">
           Visit The Site
       {
