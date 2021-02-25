@@ -101,7 +101,7 @@ export default () => {
        Landing Page For alrt.ai, a UK Based Startup.
       </h3>
 
-      <button className="home_button home_button_1" project_button>
+      <button className="home_button home_button_1 project_button">
         <h6 className="link_text">
           Visit The Site
       {

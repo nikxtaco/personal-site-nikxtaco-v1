@@ -95,6 +95,7 @@ export default () => {
       </h2>
 
       <button className="home_button home_button_1">
+      <HLink to="/projects">
         <h6 className="link_text">
           Check out my projects
       {
@@ -111,6 +112,7 @@ export default () => {
       />
       }
         </h6>
+        </HLink>
       </button>
 
       </div>
