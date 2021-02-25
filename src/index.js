@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import './index.css';
 import Landing from './App.js';
 import Blog from './pages/Blog/blog_landing.js';
+import Projects from './pages/Projects/projects.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/blog" component={Blog} />
+          <Route path="/projects" component={Projects} />
         </Switch>
       </div>
     </Router>,

@@ -6,22 +6,22 @@ import BestOnes from './BestOnes/bestones.js';
 import Poetry from './Poetry/poetry.js';
 import ThinkingOutLoud from './ThinkingOutLoud/thinkingoutloud.js';
 
-  class App extends Component {
-    render() {
-      return (
-        <Router basename="/">
-           <div>
-        <Switch>
-          <Route exact path="/blog" component={Blog} />
-          <Route path="/blog/featured" component={Featured} />
-          <Route path="/blog/bestones" component={BestOnes} />
-          <Route path="/blog/poetry" component={Poetry} />
-          <Route path="/blog/thinkingoutloud" component={ThinkingOutLoud} />
-        </Switch>
-      </div>
-        </Router>
-      )
-    }
+class App extends Component {
+  render() {
+    return (
+      <Router basename="/">
+          <div>
+      <Switch>
+        <Route exact path="/blog" component={Blog} />
+        <Route path="/blog/featured" component={Featured} />
+        <Route path="/blog/bestones" component={BestOnes} />
+        <Route path="/blog/poetry" component={Poetry} />
+        <Route path="/blog/thinkingoutloud" component={ThinkingOutLoud} />
+      </Switch>
+    </div>
+      </Router>
+    )
   }
-  
-  export default App
+}
+
+export default App

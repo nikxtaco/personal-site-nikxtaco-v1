@@ -60,7 +60,7 @@ const Navbar = () => {
 
           <div className="navbar" style={customNavbar}>
               <HLink to="/" style={customNavbarEach}>Home</HLink>
-              <a href="/projects" style={customNavbarEach}>Projects</a>
+              <HLink to="/projects" style={customNavbarEach}>Projects</HLink>
               <HLink to="/blog" style={customNavbarEach} >Blog</HLink>
                 
               <span>
