@@ -6,20 +6,24 @@ import './App.css';
 
 import ReactGA from 'react-ga';
 
+import useWindowDimensions from "./helpers/WindowDimensions.js"
+
 function initializeReactGA() {
   ReactGA.initialize('UA-173520154-1');
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
-class FullPage extends React.Component {
-  render() {
+export default () => {
+
+      const { width } = useWindowDimensions();
+
     return (
       <div>
         {initializeReactGA()}
-        <Transition1 /> 
+        {width>750?<h1>Please use your phone, the site looks trash on such a big screen. For now.</h1>
+        :<Transition1 /> }
       </div>          
     );
-  }
+  
 }
 
-export default FullPage;

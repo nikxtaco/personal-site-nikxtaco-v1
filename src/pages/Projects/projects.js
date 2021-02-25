@@ -98,7 +98,7 @@ export default () => {
       <img src={alrtai} className="project_image" alt="alrt.ai"></img>
 
       <h3 className="filler_text">
-       Landing Page For alrt.ai, a UK Based Startup.
+       Landing Page For alrt.ai.
       </h3>
 
       <button className="home_button home_button_1 project_button">
