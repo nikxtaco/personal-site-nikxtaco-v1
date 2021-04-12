@@ -13,6 +13,10 @@
     <script src="three.r95.min.js"></script>
 <script src="vanta.globe.min.js"></script> -->
 
+<script>
+  if(!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer
+</script> <!-- workaround for a warning -->
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
