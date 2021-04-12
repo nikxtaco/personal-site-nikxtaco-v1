@@ -147,11 +147,13 @@
     .blog_text_red{
         margin-bottom:10vh;
         padding: 0;
-        width:84vw;
+        text-align: right;
+        margin-left:30vw;
+        max-width:54vw;
         font-size: 20rem;
         font-family: 'Bebas Neue', cursive;
         letter-spacing: 4px;
-        line-height: 30px;
+        line-height: 50px;
     }
     .blog_button{
         margin-top:7vh;
@@ -160,10 +162,12 @@
         margin-bottom: 5rem;
     }
     .home_button_text{
+        margin-top:10vh;
+        margin-left:22vw;
+        width:40vw;
         font-family: 'Bebas Neue', cursive;
         letter-spacing: 4px;
         line-height: 25px;
-        margin:0;        
         font-size: 15rem;
         padding:0;
     }
@@ -176,7 +180,9 @@
     }
     .blog_text_white{
         font-size: 5rem;
-        width:50vw;
+        max-width:50vw;
+        text-align:center;
+        margin-left: 15vw;
     }
 
 /*Common CSS*/

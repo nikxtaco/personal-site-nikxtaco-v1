@@ -16,6 +16,8 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 import ReactGA from 'react-ga';
 
+import blog_page_picture from "../../img/blog_page_picture.jpg"
+
 function initializeReactGA() {
   ReactGA.initialize('UA-173520154-1');
   ReactGA.pageview(window.location.pathname + window.location.search);
@@ -30,18 +32,10 @@ useEffect(() => {
   const blog_sections = sections.map(function(data, id) {
     return (
         <div className="blog_post" key={id}>
-        {/* <HLink to={"/blog/" + String(data.section)}>
-         <img src={require("../../img/blog/" + String(data.imageUrl) + ".jpg")} className="featured_image"></img>
-      </HLink> */}
 
       <HLink to={"/blog/" + String(data.section)}>
       <h1 className="blog_text_red">
         {data.title}
-        {/* <UseAnimations
-        animationKey="skipForward"
-        size={20}
-        style={{ color: "white", cursor: "pointer", float:"right", padding:"0", margin:"0" }}
-      /> */}
       </h1>
       </HLink>
       </div>
@@ -66,6 +60,10 @@ return(
       ...A Featured Few
       </h2> */}
 
+      {width>750?
+      <img src={blog_page_picture} style={{position:'absolute', marginLeft:"0", maxWidth:"30vw"}}></img>
+      :<img src={blog_page_picture} style={{pointerEvents: "none", opacity:"0.25", position:'absolute', marginLeft:"0px", width:"82vw"}}></img>}
+     
      {blog_sections}
 
       <button className="home_button home_button_1 blog_button">

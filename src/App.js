@@ -20,8 +20,9 @@ export default () => {
     return (
       <div>
         {initializeReactGA()}
-        {width>750?<h1>Please use your phone, the site looks trash on such a big screen. For now.</h1>
-        :<Transition1 /> }
+        <Transition1 />
+        {/* {width>750?<h1>Please use your phone, the site looks trash on such a big screen. For now.</h1>
+        :<Transition1 /> } */}
       </div>          
     );
   
