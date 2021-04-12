@@ -61,8 +61,8 @@ return(
       </h2> */}
 
       {width>750?
-      <img src={blog_page_picture} style={{position:'absolute', marginLeft:"0", maxWidth:"30vw"}}></img>
-      :<img src={blog_page_picture} style={{pointerEvents: "none", opacity:"0.25", position:'absolute', marginLeft:"0px", width:"82vw"}}></img>}
+      <img alt="" src={blog_page_picture} style={{position:'absolute', marginLeft:"0", maxWidth:"30vw"}}></img>
+      :<img alt="" src={blog_page_picture} style={{pointerEvents: "none", opacity:"0.25", position:'absolute', marginLeft:"0px", width:"82vw"}}></img>}
      
      {blog_sections}
 

@@ -6,7 +6,7 @@ import './App.css';
 
 import ReactGA from 'react-ga';
 
-import useWindowDimensions from "./helpers/WindowDimensions.js"
+// import useWindowDimensions from "./helpers/WindowDimensions.js"
 
 function initializeReactGA() {
   ReactGA.initialize('UA-173520154-1');
@@ -15,7 +15,7 @@ function initializeReactGA() {
 
 export default () => {
 
-      const { width } = useWindowDimensions();
+      // const { width } = useWindowDimensions();
 
     return (
       <div>
