@@ -191,7 +191,7 @@
     font-size:20rem;
     margin: 20vh 0 15vh 0;
     letter-spacing: 10px;
-    color:#8888a2;
+    color:white; 
 }
 .post_title{
     font-size:10rem;
@@ -200,20 +200,29 @@
     letter-spacing: 4px;
     margin-top:8vh;
 }
+.individual_post_container{
+    max-width:64vw;
+}
 .individual_post_title{
     font-size:20rem;
-    margin: 10vh 0;
+    margin: 0vh 8vw;
+    margin-left:40vw;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 2px;
+    width:50vw;
+    color:black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .post_hr{
     width:30vw;
     border-bottom: 5px solid white;
 }
 .individual_post_hr{
-    width:84vw;
+    margin-left:40vw;
+    width:44vw;
     margin-bottom:8vh;
     border-bottom: 5px solid white;
+    opacity:0.25;
 }
 .post_year{
     margin-top:3vh;
@@ -235,6 +244,8 @@
 }
 .post_body{
     font-size:5rem;
+    margin-left:40vw;
+    width:45vw;
 }
 .back_to_list{
     margin-top:10vh;

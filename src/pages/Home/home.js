@@ -12,7 +12,8 @@ import Rellax from "rellax";
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import top_image from "../../media/redwoman.png"
+// import top_image from "../../media/redwoman.png"
+import feathers from "../../img/feathers_blue.jpg"
 
 export default () => {
 
@@ -59,10 +60,14 @@ export default () => {
   return (
     <div>
       <Navbar/>
+
+      {width>750?
+        <img alt="" src={feathers} style={{pointerEvents: "none", marginTop:"-30vh", width:"100vw", opacity:0.25, position:"absolute", paddingLeft:0}}></img>
+        :null}
     <div className="main_container">
 
       <div className="top_image"></div>
-      <img className="top_image" alt="" src={top_image}></img>
+      {/* <img className="top_image" alt="" src={top_image}></img> */}
 
       <h1 className="hi_text hi_animate">
         Hey there! <br/>

@@ -7,6 +7,9 @@ import bestones from "./bestones.json"
 
 import useWindowDimensions from "../../../helpers/WindowDimensions.js"
 
+import statue_blog from "../../../img/statue_blog.jpg"
+import feathers from "../../../img/feathers_blue.jpg"
+
 import ReactGA from 'react-ga';
 
 function initializeReactGA() {
@@ -28,7 +31,7 @@ const AllTimeFavorites = () => {
   const posts = bestones.map(function(data, id) {
     return (
       <div key={id} className="blog_post" onClick={() => {setPost_id(data.id) && setShow_post(1)}}>
-        
+    
         <h3 className="post_title">{data.title}</h3>
 
         <hr className = "post_hr"/>
@@ -47,9 +50,13 @@ const AllTimeFavorites = () => {
     if(data.id === post_id)
       {
         return(
-          <div key={id}>
+          <div key={id} className="individual_post_container">
 
+            {width>750?
+            <img alt="" src={statue_blog} style={{position:"absolute", maxWidth:"40vw"}}></img>
+            :null}
             <br/>
+            
             <h3 className="individual_post_title">{data.title}</h3> 
             
             <h3 className="post_date">{data.date}</h3>
@@ -78,6 +85,10 @@ const AllTimeFavorites = () => {
     <div>
 
       <Navbar />
+
+      {width>750?
+        <img alt="" src={feathers} style={{pointerEvents: "none", opacity:0.2, position:"absolute", width:"100vw", paddingLeft:0}}></img>
+        :null}
           
       <div className="main_container">
 

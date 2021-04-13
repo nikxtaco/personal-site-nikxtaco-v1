@@ -12,7 +12,7 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js"
 const Navbar = () => {
    
    const [navbarVisibility, setNavbarVisibility] = useState(false);
-   const { width } = useWindowDimensions();
+   const { width, height } = useWindowDimensions();
 
    function toggleVisibility(){
       setNavbarVisibility(!navbarVisibility)
@@ -90,15 +90,18 @@ const Navbar = () => {
               </span>
           </div>
           
-          {/* <div className="look_up_bg">
-          <h6 className="look_up" onClick={() => {window.scrollTo(0, 0)}}>
+          {width>750?
+          <div className="look_up_bg">
+          <h6 className="look_up" onClick={() => {window.scrollBy(0, height)}}>
             <UseAnimations
             animationKey="arrowUp"
-            size={20}
+            size={40}
             style={{ color: "black", cursor: "pointer", padding:"5px", margin:"0", float:"left", paddingBottom:"0"  }}
           />
           </h6>
-          </div> */}
+          </div>
+          :null}
+          
       </div>
    )
 }
