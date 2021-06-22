@@ -1,10 +1,8 @@
 import React, {useEffect} from "react";
-import Navbar from "../../components/navbar/navbar.js"
-import Footer from "../../components/footer/footer.js"
 
-import Scrollable_Blog from '../Blog/scrollable_blog.js';
+// import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
-import "./home.css"
+import "./intro.css"
 
 import UseAnimations from "react-useanimations";
 
@@ -14,67 +12,69 @@ import Rellax from "rellax";
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-// import top_image from "../../media/redwoman.png"
+import greatwave from "../../media/redwomangrey.png"
 // import feathers from "../../img/feathers_blue.jpg"
 
 export default () => {
 
-  useEffect(() => {
-    if(width>750)
-    {
-      new Rellax(".hi_animate", { // <---- Via class name
-      speed: -3, 
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    })
-    new Rellax(".random_animate", { // <---- Via class name
-      speed: 0, 
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    })
-    new Rellax(".hey_animate", { // <---- Via class name
-      speed: -1, 
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    })
-    new Rellax(".creative_animate", { // <---- Via class name
-      speed: 1, 
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    })
-    }
-  });
+  // useEffect(() => {
+  //   if(width>750)
+  //   {
+  //     new Rellax(".hi_animate", { // <---- Via class name
+  //     speed: -3, 
+  //     center: false,
+  //     wrapper: null,
+  //     round: true,
+  //     vertical: true,
+  //     horizontal: false
+  //   })
+  //   new Rellax(".random_animate", { // <---- Via class name
+  //     speed: 0, 
+  //     center: false,
+  //     wrapper: null,
+  //     round: true,
+  //     vertical: true,
+  //     horizontal: false
+  //   })
+  //   new Rellax(".hey_animate", { // <---- Via class name
+  //     speed: -1, 
+  //     center: false,
+  //     wrapper: null,
+  //     round: true,
+  //     vertical: true,
+  //     horizontal: false
+  //   })
+  //   new Rellax(".creative_animate", { // <---- Via class name
+  //     speed: 1, 
+  //     center: false,
+  //     wrapper: null,
+  //     round: true,
+  //     vertical: true,
+  //     horizontal: false
+  //   })
+  //   }
+  // });
+
+  function horizontalScroll(e){
+    console.log(e.deltaY)
+    if(e.deltaY > 0)
+    window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
+    else
+    window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
+  }
 
   const { width } = useWindowDimensions();
   
   return (
     <div>
-    <Navbar/>
-    <div style={{position:"absolute", marginLeft:0, marginTop:0}}>
-      <Scrollable_Blog/>
 
-      {/* <Blog style={{position:"absolute", marginLeft:"100vw"}}/> */}
+    <div className="main_home_container" onWheel={horizontalScroll} >
+    {/* <div className="main_home_container"  > */}
+      <img className="great_wave" alt="" src={greatwave}></img>
 
-    <div className="main_container">
-
-      <div className="top_image"></div>
-      {/* <img className="top_image" alt="" src={top_image}></img> */}
-
-      <h1 className="hi_text hi_animate">
-        Hey there! <br/>
-        I'm Nikita.
+      <h1 className="hey_text">
+        Hey there! I'm Nikita.
+<br/>
       </h1>
 
       <div className="random_animate">
@@ -176,9 +176,6 @@ export default () => {
 
     </div>
 
-    <Footer />
-
-    </div>
     </div>
   );
 };

@@ -3,21 +3,19 @@ html, body{
   padding:0;
   background-color:black;
   color:white;
-  font-size:15px;
-  overflow-x:hidden;
+  font-size:4px;
+  scroll-behavior: smooth;
+
+  overflow-y:hidden;
 }
 
 canvas{
   outline:0;
 }
 
-@media screen and (min-width: 750px){
-  html, body{
-    margin:0;
-    padding:0;
-    background-color:black;
-    color:white;
-    font-size:4px; /*15 for localhost 4 for remote server*/
-    overflow-x:hidden;
-  }
+/* Make scollbars invisible but keep functionality */
+
+::-webkit-scrollbar {
+  display:none;
 }
+

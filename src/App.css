@@ -40,20 +40,7 @@ h6{
   padding:0;
 }
 
-.home_button, .home_button a{
-  background-color:transparent;
-  text-decoration: none;
-  border:none;
-  border-bottom: 2px solid red;
-  color:white;
-  padding: 10px 0 10px 0;
-  font-size:1rem;
-  margin-bottom:1vh;
-}
 
-.home_button_text{
-  padding: 0 80px 0 0;
-}
 
 .link_text{
   padding: 0;
@@ -64,19 +51,7 @@ p{
 }
 
 @media screen and (min-width: 750px){
-  .home_button, .home_button a{
-    text-decoration: none;
-    border:none;
-    border-bottom: 4px solid red;
-    color:white;
-    padding: 10px 0 5px 0;
-    margin-bottom:0vh;
-    margin-top:6vh;
-  }
-  .home_button_text{
-    padding: 0 80px 0 0;
-    font-size:8rem;
-  }
+ 
   .link_text{
     padding: 0 80px 0 0;
     font-size:8rem;

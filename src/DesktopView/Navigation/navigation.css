@@ -1,0 +1,44 @@
+.home_slides{
+    display:flex;
+}
+
+.navbar {
+    position:fixed;
+    z-index:100;
+    width:100vw;
+    margin-top:10vh;
+}
+
+.infinity_logo{
+    color: white;
+    cursor: pointer;
+    margin-left: 7vw;
+}
+
+.menu_logo{
+    margin-top:-50px;
+    color: white;
+    cursor: pointer;
+    margin-left: 89vw;
+}
+
+.NavbarListStyles {
+    z-index:100;
+    color:#878787;
+    list-style:none;
+    width:100vw;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-size:4rem;
+    display:inline-block;
+    text-align:center;
+    font-family: soleil,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    margin-top:-50px;
+}
+
+.NavbarListStyles li {
+    display:inline;
+}

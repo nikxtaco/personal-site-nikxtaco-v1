@@ -42,18 +42,18 @@ const Navbar = () => {
    }
 
    return (
-      <div className="navbar">
+      <div className="navbar" style={{position:"fixed", marginLeft:0, marginTop:0}}>
 
-          <HLink to="/">
+          <HLink to="/" onClick={window.scrollTo(0,0)}>
           {
-            width>750?<UseAnimations animationKey="infinity" size={50} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}/>
+            width>750?<UseAnimations animationKey="infinity" size={50} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
             :<UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}/>
           }
           </HLink>
             
           <div onClick={toggleVisibility}>
           {
-            width>750?<UseAnimations animationKey="menu2" size={40} style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "-16vh", position: "absolute", zIndex: "5" }}/>
+            width>750?<UseAnimations animationKey="menu2" size={40} style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
             :<UseAnimations animationKey="menu2" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}/>
           }
           </div>
@@ -91,8 +91,8 @@ const Navbar = () => {
           </div>
           
           {width>750?
-          <div className="look_up_bg">
-          <h6 className="look_up" onClick={() => {window.scrollBy(0, height)}}>
+          <div className="look_up_bg" style={{position:"fixed"}}>
+          <h6 className="look_up" onClick={() => {window.scrollBy({ left: width, behavior: 'smooth'});}}>
             <UseAnimations
             animationKey="arrowUp"
             size={40}

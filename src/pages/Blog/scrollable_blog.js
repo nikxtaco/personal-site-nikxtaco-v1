@@ -45,7 +45,7 @@ useEffect(() => {
  const { width } = useWindowDimensions();
 
 return(
-  <div>
+  <div style={{marginLeft:"100vw"}}>
 
     {initializeReactGA()}
 
