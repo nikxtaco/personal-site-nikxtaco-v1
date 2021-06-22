@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
 import './navigation.css';
-import Home_Intro from "../HomeIntro/intro.js"
-import Home_Blog from "../HomeBlog/blog.js"
+import HomeIntro from "../HomeIntro/intro.js"
+import HomeBlog from "../HomeBlog/blog.js"
 
 export default () => {
 
@@ -26,12 +26,6 @@ export default () => {
     }
   }, [index])
 
-  const [navbarVisibility, setNavbarVisibility] = useState(true);
-
-   function toggleVisibility(){
-      setNavbarVisibility(!navbarVisibility)
-   }
-
    const customHome = {
       color: homeColor ? "white" : "#878787",
    }
@@ -44,7 +38,7 @@ export default () => {
         <div>          
         <div className="navbar">
 
-            <HLink to="/" onClick={()=>{{setIndex(1); window.scrollTo(0,0)}}}>
+            <HLink to="/" onClick={()=>{setIndex(1); window.scrollTo(0,0)}}>
                 <UseAnimations animationKey="infinity" size={50} className="infinity_logo"/>
             </HLink>
                 
@@ -63,8 +57,8 @@ export default () => {
         </div>          
 
         <div className="home_slides">
-            <Home_Intro/>
-            <Home_Blog/>
+            <HomeIntro/>
+            <HomeBlog/>
         </div>
 
       </div>          

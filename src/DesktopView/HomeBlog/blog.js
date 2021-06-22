@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 
 import "./blog.css"
 
@@ -6,7 +6,7 @@ import UseAnimations from "react-useanimations";
 
 import { HashLink as HLink } from 'react-router-hash-link';
 
-import Rellax from "rellax";
+// import Rellax from "rellax";
 
 import sections from "./blog_sections.json"
 
@@ -18,42 +18,42 @@ const Blog = () => {
     // window.scrollTo(0, 0)
     // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
         
-          new Rellax(".hi_animate", { // <---- Via class name
-          speed: -3, 
-          center: false,
-          wrapper: null,
-          round: true,
-          vertical: true,
-          horizontal: false
-        })
-        new Rellax(".random_animate", { // <---- Via class name
-          speed: 0, 
-          center: false,
-          wrapper: null,
-          round: true,
-          vertical: true,
-          horizontal: false
-        })
-        new Rellax(".hey_animate", { // <---- Via class name
-          speed: -1, 
-          center: false,
-          wrapper: null,
-          round: true,
-          vertical: false,
-          horizontal: true
-        })
-        new Rellax(".creative_animate", { // <---- Via class name
-          speed: 1, 
-          center: false,
-          wrapper: null,
-          round: true,
-          vertical: true,
-          horizontal: false
-        })
+    //       new Rellax(".hi_animate", { // <---- Via class name
+    //       speed: -3, 
+    //       center: false,
+    //       wrapper: null,
+    //       round: true,
+    //       vertical: true,
+    //       horizontal: false
+    //     })
+    //     new Rellax(".random_animate", { // <---- Via class name
+    //       speed: 0, 
+    //       center: false,
+    //       wrapper: null,
+    //       round: true,
+    //       vertical: true,
+    //       horizontal: false
+    //     })
+    //     new Rellax(".hey_animate", { // <---- Via class name
+    //       speed: -1, 
+    //       center: false,
+    //       wrapper: null,
+    //       round: true,
+    //       vertical: false,
+    //       horizontal: true
+    //     })
+    //     new Rellax(".creative_animate", { // <---- Via class name
+    //       speed: 1, 
+    //       center: false,
+    //       wrapper: null,
+    //       round: true,
+    //       vertical: true,
+    //       horizontal: false
+    //     })
         
-      });
+    //   });
 
   const blog_sections = sections.map(function(data, id) {
     return (

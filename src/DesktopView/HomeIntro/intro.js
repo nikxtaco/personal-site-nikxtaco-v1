@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
@@ -8,7 +8,7 @@ import UseAnimations from "react-useanimations";
 
 import { HashLink as HLink } from 'react-router-hash-link';
 
-import Rellax from "rellax";
+// import Rellax from "rellax";
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
