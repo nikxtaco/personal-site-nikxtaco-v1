@@ -1,6 +1,6 @@
 import React from "react"
 
-import "./blog.css"
+import "./art.css"
 
 import UseAnimations from "react-useanimations";
 

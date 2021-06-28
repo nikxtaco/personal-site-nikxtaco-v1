@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
@@ -55,27 +55,62 @@ export default () => {
   //   }
   // });
 
-  function horizontalScroll(e){
-    console.log(e.deltaY)
-    if(e.deltaY > 0)
-    window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
-    else
-    window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
-  }
+  const { width, height } = useWindowDimensions();
 
-  const { width } = useWindowDimensions();
+  const [about, setAbout] = useState(false);
+
+  useEffect(() => {
+    if(about===true)
+    {
+        window.scrollBy({top:height,left:0})
+    }
+  }, [about])
+  // function horizontalScroll(e){
+  //   console.log(e.deltaY)
+  //   if(e.deltaY > 0)
+  //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
+  //   else
+  //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
+  // }
+
   
   return (
-    <div>
+    <div style={{width:'100vw'}}>
 
-    <div className="main_home_container" onWheel={horizontalScroll} >
-    {/* <div className="main_home_container"  > */}
-      <img className="great_wave" alt="" src={greatwave}></img>
+    {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
+    <div className="main_home_container" >
 
+      {/* <img className="great_wave" alt="" src={greatwave}></img> */}
+
+
+      <div onClick={()=>{setAbout(!about)}} className="intro_box">
+        <div className="summary_intro_box_white">
+          <h3 className="summary_heading_white">About</h3>
+          <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
+          <h3 className="summary_description_white">00</h3>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div className="hey_text_div">
       <h1 className="hey_text">
         Hey there! I'm Nikita.
-<br/>
       </h1>
+      </div>
+
 
       <div className="random_animate">
       <h4 className="home_text_red1" style={{textAlign: "right"}}>

@@ -1,5 +1,4 @@
 .main_home_container{
-    margin-top:10vw;
     z-index:0;
     min-width:100vw;
     max-width:100vw;
@@ -9,16 +8,225 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+.hey_text_div{
+    margin-top:0;
+    padding-left:55vw;
+    width:45vw;
+    height:100vh;
+    vertical-align: middle;
+    display: table-cell;
+    position:sticky;
+}
+
 .hey_text{
-    color: white;
-    font-size: 25rem;
-    margin-top:20vh;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 6vw;
+    line-height:7vw;
+}
+
+.intro_box{
+    width:25vw;
+    height:25vh;
+    position:absolute;
+    margin-left:55vw;
+    margin-top:70vh;
+    z-index: 90;
+}
+
+.intro_box .summary_intro_box_white{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    width:15vw;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.intro_box .summary_intro_box_white .summary_heading_white{
+    color:white;
+    font-size:1vw;
+}
+
+.intro_box .summary_intro_box_white .summary_description_white{
+    color:white;
+    font-size:1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#slideUp {
+    -webkit-animation: slideUp 1.5s;
+    z-index:90;
+    animation: slideUp 1.5s;
+    background: white;
+    height:100vh;
+    width:95vw;
+    margin-left:5vw;
+    position: absolute;
+    color:black;
+    font-size: 5rem;
+  }
+
+  @keyframes slideUp {
+    0% {
+      top: 100vh;
+    }
+    100% {
+      top: 0vh;
+    }
+  }
+
+  #slideDown {
+    -webkit-animation: slideDown 1.5s;
+    z-index:-1;
+    animation: slideDown 1.5s;
+    background: white;
+    height:100vh;
+    width:95vw;
+    margin-left:5vw;
+    position: absolute;
+  }
+
+  @keyframes slideDown {
+    0% {
+      top: 0;
+      z-index:95;
+    }
+    100% {
+      top: 100vh;
+    }
+  }
+
+  .plusToX{
+      transform: rotate(45deg);
+      cursor: pointer;
+    margin-left: 89vw;
+    position:absolute;
+    margin-top:10vh;
+  }
+
+.about_heading{
+    color:black;
+    font-size: 5vw;
+    margin-top:7.5vh;
     margin-left:7vw;
     padding-left:5rem;
-    line-height: 30rem;
-    /* border-right: 4px solid white; */
-    width:40vw;
+    line-height: 10vw;
 }
+
+.about_text{
+    color:black;
+    font-size: 1.5vw;
+    margin-top:2.5vh;
+    margin-left:7vw;
+    padding-left:5rem;
+    line-height: 2vw;
+    max-width:84vw;
+}
+  .about_text_black{
+    color:rgb(236, 65, 65);
+    margin-top:4vh;
+}
+
+.home_text_big1, .home_text_big2{
+    margin-top:5vh;
+    color:#8888a2;
+    margin-bottom:5vh;
+}
+
+.filler_text{
+    margin-top:2vh;
+    color:white;
+}
+
+.home_text_small{
+    margin-top:4vh;
+    color:#8888a2;
+}
+
+@media screen and (min-width: 750px){
+    .main_text{
+        margin-top:2vh;
+        font-size: 10rem;
+    }
+    .home_text_red1{
+        margin-top:44vh;
+        margin-bottom:4vh;
+        font-size: 15rem;
+        text-align:right;
+    }
+    .home_text_red2{
+        margin-top:16vh;
+        margin-bottom:76vh;
+        font-size: 15rem;
+        text-align:center;
+    }
+    .home_text_big1{
+        margin-top:3vh;
+        margin-bottom:5vh;
+        font-size: 5rem;
+        text-align:right;
+        width:60vw;
+        margin-left:24vw;
+    }
+    .filler_text{
+        margin-top:2vh;
+        font-size: 10rem;
+    }
+    .interests_text{
+        font-size:5rem;
+        margin-bottom: 0;
+    }
+    .home_text_big2{
+        margin-top:3vh;
+        margin-bottom:0vh;
+        font-size: 5rem;
+        width:60vw;
+    }
+    .home_text_small{
+        margin-top:4vh;
+        color:#8888a2;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 
 .main_text{
     color: white;

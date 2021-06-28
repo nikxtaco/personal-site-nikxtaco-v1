@@ -1,12 +1,12 @@
 html, body{
   margin:0;
   padding:0;
-  background-color:black;
+  background-color: black;
   color:white;
   font-size:4px;
   scroll-behavior: smooth;
 
-  overflow-y:hidden;
+  /* overflow-y:hidden; */
 }
 
 canvas{
