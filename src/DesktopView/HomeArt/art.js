@@ -10,7 +10,7 @@ import { HashLink as HLink } from 'react-router-hash-link';
 
 import sections from "./blog_sections.json"
 
-import blog_page_picture from "../../img/blog_page_picture.jpg"
+// import blog_page_picture from "../../img/blog_page_picture.jpg"
 
 const Blog = () => {
 

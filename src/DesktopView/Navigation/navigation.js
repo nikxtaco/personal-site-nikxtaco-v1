@@ -47,7 +47,7 @@ export default () => {
         setBlogColor(0)
         setProjectsColor(0)
     }
-  }, [index])
+  }, [index, width])
 
    const customProjects = {
     borderTop: projectsColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",

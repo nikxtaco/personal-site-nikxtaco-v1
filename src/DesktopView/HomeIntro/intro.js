@@ -12,7 +12,7 @@ import { HashLink as HLink } from 'react-router-hash-link';
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import greatwave from "../../media/redwomangrey.png"
+// import greatwave from "../../media/redwomangrey.png"
 // import feathers from "../../img/feathers_blue.jpg"
 
 export default () => {
@@ -64,7 +64,7 @@ export default () => {
     {
         window.scrollBy({top:height,left:0})
     }
-  }, [about])
+  }, [about, height])
   // function horizontalScroll(e){
   //   console.log(e.deltaY)
   //   if(e.deltaY > 0)
