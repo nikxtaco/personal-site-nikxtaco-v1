@@ -72,7 +72,7 @@ return(
   <div style={{width:'100vw'}}>
     <div className="temp_fill"></div>
       <div className="main_blog_container">
-      <h1 className="main_blog_quote hey_animate">
+      <h1 className="main_blog_quote">
       “ The very substance of the ambitious is merely the shadow of a dream. ”
       </h1>      
 {/* 

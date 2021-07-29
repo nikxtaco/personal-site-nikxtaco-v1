@@ -90,11 +90,6 @@ export default () => {
 
         </div>    
 
-        <div className="main_background_container"></div>  
-        <div className="side_background_container"></div>
-        <div className="side_background_container2"></div>
-        <div className="subpage_background_container"></div>
-
         <div className="summary_box">
         <div  onClick={()=>setIndex(2)} className="summary_sub_box_black" style={customBlog} >
           <h3 className="summary_heading_black">Blog</h3>

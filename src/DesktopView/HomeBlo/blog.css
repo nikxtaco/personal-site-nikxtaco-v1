@@ -1,41 +1,43 @@
+.home_slides .main_blog_container .side_background_container_blog{
+    background-color:white;
+    width:48vw;
+    height:200vh;
+    position:absolute;
+    left:52vw;
+    opacity:1;
+    z-index:1;
+}
+
 .birds{
     position:absolute;
-    left:115vw;
+    left:65vw;
     top:25vh;
-    height:55vh;
+    height:75vh;
     z-index:10;
 }
 
 .blog_quote_div{
     margin-top:0;
-    padding-left:55vw;
+    padding-left:9vw;
     width:45vw;
     height:100vh;
     vertical-align: middle;
     display: table-cell;
     position:sticky;
+    z-index:10;
 }
 
 .blog_heading_quote{
     font-family: 'Roboto Mono', monospace;
-    font-size: 3vw;
-    line-height:5vw;
+    font-size: 6vw;
+    line-height:7vw;
+    
 }
 
-.main_blog_container{
-    margin-left:7vw;
-    margin-top:12vw;
-    z-index:0;
-    min-width:100vw;
-    max-width:100vw;
-    background-color:white;
-    overflow-x:hidden;
-/* background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png"); */
-}
+
 
 .main_blog_quote{
-    z-index:0;
+    z-index:100;
     color: white;
     font-size:2.1vw;
     max-width:56vw;

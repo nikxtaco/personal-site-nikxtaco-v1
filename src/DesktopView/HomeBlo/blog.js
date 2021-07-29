@@ -10,7 +10,7 @@ import "./blog.css"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import birds from "../../media/birds.png"
+import birds from "../../media/tree.png" //birds.png
 // import feathers from "../../img/feathers_blue.jpg"
 
 export default () => {
@@ -63,22 +63,12 @@ export default () => {
         window.scrollBy({top:height,left:0})
     }
   }, [about, height])
-  // function horizontalScroll(e){
-  //   console.log(e.deltaY)
-  //   if(e.deltaY > 0)
-  //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
-  //   else
-  //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
-  // }
-
   
   return (
     <div style={{width:'100vw'}}>
 
-      {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
-      <div className="main_home_container" >
-
-        <img className="birds" alt="" src={birds}></img>
+      <div className="main_blog_container" >
+      <div className="side_background_container_blog"></div>
 
         <div onClick={()=>{setAbout(!about)}} className="blog_box3">
           <div className="summary_intro_box_white">
@@ -104,11 +94,14 @@ export default () => {
           </div>
         </div>
 
-        <div className="blog_quote_div">
+        
+      <div className="blog_quote_div">
           <h1 className="blog_heading_quote">
-          “The very substance of the ambitious is merely the shadow of a dream.”
+          Blog
           </h1>
         </div>
+
+        <img className="birds" alt="" src={birds}></img>
 
       </div>
 
