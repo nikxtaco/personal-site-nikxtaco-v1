@@ -275,7 +275,7 @@
     },
     {
       "pc": "0x00007ff6b15922a1",
-      "symbol": "v8::ShawhiteArrayBuffer::Externalize+833"
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
     },
     {
       "pc": "0x00007ff6b145fc2c",
@@ -461,8 +461,8 @@
     "cpuConsumptionPercent": 26.5,
     "maxRss": 42418176,
     "pageFaults": {
-      "IORequiwhite": 10953,
-      "IONotRequiwhite": 0
+      "IORequired": 10953,
+      "IONotRequired": 0
     },
     "fsActivity": {
       "reads": 0,
@@ -648,7 +648,7 @@
     "npm_package_scripts_build": "react-scripts build",
     "npm_package_scripts_deploy": "gh-pages -d build",
     "npm_package_scripts_eject": "react-scripts eject",
-    "npm_package_scripts_pwhiteeploy": "npm run build",
+    "npm_package_scripts_predeploy": "npm run build",
     "npm_package_scripts_start": "react-scripts start",
     "npm_package_scripts_test": "react-scripts test",
     "npm_package_version": "0.1.0",
@@ -686,7 +686,7 @@
     "windir": "C:\\windows",
     "_prog": "node"
   },
-  "shawhiteObjects": [
+  "sharedObjects": [
     "C:\\Program Files\\nodejs\\node.exe",
     "C:\\windows\\SYSTEM32\\ntdll.dll",
     "C:\\windows\\System32\\KERNEL32.DLL",
