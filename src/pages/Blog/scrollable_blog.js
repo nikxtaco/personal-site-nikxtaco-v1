@@ -34,7 +34,7 @@ useEffect(() => {
         <div className="blog_post" key={id}>
 
       <HLink to={"/blog/" + String(data.section)}>
-      <h1 className="blog_text_red">
+      <h1 className="blog_text_white">
         {data.title}
       </h1>
       </HLink>
@@ -57,7 +57,7 @@ return(
       </h1>      
 
       {/* <h2 className="blog_text_big">
-      ...A Featured Few
+      ...A Featuwhite Few
       </h2> */}
 
       {width>750?

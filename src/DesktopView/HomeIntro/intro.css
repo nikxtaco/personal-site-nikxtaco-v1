@@ -10,14 +10,53 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
+/* .tree{
+    position:absolute;
+    left:7vw;
+    top:15vh;
+    height:87vh;
+    z-index:10;
+} */
+
+.stripes{
+    position:absolute;
+    left:5vw;
+    top:0vh;
+    height:100vh;
+    width:47vw;
+    z-index:10;
+    background-size: cover;
+    /* background-image: url('../../media/stripes3.jpg'); */
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: cover;
+}
+
+.tree{
+    position:absolute;
+    left:30vw;
+    top:30vh;
+    height:72vh;
+    z-index:10;
+}
+
+.map{
+    position:absolute;
+    left:0vw;
+    top:0vh;
+    width:100vw;
+    z-index:0;
+}
+
 .hey_text_div{
     margin-top:0;
-    padding-left:55vw;
+    padding-left:56vw;
     width:45vw;
     height:100vh;
     vertical-align: middle;
     display: table-cell;
     position:sticky;
+    z-index:10;
 }
 
 .hey_text{
@@ -26,36 +65,88 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     line-height:7vw;
 }
 
-.intro_box{
+.intro_box1{
     width:25vw;
     height:25vh;
     position:absolute;
-    margin-left:55vw;
-    margin-top:70vh;
+    margin-left:56vw;
+    margin-top:72vh;
     z-index: 90;
 }
 
-.intro_box .summary_intro_box_white{
+.blog_box1{
+    width:25vw;
+    height:25vh;
+    position:absolute;
+    margin-left:56vw;
+    margin-top:72vh;
+    z-index: 90;
+}
+
+.blog_box2{
+    width:25vw;
+    height:25vh;
+    position:absolute;
+    margin-left:33vw;
+    margin-top:72vh;
+    z-index: 90;
+}
+
+.blog_box3{
+    width:25vw;
+    height:25vh;
+    position:absolute;
+    margin-left:11vw;
+    margin-top:72vh;
+    z-index: 90;
+}
+
+.intro_box1 .summary_intro_box_white{
     border-bottom: 2px solid rgba(255, 255, 255, 0.6);
-    width:15vw;
+    width:16vw;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.intro_box .summary_intro_box_white .summary_heading_white{
+.blog_box1 .summary_intro_box_white{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    width:16vw;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.blog_box2 .summary_intro_box_white, .blog_box3 .summary_intro_box_white{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width:16vw;
+}
+
+.intro_box1 .summary_intro_box_white .summary_heading_white{
     color:white;
     font-size:1vw;
 }
 
-.intro_box .summary_intro_box_white .summary_description_white{
+.blog_box1 .summary_intro_box_white .summary_heading_white{
+    color:black;
+    font-size:1vw;
+}
+
+.blog_box2 .summary_intro_box_white .summary_heading_white, .blog_box3 .summary_intro_box_white .summary_heading_white{
     color:white;
     font-size:1vw;
 }
 
+.intro_box1 .summary_intro_box_white .summary_description_white{
+    color:white;
+    font-size:0.9vw;
+}
 
+.blog_box1 .summary_intro_box_white .summary_description_white{
+    color:black;
+    font-size:0.9vw;
+}
 
-
-
-
+.blog_box2 .summary_intro_box_white .summary_description_white, .blog_box3 .summary_intro_box_white .summary_description_white{
+    color:white;
+    font-size:0.9vw;
+}
 
 
 
@@ -177,13 +268,13 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
         margin-top:2vh;
         font-size: 10rem;
     }
-    .home_text_red1{
+    .home_text_white1{
         margin-top:44vh;
         margin-bottom:4vh;
         font-size: 15rem;
         text-align:right;
     }
-    .home_text_red2{
+    .home_text_white2{
         margin-top:16vh;
         margin-bottom:76vh;
         font-size: 15rem;
@@ -232,7 +323,7 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     color: white;
 }
 
-.home_text_red1, .home_text_red2{
+.home_text_white1, .home_text_white2{
     color:rgb(236, 65, 65);
     margin-top:4vh;
 }
@@ -263,12 +354,7 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     font-size: 1rem;
 }
 
-.great_wave{
-    position:absolute;
-    left:50vw;
-    top:20vh;
-    height:80vh;
-}
+
 
 
 @media screen and (min-width: 750px){
@@ -276,13 +362,13 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
         margin-top:2vh;
         font-size: 10rem;
     }
-    .home_text_red1{
+    .home_text_white1{
         margin-top:44vh;
         margin-bottom:4vh;
         font-size: 15rem;
         text-align:right;
     }
-    .home_text_red2{
+    .home_text_white2{
         margin-top:16vh;
         margin-bottom:76vh;
         font-size: 15rem;

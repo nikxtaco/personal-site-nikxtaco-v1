@@ -15,7 +15,7 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     color: white;
 }
 
-.home_text_red1, .home_text_red2{
+.home_text_white1, .home_text_white2{
     color:rgb(236, 65, 65);
     margin-top:4vh;
 }
@@ -65,13 +65,13 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
         margin-top:2vh;
         font-size: 10rem;
     }
-    .home_text_red1{
+    .home_text_white1{
         margin-top:44vh;
         margin-bottom:4vh;
         font-size: 15rem;
         text-align:right;
     }
-    .home_text_red2{
+    .home_text_white2{
         margin-top:16vh;
         margin-bottom:76vh;
         font-size: 15rem;

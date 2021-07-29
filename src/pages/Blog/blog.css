@@ -11,7 +11,7 @@
     border:none;
 }
 
-.blog_text_red{
+.blog_text_white{
     text-align:right;
     color:white;
     padding-top:0vh;
@@ -144,7 +144,7 @@
         font-size:12rem;
         padding-bottom:7vh;
     }
-    .blog_text_red{
+    .blog_text_white{
         padding-bottom:10vh;
         padding: 0;
         text-align: right;

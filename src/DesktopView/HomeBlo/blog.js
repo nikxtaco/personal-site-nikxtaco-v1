@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
-import "./intro.css"
+import "./blog.css"
 
 // import UseAnimations from "react-useanimations";
 
@@ -10,9 +10,7 @@ import "./intro.css"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-// import stripes from "../../media/stripes3.jpg"
-import tree from "../../media/cutie5.jpeg" //tree.png, pikachu2.jpg
-// import map from "../../media/BlackMarble.jpg"
+import birds from "../../media/birds.png"
 // import feathers from "../../img/feathers_blue.jpg"
 
 export default () => {
@@ -80,20 +78,35 @@ export default () => {
       {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
       <div className="main_home_container" >
 
-      <div className="stripes"></div>
-        <img className="tree" alt="" src={tree}></img>
+        <img className="birds" alt="" src={birds}></img>
 
-        <div onClick={()=>{setAbout(!about)}} className="intro_box1">
+        <div onClick={()=>{setAbout(!about)}} className="blog_box3">
           <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">About</h3>
-            <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
-            <h3 className="summary_description_white">00</h3>
+            <h3 className="summary_heading_white">Exhibit A</h3>
+            <h3 className="summary_description_white">If I ever write a book, this stuff is going on it, period.</h3>
+            <h3 className="summary_description_white">04</h3>
           </div>
         </div>
 
-        <div className="hey_text_div">
-          <h1 className="hey_text">
-            Hey there! I'm Nikita.
+        <div onClick={()=>{setAbout(!about)}} className="blog_box2">
+          <div className="summary_intro_box_white">
+            <h3 className="summary_heading_white">Exhibit B - Instagram Page</h3>
+            <h3 className="summary_description_white">Poetry that I’ve been writing for upward of 3 years now.</h3>
+            <h3 className="summary_description_white">05</h3>
+          </div>
+        </div>
+
+        <div onClick={()=>{setAbout(!about)}} className="blog_box1">
+          <div className="summary_intro_box_white">
+            <h3 className="summary_heading_white">Exhibit C - Medium Page</h3>
+            <h3 className="summary_description_white">Articles on current affairs. Thoughts and the like.</h3>
+            <h3 className="summary_description_white">06</h3>
+          </div>
+        </div>
+
+        <div className="blog_quote_div">
+          <h1 className="blog_heading_quote">
+          “The very substance of the ambitious is merely the shadow of a dream.”
           </h1>
         </div>
 

@@ -3,7 +3,7 @@ import Navbar from "../../../components/navbar/navbar.js"
 import Footer from "../../../components/footer/footer.js"
 
 import UseAnimations from "react-useanimations";
-import bestones from "./featured.json"
+import bestones from "./featuwhite.json"
 
 import useWindowDimensions from "../../../helpers/WindowDimensions.js"
 
@@ -14,7 +14,7 @@ function initializeReactGA() {
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
-const Featured = () => {
+const Featuwhite = () => {
 
   const { width } = useWindowDimensions();
 
@@ -94,7 +94,7 @@ const Featured = () => {
           
       <div className="main_container">
 
-        <h3 className="section_name">Featured</h3> 
+        <h3 className="section_name">Featuwhite</h3> 
 
         {posts}
         
@@ -110,7 +110,7 @@ const Featured = () => {
 
       <div className="main_container">
         
-        <h5 className="blog_text_red back" onClick={() => {setPost_id(0)}}>Back To List</h5>
+        <h5 className="blog_text_white back" onClick={() => {setPost_id(0)}}>Back To List</h5>
 
         {post}
 
@@ -152,7 +152,7 @@ const Featured = () => {
        
    <div className="notmob_side_container1">
 
-     <h3 className="section_name">Featured</h3> 
+     <h3 className="section_name">Featuwhite</h3> 
 
      {notmob_posts}
      
@@ -182,7 +182,7 @@ const Featured = () => {
   )
 }
 
-export default Featured
+export default Featuwhite
 
 /*<span>
 <img src="" alt=""/>

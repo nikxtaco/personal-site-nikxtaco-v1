@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+
 .home_slides{
     display:flex;
     flex-direction: row;
 }
 
-.main_background_container{
+/* .main_background_container{
     background-image: url('../../img/cyberpunkgirl_bg.jpg');
     background-repeat: no-repeat;
     background-size: 100vw;
@@ -11,50 +13,74 @@
     min-width:100vw;
     min-height:100vh;
     position:fixed;
-    opacity:0.3;
+    opacity:0.4;
     z-index:0;
-}
+} */
 
 .side_background_container{
-    background-color:white;
-    width:50vw;
+    background-color:#ffffff;
+    width:52vw;
     height:100vh;
-    position:fixed;
-    opacity:0.8;
+    position:absolute;
+    opacity:1;
+    z-index:5;
+}
+
+.side_background_container2{
+    background-color:#ffffff;
+    width:52vw;
+    height:100vh;
+    position:absolute;
+    left:150vw;
+    opacity:1;
+    z-index:5;
+}
+
+.subpage_background_container{
+    background-color:white;
+    width:400vw;
+    height:100vh;
+    position:absolute;
+    top:100vh;
+    z-index:20;
 }
 
 
 .summary_box{
     width:75vw;
     height:25vh;
-    position:fixed;
-    margin-left:25vw;
+    position:absolute;
+    margin-left:24vw;
     margin-top:10vh;
-    z-index:90;
+    z-index:15;
+}
+
+.slide2{
+    margin-left:124vw;
+    margin-top:10vh;
 }
 
 .summary_box .summary_sub_box_white{
-    border-top: 2px solid rgba(255, 255, 255, 0.6);
-    width:15vw;
+    width:16vw;
     float:left;
     margin-left:7vw;
 }
 
 .summary_box .summary_sub_box_black{
-    border-top: 2px solid rgba(0, 0, 0, 0.6);
-    width:15vw;
+    width:16vw;
     float:left;
-    margin-left:8vw;
+    margin-left:9vw;
 }
 
 .summary_box .summary_sub_box_white .summary_heading_white{
     color:white;
     font-size:1vw;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .summary_box .summary_sub_box_white .summary_description_white{
     color:white;
-    font-size:1vw;
+    font-size:0.9vw;
 }
 
 .summary_box .summary_sub_box_black .summary_heading_black{
@@ -64,7 +90,7 @@
 
 .summary_box .summary_sub_box_black .summary_description_black{
     color:rgb(0, 0, 0);
-    font-size:1vw;
+    font-size:0.9vw;
 }
 
 
@@ -78,12 +104,6 @@
 
 
 
-
-
-
-.blog_container{
-    background-color: green;
-}
 
 .navbar {
     position:fixed;

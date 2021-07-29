@@ -97,7 +97,7 @@ const ThinkingOutLoud = () => {
 
       <div className="main_container">
         
-        <h5 className="blog_text_red back" onClick={() => {setPost_id(0)}}>Back To List</h5>
+        <h5 className="blog_text_white back" onClick={() => {setPost_id(0)}}>Back To List</h5>
 
         {post}
 
