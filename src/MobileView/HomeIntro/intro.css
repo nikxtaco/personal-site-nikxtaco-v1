@@ -72,10 +72,10 @@ TO THE ABOUT SLIDE), ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
 .home_slides .main_home_container .side_background_container_home{
     background-color:white;
     width:100vw;
-    height:60vh;
+    height:65vh;
     position:absolute;
     left:0;
-    top:40vh;
+    top:35vh;
     opacity:1;
     z-index:1;
 }
@@ -83,8 +83,7 @@ TO THE ABOUT SLIDE), ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
 .home_slides .main_home_container .hi_picture{
     position:absolute;
     left:0vw;
-    top:50vh;
-    height:60vh;
+    top:40vh;
     width:50vw;
     z-index:20;
     background-image: url('../../media/pikachu2.jpg');
@@ -105,7 +104,7 @@ THE MAIN TEXT FOR THE HOME SLIDE.
     margin-top:0;
     padding-left:10vw;
     width:80vw;
-    height:55vh;
+    height:40vh;
     vertical-align: middle;
     display: table-cell;
     position:sticky;
