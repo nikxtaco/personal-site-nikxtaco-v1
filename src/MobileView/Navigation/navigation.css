@@ -1,0 +1,241 @@
+@media screen and (max-width: 750px){
+    /* 
+THE CONTAINER FOR ALL THE SLIDES/PAGES EXCEPT THE NAVBAR COMPONENTS ON THE
+LEFT AND TOP WHICH ARE DEFINED BELOW.
+*/
+
+.home_slides{
+    /* display:flex;
+    flex-direction: row; */
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+/*
+***************************************************************************
+*/
+
+/*
+TOP NAVBAR CONSISTING OF BLOG, PROJECTS AND ART ALONG WITH THEIR SUMMARIES.
+TO ADD IT FOR NEW PAGE SLIDES, JUST CREATE ANOTHER .slide(n) AND PROVIDE
+THE APPROPRIATE OFFSET.
+*/
+
+.summary_box{
+    width:75vw;
+    height:25vh;
+    position:absolute;
+    margin-left:26vw;
+    margin-top:10vh;
+    z-index:80;
+}
+
+.slide2{
+    margin-left:125vw;
+}
+
+.summary_box .summary_sub_box_white{
+    width:16vw;
+    float:left;
+    margin-left:7vw;
+}
+
+.summary_box .summary_sub_box_black{
+    width:16vw;
+    float:left;
+    margin-left:7vw;
+}
+
+.summary_box .summary_sub_box_white .summary_heading_white{
+    color:white;
+    font-size:1vw;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.summary_box .summary_sub_box_white .summary_description_white{
+    color:white;
+    font-size:0.9vw;
+}
+
+.summary_box .summary_sub_box_black .summary_heading_black{
+    color:black;
+    font-size:1vw;
+}
+
+.summary_box .summary_sub_box_black .summary_description_black{
+    color:rgb(0, 0, 0);
+    font-size:0.9vw;
+}
+
+/*
+***************************************************************************
+*/
+
+/*
+LEFT-SIDE NAVBAR CONSISTING OF HOME, MENU AND CONTACT ICONS.
+*/
+
+.navbar {
+    position:fixed;
+    left:0;
+    top:0;
+    padding-top:5vh;
+    z-index:80;
+    width:100vw;
+    height:10vh;
+    background-color:black;
+}
+
+/* .infinity_logo{
+    color: white;
+    cursor: pointer;
+    margin-top:9vh;
+    margin-left: 1vw;
+} */
+
+/* .menu_logo{
+    color: white;
+    cursor: pointer;
+    margin-top:32vh;
+    margin-left: 1.2vw;
+    transform: rotate(270deg);
+} */
+
+/* .contact_logo{
+    color: white;
+    cursor: pointer;
+    margin-top:32vh;
+    margin-left: 1.2vw;
+} */
+
+.NavbarListStyles {
+    color:#878787;
+    list-style:none;
+    width:100vw;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-size:4rem;
+    display:inline-block;
+    text-align:center;
+    font-family: soleil,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    margin-top:-50px;
+}
+
+.NavbarListStyles li {
+    display:inline;
+}
+  
+/*
+***************************************************************************
+*/
+
+.home_slides .main_home_container{
+    z-index:0;
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.home_slides .main_blog_container{
+    z-index:0;
+    position:absolute;
+    left:100vw;
+    top:0;
+    width:100vw;
+    height:100vh;
+}
+
+/*
+THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
+*/
+
+.home_slides .main_home_container .intro_box1{
+    width:50vw;
+    height:25vh;
+    position:absolute;
+    margin-left:56vw;
+    margin-top:75vh;
+    z-index: 80;
+}
+
+.home_slides .main_home_container .intro_box1 .summary_intro_box_white{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    width:40vw;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.home_slides .main_home_container .intro_box1 .summary_intro_box_white .summary_heading_white{
+    color:black;
+    font-size:4vw;
+}
+
+.home_slides .main_home_container .intro_box1 .summary_intro_box_white .summary_description_white{
+    color:black;
+    font-size:2.7vw;
+}
+
+.home_slides .main_blog_container .blog_box1{
+    width:16vw;
+    height:25vh;
+    position:absolute;
+    margin-left:55vw;
+    margin-top:72vh;
+    z-index: 80;
+}
+
+.home_slides .main_blog_container .blog_box2{
+    width:16vw;
+    height:25vh;
+    position:absolute;
+    margin-left:32vw;
+    margin-top:72vh;
+    z-index: 80;
+}
+
+.home_slides .main_blog_container .blog_box3{
+    width:16vw;
+    height:25vh;
+    position:absolute;
+    margin-left:9vw;
+    margin-top:72vh;
+    z-index: 80;
+}
+
+.home_slides .main_blog_container .blog_box1 .summary_intro_box_white{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    width:16vw;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.home_slides .main_blog_container .blog_box2 .summary_intro_box_white, .blog_box3 .summary_intro_box_white{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width:16vw;
+}
+
+.home_slides .main_blog_container .blog_box1 .summary_intro_box_white .summary_heading_white{
+    color:black;
+    font-size:1vw;
+}
+
+.home_slides .main_blog_container .blog_box2 .summary_intro_box_white .summary_heading_white, .blog_box3 .summary_intro_box_white .summary_heading_white{
+    color:white;
+    font-size:1vw;
+}
+
+.home_slides .main_blog_container .blog_box1 .summary_intro_box_white .summary_description_white{
+    color:black;
+    font-size:0.9vw;
+}
+
+.home_slides .main_blog_container .blog_box2 .summary_intro_box_white .summary_description_white, .blog_box3 .summary_intro_box_white .summary_description_white{
+    color:white;
+    font-size:0.9vw;
+}
+
+}

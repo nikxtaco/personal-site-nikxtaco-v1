@@ -1,0 +1,334 @@
+@media screen and (max-width: 750px){
+    .home_slides .main_blog_container .side_background_container_blog{
+    background-color:white;
+    width:48vw;
+    height:200vh;
+    position:absolute;
+    left:52vw;
+    opacity:1;
+    z-index:1;
+}
+
+.birds{
+    position:absolute;
+    left:65vw;
+    top:25vh;
+    height:75vh;
+    z-index:10;
+}
+
+.blog_quote_div{
+    margin-top:0;
+    padding-left:9vw;
+    width:45vw;
+    height:100vh;
+    vertical-align: middle;
+    display: table-cell;
+    position:sticky;
+    z-index:10;
+}
+
+.blog_heading_quote{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 6vw;
+    line-height:7vw;
+    
+}
+
+
+
+.main_blog_quote{
+    z-index:100;
+    color: white;
+    font-size:2.1vw;
+    max-width:56vw;
+}
+
+.main_blog_picture img{
+    z-index:-1;
+    position:absolute;
+    left:135vw;
+    top:12vw;
+    opacity:0.6;
+    width:30vw;
+}
+
+.blog_sections{
+    /* margin-top:-20vh; */
+    position:absolute;
+    top:35vh;
+}
+
+.blog_sections_list a{
+    text-decoration: none;
+}
+
+.blog_section_name{
+    text-align:right;
+    color:white;
+    width:85vw;
+    font-family: 'Bebas Neue', cursive;
+    text-align: right;
+    font-size: 5vw;
+    letter-spacing: 4px;
+    line-height: 3.5vw;
+}
+
+
+
+
+.blog_browse{
+    max-height:10vh;
+    background-color:transparent;
+    color:white;
+    text-decoration: none;
+    border:none;
+    border-bottom: 4px solid white;
+    padding-bottom:0.5vw;
+    margin-bottom:5vw;
+    margin-top:2.5vw;
+  }
+
+.blog_browse_text{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    line-height: 25px;
+    padding: 0 80px 0 0;
+    font-size:8rem;
+}
+
+.blog_browse_icon{
+    color: white; 
+    cursor: pointer;
+    float:right; 
+    margin-top:-30px;
+}
+
+
+
+    
+
+
+.blog_text_white{
+    padding-top:0vh;
+}
+.link_text{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    line-height: 25px;
+}
+
+.blog_text_white{
+    font-weight: 900;
+    padding: 2vh 0 4vh 0;
+}
+
+/*Common CSS*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.section_name{
+    color: white;
+    font-size:1.6rem;
+    padding: 7vh 0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    line-height: 25px;
+}
+
+
+.post_title{
+    color: white;
+    font-size:1.2rem;
+    padding-bottom:0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+.individual_post_title{
+    font-size:1.5rem;
+    padding: 2vh 0;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+.post_hr{
+    width:20vw;
+    padding-left:0;
+    border-bottom: 2px solid white;
+}
+
+.individual_post_hr{
+    width:20vw;
+    padding-left:0;
+    padding-bottom:5vh;
+    border-bottom: 2px solid white;
+}
+
+.post_year{
+    padding:0;
+    padding-top:1vh;
+    color:white;
+    text-align: left;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+.post_desc{
+    padding-top:1vh;
+    padding-bottom:0;
+    color:white;
+    font-size:0.8rem;
+}
+
+.post_read_more{
+    color:white;
+    padding-top:1vh;
+    font-size:0.8rem;
+    font-weight: 600;
+}
+
+.post_date{
+    font-size:1rem;
+}
+
+.post_body{
+    font-size:1rem;
+}
+
+.back{
+    visibility:hidden;
+    position:absolute;
+    top:2vh;
+    text-align: center;
+    border:0;
+}
+
+.back_to_list{
+    color:white;
+    padding-top:3vh;
+    padding-bottom: 0;
+    padding: 0;
+    width:84vw;
+    border-top: 2px solid white;
+    padding: 10px 0 10px 0;
+}
+
+@media screen and (min-width: 750px){
+ 
+    
+    .link_text{
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 4px;
+        line-height: 25px;
+        padding:0;        
+        padding:0;
+    }
+    .blog_text_white{
+        font-size: 5rem;
+        max-width:50vw;
+        text-align:center;
+        padding-left: 15vw;
+    }
+
+/*Common CSS*/
+
+.section_name{
+    font-size:20rem;
+    padding: 20vh 0 15vh 0;
+    letter-spacing: 10px;
+    color:white; 
+}
+.post_title{
+    font-size:10rem;
+    padding-bottom:8rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    padding-top:8vh;
+}
+.individual_post_container{
+    max-width:64vw;
+}
+.individual_post_title{
+    font-size:20rem;
+    padding: 0vh 8vw;
+    padding-left:40vw;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 2px;
+    width:50vw;
+    color:black;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.post_hr{
+    width:30vw;
+    border-bottom: 5px solid white;
+}
+.individual_post_hr{
+    padding-left:40vw;
+    width:44vw;
+    padding-bottom:8vh;
+    border-bottom: 5px solid white;
+    opacity:0.25;
+}
+.post_year{
+    padding-top:3vh;
+    font-size: 5rem;
+    letter-spacing: 4px;
+}
+.post_desc{
+    padding-top:2vh;
+    padding-bottom:0;
+    font-size:5rem;
+    width:50vw;
+}
+.post_read_more{
+    padding-top:1vh;
+    font-size:5rem;
+}
+.post_date{
+    font-size:5rem;
+}
+.post_body{
+    font-size:5rem;
+    padding-left:40vw;
+    width:45vw;
+}
+.back_to_list{
+    padding-top:10vh;
+    font-size: 5rem;
+    border-top: 5px solid white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+
+
+
+
+.notmob_side_container1{
+    width:33vw;
+    padding-left:4vw;
+    height:80vh;
+}
+
+.notmob_side_container2{
+    width:55vw;
+    position: absolute;
+    top:10vh;
+    left:40vw;
+    height:90vh;
+}
+
+  .notmob_post_title{
+    font-size:10rem;
+    padding-bottom:0rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+    padding-top:0;
+}
+}
+
+}

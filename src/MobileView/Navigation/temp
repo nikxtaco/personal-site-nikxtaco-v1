@@ -1,0 +1,38 @@
+{!about &&
+        <div id="slideDown">trial</div>
+        }    
+        {about &&
+        <div id="slideUp">
+            
+            
+        <div onClick={()=>{setAbout(!about)}}>
+                <UseAnimations animationKey="plusToX" size={70} className="plusToX"/>
+        </div>
+
+        <h1 className="about_heading">About</h1>
+
+            {/* <h4 className="home_text_black">
+        Let's start with random facts.
+      </h4> */}
+
+      <h2 className="about_text">
+      I'm a person with multiple, ordinary interests and very little patience, not much unlike every other 
+      GenZ kid out there. I like spending time stalking art and music pages and not once have I stopped wishing for 
+      a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization, 
+      that having deep and wise thoughts all the time isn't gonna get me anywhere, dawns on me.
+      </h2>
+{/* 
+      <h3 className="filler_text">
+        Now for the basics.
+      </h3> */}
+
+      <h2 className="about_text">
+      I'm a CS undergrad student, currently studying in MEC, Kochi. For the longest time I wanted to 
+      be an astrophysicist cuz duh, it's cool. But well, does anything ever go according to plan? Sigh.
+      At the moment, I'm quite interested in technology as well. 
+      <br/>
+      Still a Rookie though.
+      <p>¯\_(ツ)_/¯</p>
+      </h2>
+      </div>
+        }    
