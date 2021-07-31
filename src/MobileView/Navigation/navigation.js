@@ -41,9 +41,9 @@ export default () => {
      textAlign: "center",
   }
 
-  return (
-     <div className="navbar">
-
+  return ( 
+    <div>
+     <div className="mobile_navbar">
          <HLink to="/" onClick={window.scrollTo(0,0)}>
          {
            width>750?<UseAnimations animationKey="infinity" size={50} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
@@ -91,8 +91,10 @@ export default () => {
              }</a>
              </span>
          </div>
+
+         </div>
          
-         <div className="home_slides" style={{maxHeight:"100vh"}}>
+         <div className="home_slides">
             <div className="intro_container"><HomeIntro/></div>
             <div className="blog_container"><HomeBlog/></div>
             {/* <div className="blog_container"><HomeArt/></div> */}

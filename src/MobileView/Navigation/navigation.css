@@ -48,23 +48,23 @@ THE APPROPRIATE OFFSET.
 }
 
 .summary_box .summary_sub_box_white .summary_heading_white{
-    color:white;
+    color:pink;
     font-size:1vw;
     font-family: 'Roboto Mono', monospace;
 }
 
 .summary_box .summary_sub_box_white .summary_description_white{
-    color:white;
+    color:pink;
     font-size:0.9vw;
 }
 
 .summary_box .summary_sub_box_black .summary_heading_black{
-    color:black;
+    color:blue;
     font-size:1vw;
 }
 
 .summary_box .summary_sub_box_black .summary_description_black{
-    color:rgb(0, 0, 0);
+    color:blue;
     font-size:0.9vw;
 }
 
@@ -76,7 +76,7 @@ THE APPROPRIATE OFFSET.
 LEFT-SIDE NAVBAR CONSISTING OF HOME, MENU AND CONTACT ICONS.
 */
 
-.navbar {
+.mobile_navbar {
     position:fixed;
     left:0;
     top:0;
