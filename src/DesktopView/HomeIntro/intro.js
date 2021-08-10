@@ -10,8 +10,8 @@ import "./intro.css"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import stripes from "../../media/stripes.svg"
-import hi_picture from "../../media/cutie5.jpeg" //tree.png, pikachu2.jpg
+// import stripes from "../../media/stripes.svg"
+// import hi_picture from "../../media/cutie5.jpeg" //tree.png, pikachu2.jpg
 import map from "../../media/BlackMarble.jpg"
 import idiotsandwich from "../../media/idiotsandwich.jpg"
 
@@ -79,10 +79,11 @@ export default () => {
 
       {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
       <div className="main_home_container" >
-      <div className="side_background_container_home"></div>
+      {/* <div className="side_background_container_home"></div> */}
 
       {/* <div className="stripes"></div> */}
       {/* <div className="white_container_stripes"></div> */}
+        <div className="page_number">01</div>
         <div className="hi_picture"></div>
 
         <div onClick={()=>{setAbout(!about)}} className="intro_box1">
@@ -95,7 +96,7 @@ export default () => {
 
         <div className="hey_text_div">
           <h1 className="hey_text">
-            Hey there! I'm Nikita.
+            Hey there! <br/>I'm Nikita.
           </h1>
         </div>
 

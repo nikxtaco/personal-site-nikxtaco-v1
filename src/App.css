@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo&display=swap');
 
 h1, h2, h3, h5, h6{
-  font-family: 'Roboto Mono', monospace;
-  font-weight:600;
+  font-family: 'Rosarivo', serif;
+  font-weight:100;
 }
 
 h1{
@@ -21,8 +22,7 @@ h3{
 }
 
 h4{
-  font-family: 'Roboto Mono', monospace;
-  font-weight:400;
+  font-family: 'Rosarivo', serif;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size:0.9rem;
@@ -46,7 +46,7 @@ h6{
 }
 
 p{
-  font-family:"Quicksand",sans-serif;
+  font-family: 'Rosarivo', serif;
 }
 
 @media screen and (min-width: 750px){

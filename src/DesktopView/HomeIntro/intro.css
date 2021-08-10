@@ -78,17 +78,26 @@ TO THE ABOUT SLIDE), ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     z-index:1;
 }
 
+.home_slides .main_home_container .page_number{
+    position:absolute;
+    top:65vh;
+    right:32vw;
+    width:60vw;
+    z-index:30;
+    font-size: 25vmin;
+}
+
 .home_slides .main_home_container .hi_picture{
     position:absolute;
-    left:0vw;
-    top:20vh;
-    height:80vh;
-    width:50vw;
+    top:30vh;
+    left:20vw;
+    height:65vh;
+    width:30vw;
     z-index:20;
-    background-image: url('../../media/pikachu2.jpg');
+    background-image: url('../../img/cygirl.jpg');
     background-repeat: no-repeat;
     background-size:contain;
-    background-position: right center;
+    /* background-position: right center; */
 }
 
 /*
@@ -100,20 +109,17 @@ THE MAIN TEXT FOR THE HOME SLIDE.
 */
 
 .hey_text_div{
-    margin-top:0;
+    margin-top:34vh;
     padding-left:56vw;
     width:45vw;
-    height:100vh;
-    vertical-align: middle;
-    display: table-cell;
+    height:33vh;
     position:sticky;
     z-index:10;
 }
 
 .hey_text{
-    font-family: 'Roboto Mono', monospace;
-    font-size: 6vw;
-    line-height:7vw;
+    font-size: 9vmin;
+    line-height:15vmin;
 }
 
 /*
@@ -172,7 +178,7 @@ ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     margin:0;
     margin-left:3vw;
     /* background-color: red; */
-    font-family: 'Bebas Neue', cursive;
+    /* font-family: 'Bebas Neue', cursive; */
     color:black;
 }
 
@@ -184,7 +190,7 @@ ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     margin-left:3vw;
     text-align:left;
     /* background-color: red; */
-    font-family: 'Roboto Mono';
+    /* font-family: 'Roboto Mono'; */
     color:black;
 }
 
@@ -196,7 +202,7 @@ ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     margin:0;
     margin-left:3vw;
     /* background-color: red; */
-    font-family: 'Bebas Neue', cursive;
+    /* font-family: 'Bebas Neue', cursive; */
     color:black;
 }
 
@@ -208,7 +214,7 @@ ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     margin:0;
     margin-left:3vw;
     /* background-color: red; */
-    font-family: 'Roboto Mono';
+    /* font-family: 'Roboto Mono'; */
     color:black;
 }
 

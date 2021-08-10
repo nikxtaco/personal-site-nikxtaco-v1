@@ -49,12 +49,36 @@ export default () => {
     }
   }, [index, width])
 
+  // const customProjects = {
+  //   borderTop: projectsColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
+  //  }
+
+  //  const customBlog = {
+  //   borderTop: blogColor? "2px solid black" : "2px solid rgba(0, 0, 0, 0.6)",
+  //   }
+
+  //   const customArt = {
+  //   borderTop: artColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
+  //   }
+
+  //   const customProjects2 = {
+  //     borderTop: projectsColor? "2px solid black" : "2px solid rgba(0, 0, 0, 0.6)",
+  //    }
+  
+  //    const customBlog2 = {
+  //     borderTop: blogColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
+  //     }
+  
+  //     const customArt2 = {
+  //     borderTop: artColor? "2px solid black" : "2px solid rgba(0, 0, 0, 0.6)",
+  //     }
+
    const customProjects = {
     borderTop: projectsColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
    }
 
    const customBlog = {
-    borderTop: blogColor? "2px solid black" : "2px solid rgba(0, 0, 0, 0.6)",
+    borderTop: blogColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
     }
 
     const customArt = {
@@ -62,7 +86,7 @@ export default () => {
     }
 
     const customProjects2 = {
-      borderTop: projectsColor? "2px solid black" : "2px solid rgba(0, 0, 0, 0.6)",
+      borderTop: projectsColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
      }
   
      const customBlog2 = {
@@ -70,12 +94,12 @@ export default () => {
       }
   
       const customArt2 = {
-      borderTop: artColor? "2px solid black" : "2px solid rgba(0, 0, 0, 0.6)",
+      borderTop: artColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
       }
 
     return (
         <div>          
-        <div className="navbar">
+        {/* <div className="navbar">
             <HLink to="/" onClick={()=>{setIndex(1); window.scrollTo(0,0)}}>
                 <UseAnimations animationKey="infinity" size={"3vw"} className="infinity_logo"/>
             </HLink>
@@ -88,13 +112,19 @@ export default () => {
                 <UseAnimations animationKey="twitter" size={"3vw"} className="contact_logo"/>
             </div>
 
-        </div>    
+        </div>     */}
+
+      <div className="border_only_box1"></div>
+      <div className="stripes_box1"></div>
+      <div className="border_only_box2"></div>
+      <div className="stripes_box2"></div>
+
 
         <div className="summary_box">
-        <div  onClick={()=>setIndex(2)} className="summary_sub_box_black" style={customBlog} >
-          <h3 className="summary_heading_black">Blog</h3>
-          <h3 className="summary_description_black">Everything from deep poetry to pointless ramblings.</h3>
-          <h3 className="summary_description_black">01</h3>
+        <div  onClick={()=>setIndex(2)} className="summary_sub_box_white" style={customBlog} >
+          <h3 className="summary_heading_white">Blog</h3>
+          <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
+          <h3 className="summary_description_white">01</h3>
         </div>
         <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
           <h3 className="summary_heading_white">Projects</h3>
@@ -130,7 +160,6 @@ export default () => {
         <div className="home_slides" style={{maxHeight:"100vh"}}>
             <div className="intro_container"><HomeIntro/></div>
             <div className="blog_container"><HomeBlog/></div>
-            {/* <div className="blog_container"><HomeArt/></div> */}
         </div>
 
 
