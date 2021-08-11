@@ -55,53 +55,44 @@ export default () => {
 
   const { height } = useWindowDimensions();
 
-  const [about, setAbout] = useState(false);
+  const [pageDown, setPageDown] = useState(false);
 
   useEffect(() => {
-    if(about===true)
+    if(pageDown===true)
     {
         window.scrollBy({top:height,left:0})
     }
-  }, [about, height])
+  }, [pageDown, height])
   
   return (
-    <div style={{width:'100vw'}}>
+    <div style={{width:'100vw'}}> {/*unnecessary*/}
 
       <div className="main_blog_container" >
-      <div className="side_background_container_blog"></div>
 
-        <div onClick={()=>{setAbout(!about)}} className="blog_box3">
+        <div className="page_number">02</div>
+        <div className="hi_picture"></div>
+
+        <div onClick={()=>{setPageDown(!pageDown)}} className="intro_box">
           <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">Exhibit A</h3>
-            <h3 className="summary_description_white">If I ever write a book, this stuff is going on it, period.</h3>
+            <h3 className="summary_heading_white">The Select Few</h3>
+            <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3>
             <h3 className="summary_description_white">04</h3>
           </div>
         </div>
 
-        <div onClick={()=>{setAbout(!about)}} className="blog_box2">
-          <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">Exhibit B - Instagram Page</h3>
-            <h3 className="summary_description_white">Poetry that I’ve been writing for upward of 3 years now.</h3>
-            <h3 className="summary_description_white">05</h3>
-          </div>
+        <div className="hey_text_div">
+          <h1 className="hey_text">
+            I write, <br/>sometimes.
+          </h1>
         </div>
-
-        <div onClick={()=>{setAbout(!about)}} className="blog_box1">
-          <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">Exhibit C - Medium Page</h3>
-            <h3 className="summary_description_white">Articles on current affairs. Thoughts and the like.</h3>
-            <h3 className="summary_description_white">06</h3>
-          </div>
-        </div>
-
         
-      <div className="blog_quote_div">
+      {/* <div className="blog_quote_div">
           <h1 className="blog_heading_quote">
           Blog
           </h1>
-        </div>
+        </div> */}
 
-        <img className="birds" alt="" src={birds}></img>
+        {/* <img className="birds" alt="" src={birds}></img> */}
 
       </div>
 

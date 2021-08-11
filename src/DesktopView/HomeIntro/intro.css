@@ -78,27 +78,7 @@ TO THE ABOUT SLIDE), ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     z-index:1;
 }
 
-.home_slides .main_home_container .page_number{
-    position:absolute;
-    top:65vh;
-    right:32vw;
-    width:60vw;
-    z-index:30;
-    font-size: 25vmin;
-}
 
-.home_slides .main_home_container .hi_picture{
-    position:absolute;
-    top:30vh;
-    left:20vw;
-    height:65vh;
-    width:30vw;
-    z-index:20;
-    background-image: url('../../img/cygirl.jpg');
-    background-repeat: no-repeat;
-    background-size:contain;
-    /* background-position: right center; */
-}
 
 /*
 ***************************************************************************

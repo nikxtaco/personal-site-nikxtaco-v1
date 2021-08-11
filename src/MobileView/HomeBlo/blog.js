@@ -68,7 +68,7 @@ export default () => {
     <div style={{width:'100vw'}}>
 
       <div className="main_blog_container" >
-      <div className="side_background_container_blog"></div>
+      {/* <div className="side_background_container_blog"></div> */}
 
         <div onClick={()=>{setAbout(!about)}} className="blog_box3">
           <div className="summary_intro_box_white">

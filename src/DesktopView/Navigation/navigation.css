@@ -13,9 +13,38 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
 
 /* Stripes */
 
+.stripe_design{
+    margin:0;
+}
+
+.stripes_slide_02{
+    margin-left:100vw;
+    margin-top:0vh;
+}
+
+.stripes_slide_03{
+    margin-left:200vw;
+    margin-top:0vh;
+}
+
+.stripes_slide_04{
+    margin-left:300vw;
+    margin-top:0vh;
+}
+
+.back_to_home{
+    position:absolute;
+    margin-left:15vmin;
+    width:25vmin;
+    margin-top:11vmin;
+    font-size:2vmin;
+    transform: rotate(270deg);
+    z-index:100;
+}
+
 .stripes_box1{
-    width:12.5vw;
-    height:25vh;
+    width:25vmin;
+    height:25vmin;
     position:absolute;
     margin:0;
     z-index:80;
@@ -24,31 +53,31 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     background-size:cover;
 }
 .border_only_box1{
-    width:12.5vw;
-    height:25vh;
+    width:25vmin;
+    height:25vmin;
     position:absolute;
-    margin-left:2.5vw;
-    margin-top:5vh;
+    margin-left:5vmin;
+    margin-top:5vmin;
     z-index:70;
     border:2px solid rgb(255, 255, 255, 0.5);
 }
 .stripes_box2{
-    width:12.5vw;
-    height:25vh;
+    width:25vmin;
+    height:25vmin;
     position:absolute;
-    margin-left:82.5vw;
-    margin-top:75vh;
+    margin-left:calc(100vw - 25vmin);
+    margin-top:calc(100vh - 25vmin);
     z-index:80;
     background-image: url('../../media/stripes.jpg');
     background-repeat: no-repeat;
     background-size:cover;
 }
 .border_only_box2{
-    width:12.5vw;
-    height:25vh;
+    width:25vmin;
+    height:25vmin;
     position:absolute;
-    margin-left:85vw;
-    margin-top:70vh;
+    margin-left:calc(100vw - 30vmin);
+    margin-top:calc(100vh - 30vmin);
     z-index:70;
     border:2px solid rgb(255, 255, 255, 0.5);
 }
@@ -56,6 +85,28 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
 /*
 ***************************************************************************
 */
+
+.page_number{
+    position:absolute;
+    top:65vh;
+    right:32vw;
+    width:60vw;
+    z-index:30;
+    font-size: 25vmin;
+}
+
+.hi_picture{
+    position:absolute;
+    top:30vh;
+    left:20vw;
+    height:65vh;
+    width:30vw;
+    z-index:20;
+    background-image: url('../../img/cygirl.jpg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    /* background-position: right center; */
+}
 
 /*
 TOP NAVBAR CONSISTING OF BLOG, PROJECTS AND ART ALONG WITH THEIR SUMMARIES.
@@ -73,7 +124,7 @@ THE APPROPRIATE OFFSET.
 }
 
 .slide2{
-    margin-left:125vw;
+    margin-left:126vw;
 }
 
 .summary_box .summary_sub_box_white{
@@ -97,16 +148,6 @@ THE APPROPRIATE OFFSET.
     color:white;
     font-size:1.8vmin;
 }
-
-/* .summary_box .summary_sub_box_black .summary_heading_black{
-    color:black;
-    font-size:1vw;
-}
-
-.summary_box .summary_sub_box_black .summary_description_black{
-    color:rgb(0, 0, 0);
-    font-size:0.9vw;
-} */
 
 /*
 ***************************************************************************
@@ -192,7 +233,7 @@ LEFT-SIDE NAVBAR CONSISTING OF HOME, MENU AND CONTACT ICONS.
 THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
 */
 
-.home_slides .main_home_container .intro_box1{
+.intro_box{
     width:25vw;
     height:25vh;
     position:absolute;
@@ -201,20 +242,24 @@ THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
     z-index: 80;
 }
 
-.home_slides .main_home_container .intro_box1 .summary_intro_box_white{
+.summary_intro_box_white{
     border-bottom: 2px solid rgba(255, 255, 255, 0.6);
     width:16vw;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.home_slides .main_home_container .intro_box1 .summary_intro_box_white .summary_heading_white{
+.summary_intro_box_white .summary_heading_white{
     color:white;
     font-size:2vmin;
 }
 
-.home_slides .main_home_container .intro_box1 .summary_intro_box_white .summary_description_white{
+.summary_intro_box_white .summary_description_white{
     color:white;
     font-size:1.8vmin;
+}
+
+.blog_box{
+    margin-left:156vw;
 }
 
 .home_slides .main_blog_container .blog_box1{

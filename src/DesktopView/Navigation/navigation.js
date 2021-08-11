@@ -85,18 +85,6 @@ export default () => {
     borderTop: artColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
     }
 
-    const customProjects2 = {
-      borderTop: projectsColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
-     }
-  
-     const customBlog2 = {
-      borderTop: blogColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
-      }
-  
-      const customArt2 = {
-      borderTop: artColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.6)",
-      }
-
     return (
         <div>          
         {/* <div className="navbar">
@@ -114,45 +102,71 @@ export default () => {
 
         </div>     */}
 
-      <div className="border_only_box1"></div>
-      <div className="stripes_box1"></div>
-      <div className="border_only_box2"></div>
-      <div className="stripes_box2"></div>
+      <div className="stripe_design">
+        <div className="border_only_box1"></div>
+        <div className="stripes_box1"></div>
+        <div className="border_only_box2"></div>
+        <div className="stripes_box2"></div>
+      </div>
+
+      <div className="stripe_design stripes_slide_02">
+        <div className="border_only_box1"></div>
+        <div className="stripes_box1"></div>
+        <div className="back_to_home" onClick={()=>setIndex(1)}>Back To Home</div>
+        <div className="border_only_box2"></div>
+        <div className="stripes_box2"></div>
+      </div>
+
+      <div className="stripe_design stripes_slide_03">
+        <div className="border_only_box1"></div>
+        <div className="stripes_box1"></div>
+        <div className="back_to_home" onClick={()=>setIndex(1)}>Back To Home</div>
+        <div className="border_only_box2"></div>
+        <div className="stripes_box2"></div>
+      </div>
+
+      <div className="stripe_design stripes_slide_04">
+        <div className="border_only_box1"></div>
+        <div className="stripes_box1"></div>
+        <div className="back_to_home" onClick={()=>setIndex(1)}>Back To Home</div>
+        <div className="border_only_box2"></div>
+        <div className="stripes_box2"></div>
+      </div>
 
 
         <div className="summary_box">
         <div  onClick={()=>setIndex(2)} className="summary_sub_box_white" style={customBlog} >
           <h3 className="summary_heading_white">Blog</h3>
           <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
-          <h3 className="summary_description_white">01</h3>
+          <h3 className="summary_description_white">02</h3>
         </div>
         <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
           <h3 className="summary_heading_white">Projects</h3>
           <h3 className="summary_description_white">Things I ended up with while trying to learn cool stuff.</h3>
-          <h3 className="summary_description_white">02</h3>
+          <h3 className="summary_description_white">03</h3>
         </div>
         <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
           <h3 className="summary_heading_white">Art</h3>
           <h3 className="summary_description_white">I hardly have any color sense so I make do in monochrome.</h3>
-          <h3 className="summary_description_white">03</h3>
+          <h3 className="summary_description_white">04</h3>
         </div>
       </div>
 
       <div className="summary_box slide2">
-        <div  onClick={()=>setIndex(2)} className="summary_sub_box_white" style={customBlog2} >
+        <div  onClick={()=>setIndex(2)} className="summary_sub_box_white" style={customBlog} >
           <h3 className="summary_heading_white">Blog</h3>
           <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
-          <h3 className="summary_description_white">01</h3>
+          <h3 className="summary_description_white">02</h3>
         </div>
-        <div onClick={()=>setIndex(3)} style={customProjects2} className="summary_sub_box_black">
-          <h3 className="summary_heading_black">Projects</h3>
-          <h3 className="summary_description_black">Things I ended up with while trying to learn cool stuff.</h3>
-          <h3 className="summary_description_black">02</h3>
+        <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
+          <h3 className="summary_heading_white">Projects</h3>
+          <h3 className="summary_description_white">Things I ended up with while trying to learn cool stuff.</h3>
+          <h3 className="summary_description_white">03</h3>
         </div>
-        <div onClick={()=>setIndex(4)} style={customArt2} className="summary_sub_box_black">
-          <h3 className="summary_heading_black">Art</h3>
-          <h3 className="summary_description_black">I hardly have any color sense so I make do in monochrome.</h3>
-          <h3 className="summary_description_black">03</h3>
+        <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
+          <h3 className="summary_heading_white">Art</h3>
+          <h3 className="summary_description_white">I hardly have any color sense so I make do in monochrome.</h3>
+          <h3 className="summary_description_white">04</h3>
         </div>
       </div>
 

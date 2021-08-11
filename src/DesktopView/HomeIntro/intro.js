@@ -57,14 +57,14 @@ export default () => {
 
   const { height } = useWindowDimensions();
 
-  const [about, setAbout] = useState(false);
+  const [pageDown, setPageDown] = useState(false);
 
   useEffect(() => {
-    if(about===true)
+    if(pageDown===true)
     {
         window.scrollBy({top:height,left:0})
     }
-  }, [about, height])
+  }, [pageDown])
   // function horizontalScroll(e){
   //   console.log(e.deltaY)
   //   if(e.deltaY > 0)
@@ -77,16 +77,11 @@ export default () => {
   return (
     <div>
 
-      {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
       <div className="main_home_container" >
-      {/* <div className="side_background_container_home"></div> */}
-
-      {/* <div className="stripes"></div> */}
-      {/* <div className="white_container_stripes"></div> */}
         <div className="page_number">01</div>
         <div className="hi_picture"></div>
 
-        <div onClick={()=>{setAbout(!about)}} className="intro_box1">
+        <div onClick={()=>{setPageDown(!pageDown)}} className="intro_box">
           <div className="summary_intro_box_white">
             <h3 className="summary_heading_white">About</h3>
             <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
@@ -103,17 +98,6 @@ export default () => {
       </div>
 
       <div className="about_container" >
-{/* 
-      <div className="stripes"></div>
-        <img className="tree" alt="" src={tree}></img>
-        
-        <div onClick={()=>{setAbout(!about)}} className="intro_box1">
-          <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">About</h3>
-            <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
-            <h3 className="summary_description_white">00</h3>
-          </div>
-        </div> */}
 
         {/* <div className="about_heading_div">
           <h1 className="about_heading">
