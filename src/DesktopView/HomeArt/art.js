@@ -1,19 +1,10 @@
-import React, {useState, useEffect} from "react";
-
-// import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
-
-import "./blog.css"
-
-// import UseAnimations from "react-useanimations";
-
+import React, {Component, useState, useEffect} from "react";
+import "./art.css"
+import UseAnimations from "react-useanimations";
 // import Rellax from "rellax";
-
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import birds from "../../media/tree.png" //birds.png
-// import feathers from "../../img/feathers_blue.jpg"
-
-export default () => {
+export default function Art() {
 
   // useEffect(() => {
   //   if(width>750)
@@ -78,36 +69,35 @@ export default () => {
   return (
     <div>
 
-      <div id="blog" className="main_blog_container" >
-
-        <div className="page_number">02</div>
+      <div id="art" className="main_art_container" >
+        <div className="page_number">04</div>
         <div className="dancergirl_picture"></div>
 
-        <div onClick={()=>{setPageDown(!pageDown)}} onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
-          <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">The Select Few</h3>
-            <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3>
-            <h3 className="summary_description_white">05</h3>
-            <div style={customSummary}></div>
-          </div>
-        </div>
+          <a href="https://soundcloud.app.goo.gl/ERQcF" target="_blank" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
+            <div className="summary_intro_box_white">
+              <h3 className="summary_heading_white">Music</h3>
+              <h3 className="summary_description_white">I sometimes make keyboard covers and post them here.</h3>
+              <h3 className="summary_description_white">07</h3>
+              <div style={customSummary}></div>
+            </div>
+          </a>
 
         <div className="hey_text_div">
           <h1 className="hey_text">
-            I write, <br/>sometimes.
+            Most often, <br/>I try to make art.
           </h1>
         </div>
-        
-      {/* <div className="blog_quote_div">
-          <h1 className="blog_heading_quote">
-          Blog
-          </h1>
-        </div> */}
-
-        {/* <img className="birds" alt="" src={birds}></img> */}
 
       </div>
 
+      <div className="stripe_design stripes_slide_00">
+        <div className="border_only_box1"></div>
+        <div className="stripes_box1"></div>
+        <a href="#home"><div className="back_to_home" onClick={()=>{setPageDown(!pageDown)}}>Back To Home</div></a>
+        <div className="border_only_box2"></div>
+        <div className="stripes_box2"></div>
+      </div>
+
     </div>
-  );
-};
+  )
+}

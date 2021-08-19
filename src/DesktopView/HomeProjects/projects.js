@@ -1,10 +1,10 @@
 import React, {Component, useState, useEffect} from "react";
-import "./intro.css"
+import "./projects.css"
 import UseAnimations from "react-useanimations";
 // import Rellax from "rellax";
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-export default function Intro() {
+export default function Projects() {
 
   // useEffect(() => {
   //   if(width>750)
@@ -69,9 +69,9 @@ export default function Intro() {
   return (
     <div>
 
-      <div id="home" className="main_home_container" >
-        <div className="page_number">01</div>
-        <div className="cygirl_picture"></div>
+      <div id="projects" className="main_projects_container" >
+        <div className="page_number">03</div>
+        <div className="buildingart_picture"></div>
 
         <div onClick={()=>{setPageDown(!pageDown)}} onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
           {/* <a href="#about" className="intro_box"> */}
@@ -80,13 +80,13 @@ export default function Intro() {
               <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
               <h3 className="summary_description_white">00</h3>
               <div style={customSummary}></div>
-          </div>
+            </div>
           {/* </a> */}
         </div>
 
         <div className="hey_text_div">
           <h1 className="hey_text">
-            Hey there! <br/>I'm Nikita.
+            Sometimes, <br/>I work.
           </h1>
         </div>
 

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
-import './navigation.css';
+// import './navigation.css';
 import HomeIntro from "../HomeIntro/intro.js"
 // import HomeBlog from "../HomeBlog/blog.js"
 import HomeBlog from "../HomeBlo/blog.js"

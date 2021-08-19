@@ -135,22 +135,6 @@ ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     opacity:0.6;
 } */
 
-/* .about_bg_image{
-    background-image: url('../../media/tempbgtry.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left:5vw;
-    width:100vw;
-    height:100vh;
-}
-
-/* .about_bg_image{
-    background-image: url('../../media/tempbgtry.jpeg');
-    padding-left:5vw;
-    width:100vw;
-    height:100vh;
-} */
-
 .about_contact_links{
     position:absolute;
     left:95vw;
@@ -170,23 +154,11 @@ ALONG WITH THE SIDE CONTAINER AND MAIN PICTURE.
     background-image: url('../../media/materialtexture1.jpg');
 }
 
-.about_circle2{
-    position:absolute;
-    background-color: #ffffff;
-    opacity:1;
-    top:7vh;
-    left:89vw;
-    width:20vmin;
-    height:20vmin;
-    border-radius: 100%;
-    background-image: url('../../media/materialtexture1.jpg');
-}
-
 .about_circle_text{
     position:absolute;
     top:72vh;
     left:7.5vw;
-    font-size: 12vmin;color:rgb(255, 255, 255);
+    font-size: 12vmin;
 }
 
 .about_container .about_content{

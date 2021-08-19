@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
-import "./blog.css"
+// import "./blog.css"
 
 // import UseAnimations from "react-useanimations";
 

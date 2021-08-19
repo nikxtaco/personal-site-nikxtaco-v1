@@ -15,6 +15,12 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
 
 .stripe_design{
     margin:0;
+    position:absolute;
+}
+
+.stripes_slide_00{
+    margin-left:0vw;
+    margin-top:100vh;
 }
 
 .stripes_slide_02{
@@ -22,9 +28,19 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     margin-top:0vh;
 }
 
+.stripes_slide_02a{
+    margin-left:100vw;
+    margin-top:100vh;
+}
+
 .stripes_slide_03{
     margin-left:200vw;
     margin-top:0vh;
+}
+
+.stripes_slide_03a{
+    margin-left:200vw;
+    margin-top:100vh;
 }
 
 .stripes_slide_04{
@@ -40,6 +56,8 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     font-size:2vmin;
     transform: rotate(270deg);
     z-index:100;
+    color:white;
+    text-decoration: none;
 }
 
 .stripes_box1{
@@ -95,7 +113,7 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     font-size: 25vmin;
 }
 
-.hi_picture{
+.cygirl_picture{
     position:absolute;
     top:30vh;
     left:20vw;
@@ -103,6 +121,32 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     width:30vw;
     z-index:20;
     background-image: url('../../img/cygirl.jpg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    /* background-position: right center; */
+}
+
+.dancergirl_picture{
+    position:absolute;
+    top:20vh;
+    left:18vw;
+    height:80vh;
+    width:50vw;
+    z-index:20;
+    background-image: url('../../img/dancergirl.jpg');
+    background-repeat: no-repeat;
+    background-size:contain;
+    /* background-position: right center; */
+}
+
+.buildingart_picture{
+    position:absolute;
+    top:18vh;
+    left:15vw;
+    height:80vh;
+    width:70vw;
+    z-index:20;
+    background-image: url('../../img/buildingart.jpg');
     background-repeat: no-repeat;
     background-size:contain;
     /* background-position: right center; */
@@ -121,19 +165,22 @@ THE APPROPRIATE OFFSET.
     margin-left:26vw;
     margin-top:10vh;
     z-index:80;
+    text-decoration: none !important;
 }
 
 .slide2{
     margin-left:126vw;
 }
 
-.summary_box .summary_sub_box_white{
-    width:16vw;
-    float:left;
-    margin-left:7vw;
+.slide3{
+    margin-left:226vw;
 }
 
-.summary_box .summary_sub_box_black{
+.slide4{
+    margin-left:326vw;
+}
+
+.summary_box .summary_sub_box_white{
     width:16vw;
     float:left;
     margin-left:7vw;
@@ -148,6 +195,32 @@ THE APPROPRIATE OFFSET.
     color:white;
     font-size:1.8vmin;
 }
+
+.line_draw {
+    width:16vw;
+    height:4px;
+    float:left;
+    background: linear-gradient(to right, white 50%, rgb(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    transition:all 1s ease;
+  }
+  .line_draw:hover {
+    background-position:left bottom;
+  }
+
+  .line_draw2 {
+    width:16vw;
+    height:4px;
+    float:left;
+    background: linear-gradient(to right, white 50%, rgb(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    transition:all 1s ease;
+  }
+  .line_draw2:hover {
+    background-position:left bottom;
+  }
 
 /*
 ***************************************************************************
@@ -229,6 +302,24 @@ LEFT-SIDE NAVBAR CONSISTING OF HOME, MENU AND CONTACT ICONS.
     height:100vh;
 }
 
+.home_slides .main_projects_container{
+    z-index:0;
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    left:200vw;
+    top:0;
+}
+
+.home_slides .main_art_container{
+    z-index:0;
+    position:absolute;
+    left:300vw;
+    top:0;
+    width:100vw;
+    height:100vh;
+}
+
 /*
 THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
 */
@@ -240,10 +331,11 @@ THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
     margin-left:56vw;
     margin-top:72vh;
     z-index: 80;
+    text-decoration: none;
 }
 
 .summary_intro_box_white{
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    /* border-bottom: 2px solid rgba(255, 255, 255, 0.6); */
     width:16vw;
     background-color: rgba(0, 0, 0, 0.6);
 }
