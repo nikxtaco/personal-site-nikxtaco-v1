@@ -1,17 +1,49 @@
-/*
-THE CONTAINER FOR ALL THE SLIDES/PAGES EXCEPT THE NAVBAR COMPONENTS ON THE
-LEFT AND TOP WHICH ARE DEFINED BELOW.
-*/
+/* THE CONTAINER FOR ALL THE SLIDES/PAGES */
 
 .home_slides{
-    /* display:flex;
-    flex-direction: row; */
     position:absolute;
     left:0;
     top:0;
 }
 
-/* Stripes */
+.home_slides .main_home_container{
+    z-index:0;
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.home_slides .main_blog_container{
+    z-index:0;
+    position:absolute;
+    left:100vw;
+    top:0;
+    width:100vw;
+    height:100vh;
+}
+
+.home_slides .main_projects_container{
+    z-index:0;
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    left:200vw;
+    top:0;
+}
+
+.home_slides .main_art_container{
+    z-index:0;
+    position:absolute;
+    left:300vw;
+    top:0;
+    width:100vw;
+    height:100vh;
+}
+
+/* --------------------------- */
+/* STRIPE DESIGN FOR ALL PAGES */
 
 .stripe_design{
     margin:0;
@@ -46,18 +78,6 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
 .stripes_slide_04{
     margin-left:300vw;
     margin-top:0vh;
-}
-
-.back_to_home{
-    position:absolute;
-    margin-left:15vmin;
-    width:25vmin;
-    margin-top:11vmin;
-    font-size:2vmin;
-    transform: rotate(270deg);
-    z-index:100;
-    color:white;
-    text-decoration: none;
 }
 
 .stripes_box1{
@@ -100,9 +120,8 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     border:2px solid rgb(255, 255, 255, 0.5);
 }
 
-/*
-***************************************************************************
-*/
+/* ---------------------------------------------------- */
+/* THE PAGE NUMBER AND IMAGE FOR EACH OF THE MAIN PAGES */
 
 .page_number{
     position:absolute;
@@ -123,7 +142,6 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     background-image: url('../../img/cygirl.jpg');
     background-repeat: no-repeat;
     background-size:contain;
-    /* background-position: right center; */
 }
 
 .dancergirl_picture{
@@ -136,7 +154,6 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     background-image: url('../../img/dancergirl.jpg');
     background-repeat: no-repeat;
     background-size:contain;
-    /* background-position: right center; */
 }
 
 .buildingart_picture{
@@ -149,14 +166,10 @@ LEFT AND TOP WHICH ARE DEFINED BELOW.
     background-image: url('../../img/buildingart.jpg');
     background-repeat: no-repeat;
     background-size:contain;
-    /* background-position: right center; */
 }
 
-/*
-TOP NAVBAR CONSISTING OF BLOG, PROJECTS AND ART ALONG WITH THEIR SUMMARIES.
-TO ADD IT FOR NEW PAGE SLIDES, JUST CREATE ANOTHER .slide(n) AND PROVIDE
-THE APPROPRIATE OFFSET.
-*/
+/* -------------------------------------------------------------------------- */
+/* TOP NAVBAR CONSISTING OF BLOG, PROJECTS AND ART ALONG WITH THEIR SUMMARIES */
 
 .summary_box{
     width:75vw;
@@ -180,18 +193,18 @@ THE APPROPRIATE OFFSET.
     margin-left:326vw;
 }
 
-.summary_box .summary_sub_box_white{
+.summary_sub_box_white{
     width:16vw;
     float:left;
     margin-left:7vw;
 }
 
-.summary_box .summary_sub_box_white .summary_heading_white{
+.summary_heading_white{
     color:white;
     font-size:2vmin;
 }
 
-.summary_box .summary_sub_box_white .summary_description_white{
+.summary_description_white{
     color:white;
     font-size:1.8vmin;
 }
@@ -204,125 +217,35 @@ THE APPROPRIATE OFFSET.
     background-size: 200% 100%;
     background-position:right bottom;
     transition:all 1s ease;
-  }
-  .line_draw:hover {
-    background-position:left bottom;
-  }
+}
 
-  .line_draw2 {
-    width:16vw;
-    height:4px;
+.line_draw:hover {
+    background-position:left bottom;
+}
+
+/* ----------------------------------------- */
+/* EXTRA CLASSES FOR BACK TO HOME NAVIGATION */
+
+.backtohometext{
+    position:absolute;
+    top:20vh;
+    z-index:90;
+    left:-33vw;
+    padding-left:5vmin;
+    padding-top:1vmin;
+}
+
+.backtohometext2{
+    position:absolute;
+    top:1vh;
+    left:28.5vmin;
     float:left;
-    background: linear-gradient(to right, white 50%, rgb(255, 255, 255, 0) 50%);
-    background-size: 200% 100%;
-    background-position:right bottom;
-    transition:all 1s ease;
-  }
-  .line_draw2:hover {
-    background-position:left bottom;
-  }
-
-/*
-***************************************************************************
-*/
-
-/*
-LEFT-SIDE NAVBAR CONSISTING OF HOME, MENU AND CONTACT ICONS.
-*/
-
-.navbar {
-    position:fixed;
-    z-index:80;
-    width:5vw;
-    height:100vh;
-    background-color:black;
+    color:white;
+    font-size:1.8vmin;
 }
 
-.infinity_logo{
-    color: white;
-    cursor: pointer;
-    margin-top:9vh;
-    margin-left: 1vw;
-}
-
-.menu_logo{
-    color: white;
-    cursor: pointer;
-    margin-top:32vh;
-    margin-left: 1.2vw;
-    transform: rotate(270deg);
-}
-
-.contact_logo{
-    color: white;
-    cursor: pointer;
-    margin-top:32vh;
-    margin-left: 1.2vw;
-}
-
-.NavbarListStyles {
-    color:#878787;
-    list-style:none;
-    width:100vw;
-    text-transform: uppercase;
-    letter-spacing: 1rem;
-    font-size:4rem;
-    display:inline-block;
-    text-align:center;
-    font-family: soleil,Helvetica,Arial,sans-serif;
-    font-weight: 600;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    margin-top:-50px;
-}
-
-.NavbarListStyles li {
-    display:inline;
-}
-  
-/*
-***************************************************************************
-*/
-
-.home_slides .main_home_container{
-    z-index:0;
-    width:100vw;
-    height:100vh;
-    position:absolute;
-    left:0;
-    top:0;
-}
-
-.home_slides .main_blog_container{
-    z-index:0;
-    position:absolute;
-    left:100vw;
-    top:0;
-    width:100vw;
-    height:100vh;
-}
-
-.home_slides .main_projects_container{
-    z-index:0;
-    width:100vw;
-    height:100vh;
-    position:absolute;
-    left:200vw;
-    top:0;
-}
-
-.home_slides .main_art_container{
-    z-index:0;
-    position:absolute;
-    left:300vw;
-    top:0;
-    width:100vw;
-    height:100vh;
-}
-
-/*
-THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
-*/
+/* ------------------------------------------------ */
+/* THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES */
 
 .intro_box{
     width:25vw;
@@ -335,7 +258,6 @@ THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
 }
 
 .summary_intro_box_white{
-    /* border-bottom: 2px solid rgba(255, 255, 255, 0.6); */
     width:16vw;
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -350,64 +272,18 @@ THE BOTTOM NAVIGATION LINKS FOR ALL SLIDES/PAGES (HOME, BLOG, PROJECTS, ART)
     font-size:1.8vmin;
 }
 
-.blog_box{
-    margin-left:156vw;
+/* THE MAIN TEXT FOR THE MAIN SLIDES */
+
+.hey_text_div{
+    margin-top:34vh;
+    padding-left:56vw;
+    width:45vw;
+    height:33vh;
+    position:sticky;
+    z-index:30;
 }
 
-.home_slides .main_blog_container .blog_box1{
-    width:16vw;
-    height:25vh;
-    position:absolute;
-    margin-left:55vw;
-    margin-top:72vh;
-    z-index: 80;
-}
-
-.home_slides .main_blog_container .blog_box2{
-    width:16vw;
-    height:25vh;
-    position:absolute;
-    margin-left:32vw;
-    margin-top:72vh;
-    z-index: 80;
-}
-
-.home_slides .main_blog_container .blog_box3{
-    width:16vw;
-    height:25vh;
-    position:absolute;
-    margin-left:9vw;
-    margin-top:72vh;
-    z-index: 80;
-}
-
-.home_slides .main_blog_container .blog_box1 .summary_intro_box_white{
-    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
-    width:16vw;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-
-.home_slides .main_blog_container .blog_box2 .summary_intro_box_white, .blog_box3 .summary_intro_box_white{
-    border-bottom: 2px solid rgb(255, 255, 255);
-    width:16vw;
-}
-
-.home_slides .main_blog_container .blog_box1 .summary_intro_box_white .summary_heading_white{
-    color:black;
-    font-size:1vw;
-}
-
-.home_slides .main_blog_container .blog_box2 .summary_intro_box_white .summary_heading_white, .blog_box3 .summary_intro_box_white .summary_heading_white{
-    color:white;
-    font-size:1vw;
-}
-
-.home_slides .main_blog_container .blog_box1 .summary_intro_box_white .summary_description_white{
-    color:black;
-    font-size:0.9vw;
-}
-
-.home_slides .main_blog_container .blog_box2 .summary_intro_box_white .summary_description_white, .blog_box3 .summary_intro_box_white .summary_description_white{
-    color:white;
-    font-size:0.9vw;
+.hey_text{
+    font-size: 9vmin;
+    line-height:15vmin;
 }

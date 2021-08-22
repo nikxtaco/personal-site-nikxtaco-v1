@@ -1,6 +1,6 @@
-import React, {Component, useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import "./projects.css"
-import UseAnimations from "react-useanimations";
+// import UseAnimations from "react-useanimations";
 // import Rellax from "rellax";
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
@@ -91,66 +91,14 @@ export default function Projects() {
         </div>
 
       </div>
-
+{/* 
       <div className="stripe_design stripes_slide_00">
         <div className="border_only_box1"></div>
         <div className="stripes_box1"></div>
         <a href="#home"><div className="back_to_home" onClick={()=>{setPageDown(!pageDown)}}>Back To Home</div></a>
         <div className="border_only_box2"></div>
         <div className="stripes_box2"></div>
-      </div>
-
-      <div id="about" className="about_container">
-        <div className="about_bg_image"></div>
-      {/* <div className="page_number">00</div> */}
-
-        <div className="about_content">
-          <h1 className="about_heading">
-            Who Am I?
-          </h1>
-
-          <div className="about_text">
-            <p className="about_para_white">
-            I'm a person with multiple, ordinary interests and very little patience for most things, not much unlike every other GenZ kid out there. I like spending time scrolling through art and music pages and not once have I stopped wishing for a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization that having deep and wise thoughts all the time isn't going to get me anywhere, dawns on me.
-            </p>
-
-            <p className="about_para_grey">
-            Vague content aside, I'm a Sophomore Computer Science Engineering student, currently studying in MEC, Kochi. 
-            At the moment, I'm juggling between things I like doing and since these things change rather often, I'd prefer you asked me in person if you wanted to know more, than me try to list them out here. So yeah, I'm just another person who wants to do it all. Inefficient and time consuming? Yes. But then again, I have time to kill. Or do I?
-             </p>
-
-            <p className="about_para_white">
-            Either way, you're free to reach out to me via any of my social media handles, though I do prefer traditional e-mails over them all. Until then, cheers!
-            </p>
-
-            
-
-          </div>
-        </div>
-
-        <div className="about_circle"></div>
-        <div className="about_circle_text">about</div>
-
-        <div className="about_contact_links">
-              <a href="https://www.github.com/nikxtaco">
-             <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "0vh" }}/>
-              </a>
-
-             <a href="https://instagram.com/nikxtaco">
-        <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
-           </a>
-
-             <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
-            <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-            </a>
-               
-             <a href="https://twitter.com/nikxtaco">
-            <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-             </a>
-             </div>
-
-      </div>
-
+      </div> */}
 
     </div>
   )

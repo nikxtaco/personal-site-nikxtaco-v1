@@ -13,7 +13,7 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js"
 import birds from "../../media/tree.png" //birds.png
 // import feathers from "../../img/feathers_blue.jpg"
 
-export default () => {
+export default function Blog() {
 
   // useEffect(() => {
   //   if(width>750)

@@ -1,5 +1,5 @@
 @media screen and (max-width: 750px){
-    .home_slides .main_blog_container .side_background_container_blog{
+    /* .home_slides .main_blog_container .side_background_container_blog{
     background-color:white;
     width:48vw;
     height:200vh;
@@ -54,7 +54,6 @@
 }
 
 .blog_sections{
-    /* margin-top:-20vh; */
     position:absolute;
     top:35vh;
 }
@@ -123,7 +122,7 @@
     padding: 2vh 0 4vh 0;
 }
 
-/*Common CSS*/
+Common CSS
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
@@ -234,7 +233,7 @@
         padding-left: 15vw;
     }
 
-/*Common CSS*/
+Common CSS
 
 .section_name{
     font-size:20rem;
@@ -329,6 +328,6 @@
     letter-spacing: 4px;
     padding-top:0;
 }
-}
+} */
 
 }

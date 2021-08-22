@@ -15,7 +15,7 @@ function initializeReactGA() {
   ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
-export default () => {
+export default function App() {
 
       const { width } = useWindowDimensions();
 

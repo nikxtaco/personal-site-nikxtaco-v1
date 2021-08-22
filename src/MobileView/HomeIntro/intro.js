@@ -10,12 +10,12 @@ import React, {useState, useEffect} from "react";
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import stripes from "../../media/stripes.svg"
-import hi_picture from "../../media/cutie5.jpeg" //tree.png, pikachu2.jpg
+// import stripes from "../../media/stripes.svg"
+// import hi_picture from "../../media/cutie5.jpeg" //tree.png, pikachu2.jpg
 import map from "../../media/BlackMarble.jpg"
 import idiotsandwich from "../../media/idiotsandwich.jpg"
 
-export default () => {
+export default function Intro() {
 
   // useEffect(() => {
   //   if(width>750)

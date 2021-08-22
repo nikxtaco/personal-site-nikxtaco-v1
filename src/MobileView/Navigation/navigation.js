@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
 // import './navigation.css';
@@ -9,10 +9,10 @@ import HomeBlog from "../HomeBlo/blog.js"
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 
-export default () => {
+export default function Navigation() {
 
   const [navbarVisibility, setNavbarVisibility] = useState(false);
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   function toggleVisibility(){
      setNavbarVisibility(!navbarVisibility)
