@@ -20,7 +20,7 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js"
 export default () => {
 
   useEffect(() => {
-    if(width>750)
+    if(width>1440)
     {
       new Rellax(".hi_animate", { // <---- Via class name
       speed: -3, 
@@ -107,7 +107,7 @@ export default () => {
         <h6 className="link_text">
           Check out my projects
       {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipForward"
       size={45}
@@ -127,7 +127,7 @@ export default () => {
 
       <h4 className="home_text_white2 hey_animate">
         But hey, there are things&nbsp;
-        {width<750?<br/>:null}
+        {width<1440?<br/>:null}
         I'm moderately good at too!
       </h4>
 
@@ -151,7 +151,7 @@ export default () => {
         <h6 className="link_text">
         Read away
         {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipForward"
       size={45}

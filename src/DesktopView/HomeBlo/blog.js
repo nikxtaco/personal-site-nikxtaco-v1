@@ -16,7 +16,7 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js"
 export default function Blog() {
 
     // useEffect(() => {
-    //   if(width>750)
+    //   if(width>1440)
     //   {
     //     new Rellax(".hi_animate", { // <---- Via class name
     //     speed: -3, 

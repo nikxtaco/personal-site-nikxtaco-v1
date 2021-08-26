@@ -7,7 +7,7 @@ import UseAnimations from "react-useanimations";
 export default function Intro() {
 
     // useEffect(() => {
-    //   if(width>750)
+    //   if(width>1440)
     //   {
     //     new Rellax(".hi_animate", { // <---- Via class name
     //     speed: -3, 

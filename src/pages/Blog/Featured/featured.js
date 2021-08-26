@@ -85,7 +85,7 @@ const Featuwhite = () => {
 {initializeReactGA()}
   
   {
-      width<750?<div>
+      width<1440?<div>
  
     {!post_id && !show_post &&
     <div>
@@ -117,7 +117,7 @@ const Featuwhite = () => {
         <h5 className="back_to_list" onClick={() => {setPost_id(0)}}>
           Back To List
       {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipBack"
       size={40}

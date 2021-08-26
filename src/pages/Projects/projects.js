@@ -18,7 +18,7 @@ import filterbubble from "../../img/projects/filterbubble.png"
 export default () => {
 
   useEffect(() => {
-    if(width>750)
+    if(width>1440)
     {
       new Rellax(".hi_animate", { // <---- Via class name
       speed: -3, 
@@ -79,7 +79,7 @@ export default () => {
         <h6 className="link_text">
           Visit The Site
       {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipForward"
       size={45}
@@ -105,7 +105,7 @@ export default () => {
         <h6 className="link_text">
           Visit The Site
       {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipForward"
       size={45}

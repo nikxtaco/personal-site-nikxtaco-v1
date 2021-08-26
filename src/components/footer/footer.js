@@ -17,7 +17,7 @@ const Navbar = () => {
 
         <a href="https://www.github.com/nikxtaco">
       {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="github"
       size={"5vw"}
@@ -32,7 +32,7 @@ const Navbar = () => {
          </a>
          <a href="https://instagram.com/nikxtaco">
        {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="instagram"
       size={"5vw"}
@@ -47,7 +47,7 @@ const Navbar = () => {
       </a>
          <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
          {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="linkedin"
       size={"5vw"}
@@ -62,7 +62,7 @@ const Navbar = () => {
          </a>
          <a href="https://twitter.com/nikxtaco">
             {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="twitter"
       size={"5vw"}

@@ -139,7 +139,7 @@
     padding: 10px 0 10px 0;
 }
 
-@media screen and (min-width: 750px){
+@media screen and (min-width: 1440px){
     .main_quote{
         font-size:12rem;
         padding-bottom:7vh;

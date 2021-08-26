@@ -104,7 +104,7 @@ const ThinkingOutLoud = () => {
         <h5 className="back_to_list" onClick={() => {setPost_id(0)}}>
           Back To List
           {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipBack"
       size={40}

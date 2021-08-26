@@ -52,7 +52,7 @@ const AllTimeFavorites = () => {
         return(
           <div key={id} className="individual_post_container">
 
-            {width>750?
+            {width>1440?
             <img alt="" src={statue_blog} style={{position:"absolute", maxWidth:"40vw"}}></img>
             :null}
             <br/>
@@ -86,7 +86,7 @@ const AllTimeFavorites = () => {
 
       <Navbar />
 
-      {width>750?
+      {width>1440?
         <img alt="" src={feathers} style={{pointerEvents: "none", opacity:0.2, position:"absolute", width:"100vw", paddingLeft:0}}></img>
         :null}
           
@@ -115,7 +115,7 @@ const AllTimeFavorites = () => {
         <h5 className="back_to_list" onClick={() => {setPost_id(0)}}>
           Back To List
           {
-      width>750?
+      width>1440?
       <UseAnimations
       animationKey="skipBack"
       size={40}

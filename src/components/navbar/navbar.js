@@ -37,7 +37,7 @@ const Navbar = () => {
       color: "white",
       display: "block",
       transition: "0.3s",
-      fontSize: width>750?"10rem":"2rem",
+      fontSize: width>1440?"10rem":"2rem",
       textAlign: "center",
    }
 
@@ -46,14 +46,14 @@ const Navbar = () => {
 
           <HLink to="/" onClick={window.scrollTo(0,0)}>
           {
-            width>750?<UseAnimations animationKey="infinity" size={50} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
+            width>1440?<UseAnimations animationKey="infinity" size={50} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
             :<UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "10vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}/>
           }
           </HLink>
             
           <div onClick={toggleVisibility}>
           {
-            width>750?<UseAnimations animationKey="menu2" size={40} style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
+            width>1440?<UseAnimations animationKey="menu2" size={40} style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
             :<UseAnimations animationKey="menu2" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "-11vh", position: "absolute", zIndex: "5" }}/>
           }
           </div>
@@ -66,31 +66,31 @@ const Navbar = () => {
               <span>
               <a href="https://www.github.com/nikxtaco">
               {
-                width>750?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
+                width>1440?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
                 :<UseAnimations animationKey="github" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"15vw", paddingTop: "5vh" }}/>
               }</a>
 
               <a href="https://instagram.com/nikxtaco">
               {
-              width>750?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+              width>1440?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
               :<UseAnimations animationKey="instagram" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
               }</a>
 
               <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
               {
-              width>750?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+              width>1440?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
               :<UseAnimations animationKey="linkedin" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
               }</a>
                 
               <a href="https://twitter.com/nikxtaco">
               {
-              width>750?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+              width>1440?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
               :<UseAnimations animationKey="twitter" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
               }</a>
               </span>
           </div>
           
-          {width>750?
+          {width>1440?
           <div className="look_up_bg" style={{position:"fixed"}}>
           <h6 className="look_up" onClick={() => {window.scrollBy({ left: width, behavior: 'smooth'});}}>
             <UseAnimations

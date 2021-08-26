@@ -51,7 +51,7 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
 }
 
 
-@media screen and (min-width: 750px){
+@media screen and (min-width: 1440px){
     .main_container{
         padding-left:8vw; /**/
         margin-right:8vw; /**/

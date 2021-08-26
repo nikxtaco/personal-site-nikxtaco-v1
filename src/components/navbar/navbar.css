@@ -10,7 +10,7 @@
   border-radius: 100%;
 }
 
-  @media screen and (max-width: 750px){
+  @media screen and (max-width: 1440px){
     .logo{
       width:20vw;
     }

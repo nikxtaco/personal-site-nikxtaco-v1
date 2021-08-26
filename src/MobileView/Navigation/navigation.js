@@ -37,7 +37,7 @@ export default function Navigation() {
      color: "white",
      display: "block",
      transition: "0.3s",
-     fontSize: width>750?"10rem":"7rem",
+     fontSize: width>1440?"10rem":"7rem",
      textAlign: "center",
   }
 
@@ -46,15 +46,13 @@ export default function Navigation() {
      <div className="mobile_navbar">
          <HLink to="/" onClick={window.scrollTo(0,0)}>
          {
-           width>750?<UseAnimations animationKey="infinity" size={50} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
-           :<UseAnimations animationKey="infinity" size={40} style={{ color: "white", cursor: "pointer", marginLeft: "10vw", position: "absolute", zIndex: "5" }}/>
+           <UseAnimations animationKey="infinity" size={20} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "5" }}/>
          }
          </HLink>
            
          <div onClick={toggleVisibility}>
          {
-           width>750?<UseAnimations animationKey="menu2" size={40} style={{ color: "white", cursor: "pointer", marginLeft: "89vw", marginTop: "10vh", position: "absolute", zIndex: "5" }}/>
-           :<UseAnimations animationKey="menu2" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "85vw", marginTop: "1vh", position: "absolute", zIndex: "5" }}/>
+           <UseAnimations animationKey="menu2" size={15} style={{ color: "white", cursor: "pointer", marginLeft: "60vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
          }
          </div>
 
@@ -68,25 +66,25 @@ export default function Navigation() {
              <span>
              <a href="https://www.github.com/nikxtaco">
              {
-               width>750?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
+               width>1440?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
                :<UseAnimations animationKey="github" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"15vw", paddingTop: "5vh" }}/>
              }</a>
 
              <a href="https://instagram.com/nikxtaco">
              {
-             width>750?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+             width>1440?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="instagram" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
 
              <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
              {
-             width>750?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+             width>1440?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="linkedin" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
                
              <a href="https://twitter.com/nikxtaco">
              {
-             width>750?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+             width>1440?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="twitter" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
              </span>
@@ -94,11 +92,10 @@ export default function Navigation() {
 
          </div>
          
-         <div className="home_slides">
+         {/* <div className="home_slides">
             <div className="intro_container"><HomeIntro/></div>
             <div className="blog_container"><HomeBlog/></div>
-            {/* <div className="blog_container"><HomeArt/></div> */}
-        </div>
+        </div> */}
          
      </div>  
     );

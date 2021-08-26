@@ -60,7 +60,7 @@ return(
       ...A Featuwhite Few
       </h2> */}
 
-      {width>750?
+      {width>1440?
       <img alt="" src={blog_page_picture} style={{position:'absolute', paddingLeft:"0", maxWidth:"30vw"}}></img>
       :<img alt="" src={blog_page_picture} style={{pointerEvents: "none", opacity:"0.25", position:'absolute', paddingLeft:"0px", width:"82vw"}}></img>}
      
@@ -70,7 +70,7 @@ return(
         <h6 className="home_button_text">
           To Browse More
         {
-        width>750?
+        width>1440?
         <UseAnimations
         animationKey="arrowDown"
         size={50}
@@ -89,7 +89,7 @@ return(
         Click here to check out my instagram (@cryptic.tales).
         <a href="https://instagram.com/cryptic.tales">
        {
-        width>750?
+        width>1440?
         <UseAnimations
         animationKey="instagram"
         size={30}
@@ -107,7 +107,7 @@ return(
       <h5 className="blog_text_white">
         I also write on Medium, at times.
           {
-        width>750?
+        width>1440?
         <UseAnimations
         animationKey="skipForward"
         size={30}

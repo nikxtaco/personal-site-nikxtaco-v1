@@ -22,7 +22,8 @@ export default function App() {
     return (
       <div>
         {initializeReactGA()}
-        {width>750?
+        {console.log(width)}
+        {width>1440?
         <DesktopNavigation/>
         :<MobileNavigation/>}
       </div>          
@@ -57,7 +58,7 @@ export default function App() {
 //     return (
 //       <div>
 //         {initializeReactGA()}
-//         {width>750?<h1 style={{textAlign:"center", fontSize:50}}>Please use a smaller screen. Desktop view will be out soon.</h1>
+//         {width>1440?<h1 style={{textAlign:"center", fontSize:50}}>Please use a smaller screen. Desktop view will be out soon.</h1>
 //         :<Transition1 /> }
 //       </div>          
 //     );
