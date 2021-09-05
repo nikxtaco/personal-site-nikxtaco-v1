@@ -46,16 +46,25 @@ export default function Navigation() {
      <div className="mobile_navbar">
          <HLink to="/" onClick={window.scrollTo(0,0)}>
          {
-           <UseAnimations animationKey="infinity" size={20} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "5" }}/>
+           <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "5" }}/>
          }
          </HLink>
            
+           {navbarVisibility && 
          <div onClick={toggleVisibility}>
          {
-           <UseAnimations animationKey="menu2" size={15} style={{ color: "white", cursor: "pointer", marginLeft: "60vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
+           <UseAnimations animationKey="menu2" size={25} style={{ color: "white", cursor: "pointer", marginLeft: "87vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
          }
          </div>
+        }
 
+{!navbarVisibility && 
+         <div onClick={toggleVisibility}>
+         {
+           <UseAnimations animationKey="menu2" size={25} style={{ color: "white", cursor: "pointer", marginLeft: "87vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
+         }
+         </div>
+        }
          <div style={customNavbar}>
              <HLink to="/" style={customNavbarEach}>Home</HLink>
              <HLink to="/blog" style={customNavbarEach} >Blog</HLink>
@@ -92,10 +101,10 @@ export default function Navigation() {
 
          </div>
          
-         {/* <div className="home_slides">
+         <div className="home_slides">
             <div className="intro_container"><HomeIntro/></div>
-            <div className="blog_container"><HomeBlog/></div>
-        </div> */}
+            {/* <div className="blog_container"><HomeBlog/></div> */}
+        </div>
          
      </div>  
     );

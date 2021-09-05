@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
-// import "./intro.css"
+import "./intro.css"
 
 // import UseAnimations from "react-useanimations";
 
@@ -79,28 +79,24 @@ export default function Intro() {
 
       {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
       <div className="main_home_container" >
-      <div className="side_background_container_home"></div>
-
-      {/* <div className="stripes"></div> */}
-      {/* <div className="white_container_stripes"></div> */}
-        <div className="hi_picture"></div>
-
+        <div className="cygirl_picture_mobile"></div>
+{/* 
         <div onClick={()=>{setAbout(!about)}} className="intro_box1">
           <div className="summary_intro_box_white">
             <h3 className="summary_heading_white">About</h3>
             <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
             <h3 className="summary_description_white">00</h3>
           </div>
-        </div>
+        </div> */}
 
-        <div className="hey_text_div">
-          <h1 className="hey_text">
-            Hey there! <br/>I'm Nikita.
+        <div className="hey_text_div_mobile">
+          <h1 className="hey_text_mobile">
+            I'm Nikita.
           </h1>
         </div>
 
       </div>
-
+{/* 
       <div className="about_container" >
 
       <div className="about_content">
@@ -126,14 +122,14 @@ export default function Intro() {
       </div>
 
       <div className="col2">
-      <img className="map" src={map} alt=""></img>
+      <img className="map" src={map} alt=""></img> */}
 
         {/* fir conrtact */}
-</div>
+{/* </div>
 
-      </div>
+      </div> */}
 
-      </div>
+      {/* </div> */}
 
 
     </div>

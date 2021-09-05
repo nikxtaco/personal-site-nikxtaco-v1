@@ -1,2 +1,33 @@
 @media screen and (max-width: 1440px){
+
+    /* THE MAIN TEXT FOR THE MAIN SLIDES */
+
+    .hey_text_div_mobile{
+        margin-top:25vh;
+        width:100vw;
+        height:33vh;
+        position:sticky;
+        z-index:30;
+        text-align: center;
+    }
+
+    .hey_text_mobile{
+        font-size: 10vmin;
+        line-height:15vmin;
+        font-family: 'Rozha One', serif;
+    }
+
+    .cygirl_picture_mobile{
+        position:absolute;
+        top:40vh;
+        left:5vw;
+        width:90vw;
+        height:100vw;
+        z-index:0;
+        background-image: url('../../img/cygirl.jpg');
+        background-repeat: no-repeat;
+        background-size:contain;
+        opacity:0.1;
+    }
+
 }
