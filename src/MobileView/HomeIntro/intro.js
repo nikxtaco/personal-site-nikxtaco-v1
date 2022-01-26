@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
 
-// import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
-
 import "./intro.css"
 
 // import UseAnimations from "react-useanimations";
@@ -33,17 +31,8 @@ export default function Intro() {
 
   return (
     <div>
-      {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
       <div id="home" className="main_home_container" >
         <div className="cygirl_picture_mobile"></div>
-{/* 
-        <div onClick={()=>{setAbout(!about)}} className="intro_box1">
-          <div className="summary_intro_box_white">
-            <h3 className="summary_heading_white">About</h3>
-            <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3>
-            <h3 className="summary_description_white">00</h3>
-          </div>
-        </div> */}
 
         <div className="hey_text_div_mobile">
           <h1 className="hey_text_mobile">
@@ -57,6 +46,12 @@ export default function Intro() {
             awkward laughter
           </h2>
         </div>
+
+
+
+
+
+
 
         <a href="#about">
         <div className="about_button_mobile">
@@ -91,7 +86,6 @@ export default function Intro() {
 
       <div className="col2">
 
-        {/* fir conrtact */}
 </div>
 
       </div> 

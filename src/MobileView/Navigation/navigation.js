@@ -3,7 +3,8 @@ import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
 import './navigation.css';
 import HomeIntro from "../HomeIntro/intro.js"
-// import HomeBlog from "../HomeBlog/blog.js"
+import HomeProjects from "../HomeProjects/projects.js"
+import HomeArt from "../HomeArt/art.js"
 import HomeBlog from "../HomeBlo/blog.js"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
@@ -69,7 +70,7 @@ export default function Navigation() {
              <a href="#home" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
-             <HLink to="/art" style={customNavbarEach} >Art</HLink>
+             <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Music</a>
              <HLink to="/about" style={customNavbarEach} >About</HLink>
                
              <span>
@@ -104,6 +105,8 @@ export default function Navigation() {
          <div className="home_slides">
             <div className="intro_container"><HomeIntro/></div>
             <div className="blog_container"><HomeBlog/></div>
+            <div className="art_container"><HomeArt/></div>
+            <div className="projects_container"><HomeProjects/></div>
         </div>
          
      </div>  

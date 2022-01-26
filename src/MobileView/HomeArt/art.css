@@ -1,0 +1,74 @@
+@media screen and (max-width: 1440px){
+
+    /* THE MAIN TEXT FOR THE MAIN SLIDES */
+
+    .hey_text_div_mobile{
+        margin-top:25vh;
+        width:100vw;
+        height:33vh;
+        position:sticky;
+        z-index:30;
+        text-align: center;
+    }
+
+    .hey_text_mobile{
+        font-size: 10vmin;
+        line-height:15vmin;
+        margin-bottom: 5vmin;
+        font-family: 'Rozha One', serif;
+    }
+
+    .hey_desc_mobile{
+        font-size: 4vmin;
+        margin-bottom: 5vmin;
+        font-family: "Playfair Display",serif;
+    }
+
+    .semibold{
+        font-weight: 600;
+    }
+
+    .about_button_mobile{
+        font-size:5vmin;
+        font-family: "Playfair Display",serif;
+        padding:1vmin 2vw;
+        margin-top:10vh;
+        width:40vw;
+        margin-left:28vw;
+        text-align:center;
+        border: 1px solid white;
+        color:white;
+        z-index:100;
+        text-decoration: none !important;
+    }
+
+    a{
+        text-decoration: none !important;
+        z-index:100;
+    }
+
+    .dancergirl_picture_mobile{
+        position:absolute;
+        top:45vh;
+        left:5vw;
+        width:90vw;
+        height:100vw;
+        z-index:-1;
+        background-image: url('../../img/dancergirl.jpg');
+        background-repeat: no-repeat;
+        background-size:contain;
+        opacity:0.2;
+    }
+
+    .about_container{
+        position:absolute;
+        margin:0;
+        top:100vh;
+        left:0;
+        width:100vw;
+        height:100vh;
+        overflow-y:scroll;
+        z-index:0;
+    }
+
+}
