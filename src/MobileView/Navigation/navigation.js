@@ -13,16 +13,10 @@ export default function Navigation() {
 
   const [navbarVisibility, setNavbarVisibility] = useState(false);
   const { width } = useWindowDimensions();
-  const [navbarLocation, setNavbarLocation] = useState(0);
 
   function toggleVisibility(){
      setNavbarVisibility(!navbarVisibility)
   }
-
-  useEffect(() => {
-    setNavbarLocation(window.scrollY);
-    console.log(window.scrollY);
-  }, [])
 
   const customNavbar = {
      backgroundColor: "#000000cc",
@@ -52,7 +46,7 @@ export default function Navigation() {
      <div className="mobile_navbar">
          <a href="#home">
          {
-           <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "5" }}/>
+           <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "1z" }}/>
          }
          </a>
            

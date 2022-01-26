@@ -58,18 +58,19 @@ export default function Intro() {
           </h2>
         </div>
 
+        <a href="#about">
         <div className="about_button_mobile">
           ABOUT
         </div>
+        </a>
 
       </div>
-{/* 
-      <div className="about_container" >
+
+      <div id="about" className="about_container" >
 
       <div className="about_content">
 
         <div className="col1">
-          <img className="idiotsandwich" src={idiotsandwich} alt=""></img>
         <h4 className="random_facts">
         Let's start with random facts.
       </h4> 
@@ -89,14 +90,13 @@ export default function Intro() {
       </div>
 
       <div className="col2">
-      <img className="map" src={map} alt=""></img> */}
 
         {/* fir conrtact */}
-{/* </div>
+</div>
 
-      </div> */}
+      </div> 
 
-      {/* </div> */}
+      </div>
 
 
     </div>

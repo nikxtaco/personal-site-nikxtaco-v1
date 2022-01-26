@@ -37,6 +37,14 @@
         margin-left:28vw;
         text-align:center;
         border: 1px solid white;
+        color:white;
+        z-index:100;
+        text-decoration: none !important;
+    }
+
+    a{
+        text-decoration: none !important;
+        z-index:100;
     }
 
     .cygirl_picture_mobile{
@@ -45,11 +53,22 @@
         left:5vw;
         width:90vw;
         height:100vw;
-        z-index:0;
+        z-index:-1;
         background-image: url('../../img/cygirl.jpg');
         background-repeat: no-repeat;
         background-size:contain;
         opacity:0.1;
+    }
+
+    .about_container{
+        position:absolute;
+        margin:0;
+        top:100vh;
+        left:0;
+        width:100vw;
+        height:100vh;
+        overflow-y:scroll;
+        z-index:0;
     }
 
 }

@@ -6,6 +6,7 @@ html, body{
   font-size:4px;
   scroll-behavior: smooth;
   /* overflow:hidden; */
+  text-decoration: none !important;
 }
 
 canvas{

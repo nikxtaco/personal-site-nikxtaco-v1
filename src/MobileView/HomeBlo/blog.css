@@ -26,6 +26,7 @@
 
     .semibold{
         font-weight: 600;
+        z-index:5;
     }
 
     .about_button_mobile{
