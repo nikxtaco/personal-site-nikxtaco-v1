@@ -74,6 +74,15 @@ export default function Intro() {
   //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
   // }
 
+  const customSummary = {
+    width:"80vw",
+    height:"1px",
+    float:"left",
+    marginLeft: "10vw",
+    background: "linear-gradient(to right, white 50%, rgb(255, 255, 255, 0.3) 50%)",
+    backgroundSize: "200% 100%",
+  }
+
   return (
     <div>
 
@@ -93,6 +102,7 @@ export default function Intro() {
           <h1 className="hey_text_mobile">
             I'm Nikita.
           </h1>
+          <div style={customSummary}></div>
         </div>
 
       </div>
