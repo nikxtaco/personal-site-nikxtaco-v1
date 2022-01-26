@@ -40,7 +40,7 @@ export default function Blog() {
     <div>
       {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
       <div id="blog" className="main_blog_container" >
-        <div className="cygirl_picture_mobile"></div>
+        <div className="songcircle_picture_mobile"></div>
 {/* 
         <div onClick={()=>{setAbout(!about)}} className="intro_box1">
           <div className="summary_intro_box_white">
@@ -52,14 +52,14 @@ export default function Blog() {
 
         <div className="hey_text_div_mobile">
           <h1 className="hey_text_mobile">
-            I'm Nikita.
+            Blog
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
-            but that's not all i am!
+            Poetry & Prose
           </h2>
-          <h2 className="hey_desc_mobile semibold">
-            awkward laughter
+          <h2 className="hey_desc_mobile">
+            but mostly poetry
           </h2>
         </div>
 

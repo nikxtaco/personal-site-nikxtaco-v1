@@ -50,11 +50,11 @@ export default function Navigation() {
   return ( 
     <div>
      <div className="mobile_navbar">
-         <HLink to="/" onClick={window.scrollTo(0,0)}>
+         <a href="#home">
          {
            <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "5" }}/>
          }
-         </HLink>
+         </a>
            
            {navbarVisibility && 
          <div onClick={toggleVisibility}>

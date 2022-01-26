@@ -39,17 +39,17 @@
         border: 1px solid white;
     }
 
-    .cygirl_picture_mobile{
+    .songcircle_picture_mobile{
         position:absolute;
         top:40vh;
-        left:5vw;
-        width:90vw;
-        height:100vw;
+        left:0vw;
+        width:100vw;
+        height:200vw;
         z-index:0;
-        background-image: url('../../img/cygirl.jpg');
+        background-image: url('../../img/song_circle.png');
         background-repeat: no-repeat;
         background-size:contain;
-        opacity:0.1;
+        opacity:0.3;
     }
 
 }

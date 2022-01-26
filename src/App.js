@@ -1,6 +1,5 @@
 import React from "react";
 
-// import Transition1 from "./pages/Home/home.js"
 import DesktopNavigation from "./DesktopView/Navigation/navigation.js"
 import MobileNavigation from "./MobileView/Navigation/navigation.js"
 
@@ -22,10 +21,6 @@ export default function App() {
     return (
       <div>
         {initializeReactGA()}
-        <div className="tri">HELLOO</div>
-
-<h1 style={{height:"200vh", width:"200vw"}}>tiejrig4jg</h1>
-
         {width>1440?
         <DesktopNavigation/>
         :<MobileNavigation/>}

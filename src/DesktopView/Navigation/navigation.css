@@ -168,6 +168,18 @@
     background-size:contain;
 }
 
+.songcircle_picture{
+    position:absolute;
+    top:20vh;
+    left:18vw;
+    height:80vh;
+    width:50vw;
+    z-index:20;
+    background-image: url('../../img/song_circle.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
 /* -------------------------------------------------------------------------- */
 /* TOP NAVBAR CONSISTING OF BLOG, PROJECTS AND ART ALONG WITH THEIR SUMMARIES */
 
