@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
-// import './navigation.css';
+import './navigation.css';
 import HomeIntro from "../HomeIntro/intro.js"
 // import HomeBlog from "../HomeBlog/blog.js"
 import HomeBlog from "../HomeBlo/blog.js"
@@ -13,10 +13,16 @@ export default function Navigation() {
 
   const [navbarVisibility, setNavbarVisibility] = useState(false);
   const { width } = useWindowDimensions();
+  const [navbarLocation, setNavbarLocation] = useState(0);
 
   function toggleVisibility(){
      setNavbarVisibility(!navbarVisibility)
   }
+
+  useEffect(() => {
+    setNavbarLocation(window.scrollY);
+    console.log(window.scrollY);
+  }, [])
 
   const customNavbar = {
      backgroundColor: "#000000cc",
@@ -66,9 +72,9 @@ export default function Navigation() {
          </div>
         }
          <div style={customNavbar}>
-             <HLink to="/" style={customNavbarEach}>Home</HLink>
-             <HLink to="/blog" style={customNavbarEach} >Blog</HLink>
-             <HLink to="/projects" style={customNavbarEach}>Projects</HLink>
+             <a href="#home" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
+             <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
+             <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <HLink to="/art" style={customNavbarEach} >Art</HLink>
              <HLink to="/about" style={customNavbarEach} >About</HLink>
                
@@ -103,7 +109,7 @@ export default function Navigation() {
          
          <div className="home_slides">
             <div className="intro_container"><HomeIntro/></div>
-            {/* <div className="blog_container"><HomeBlog/></div> */}
+            <div className="blog_container"><HomeBlog/></div>
         </div>
          
      </div>  

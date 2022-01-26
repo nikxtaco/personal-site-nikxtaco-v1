@@ -6,54 +6,9 @@ import "./intro.css"
 
 // import UseAnimations from "react-useanimations";
 
-// import Rellax from "rellax";
-
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-// import stripes from "../../media/stripes.svg"
-// import hi_picture from "../../media/cutie5.jpeg" //tree.png, pikachu2.jpg
-import map from "../../media/BlackMarble.jpg"
-import idiotsandwich from "../../media/idiotsandwich.jpg"
-
 export default function Intro() {
-
-  // useEffect(() => {
-  //   if(width>1440)
-  //   {
-  //     new Rellax(".hi_animate", { // <---- Via class name
-  //     speed: -3, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   new Rellax(".random_animate", { // <---- Via class name
-  //     speed: 0, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   new Rellax(".hey_animate", { // <---- Via class name
-  //     speed: -1, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   new Rellax(".creative_animate", { // <---- Via class name
-  //     speed: 1, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   }
-  // });
 
   const { height } = useWindowDimensions();
 
@@ -66,28 +21,20 @@ export default function Intro() {
         console.log(height)
     }
   }, [about, height])
-  // function horizontalScroll(e){
-  //   console.log(e.deltaY)
-  //   if(e.deltaY > 0)
-  //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
-  //   else
-  //   window.scrollBy({ left: e.deltaY, behavior: 'smooth'})
-  // }
 
   const customSummary = {
     width:"80vw",
     height:"1px",
-    float:"left",
     marginLeft: "10vw",
+    marginBottom:"5vh",
     background: "linear-gradient(to right, white 50%, rgb(255, 255, 255, 0.3) 50%)",
     backgroundSize: "200% 100%",
   }
 
   return (
     <div>
-
       {/* <div className="main_home_container" onWheel={horizontalScroll} > */}
-      <div className="main_home_container" >
+      <div id="home" className="main_home_container" >
         <div className="cygirl_picture_mobile"></div>
 {/* 
         <div onClick={()=>{setAbout(!about)}} className="intro_box1">
@@ -103,6 +50,16 @@ export default function Intro() {
             I'm Nikita.
           </h1>
           <div style={customSummary}></div>
+          <h2 className="hey_desc_mobile">
+            but that's not all i am!
+          </h2>
+          <h2 className="hey_desc_mobile semibold">
+            awkward laughter
+          </h2>
+        </div>
+
+        <div className="about_button_mobile">
+          ABOUT
         </div>
 
       </div>

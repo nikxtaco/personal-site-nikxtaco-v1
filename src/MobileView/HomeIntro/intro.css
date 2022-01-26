@@ -18,6 +18,27 @@
         font-family: 'Rozha One', serif;
     }
 
+    .hey_desc_mobile{
+        font-size: 4vmin;
+        margin-bottom: 5vmin;
+        font-family: "Playfair Display",serif;
+    }
+
+    .semibold{
+        font-weight: 600;
+    }
+
+    .about_button_mobile{
+        font-size:5vmin;
+        font-family: "Playfair Display",serif;
+        padding:1vmin 2vw;
+        margin-top:10vh;
+        width:40vw;
+        margin-left:28vw;
+        text-align:center;
+        border: 1px solid white;
+    }
+
     .cygirl_picture_mobile{
         position:absolute;
         top:40vh;

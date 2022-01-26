@@ -5,8 +5,7 @@ html, body{
   color:white;
   font-size:4px;
   scroll-behavior: smooth;
-
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 canvas{

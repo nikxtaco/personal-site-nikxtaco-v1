@@ -2,13 +2,11 @@
 
     .mobile_navbar{
         width: 100vw;
-        background-color: pink;
-        height:20vh;
-        position:sticky;
+        height:15vh;
+        position: fixed;
+        top:0px;
+        left:0px;
         margin:0;
-        padding:0;
-        left:0;
-        top:0;
     }
 
 }

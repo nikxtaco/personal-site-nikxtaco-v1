@@ -22,7 +22,10 @@ export default function App() {
     return (
       <div>
         {initializeReactGA()}
-        {console.log(width)}
+        <div className="tri">HELLOO</div>
+
+<h1 style={{height:"200vh", width:"200vw"}}>tiejrig4jg</h1>
+
         {width>1440?
         <DesktopNavigation/>
         :<MobileNavigation/>}
