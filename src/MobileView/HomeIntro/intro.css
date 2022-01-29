@@ -60,15 +60,34 @@
         opacity:0.1;
     }
 
-    .about_container{
+    .about_container_mobile{
         position:absolute;
         margin:0;
         top:100vh;
-        left:0;
+        padding-top:12vh;
+        padding-left:7vw;
         width:100vw;
         height:100vh;
         overflow-y:scroll;
         z-index:0;
+    }
+
+    .about_heading_mobile{
+        font-family: "Playfair Display",serif;
+        font-size: 4vmin;
+    }
+
+    .about_title1_mobile{
+        font-family: 'Rozha One', serif;
+        font-size:11vw;
+        margin:0;
+    }
+
+    .about_content_mobile{
+        font-size: 3.7vw;
+        padding-left:10vw;
+        margin-top:5vh;
+        border-left: 2px solid white;
     }
 
 }

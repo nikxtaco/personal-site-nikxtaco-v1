@@ -47,12 +47,6 @@ export default function Intro() {
           </h2>
         </div>
 
-
-
-
-
-
-
         <a href="#about">
         <div className="about_button_mobile">
           ABOUT
@@ -61,30 +55,51 @@ export default function Intro() {
 
       </div>
 
-      <div id="about" className="about_container" >
+
+
+
+
+
+
+      <div id="about" className="about_container_mobile" >
 
       <div className="about_content">
 
-        <div className="col1">
-        <h4 className="random_facts">
-        Let's start with random facts.
-      </h4> 
+        <div>
+          <h3 className="about_heading_mobile">
+            - ABOUT
+          </h3>
+          <h1 className="about_title1_mobile">
+           I'm an<br/>aspiring...
+          </h1> 
+          <h3 className="about_heading_mobile">
+            bit of pretty much everything.
+          </h3>
 
-      <h2 className="about_para1">
-      I'm a person with multiple, ordinary interests and very little patience (only when it doesn't concern work, recruiters!), not much unlike every other GenZ kid out there. I like spending time scrolling through art and music pages and not once have I stopped wishing for a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization that having deep and wise thoughts all the time isn't going to get me anywhere, dawns on me.
-      </h2>
+          <p className="about_content_mobile">
+          I've got multiple interests and (definitely <br/>
+          practical) ambitions that I shelter in my <br/>
+          (arguably) well-organized mind. When <br/>
+          I'm not doing them or thinking of doing <br/>
+          them, I spend my time scrolling through <br/>
+          art and music pages, burning through the <br/>
+          movies and shows on my infinitely long <br/>
+          recommendation list, or making notes on <br/>
+          random things that I find interesting for <br/>
+          no apparent reason, but let's not talk <br/>
+          about that.<br/><br/>
 
-      <h4 className="basics">
-        Now for the basics.
-      </h4>
-
-      <h2 className="about_para2">
-      Vague content aside, I'm a Sophomore Computer Science Engineering student, currently studying in MEC, Kochi. At the moment, I'm juggling between things I like doing and since these things change rather often, I'd prefer you asked me in person if you wanted to know more, than me try to list them out here. So yeah, I'm just another person who wants to do it all. Inefficient and time consuming? Yes. But then again, I have time to kill. Or do I?
-      </h2>
-
-      </div>
-
-      <div className="col2">
+          Rational fiction, thought experiments, <br/>
+          history and the morality of politics are <br/>
+          some of the things that interest me (as of <br/>
+          right this second) and I do not claim to be <br/>
+          adept at any of them. I am however good <br/>
+          at a couple of things (including sarcasm, <br/>
+          owing to which my friends never think <br/>
+          I'm being serious), and those things are <br/>
+          or will be listed on this website before <br/>
+          the next olympic games.<br/>
+          </p>
 
 </div>
 
