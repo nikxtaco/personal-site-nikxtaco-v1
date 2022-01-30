@@ -7,6 +7,8 @@ import "./intro.css"
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 import UseAnimations from "react-useanimations";
+import Footer from "../../components/footer/footer.js"
+
 
 export default function Intro() {
 
@@ -127,7 +129,7 @@ export default function Intro() {
           Until then, I fare thee well.<br/>
           </p>
 
-          <span>
+          {/* <span>
               <a href="https://www.github.com/nikxtaco">
               {
                 width>1440?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
@@ -152,11 +154,13 @@ export default function Intro() {
               :<UseAnimations animationKey="twitter" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
               }</a>
               
-          </span>
+          </span> */}
 
-        
 
 </div>
+
+
+<Footer/>
 
       </div> 
 

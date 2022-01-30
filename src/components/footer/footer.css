@@ -2,23 +2,35 @@
     border-bottom: 1px solid white;
     padding: 0;
     width:84vw;
+    margin:0;
 }
 
 .footer_link{
     text-align: center;
     color:white;
     border: none;
+    font-size:3vmin;
+    text-align: center;
+    margin-left: -7vw;
+    margin-top:15vh;
+    padding-bottom: 5vh;
+    position: absolute;
+    width:100vw;
+    font-family: "Playfair Display",sans-serif;
 }
 
 .footer{
     text-decoration: none;
+    margin:0;
+    margin-top:5vh;
+    padding:0;
 }
 
 span{
     margin-top:30vw;
 }
 
-@media screen and (min-width: 1440px){
+/* @media screen and (min-width: 1440px){
     .footer_line{
         border-bottom: 5px solid white;
     }
@@ -28,5 +40,7 @@ span{
         border: none;
         font-size: 5rem;
         width:90vw;
+        margin:0;
+        padding:0;
     }
-}
+} */
