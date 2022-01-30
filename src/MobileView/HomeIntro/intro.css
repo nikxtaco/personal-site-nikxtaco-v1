@@ -80,7 +80,13 @@
         font-family: 'Rozha One', serif;
         font-size:11vw;
         margin:0;
-        margin-top:3vh;
+    }
+
+    .about_title2_mobile{
+        font-family: 'Rozha One', serif;
+        font-size:11vw;
+        margin:0;
+        margin-top:8vh;
     }
 
     .about_content_mobile{

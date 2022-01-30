@@ -103,7 +103,7 @@ export default function Intro() {
           the next olympic games.<br/>
           </p>
 
-          <h1 className="about_title1_mobile">
+          <h1 className="about_title2_mobile">
           I try to do<br/>new things
           </h1> 
           <h3 className="about_heading_mobile">
