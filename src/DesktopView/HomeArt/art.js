@@ -10,9 +10,9 @@ export default function Art() {
 
     const customSummary = {
       width:"16vw",
-      height:"4px",
+      height:"2px",
       float:"left",
-      background: "linear-gradient(to right, white 50%, rgb(255, 255, 255, 0.3) 50%)",
+      background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
       backgroundSize: "200% 100%",
       transition: "all 1s ease",
       backgroundPosition: summaryColor? "left bottom" : "right bottom",
@@ -30,9 +30,9 @@ export default function Art() {
 
                     <a href="https://soundcloud.app.goo.gl/ERQcF" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
                         <div className="summary_intro_box_white">
-                            <h3 className="summary_heading_white">Music</h3>
-                            <h3 className="summary_description_white">I sometimes make keyboard covers and post them here.</h3>
-                            <h3 className="summary_description_white">07</h3>
+                            <h3 className="summary_heading_white_bottom">Soundcloud</h3>
+                            {/* <h3 className="summary_description_white">I sometimes make keyboard covers and post them here.</h3> */}
+                            <h3 className="summary_description_white_bottom">07</h3>
                             <div style={customSummary}></div>
                         </div>
                     </a>

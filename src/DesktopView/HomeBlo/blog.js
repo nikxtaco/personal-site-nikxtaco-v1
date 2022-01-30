@@ -60,9 +60,9 @@ export default function Blog() {
 
     const customSummary = {
       width:"16vw",
-      height:"4px",
+      height:"2px",
       float:"left",
-      background: "linear-gradient(to right, white 50%, rgb(255, 255, 255, 0.3) 50%)",
+      background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
       backgroundSize: "200% 100%",
       transition: "all 1s ease",
       backgroundPosition: summaryColor? "left bottom" : "right bottom",
@@ -83,13 +83,23 @@ export default function Blog() {
                 <div id="blog" className="main_blog_container" >
 
                     <div className="page_number">02</div>
-                    <div className="dancergirl_picture"></div>
+                    <div className="songcircle_picture"></div>
 
                     <a href="#bloglist" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
                         <div className="summary_intro_box_white">
-                            <h3 className="summary_heading_white">The Select Few</h3>
-                            <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3>
-                            <h3 className="summary_description_white">05</h3>
+                            <h3 className="summary_heading_white_bottom">Instagram</h3>
+                            {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}
+                            <h3 className="summary_description_white_bottom">05</h3>
+                            <div style={customSummary}></div>
+                        </div>
+                    </a>
+
+                    {/* for medium */}
+                    <a href="#bloglist" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
+                        <div className="summary_intro_box_white">
+                            <h3 className="summary_heading_white_bottom">Instagram</h3>
+                            {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}
+                            <h3 className="summary_description_white_bottom">05</h3>
                             <div style={customSummary}></div>
                         </div>
                     </a>

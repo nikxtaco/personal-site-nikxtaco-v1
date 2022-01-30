@@ -86,7 +86,7 @@
     position:absolute;
     margin:0;
     z-index:80;
-    background-image: url('../../media/stripes.jpg');
+    background-image: url('../../media/stripes2.png');
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -106,7 +106,7 @@
     margin-left:calc(100vw - 25vmin);
     margin-top:calc(100vh - 25vmin);
     z-index:80;
-    background-image: url('../../media/stripes.jpg');
+    background-image: url('../../media/stripes2.png');
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -139,9 +139,10 @@
     height:65vh;
     width:30vw;
     z-index:20;
-    background-image: url('../../img/cygirl.jpg');
+    background-image: url('../../img/cygirl2.jpg');
     background-repeat: no-repeat;
     background-size:contain;
+    opacity:1;
 }
 
 .dancergirl_picture{
@@ -154,6 +155,7 @@
     background-image: url('../../img/dancergirl.jpg');
     background-repeat: no-repeat;
     background-size:contain;
+    opacity:0.5;
 }
 
 .buildingart_picture{
@@ -166,18 +168,20 @@
     background-image: url('../../img/buildingart.jpg');
     background-repeat: no-repeat;
     background-size:contain;
+    opacity:0.7;
 }
 
 .songcircle_picture{
     position:absolute;
-    top:20vh;
+    top:27.5vh;
     left:18vw;
-    height:80vh;
+    height:65vh;
     width:50vw;
     z-index:20;
     background-image: url('../../img/song_circle.png');
     background-repeat: no-repeat;
     background-size:contain;
+    opacity:0.5;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -223,9 +227,9 @@
 
 .line_draw {
     width:16vw;
-    height:4px;
+    height:2px;
     float:left;
-    background: linear-gradient(to right, white 50%, rgb(255, 255, 255, 0) 50%);
+    background: linear-gradient(to right, white 10%, rgb(255, 255, 255, 0) 50%);
     background-size: 200% 100%;
     background-position:right bottom;
     transition:all 1s ease;

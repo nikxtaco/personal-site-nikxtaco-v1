@@ -55,20 +55,23 @@ export default function Navigation() {
 
     const customHome = {
       width:"12vw",
-      height:"4px",
-      background: "linear-gradient(to right, white 50%, rgb(255, 255, 255, 0.3) 50%)",
+      height:"2px",
+      background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
       backgroundSize: "200% 100%",
       transition: "all 1s ease",
       backgroundPosition: homeColor? "left bottom" : "right bottom",
     }
    const customProjects = {
-    borderTop: projectsColor? "4px solid white" : "4px solid rgba(255, 255, 255, 0.3)",
+    // borderTop: projectsColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.1)",
+    borderTop: "2px solid rgba(255, 255, 255, 0.1)", 
     }
    const customBlog = {
-    borderTop: blogColor? "4px solid white" : "4px solid rgba(255, 255, 255, 0.3)",
+    // borderTop: blogColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.1)",
+    borderTop: "2px solid rgba(255, 255, 255, 0.1)",
     }
     const customArt = {
-    borderTop: artColor? "4px solid white" : "4px solid rgba(255, 255, 255, 0.3)",
+    // borderTop: artColor? "2px solid white" : "2px solid rgba(255, 255, 255, 0.1)",
+    borderTop: "2px solid rgba(255, 255, 255, 0.1)",
     }
 
     return (
