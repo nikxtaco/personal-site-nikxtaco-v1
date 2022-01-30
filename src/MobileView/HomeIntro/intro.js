@@ -118,7 +118,7 @@ export default function Intro() {
           computer science engineering undergrad <br/>
           who will (hopefully) graduate within the <br/>
           next two years (date of final update, <br/>
-          August 2021).
+          August 2021).<br/><br/>
 
           Either way, you're more than welcome <br/>
           to reach out to me via any of my handles <br/>
