@@ -7,6 +7,7 @@ html, body{
   scroll-behavior: smooth;
   /* overflow:hidden; */
   text-decoration: none !important;
+  touch-action: none;
 }
 
 canvas{
