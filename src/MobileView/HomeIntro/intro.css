@@ -81,10 +81,11 @@
         font-family: 'Rozha One', serif;
         font-size:11vw;
         margin:0;
+        margin-top:3vh;
     }
 
     .about_content_mobile{
-        font-size: 3.7vw;
+        font-size: 3.8vw;
         padding-left:10vw;
         margin-top:5vh;
         border-left: 2px solid white;

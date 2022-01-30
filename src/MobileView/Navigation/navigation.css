@@ -3,10 +3,12 @@
     .mobile_navbar{
         width: 100vw;
         position: fixed;
+        height:12vh;
         top:0px;
         left:0px;
         margin:0;
         z-index:100;
+        background-color: rgb(0, 0, 0, 0.8);
     }
 
 }

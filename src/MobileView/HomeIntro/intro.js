@@ -6,9 +6,11 @@ import "./intro.css"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
+import UseAnimations from "react-useanimations";
+
 export default function Intro() {
 
-  const { height } = useWindowDimensions();
+  const { width, height } = useWindowDimensions();
 
   const [about, setAbout] = useState(false);
 
@@ -100,6 +102,59 @@ export default function Intro() {
           or will be listed on this website before <br/>
           the next olympic games.<br/>
           </p>
+
+          <h1 className="about_title1_mobile">
+          I try to do<br/>new things
+          </h1> 
+          <h3 className="about_heading_mobile">
+          ...every once in a while.
+          </h3>
+
+          <p className="about_content_mobile">
+          Besides constantly wishing for a rather <br/>
+          peaceful life of a Pokemon trainer running <br/>
+          from gym to gym with the sole purpose of <br/>
+          collecting badges, I'm also a full-time <br/>
+          computer science engineering undergrad <br/>
+          who will (hopefully) graduate within the <br/>
+          next two years (date of final update, <br/>
+          August 2021).
+
+          Either way, you're more than welcome <br/>
+          to reach out to me via any of my handles <br/>
+          listed on the site, though I do prefer less <br/>
+          anxiety-causing e-mails over them all. <br/> 
+          Until then, I fare thee well.<br/>
+          </p>
+
+          <span>
+              <a href="https://www.github.com/nikxtaco">
+              {
+                width>1440?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
+                :<UseAnimations animationKey="github" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"8vw", paddingTop: "5vh", paddingBottom:"5vh" }}/>
+              }</a>
+
+              <a href="https://instagram.com/nikxtaco">
+              {
+              width>1440?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+              :<UseAnimations animationKey="instagram" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
+              }</a>
+
+              <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
+              {
+              width>1440?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+              :<UseAnimations animationKey="linkedin" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
+              }</a>
+                
+              <a href="https://twitter.com/nikxtaco">
+              {
+              width>1440?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+              :<UseAnimations animationKey="twitter" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
+              }</a>
+              
+          </span>
+
+        
 
 </div>
 
