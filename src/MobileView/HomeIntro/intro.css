@@ -67,8 +67,10 @@
         padding-top:12vh;
         padding-left:7vw;
         width:100vw;
-        height:100vh;
-        z-index:0;
+        height:auto;
+        z-index:20;
+        touch-action: auto;
+        -ms-touch-action: auto;
     }
 
     .about_heading_mobile{

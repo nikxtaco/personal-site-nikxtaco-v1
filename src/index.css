@@ -5,9 +5,10 @@ html, body{
   color:white;
   font-size:4px;
   scroll-behavior: smooth;
-  /* overflow:hidden; */
+  overflow:hidden;
   text-decoration: none !important;
-  touch-action: none;
+  touch-action: none !important;
+  -ms-touch-action: none !important;
 }
 
 canvas{
