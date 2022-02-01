@@ -29,15 +29,17 @@
         z-index:5;
     }
 
-    .about_button_mobile{
+    .about_button_mobile2{
         font-size:5vmin;
         font-family: "Playfair Display",serif;
         padding:1vmin 2vw;
-        margin-top:10vh;
+        margin-top:5vh;
         width:40vw;
         margin-left:28vw;
         text-align:center;
         border: 1px solid white;
+        color:white;
+        text-decoration: none !important;
     }
 
     .songcircle_picture_mobile{

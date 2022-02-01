@@ -71,28 +71,28 @@ export default function Navigation() {
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Music</a>
-             <HLink to="/about" style={customNavbarEach} >About</HLink>
+             <HLink to="#about" style={customNavbarEach}>About</HLink>
                
              <span>
-             <a href="https://www.github.com/nikxtaco">
+             <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
              {
                width>1440?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
                :<UseAnimations animationKey="github" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"15vw", paddingTop: "5vh" }}/>
              }</a>
 
-             <a href="https://instagram.com/nikxtaco">
+             <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
              {
              width>1440?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="instagram" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
 
-             <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
+             <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
              {
              width>1440?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="linkedin" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
                
-             <a href="https://twitter.com/nikxtaco">
+             <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
              {
              width>1440?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="twitter" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>

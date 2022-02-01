@@ -73,16 +73,16 @@ export default function Projects() {
         <div className="page_number">03</div>
         <div className="buildingart_picture"></div>
 
+        <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
         <div onClick={()=>{setPageDown(!pageDown)}} onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
-          {/* <a href="#about" className="intro_box"> */}
             <div className="summary_intro_box_white">
               <h3 className="summary_heading_white_bottom">Github</h3>
               {/* <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3> */}
-              <h3 className="summary_description_white_bottom">00</h3>
+              <h3 className="summary_description_white_bottom">03A</h3>
               <div style={customSummary}></div>
             </div>
-          {/* </a> */}
         </div>
+        </a>
 
         <div className="hey_text_div">
           <h1 className="hey_text">

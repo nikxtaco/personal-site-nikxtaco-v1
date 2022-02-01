@@ -32,7 +32,7 @@ export default function Art() {
                         <div className="summary_intro_box_white">
                             <h3 className="summary_heading_white_bottom">Soundcloud</h3>
                             {/* <h3 className="summary_description_white">I sometimes make keyboard covers and post them here.</h3> */}
-                            <h3 className="summary_description_white_bottom">07</h3>
+                            <h3 className="summary_description_white_bottom">04A</h3>
                             <div style={customSummary}></div>
                         </div>
                     </a>

@@ -273,6 +273,26 @@
     text-decoration: none;
 }
 
+.intro_box1{
+    width:25vw;
+    height:25vh;
+    position:absolute;
+    margin-left:56vw;
+    margin-top:67vh;
+    z-index: 80;
+    text-decoration: none;
+}
+
+.intro_box2{
+    width:25vw;
+    height:25vh;
+    position:absolute;
+    margin-left:56vw;
+    margin-top:78vh;
+    z-index: 80;
+    text-decoration: none;
+}
+
 .summary_intro_box_white{
     width:16vw;
     background-color: rgba(0, 0, 0, 0.6);
@@ -286,6 +306,22 @@
 .summary_intro_box_white .summary_description_white{
     color:white;
     font-size:1.8vmin;
+}
+
+.summary_heading_white_bottom{
+    color:white;
+    font-size:4vmin;
+    font-family: 'Rosarivo', serif;
+    font-style: italic;
+    margin-bottom: 1vmin;
+}
+
+.summary_description_white_bottom{
+    color:white;
+    font-size:2vmin;
+    float:right;
+    margin-top:-4.5vmin;
+    margin-bottom:0;
 }
 
 /* THE MAIN TEXT FOR THE MAIN SLIDES */

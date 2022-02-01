@@ -56,17 +56,28 @@ export default function Blog() {
     const { height } = useWindowDimensions();
 
     const [pageDown, setPageDown] = useState(false);
-    const [summaryColor, setSummaryColor] = useState(0)
+    const [summaryColor1, setSummaryColor1] = useState(0);
+    const [summaryColor2, setSummaryColor2] = useState(0);
 
-    const customSummary = {
+    const customSummary1 = {
       width:"16vw",
       height:"2px",
       float:"left",
       background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
       backgroundSize: "200% 100%",
       transition: "all 1s ease",
-      backgroundPosition: summaryColor? "left bottom" : "right bottom",
+      backgroundPosition: summaryColor1? "left bottom" : "right bottom",
       }
+
+      const customSummary2 = {
+        width:"16vw",
+        height:"2px",
+        float:"left",
+        background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
+        backgroundSize: "200% 100%",
+        transition: "all 1s ease",
+        backgroundPosition: summaryColor2? "left bottom" : "right bottom",
+        }
 
     useEffect(() => {
       if(pageDown===true)
@@ -85,22 +96,21 @@ export default function Blog() {
                     <div className="page_number">02</div>
                     <div className="songcircle_picture"></div>
 
-                    <a href="#bloglist" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
+                    <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                         <div className="summary_intro_box_white">
                             <h3 className="summary_heading_white_bottom">Instagram</h3>
                             {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}
-                            <h3 className="summary_description_white_bottom">05</h3>
-                            <div style={customSummary}></div>
+                            <h3 className="summary_description_white_bottom">02A</h3>
+                            <div style={customSummary1}></div>
                         </div>
                     </a>
 
-                    {/* for medium */}
-                    <a href="#bloglist" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
+                    <a href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
                         <div className="summary_intro_box_white">
-                            <h3 className="summary_heading_white_bottom">Instagram</h3>
+                            <h3 className="summary_heading_white_bottom">Medium</h3>
                             {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}
-                            <h3 className="summary_description_white_bottom">05</h3>
-                            <div style={customSummary}></div>
+                            <h3 className="summary_description_white_bottom">02B</h3>
+                            <div style={customSummary2}></div>
                         </div>
                     </a>
 

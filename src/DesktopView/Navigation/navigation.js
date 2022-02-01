@@ -14,9 +14,9 @@ export default function Navigation() {
 
     const [index, setIndex] = useState(1);
     const [homeColor, setHomeColor] = useState(0)
-    const [projectsColor, setProjectsColor] = useState(1)
-    const [blogColor, setBlogColor] = useState(0)
-    const [artColor, setArtColor] = useState(0)
+    // const [projectsColor, setProjectsColor] = useState(1)
+    // const [blogColor, setBlogColor] = useState(0)
+    // const [artColor, setArtColor] = useState(0)
 
     // ALLOWS NAVIGATION BETWEEN THE FOUR MAIN PAGES
 
@@ -24,30 +24,30 @@ export default function Navigation() {
       if(index===1)
       {
           window.scrollTo({top:0,left:0})
-          setBlogColor(0)
-          setProjectsColor(0)
-          setArtColor(0)
+        //   setBlogColor(0)
+        //   setProjectsColor(0)
+        //   setArtColor(0)
       }
       if(index===2)
       {
           window.scrollTo({top:0,left:width})
-          setBlogColor(1)
-          setProjectsColor(0)
-          setArtColor(0)
+        //   setBlogColor(1)
+        //   setProjectsColor(0)
+        //   setArtColor(0)
       }
       if(index===3)
       {
           window.scrollTo({top:0,left:width*2})
-          setProjectsColor(1)
-          setBlogColor(0)
-          setArtColor(0)
+        //   setProjectsColor(1)
+        //   setBlogColor(0)
+        //   setArtColor(0)
       }
       if(index===4)
       {
           window.scrollTo({top:0,left:width*3})
-          setArtColor(1)
-          setBlogColor(0)
-          setProjectsColor(0)
+        //   setArtColor(1)
+        //   setBlogColor(0)
+        //   setProjectsColor(0)
       }
     }, [index, width])
 

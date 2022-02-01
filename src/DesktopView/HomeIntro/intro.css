@@ -8,22 +8,6 @@
     opacity:0.5;
 }
 
-.summary_heading_white_bottom{
-    color:white;
-    font-size:4vmin;
-    font-family: 'Rosarivo', serif;
-    font-style: italic;
-    margin-bottom: 1vmin;
-}
-
-.summary_description_white_bottom{
-    color:white;
-    font-size:2vmin;
-    float:right;
-    margin-top:-4.5vmin;
-    margin-bottom:0;
-}
-
 /* .about_bg_image{
     background-image: url('../../media/materialtexture1.jpg');
     padding-left:5vw;

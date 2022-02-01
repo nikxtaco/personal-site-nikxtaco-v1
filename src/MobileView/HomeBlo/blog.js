@@ -63,9 +63,17 @@ export default function Blog() {
           </h2>
         </div>
 
-        <div className="about_button_mobile">
-          INSTA
+        <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
+        <div className="about_button_mobile2">
+          INSTAGRAM
         </div>
+        </a>
+
+        <a href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer">
+        <div className="about_button_mobile2">
+          MEDIUM
+        </div>
+        </a>
 
       </div>
 {/* 
