@@ -1,4 +1,3 @@
-/* CONTAINER FOR THE BLOGLIST SLIDE (EXTENDED DOWNWARDS) */
 
 .bloglist_container{
     position:absolute;
@@ -10,7 +9,6 @@
     z-index:0;
 }
 
-/* THE CONTACT LINKS AND NAVIGATION TO GO BACK UP */
 
 .about_contact_links{
     position:absolute;
@@ -38,7 +36,6 @@
     top:8vh;
     z-index:90;
 }
-/* ------------- */
 
 .bloglist_container .bloglist_content{
     width:100vw;
@@ -129,7 +126,6 @@
 }
 
 .blog_sections{
-    /* margin-top:-20vh; */
     position:absolute;
     top:35vh;
 }
@@ -198,7 +194,9 @@
     padding: 2vh 0 4vh 0;
 }
 
-/*Common CSS*/
+
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
@@ -309,7 +307,6 @@
         padding-left: 15vw;
     }
 
-/*Common CSS*/
 
 .section_name{
     font-size:20rem;
@@ -390,7 +387,6 @@
 }
 
 .notmob_side_container2{
-    width:55vw;
     position: absolute;
     top:10vh;
     left:40vw;

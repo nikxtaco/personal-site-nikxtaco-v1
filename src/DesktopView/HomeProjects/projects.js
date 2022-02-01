@@ -1,48 +1,8 @@
 import React, {useState, useEffect} from "react";
 import "./projects.css"
-// import UseAnimations from "react-useanimations";
-// import Rellax from "rellax";
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 export default function Projects() {
-
-  // useEffect(() => {
-  //   if(width>1440)
-  //   {
-  //     new Rellax(".hi_animate", { // <---- Via class name
-  //     speed: -3, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   new Rellax(".random_animate", { // <---- Via class name
-  //     speed: 0, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   new Rellax(".hey_animate", { // <---- Via class name
-  //     speed: -1, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   new Rellax(".creative_animate", { // <---- Via class name
-  //     speed: 1, 
-  //     center: false,
-  //     wrapper: null,
-  //     round: true,
-  //     vertical: true,
-  //     horizontal: false
-  //   })
-  //   }
-  // });
 
   const { height } = useWindowDimensions();
 

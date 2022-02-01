@@ -38,14 +38,14 @@ export default function Navigation() {
      color: "white",
      display: "block",
      transition: "0.3s",
-     fontSize: width>1440?"10rem":"7rem",
+     fontSize: width>991?"10rem":"7rem",
      textAlign: "center",
   }
 
   return ( 
     <div>
      <div className="mobile_navbar">
-         <a href="#home">
+         <a href="/">
          {
            <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "1z" }}/>
          }
@@ -67,7 +67,7 @@ export default function Navigation() {
          </div>
         }
          <div style={customNavbar}>
-             <a href="#home" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
+             <a href="/" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Music</a>
@@ -75,25 +75,25 @@ export default function Navigation() {
              <span>
              <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
              {
-               width>1440?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
+               width>991?<UseAnimations animationKey="github" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"32.5vw", paddingTop: "10vh" }}/>
                :<UseAnimations animationKey="github" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"15vw", paddingTop: "5vh" }}/>
              }</a>
 
              <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
              {
-             width>1440?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+             width>991?<UseAnimations animationKey="instagram" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="instagram" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
 
              <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
              {
-             width>1440?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+             width>991?<UseAnimations animationKey="linkedin" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="linkedin" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
                
              <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
              {
-             width>1440?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
+             width>991?<UseAnimations animationKey="twitter" size={"5vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
              :<UseAnimations animationKey="twitter" size={"10vw"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
              }</a>
              </span>
