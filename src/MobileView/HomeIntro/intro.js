@@ -67,8 +67,6 @@ export default function Intro() {
 
       <div id="about" className="about_container_mobile" >
 
-      <div className="about_content">
-
         <div>
           <h3 className="about_heading_mobile">
             - ABOUT
@@ -133,8 +131,6 @@ export default function Intro() {
 
 
 <Footer/>
-
-      </div> 
 
       </div>
 

@@ -5,10 +5,8 @@ html, body{
   color:white;
   font-size:4px;
   scroll-behavior: smooth;
-  overflow:hidden;
   text-decoration: none !important;
-  touch-action: none;
-  -ms-touch-action: none;
+  overflow:hidden;
 }
 
 canvas{
@@ -21,3 +19,10 @@ canvas{
   display:none;
 }
 
+@media screen and (max-width: 991px){
+  html, body{
+    touch-action: none;
+    -ms-touch-action: none;
+    overflow-y: scroll;
+  }
+}

@@ -31,7 +31,7 @@ export default function Intro() {
 
   return (
     <div>
-      <div id="projects" className="main_projects_container" >
+      <div id="projects" className="main_projects_container" style={{maxHeight:"100vh"}}>
         <div className="buildingart_picture_mobile"></div>
 
         <div className="hey_text_div_mobile">

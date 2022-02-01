@@ -85,43 +85,75 @@ export default function Intro() {
             
             {/* THE ABOUT PAGE BELOW THE MAIN INTRO PAGE */}
 
-                <div id="about" className="about_container">
 
-                    {/* <div className="about_bg_image"></div> */}
+            <div id="about" className="about_container" >
 
-                    <div className="about_content">
-                      
-                        <h1 className="about_heading">
-                            Who Am I?
-                        </h1>
+<div className="about_all_content">
 
-                        <div className="about_text">
-                            <p className="about_para_white">
-                            I'm a person with multiple, ordinary interests and very little patience for most things, not much unlike every other GenZ kid out there. I like spending time scrolling through art and music pages and not once have I stopped wishing for a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization that having deep and wise thoughts all the time isn't going to get me anywhere, dawns on me.
-                            </p>
+  <div>
+    <h3 className="about_heading">
+      - ABOUT
+    </h3>
+    <h1 className="about_title1">
+     I'm an<br/>aspiring...
+    </h1> 
+    <h3 className="about_heading">
+      bit of pretty much everything.
+    </h3>
 
-                            <p className="about_para_white">
-                            Vague content aside, I'm a Sophomore Computer Science Engineering student, currently studying in MEC, Kochi. 
-                            At the moment, I'm juggling between things I like doing and since these things change rather often, I'd prefer you asked me in person if you wanted to know more, than me try to list them out here. So yeah, I'm just another person who wants to do it all. Inefficient and time consuming? Yes. But then again, I have time to kill. Or do I?
-                            </p>
+    <p className="about_content">
+    I've got multiple interests and (definitely practical) ambitions that I <br/>
+    shelter in my (arguably) well-organized mind. When I'm not doing<br/>
+    them or thinking of doing them, I spend my time scrolling through <br/>
+    art and music pages, burning through the movies and shows on my<br/>
+    infinitely long recommendation list, or making notes on random<br/>
+    things that I find interesting for no apparent reason, but let's not<br/>
+    talk about that.<br/><br/>
 
-                            <p className="about_para_white">
-                            Either way, you're free to reach out to me via any of my social media handles, though I do prefer traditional e-mails over them all. Until then, cheers!
-                            </p>
-                        </div>
+    Rational fiction, thought experiments, history and the morality of <br/>
+    politics are some of the things that interest me (as of right this <br/>
+    second) and I do not claim to be adept at any of them. I am however<br/>
+    good at a couple of things (including sarcasm, owing to which my <br/>
+    friends never think I'm being serious), and those things are or will<br/>
+    be listed on this website before the next olympic games.<br/>
+    </p>
 
-                    </div>
+    <h1 className="about_title2">
+    I try to do<br/>new things
+    </h1> 
+    <h3 className="about_heading">
+    ...every once in a while.
+    </h3>
 
-                    <div className="about_circle"></div>
-                    <div className="about_circle_text">about</div>
+    <p className="about_content">
+    Besides constantly wishing for a rather peaceful life of a Pokemon<br/>
+    trainer running from gym to gym with the sole purpose of collecting<br/>
+    badges, I'm also a full-time computer science engineering undergrad<br/>
+    who will (hopefully) graduate within the next two years (date of final<br/>
+    update, August 2021).<br/><br/>
+
+    Either way, you're more than welcome to reach out to me via any of my<br/>
+    handles listed on the site, though I do prefer less anxiety-causing<br/>
+    e-mails over them all. Until then, I fare thee well.<br/>
+    </p>
+
+</div>
+
+</div> 
+
+
+
+
+                    {/* <div className="about_circle"></div>
+                    <div className="about_circle_text">about</div> */}
                     <div className="about_circle2"></div>
-                    <a href="#home" className="scrollup_x">
-                        <UseAnimations animationKey="arrowUp" onClick={()=>{console.log("hi")}} size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "0vh" }}/>
+                    <a href="/" className="scrollup_x">
+                        <UseAnimations animationKey="arrowUp" onClick={()=>{console.log("hi")}} size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
                     </a>
 
                     <div className="about_contact_links">
                     <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
-                            <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "0vh" }}/>
+                            <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
                         </a>
                         <a href="https://instagram.com/nikxtaco">
                             <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
