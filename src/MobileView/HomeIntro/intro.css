@@ -48,9 +48,9 @@
         padding-top:12vh;
         padding-left:7vw;
         width:100vw;
-        height:auto;
+        height:100vh;
         z-index:20;
-        overflow: scroll;
+        overflow-y: scroll;
         touch-action: auto;
         -ms-touch-action: auto;
     }
