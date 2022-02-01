@@ -39,6 +39,7 @@
         text-align:center;
         border: 1px solid white;
         color:white;
+        z-index:100;
         text-decoration: none !important;
     }
 
@@ -48,7 +49,7 @@
         left:0vw;
         width:100vw;
         height:200vw;
-        z-index:0;
+        z-index:-1;
         background-image: url('../../img/song_circle.png');
         background-repeat: no-repeat;
         background-size:contain;

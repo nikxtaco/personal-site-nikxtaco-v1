@@ -71,7 +71,6 @@ export default function Navigation() {
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Music</a>
-             <HLink to="#about" style={customNavbarEach}>About</HLink>
                
              <span>
              <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">

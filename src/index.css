@@ -7,8 +7,8 @@ html, body{
   scroll-behavior: smooth;
   overflow:hidden;
   text-decoration: none !important;
-  touch-action: none !important;
-  -ms-touch-action: none !important;
+  touch-action: none;
+  -ms-touch-action: none;
 }
 
 canvas{

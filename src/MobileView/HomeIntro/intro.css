@@ -50,6 +50,7 @@
         width:100vw;
         height:auto;
         z-index:20;
+        overflow: scroll;
         touch-action: auto;
         -ms-touch-action: auto;
     }
