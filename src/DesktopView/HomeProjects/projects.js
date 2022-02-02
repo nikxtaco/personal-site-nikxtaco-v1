@@ -19,12 +19,12 @@ export default function Projects() {
     backgroundPosition: summaryColor? "left bottom" : "right bottom",
     }
 
-  useEffect(() => {
-    if(pageDown===true)
-    {
-        window.scrollBy({top:height,left:0})
-    }
-  }, [pageDown, height])
+  // useEffect(() => {
+  //   if(pageDown===true)
+  //   {
+  //       window.scrollBy({top:height,left:0})
+  //   }
+  // }, [pageDown, height])
   
   return (
     <div>
@@ -46,7 +46,7 @@ export default function Projects() {
 
         <div className="hey_text_div">
           <h1 className="hey_text">
-            Sometimes, <br/>I work.
+            Sometimes, <br/>I code.
           </h1>
         </div>
 

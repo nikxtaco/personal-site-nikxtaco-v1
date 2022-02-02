@@ -36,7 +36,7 @@ export default function Navigation() {
   }
 
   const customNavbarEach = {
-     padding: "8px 0 8px 0",
+     padding: "8px 0 15px 0",
      textDecoration: "none",
      color: "white",
      display: "block",

@@ -79,12 +79,12 @@ export default function Blog() {
         backgroundPosition: summaryColor2? "left bottom" : "right bottom",
         }
 
-    useEffect(() => {
-      if(pageDown===true)
-      {
-          window.scrollBy({top:height,left:0})
-      }
-    }, [pageDown, height])
+    // useEffect(() => {
+    //   if(pageDown===true)
+    //   {
+    //       window.scrollBy({top:height,left:0})
+    //   }
+    // }, [pageDown, height])
     
     return (
         <div>

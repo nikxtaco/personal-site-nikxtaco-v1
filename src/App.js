@@ -16,12 +16,12 @@ function initializeReactGA() {
 
 export default function App() {
 
-      const { width } = useWindowDimensions();
+      const { width, height } = useWindowDimensions();
 
     return (
       <div>
         {initializeReactGA()}
-        {width>991?
+        {width>height?
         <DesktopNavigation/>
         :<MobileNavigation/>}
       </div>          

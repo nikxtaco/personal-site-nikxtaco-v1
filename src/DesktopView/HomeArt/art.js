@@ -39,7 +39,7 @@ export default function Art() {
 
                     <div className="hey_text_div">
                         <h1 className="hey_text">
-                            Most often,<br/>I try to make art.
+                            And on occasion,<br/>I play the keyboard.
                         </h1>
                     </div>
 

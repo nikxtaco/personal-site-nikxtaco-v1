@@ -26,3 +26,9 @@ canvas{
     overflow-y: scroll;
   }
 }
+
+/* @media screen and (max-width: 991px) and (orientation: landscape){
+  html, body{
+    display:none;
+  }
+} */

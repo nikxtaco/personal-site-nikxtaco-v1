@@ -53,13 +53,13 @@
     .about_container_mobile{
         position:absolute;
         margin:0;
-        top:100vh;
+        top:90vh;
         padding-top:12vh;
         padding-left:7vw;
         width:100vw;
         height:100vh;
         z-index:20;
-        overflow-y: scroll;
+        /* overflow-y: scroll; */
         touch-action: auto;
         -ms-touch-action: auto;
     }
