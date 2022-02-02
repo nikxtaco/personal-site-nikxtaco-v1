@@ -34,7 +34,7 @@ export default function Intro() {
   }
 
   return (
-    <div>
+    <div style={{overflowY:"scroll"}}>
       <div id="home" className="main_home_container" >
         <div className="cygirl_picture_mobile"></div>
 
