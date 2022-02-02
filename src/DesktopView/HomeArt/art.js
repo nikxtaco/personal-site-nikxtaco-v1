@@ -38,7 +38,7 @@ export default function Art() {
                     </a>
 
                     <div className="hey_text_div">
-                        <h1 className="hey_text">
+                        <h1 className="hey_text_tad_smaller">
                             And on occasion,<br/>I play the keyboard.
                         </h1>
                     </div>
