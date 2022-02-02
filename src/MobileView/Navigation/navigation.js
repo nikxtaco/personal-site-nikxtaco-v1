@@ -22,7 +22,7 @@ export default function Navigation() {
 
   const customNavbar = {
      backgroundColor: "#000000f8",
-     fontFamily:"'Poppins',sans-serif",
+     fontFamily:"'Rozha One',sans-serif",
      height: "100%",
      position: "fixed",
      zIndex: 1,
