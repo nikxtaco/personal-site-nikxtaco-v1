@@ -13,6 +13,7 @@
     text-align: center;
     margin-left: -7vw;
     margin-top:30vmin;
+    padding-bottom:10vmin;
     position: absolute;
     width:100vw;
     font-family: "Playfair Display",sans-serif;
@@ -24,7 +25,6 @@
     margin-top:8vmin;
     margin-bottom: 5vmin;
     padding:0;
-    height:35vh;
 }
 
 span{

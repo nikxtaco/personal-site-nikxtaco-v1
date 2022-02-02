@@ -8,6 +8,7 @@ import HomeArt from "../HomeArt/art.js"
 import HomeBlog from "../HomeBlo/blog.js"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
+import smooth from "react-scroll/modules/mixins/smooth";
 
 
 export default function Navigation() {
@@ -20,7 +21,7 @@ export default function Navigation() {
   }
 
   const customNavbar = {
-     backgroundColor: "#000000cc",
+     backgroundColor: "#000000f8",
      fontFamily:"'Poppins',sans-serif",
      height: "100%",
      position: "fixed",
@@ -29,6 +30,8 @@ export default function Navigation() {
      left: 0,
      overflowX: "hidden",
      paddingTop:"25vh",
+     transition: "all 0.25s ease",
+     transitionDelay: navbarVisibility ? "0s" : "1s",
      width: navbarVisibility ? "100vw" : "0",
   }
 
@@ -67,7 +70,7 @@ export default function Navigation() {
          </div>
         }
          <div style={customNavbar}>
-             <a href="/" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
+             <a href="#home" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Music</a>

@@ -12,7 +12,7 @@
     }
 
     .hey_text_div_intro_mobile{
-        margin-top:20vh;
+        margin-top:23vh;
         width:100vw;
         height:33vh;
         position:sticky;
@@ -53,7 +53,7 @@
     .about_container_mobile{
         position:absolute;
         margin:0;
-        top:90vh;
+        top:100vh;
         padding-top:12vh;
         padding-left:7vw;
         width:100vw;
