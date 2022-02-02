@@ -102,19 +102,19 @@ export default function Intro() {
     </h3>
 
     <p className="about_content">
-    I've got multiple interests and (definitely practical) ambitions that I <br/>
-    shelter in my (arguably) well-organized mind. When I'm not doing<br/>
-    them or thinking of doing them, I spend my time scrolling through <br/>
-    art and music pages, burning through the movies and shows on my<br/>
-    infinitely long recommendation list, or making notes on random<br/>
-    things that I find interesting for no apparent reason, but let's not<br/>
+    I've got multiple interests and (definitely practical) ambitions that I
+    shelter in my (arguably) well-organized mind. When I'm not doing
+    them or thinking of doing them, I spend my time scrolling through 
+    art and music pages, burning through the movies and shows on my
+    infinitely long recommendation list, or making notes on random
+    things that I find interesting for no apparent reason, but let's not
     talk about that.<br/><br/>
 
-    Rational fiction, thought experiments, history and the morality of <br/>
-    politics are some of the things that interest me (as of right this <br/>
-    second) and I do not claim to be adept at any of them. I am however<br/>
-    good at a couple of things (including sarcasm, owing to which my <br/>
-    friends never think I'm being serious), and those things are or will<br/>
+    Rational fiction, thought experiments, history and the morality of 
+    politics are some of the things that interest me (as of right this 
+    second) and I do not claim to be adept at any of them. I am however
+    good at a couple of things (including sarcasm, owing to which my 
+    friends never think I'm being serious), and those things are or will
     be listed on this website before the next olympic games.<br/>
     </p>
 
@@ -126,17 +126,19 @@ export default function Intro() {
     </h3>
 
     <p className="about_content">
-    Besides constantly wishing for a rather peaceful life of a Pokemon<br/>
-    trainer running from gym to gym with the sole purpose of collecting<br/>
-    badges, I'm also a full-time computer science engineering undergrad<br/>
-    who will (hopefully) graduate within the next two years (date of final<br/>
+    Besides constantly wishing for a rather peaceful life of a Pokemon
+    trainer running from gym to gym with the sole purpose of collecting
+    badges, I'm also a full-time computer science engineering undergrad
+    who will (hopefully) graduate within the next two years (date of final
     update, August 2021).<br/><br/>
 
-    Either way, you're more than welcome to reach out to me via any of my<br/>
-    handles listed on the site, though I do prefer less anxiety-causing<br/>
-    e-mails over them all. Until then, I fare thee well.<br/>
+    Either way, you're more than welcome to reach out to me via any of my
+    handles listed on the site, though I do prefer less anxiety-causing
+    e-mails over them all. <br/><br/>
+    
+    Until then, I fare thee well.<br/>
     </p>
-
+    <br/><br/>
 </div>
 
 </div> 
@@ -146,9 +148,9 @@ export default function Intro() {
 
                     {/* <div className="about_circle"></div>
                     <div className="about_circle_text">about</div> */}
-                    <div className="about_circle2"></div>
+                    {/* <div className="about_circle2"></div> */}
                     <a href="/" className="scrollup_x">
-                        <UseAnimations animationKey="arrowUp" onClick={()=>{console.log("hi")}} size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
+                        <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
                     </a>
 
                     <div className="about_contact_links">

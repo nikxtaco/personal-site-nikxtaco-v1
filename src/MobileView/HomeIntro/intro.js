@@ -38,9 +38,9 @@ export default function Intro() {
       <div id="home" className="main_home_container" >
         <div className="cygirl_picture_mobile"></div>
 
-        <div className="hey_text_div_mobile">
+        <div className="hey_text_div_intro_mobile">
           <h1 className="hey_text_mobile">
-            I'm Nikita.
+            Hey there! <br/>I'm Nikita.
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
@@ -52,7 +52,7 @@ export default function Intro() {
         </div>
 
         <a href="#about">
-        <div className="about_button_mobile">
+        <div className="about_button_intro_mobile">
           ABOUT
         </div>
         </a>
@@ -79,28 +79,28 @@ export default function Intro() {
           </h3>
 
           <p className="about_content_mobile">
-          I've got multiple interests and (definitely <br/>
-          practical) ambitions that I shelter in my <br/>
-          (arguably) well-organized mind. When <br/>
-          I'm not doing them or thinking of doing <br/>
-          them, I spend my time scrolling through <br/>
-          art and music pages, burning through the <br/>
-          movies and shows on my infinitely long <br/>
-          recommendation list, or making notes on <br/>
-          random things that I find interesting for <br/>
-          no apparent reason, but let's not talk <br/>
+          I've got multiple interests and (definitely
+          practical) ambitions that I shelter in my
+          (arguably) well-organized mind. When
+          I'm not doing them or thinking of doing
+          them, I spend my time scrolling through 
+          art and music pages, burning through the 
+          movies and shows on my infinitely long
+          recommendation list, or making notes on
+          random things that I find interesting for 
+          no apparent reason, but let's not talk 
           about that.<br/><br/>
 
-          Rational fiction, thought experiments, <br/>
-          history and the morality of politics are <br/>
-          some of the things that interest me (as of <br/>
-          right this second) and I do not claim to be <br/>
-          adept at any of them. I am however good <br/>
-          at a couple of things (including sarcasm, <br/>
-          owing to which my friends never think <br/>
-          I'm being serious), and those things are <br/>
-          or will be listed on this website before <br/>
-          the next olympic games.<br/>
+          Rational fiction, thought experiments, 
+          history and the morality of politics are 
+          some of the things that interest me (as of 
+          right this second) and I do not claim to be 
+          adept at any of them. I am however good 
+          at a couple of things (including sarcasm,
+          owing to which my friends never think 
+          I'm being serious), and those things are 
+          or will be listed on this website before 
+          the next olympic games.
           </p>
 
           <h1 className="about_title2_mobile">
@@ -111,19 +111,19 @@ export default function Intro() {
           </h3>
 
           <p className="about_content_mobile">
-          Besides constantly wishing for a rather <br/>
-          peaceful life of a Pokemon trainer running <br/>
-          from gym to gym with the sole purpose of <br/>
-          collecting badges, I'm also a full-time <br/>
-          computer science engineering undergrad <br/>
-          who will (hopefully) graduate within the <br/>
-          next two years (date of final update, <br/>
+          Besides constantly wishing for a rather 
+          peaceful life of a Pokemon trainer running 
+          from gym to gym with the sole purpose of 
+          collecting badges, I'm also a full-time 
+          computer science engineering undergrad 
+          who will (hopefully) graduate within the 
+          next two years (date of final update, 
           August 2021).<br/><br/>
 
-          Either way, you're more than welcome <br/>
-          to reach out to me via any of my handles <br/>
-          listed on the site, though I do prefer less <br/>
-          anxiety-causing e-mails over them all. <br/> 
+          Either way, you're more than welcome 
+          to reach out to me via any of my handles 
+          listed on the site, though I do prefer less 
+          anxiety-causing e-mails over them all. 
           Until then, I fare thee well.<br/>
           </p>
 

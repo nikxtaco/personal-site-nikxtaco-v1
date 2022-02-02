@@ -11,6 +11,15 @@
         text-align: center;
     }
 
+    .hey_text_div_intro_mobile{
+        margin-top:20vh;
+        width:100vw;
+        height:33vh;
+        position:sticky;
+        z-index:30;
+        text-align: center;
+    }
+
     .hey_text_mobile{
         font-size: 10vmin;
         line-height:15vmin;
@@ -62,21 +71,22 @@
 
     .about_title1_mobile{
         font-family: 'Rozha One', serif;
-        font-size:11vw;
+        font-size:11vmin;
         margin:0;
     }
 
     .about_title2_mobile{
         font-family: 'Rozha One', serif;
-        font-size:11vw;
+        font-size:11vmin;
         margin:0;
         margin-top:8vh;
     }
 
     .about_content_mobile{
-        font-size: 3.8vw;
+        font-size: 3.8vmin;
         padding-left:10vw;
         margin-top:5vh;
+        width:75vw;
         border-left: 2px solid white;
     }
 
