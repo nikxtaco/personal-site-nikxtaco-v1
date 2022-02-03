@@ -154,7 +154,7 @@ export default function Intro() {
                     </a>
 
                     <div className="about_contact_links">
-                    <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
+                    <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
                             <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
                         </a>
                         <a href="https://instagram.com/nikxtaco">

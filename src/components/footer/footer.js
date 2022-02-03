@@ -16,10 +16,10 @@ const Navbar = () => {
         <hr className="footer_line"></hr>
 
          <div>
-        <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
+        <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
               {
-                width>991?<UseAnimations animationKey="github" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"17.5vw", paddingTop: "10vh" }}/>
-                :<UseAnimations animationKey="github" size={"10vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"8vw", paddingTop: "5vh", paddingBottom:"5vh" }}/>
+                width>991?<UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"17.5vw", paddingTop: "10vh" }}/>
+                :<UseAnimations animationKey="mail" size={"10vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"8vw", paddingTop: "5vh", paddingBottom:"5vh" }}/>
               }</a>
 
               <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">

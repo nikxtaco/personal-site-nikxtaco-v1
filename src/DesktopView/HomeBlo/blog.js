@@ -87,7 +87,7 @@ export default function Blog() {
     // }, [pageDown, height])
     
     return (
-        <div>
+        <div style={{overflow: "hidden"}}>
 
             {/* THE MAIN BLOG PAGE AND THE ID LINK TO THE BLOGLIST PAGE */}
 
@@ -124,7 +124,7 @@ export default function Blog() {
 
             {/* THE BLOGLIST PAGE BELOW THE MAIN INTRO PAGE */}
 
-                <div id="bloglist" className="bloglist_container">
+                {/* <div id="bloglist" className="bloglist_container">
 
                     <div className="about_bg_image"></div>
 
@@ -140,7 +140,6 @@ export default function Blog() {
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">External Links</h3>
                                 <h3 className="summary_description_white">In the unlikely event that you want to read everything I’ve ever written online and not just the select few, check out these links for 100+ of my pieces.</h3>
-                                {/* <h3 className="summary_description_white">02</h3> */}
                             </div>
                         </div>
                     </a>
@@ -162,7 +161,7 @@ export default function Blog() {
                             </div>
                         </div>
                     </a>
-                            {/* <p className="bloglist_para_white">
+                            <p className="bloglist_para_white">
                             I'm a person with multiple, ordinary interests and very little patience for most things, not much unlike every other GenZ kid out there. I like spending time scrolling through art and music pages and not once have I stopped wishing for a rather peaceful life of a Pokemon trainer. I try to learn new things every once in a while when the realization that having deep and wise thoughts all the time isn't going to get me anywhere, dawns on me.
                             </p>
 
@@ -173,13 +172,11 @@ export default function Blog() {
 
                             <p className="bloglist_para_white">
                             Either way, you're free to reach out to me via any of my social media handles, though I do prefer traditional e-mails over them all. Until then, cheers!
-                            </p> */}
+                            </p>
                         </div>
 
                     </div>
 
-                    {/* <div className="about_circle"></div>
-                    <div className="about_circle_text">about</div> */}
                     <div className="about_circle2"></div>
                     <a href="#blog" className="scrollup_x">
                         <UseAnimations animationKey="arrowUp" onClick={()=>{console.log("hi")}} size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "0vh" }}/>
@@ -200,7 +197,7 @@ export default function Blog() {
                         </a>
                     </div>
 
-                </div>
+                </div> */}
 
 
         </div>

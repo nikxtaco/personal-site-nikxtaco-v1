@@ -1,11 +1,7 @@
-    .main_container{
+    /* .main_container{
     padding-left:8vw;
     padding-right:8vw;
     margin-top:25vw;
-
-/* background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
-background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png"); */
-
 }
 
 .hi_text{
@@ -57,8 +53,8 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
 
 @media screen and (min-width: 1440px){
     .main_container{
-        padding-left:8vw; /**/
-        margin-right:8vw; /**/
+        padding-left:8vw; 
+        margin-right:8vw; 
         margin-top:10vw;
     }
     .hi_text{
@@ -127,4 +123,4 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     }
 }
 
-
+ */
