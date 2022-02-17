@@ -96,7 +96,7 @@ export default function Blog() {
                     <div className="page_number">02</div>
                     <div className="songcircle_picture"></div>
 
-                    <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
+                    <a href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                         <div className="summary_intro_box_white">
                             <h3 className="summary_heading_white_bottom">Instagram</h3>
                             {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}

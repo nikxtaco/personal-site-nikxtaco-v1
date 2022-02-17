@@ -157,13 +157,13 @@ export default function Intro() {
                     <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
                             <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
                         </a>
-                        <a href="https://instagram.com/nikxtaco">
+                        <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
                             <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
                         </a>
-                        <a href="https://www.linkedin.com/in/nikita-menon-b2248079">
+                        <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
                             <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
                         </a>
-                        <a href="https://twitter.com/nikxtaco">
+                        <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
                         <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
                         </a>
                     </div>
