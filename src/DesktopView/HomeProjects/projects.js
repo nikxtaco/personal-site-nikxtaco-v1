@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import "./projects.css"
-import useWindowDimensions from "../../helpers/WindowDimensions.js"
+// import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 export default function Projects() {
 
-  const { height } = useWindowDimensions();
+  // const { height } = useWindowDimensions();
 
   const [pageDown, setPageDown] = useState(false);
   const [summaryColor, setSummaryColor] = useState(0)

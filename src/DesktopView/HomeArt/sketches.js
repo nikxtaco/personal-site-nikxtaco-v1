@@ -1,9 +1,9 @@
 import React from 'react';
 import "./art.css"
 
-import HPOriginal from "../../img/sketches/HPOriginal.png";
+// import HPOriginal from "../../img/sketches/HPOriginal.png";
 import HPEdited from "../../img/sketches/HPEdited.png";
-import LDROriginal from "../../img/sketches/LDROriginal.jpeg";
+// import LDROriginal from "../../img/sketches/LDROriginal.jpeg";
 import LDREdited from "../../img/sketches/LDREdited.jpeg";
 import SherlockOriginal from "../../img/sketches/SherlockOriginal.jpeg";
 
@@ -18,6 +18,7 @@ const Sketches = () => {
           <img
             // src={require('../../img/sketches/cutie5.jpeg').default}
             src={path}
+            alt={title}
             className='iframe-sketches-item magnifying-image'
           />
         </div>

@@ -12,6 +12,7 @@ const KeyboardCovers = ({ videos }) => {
             scrolling="no"
             frameBorder="no"
             allow="autoplay"
+            title={title}
             src={url + "&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true"}
           ></iframe>
 

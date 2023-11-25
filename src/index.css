@@ -23,7 +23,7 @@ canvas{
   html, body{
     touch-action: none;
     -ms-touch-action: none;
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
 }
 

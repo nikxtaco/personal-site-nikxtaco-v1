@@ -59,7 +59,7 @@
         width:100vw;
         height:100vh;
         z-index:20;
-        /* overflow-y: scroll; */
+        overflow-y: scroll;
         touch-action: auto;
         -ms-touch-action: auto;
     }

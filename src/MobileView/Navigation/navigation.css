@@ -45,3 +45,13 @@ a{
     text-decoration: none !important;
     z-index:100;
 }
+
+
+
+
+
+
+.blog_container {
+    max-height: 100vh;
+    overflow-y: hidden;
+}

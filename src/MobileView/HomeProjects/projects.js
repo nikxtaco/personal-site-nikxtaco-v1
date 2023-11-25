@@ -10,7 +10,7 @@ export default function Intro() {
 
   const { height } = useWindowDimensions();
 
-  const [about, setAbout] = useState(false);
+  const [about] = useState(false);
 
   useEffect(() => {
     if(about===true)

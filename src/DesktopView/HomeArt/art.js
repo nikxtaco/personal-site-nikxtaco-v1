@@ -69,7 +69,7 @@ export default function Art() {
 
                         <KeyboardCovers videos={keyboardData} />
 
-                        <p className="art_content">
+                        <div className="art_content">
                         See more on Soundcloud... or scroll down!
                         <span>
                             <a href="#sketches">
@@ -79,7 +79,7 @@ export default function Art() {
                                 <UseAnimations animationKey="activity" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
                             </a>
                         </span>
-                        </p>
+                        </div>
 
                         <br/><br/>
 
@@ -112,20 +112,28 @@ export default function Art() {
 
                         <Sketches />
 
-                        <h3 className="about_heading">
-                        Listing just 3 because I hadn't previously bothered to maintain aspect ratio for my drawings.
+                        <div className="art_content">
+                        Three in the listing
                         <br/>
+                        are all, for I once ignored
+                        <br/>
+                        their sacred ratios.
+                        </div>
+                        
+                        <br/><br/>
+
+                        <h3 className="about_heading">
                         Thanks for sticking around to get here :)
                         </h3>
 
-                        <p className="art_content">
+                        <div className="art_content">
                         Go back
                         <span>
                             <a href="#art_stuff">
                                 <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
                             </a>
                         </span>
-                        </p>
+                        </div>
 
                         </div>
                     </div>

@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
 import "./blog.css"
 
-import UseAnimations from "react-useanimations";
+// import UseAnimations from "react-useanimations";
 
 // import Rellax from "rellax";
 
-import useWindowDimensions from "../../helpers/WindowDimensions.js"
+// import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 // import birds from "../../media/tree.png" //birds.png
 // import feathers from "../../img/feathers_blue.jpg"
@@ -53,9 +53,9 @@ export default function Blog() {
     //   }
     // });
 
-    const { height } = useWindowDimensions();
+    // const { height } = useWindowDimensions();
 
-    const [pageDown, setPageDown] = useState(false);
+    // const [pageDown, setPageDown] = useState(false);
     const [summaryColor1, setSummaryColor1] = useState(0);
     const [summaryColor2, setSummaryColor2] = useState(0);
 

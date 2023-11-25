@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import { HashLink as HLink } from 'react-router-hash-link';
+import React, {useState} from "react";
+// import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
 import './navigation.css';
 import HomeIntro from "../HomeIntro/intro.js"
@@ -8,7 +8,7 @@ import HomeArt from "../HomeArt/art.js"
 import HomeBlog from "../HomeBlo/blog.js"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
-import smooth from "react-scroll/modules/mixins/smooth";
+// import smooth from "react-scroll/modules/mixins/smooth";
 
 
 export default function Navigation() {

@@ -6,15 +6,15 @@ import "./intro.css"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import UseAnimations from "react-useanimations";
+// import UseAnimations from "react-useanimations";
 import Footer from "../../components/footer/footer.js"
 
 
 export default function Intro() {
 
-  const { width, height } = useWindowDimensions();
+  const { height } = useWindowDimensions();
 
-  const [about, setAbout] = useState(false);
+  const [about] = useState(false);
 
   useEffect(() => {
     if(about===true)

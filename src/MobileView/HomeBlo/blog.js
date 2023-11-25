@@ -10,14 +10,14 @@ import "./blog.css"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-import birds from "../../media/tree.png" //birds.png
+// import birds from "../../media/tree.png" //birds.png
 // import feathers from "../../img/feathers_blue.jpg"
 
 export default function Blog() {
 
   const { height } = useWindowDimensions();
 
-  const [about, setAbout] = useState(false);
+  const [about] = useState(false);
 
   useEffect(() => {
     if(about===true)
