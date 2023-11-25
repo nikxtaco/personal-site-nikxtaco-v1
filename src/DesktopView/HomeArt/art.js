@@ -49,7 +49,7 @@ export default function Art() {
                                 <div style={customSummary}></div>
                             </div>
                         </a> */}
-                        <a href="#music" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
+                        <a href="#art_stuff" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                             <div className="summary_intro_box_white">
                                 <h3 className="summary_heading_white_bottom">Music</h3>
                                 <h3 className="summary_description_white_bottom">04A</h3>
@@ -111,12 +111,12 @@ export default function Art() {
                         <br/><br/>
 
                         <a href="#art" className="scrollup_art">
-                            <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", marginTop: "100vh" }}/>
+                            <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", marginTop: "108vh" }}/>
                         </a>
 
                         <div className="art_contact_links">
                         <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
-                                <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
+                                <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "108vh" }}/>
                             </a>
                             <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
                                 <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>

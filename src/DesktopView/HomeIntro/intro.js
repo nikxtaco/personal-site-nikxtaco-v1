@@ -132,6 +132,8 @@ export default function Intro() {
                         who will (hopefully) graduate within the next two years (date of final
                         update, August 2021).<br/><br/>
 
+                        edit: it is now 2023 and i have graduated! <br/><br/>
+
                         Either way, you're more than welcome to reach out to me via any of my
                         handles listed on the site, though I do prefer less anxiety-causing
                         e-mails over them all. <br/><br/>
