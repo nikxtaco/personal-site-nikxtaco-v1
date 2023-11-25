@@ -30,13 +30,6 @@
     background-image: url('../../media/materialtexture1.jpg');
 }
 
-.scrollup_x{
-    position:absolute;
-    left:95vw;
-    top:8vh;
-    z-index:90;
-}
-
 .bloglist_container .bloglist_content{
     width:100vw;
     height:73vh;

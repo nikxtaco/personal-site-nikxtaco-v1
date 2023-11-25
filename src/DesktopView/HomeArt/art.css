@@ -1,0 +1,127 @@
+.art_container{
+    margin-top:-100vh;
+    margin-left:300vw;
+    width:100vw;
+    overflow-y:scroll;
+}
+
+.art_container .art_all_content{
+    width:75vw;
+    margin:0;
+    margin-top:10vh;
+    margin-left:22vw;
+    font-family: "Playfair Display",serif;
+}
+
+.art_heading{
+    font-family: "Playfair Display",serif;
+    font-size: 3vmin;
+}
+
+.art_title1{
+    font-family: 'Rozha One', serif;
+    font-size:12vmin;
+    margin:0;
+}
+
+.art_title2{
+    font-family: 'Rozha One', serif;
+    font-size:12vmin;
+    margin:0;
+    margin-top:8vh;
+}
+
+.art_content{
+    width:50vw;
+    font-size: 3.3vmin;
+    padding-left:6vw;
+    margin-top:5vh;
+    border-left: 2px solid white;
+}
+
+/* THE CONTACT LINKS AND NAVIGATION TO GO BACK UP */
+
+.art_contact_links{
+    position:absolute;
+    left:395vw;
+    top:8vh;
+    margin-top:10vh;
+}
+
+.scrollup_art{
+    position:absolute;
+    left:395vw;
+    top:8vh;
+    z-index:90;
+}
+
+
+
+
+iframe {
+	aspect-ratio: 16 / 9;
+	height: 100%;
+	width: 100%;
+}
+
+.iframe-container {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .iframe-item {
+    width: 19%;
+    float: left;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-bottom: 20px; 
+  }
+
+  .iframe-sketches-item {
+    aspect-ratio: 7/5;
+    width: 24%;
+    float: left;
+    box-sizing: border-box;
+    margin-right: 20px;
+    margin-bottom: 20px; 
+  }
+/* 
+  .magnifying-image-container {
+    overflow: visible;
+    position: relative;
+  }
+
+  .magnifying-image-container .magnifying-image {
+    transition: transform 0.3s ease-out;
+  }  
+
+  .magnifying-image-container:hover .magnifying-image {
+    cursor: zoom-in;
+    transform: scale(5);
+  } */
+
+  .iframe-item:nth-child(4n) {
+    margin-right: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .iframe-item {
+      width: 50%;
+      margin-right: 0;
+    }
+  }
+  
+
+
+
+  /* .music_container {
+    height: 100vh;
+    margin-top: 8vh;
+    overflow-y: scroll;
+  } */
+  
+  .sketches_container {
+    height: 100vh;
+    padding-top: 8vh;
+  }
