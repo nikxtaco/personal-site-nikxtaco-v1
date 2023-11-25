@@ -39,7 +39,7 @@
     left:0;
     width:100vw;
     height:100vh;
-    overflow-y:scroll;
+    overflow-y:scroll !important;
 }
 
 /* THE ABOUT CIRCLE DESIGN */

@@ -9,17 +9,28 @@ import Sketches from './sketches';
 
 export default function Art() {
 
-    const [summaryColor, setSummaryColor] = useState(0)
+    const [summaryColor1, setSummaryColor1] = useState(0);
+    const [summaryColor2, setSummaryColor2] = useState(0);
 
-    const customSummary = {
+    const customSummary1 = {
       width:"16vw",
       height:"2px",
       float:"left",
       background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
       backgroundSize: "200% 100%",
       transition: "all 1s ease",
-      backgroundPosition: summaryColor? "left bottom" : "right bottom",
-    }
+      backgroundPosition: summaryColor1? "left bottom" : "right bottom",
+      }
+
+      const customSummary2 = {
+        width:"16vw",
+        height:"2px",
+        float:"left",
+        background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
+        backgroundSize: "200% 100%",
+        transition: "all 1s ease",
+        backgroundPosition: summaryColor2? "left bottom" : "right bottom",
+        }
     
     return (
         <div>
@@ -31,13 +42,26 @@ export default function Art() {
                     <div className="page_number">04</div>
                         <div className="dancergirl_picture"></div>
 
-                        {/* <a href="https://soundcloud.app.goo.gl/ERQcF" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box"> */}
-                        <a href="#art_stuff" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
+                        {/* <a href="#art_stuff" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
                             <div className="summary_intro_box_white">
                                 <h3 className="summary_heading_white_bottom">Soundcloud</h3>
-                                {/* <h3 className="summary_description_white">I sometimes make keyboard covers and post them here.</h3> */}
                                 <h3 className="summary_description_white_bottom">04A</h3>
                                 <div style={customSummary}></div>
+                            </div>
+                        </a> */}
+                        <a href="#music" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
+                            <div className="summary_intro_box_white">
+                                <h3 className="summary_heading_white_bottom">Music</h3>
+                                <h3 className="summary_description_white_bottom">04A</h3>
+                                <div style={customSummary1}></div>
+                            </div>
+                        </a>
+
+                        <a href="#sketches" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
+                            <div className="summary_intro_box_white">
+                                <h3 className="summary_heading_white_bottom">Sketches</h3>
+                                <h3 className="summary_description_white_bottom">04B</h3>
+                                <div style={customSummary2}></div>
                             </div>
                         </a>
 
@@ -58,9 +82,12 @@ export default function Art() {
                     <div className="art_all_content">
 
                     <div>
+                    <div id="music" className="music_container">
+
                         <h3 className="art_heading">
                         - Art & Music
                         </h3>
+
                         <h1 className="art_title1">
                         Keyboard Covers
                         </h1> 
@@ -101,11 +128,18 @@ export default function Art() {
                             <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
                             </a>
                         </div>
+
+                        </div>
     
                         <div id="sketches" className="sketches_container">
 
                         <h1 className="art_title1">
                         Sketches
+                        <span>
+                            <a href="#art_stuff">
+                                <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"18vw" }}/>
+                            </a>
+                        </span>
                         </h1> 
                         
                         <br/><br/><br/>
@@ -117,23 +151,14 @@ export default function Art() {
                         <br/>
                         are all, for I once ignored
                         <br/>
-                        their sacred ratios.
+                        their aspect ratios.
                         </div>
-                        
+
                         <br/><br/>
 
                         <h3 className="about_heading">
                         Thanks for sticking around to get here :)
                         </h3>
-
-                        <div className="art_content">
-                        Go back
-                        <span>
-                            <a href="#art_stuff">
-                                <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
-                            </a>
-                        </span>
-                        </div>
 
                         </div>
                     </div>

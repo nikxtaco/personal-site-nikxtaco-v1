@@ -115,11 +115,10 @@ iframe {
 
 
 
-  /* .music_container {
+  .music_container {
     height: 100vh;
-    margin-top: 8vh;
-    overflow-y: scroll;
-  } */
+    /* overflow-y: scroll; */
+  }
   
   .sketches_container {
     height: 100vh;
