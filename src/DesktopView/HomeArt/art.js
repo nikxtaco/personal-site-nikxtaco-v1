@@ -58,7 +58,7 @@ export default function Art() {
 
                         <div className="hey_text_div">
                             <h1 className="hey_text_tad_smaller">
-                                On occasion, I make<br/>covers or sketch.
+                                And on occasion, <br/>I do artsy stuff.
                             </h1>
                         </div>
 
