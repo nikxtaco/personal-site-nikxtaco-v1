@@ -1,5 +1,5 @@
 .art_container{
-    margin-top:-100vh;
+    margin-top:-92vh;
     margin-left:300vw;
     width:100vw;
     overflow-y:scroll;
@@ -55,9 +55,6 @@
     z-index:90;
 }
 
-
-
-
 iframe {
 	aspect-ratio: 16 / 9;
 	height: 100%;
@@ -86,20 +83,6 @@ iframe {
     margin-right: 20px;
     margin-bottom: 20px; 
   }
-/* 
-  .magnifying-image-container {
-    overflow: visible;
-    position: relative;
-  }
-
-  .magnifying-image-container .magnifying-image {
-    transition: transform 0.3s ease-out;
-  }  
-
-  .magnifying-image-container:hover .magnifying-image {
-    cursor: zoom-in;
-    transform: scale(5);
-  } */
 
   .iframe-item:nth-child(4n) {
     margin-right: 0;
@@ -112,13 +95,9 @@ iframe {
     }
   }
   
-
-
-
   .music_container {
     height: 100vh;
-    /* padding-top: 8vh; */
-    /* overflow-y: scroll; */
+    padding-top: 8vh;
   }
   
   .sketches_container {

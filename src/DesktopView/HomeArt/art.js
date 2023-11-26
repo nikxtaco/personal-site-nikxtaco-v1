@@ -1,8 +1,6 @@
 import React, {useState} from "react";
 import "./art.css"
 import UseAnimations from "react-useanimations";
-// import Rellax from "rellax";
-// import useWindowDimensions from "../../helpers/WindowDimensions.js"
 import KeyboardCovers from './keyboardCovers';
 import keyboardData from './keyboardData.json';
 import Sketches from './sketches';
@@ -42,14 +40,7 @@ export default function Art() {
                     <div className="page_number">04</div>
                         <div className="dancergirl_picture"></div>
 
-                        {/* <a href="#art_stuff" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
-                            <div className="summary_intro_box_white">
-                                <h3 className="summary_heading_white_bottom">Soundcloud</h3>
-                                <h3 className="summary_description_white_bottom">04A</h3>
-                                <div style={customSummary}></div>
-                            </div>
-                        </a> */}
-                        <a href="#art_stuff" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
+                        <a href="#music" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                             <div className="summary_intro_box_white">
                                 <h3 className="summary_heading_white_bottom">Music</h3>
                                 <h3 className="summary_description_white_bottom">04A</h3>
@@ -67,21 +58,18 @@ export default function Art() {
 
                         <div className="hey_text_div">
                             <h1 className="hey_text_tad_smaller">
-                                And on occasion,<br/>I play the keyboard.
+                                On occasion, I make<br/>covers or sketch.
                             </h1>
                         </div>
 
                     </div>
 
-
-                {/* THE ABOUT PAGE BELOW THE MAIN INTRO PAGE */}
-
+                {/* THE ART STUFF BELOW THE MAIN ART INTRO PAGE */}
 
                 <div id="art_stuff" className="art_container" >
 
                     <div className="art_all_content">
 
-                    <div>
                     <div id="music" className="music_container">
 
                         <h3 className="art_heading">
@@ -136,7 +124,7 @@ export default function Art() {
                         <h1 className="art_title1">
                         Sketches
                         <span>
-                            <a href="#art_stuff">
+                            <a href="#music">
                                 <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"18vw" }}/>
                             </a>
                         </span>
@@ -179,8 +167,6 @@ export default function Art() {
                     <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
                     </a>
                 </div>
-
-            </div>
 
         </div>
     )

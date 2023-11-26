@@ -155,7 +155,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Art & Music</h3>
-                                <h3 className="summary_description_white">I hardly have any sense of tempo but well, I try.
+                                <h3 className="summary_description_white">I hardly have any sense of tempo or actual theory but well, I try.
                                     {/* I hardly have any color sense so I make do in monochrome. */}
                                     </h3>
                                 <h3 className="summary_description_white">04</h3>
@@ -194,7 +194,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Art & Music</h3>
-                                <h3 className="summary_description_white">I hardly have any sense of tempo but well, I try.
+                                <h3 className="summary_description_white">I hardly have any sense of tempo or actual theory but well, I try.
                                     {/* I hardly have any color sense so I make do in monochrome. */}
                                     </h3>
                                 <h3 className="summary_description_white">04</h3>
@@ -233,7 +233,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Art & Music</h3>
-                                <h3 className="summary_description_white">I hardly have any sense of tempo but well, I try.
+                                <h3 className="summary_description_white">I hardly have any sense of tempo or actual theory but well, I try.
                                     {/* I hardly have any color sense so I make do in monochrome. */}
                                     </h3>
                                 <h3 className="summary_description_white">04</h3>
@@ -272,7 +272,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
                             <div className="line_draw">
                             <h3 className="summary_heading_white">Art & Music</h3>
-                            <h3 className="summary_description_white">I hardly have any sense of tempo but well, I try.
+                            <h3 className="summary_description_white">I hardly have any sense of tempo or actual theory but well, I try.
                                     {/* I hardly have any color sense so I make do in monochrome. */}
                                     </h3>
                             <h3 className="summary_description_white">04</h3>
