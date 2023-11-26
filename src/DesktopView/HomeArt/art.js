@@ -153,7 +153,7 @@ export default function Art() {
 
                 <div className="art_contact_links">
                 <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
-                        <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "200vh" }}/>
+                        <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "208vh" }}/>
                     </a>
                     <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
                         <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
