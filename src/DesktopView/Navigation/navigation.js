@@ -154,7 +154,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn cool stuff.</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn cool stuff.</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
@@ -232,7 +232,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn cool stuff.</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
@@ -271,7 +271,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
                                 <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn cool stuff.</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
