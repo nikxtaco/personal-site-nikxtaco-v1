@@ -69,11 +69,11 @@ iframe {
   }
   
   .iframe-item {
-    width: 19%;
+    width: 13vw;
     float: left;
     box-sizing: border-box;
-    margin-right: 20px;
-    margin-bottom: 20px; 
+    margin-right: 1vw;
+    margin-bottom: 1vw; 
   }
 
   .iframe-sketches-item-set1 {

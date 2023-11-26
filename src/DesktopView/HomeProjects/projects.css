@@ -65,23 +65,16 @@ iframe {
     content: "";
     display: table;
     clear: both;
-  }
-  
-  .iframe-item {
-    width: 19%;
-    float: left;
-    box-sizing: border-box;
-    margin-right: 20px;
-    margin-bottom: 20px; 
+    width: 56vw;
   }
 
   .iframe-projects-item {
     aspect-ratio: 16/10;
-    width: 38%;
+    width: 26vw;
     float: left;
     box-sizing: border-box;
-    margin-right: 20px;
-    margin-bottom: 20px; 
+    margin-right: 1vw;
+    margin-bottom: 1vw; 
   }
 
   .iframe-item:nth-child(4n) {
