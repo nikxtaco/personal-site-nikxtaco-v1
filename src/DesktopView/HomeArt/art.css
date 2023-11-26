@@ -1,5 +1,5 @@
 .art_container{
-    margin-top:-92vh;
+    margin-top:-68vh;
     margin-left:300vw;
     width:100vw;
     overflow-y:scroll;
@@ -65,6 +65,7 @@ iframe {
     content: "";
     display: table;
     clear: both;
+    width: 56vw;
   }
   
   .iframe-item {
@@ -75,13 +76,34 @@ iframe {
     margin-bottom: 20px; 
   }
 
-  .iframe-sketches-item {
+  .iframe-sketches-item-set1 {
     aspect-ratio: 7/5;
-    width: 24%;
+    /* width: 38%; */
+    width: 27vw;
     float: left;
     box-sizing: border-box;
-    margin-right: 20px;
-    margin-bottom: 20px; 
+    margin-right: 1vw;
+    margin-bottom: 1vw; 
+  }
+
+  .iframe-sketches-item-set2 {
+    aspect-ratio: 7/5;
+    /* width: 35.6%; */
+    width: 25.6vw;
+    float: left;
+    box-sizing: border-box;
+    margin-right: 1vw;
+    margin-bottom: 1vw; 
+  }
+
+  .iframe-sketches-item-set3 {
+    aspect-ratio: 3/4;
+    /* width: 19.1%; */
+    width: 13.7vw;
+    float: left;
+    box-sizing: border-box;
+    margin-right: 1vw;
+    margin-bottom: 1vw; 
   }
 
   .iframe-item:nth-child(4n) {
@@ -97,10 +119,10 @@ iframe {
   
   .music_container {
     height: 100vh;
-    padding-top: 8vh;
   }
   
   .sketches_container {
     height: 100vh;
     padding-top: 8vh;
+    overflow-y: scroll;
   }

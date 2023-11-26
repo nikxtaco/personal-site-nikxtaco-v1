@@ -40,7 +40,7 @@ export default function Art() {
                     <div className="page_number">04</div>
                         <div className="dancergirl_picture"></div>
 
-                        <a href="#music" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
+                        <a href="#art_stuff" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                             <div className="summary_intro_box_white">
                                 <h3 className="summary_heading_white_bottom">Music</h3>
                                 <h3 className="summary_description_white_bottom">04A</h3>
@@ -118,13 +118,15 @@ export default function Art() {
                         </div>
 
                         </div>
+
+                        
     
                         <div id="sketches" className="sketches_container">
 
                         <h1 className="art_title1">
                         Sketches
                         <span>
-                            <a href="#music">
+                            <a href="#art_stuff">
                                 <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"18vw" }}/>
                             </a>
                         </span>
@@ -134,19 +136,15 @@ export default function Art() {
 
                         <Sketches />
 
-                        <div className="art_content">
-                        Three in the listing
-                        <br/>
-                        are all, for I once ignored
-                        <br/>
-                        their aspect ratios (._.)
-                        </div>
-
                         <br/><br/>
 
-                        <h3 className="about_heading">
+                        <div className="art_heading">
                         Thanks for sticking around to get here!
-                        </h3>
+                        </div>
+
+                        <br/><br/><br/><br/><br/><br/>
+                        <br/><br/><br/><br/><br/><br/>
+                        <br/><br/>
 
                         </div>
                     </div>
@@ -167,7 +165,6 @@ export default function Art() {
                     <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
                     </a>
                 </div>
-
         </div>
     )
 }

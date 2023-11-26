@@ -130,6 +130,14 @@ export default function Navigation() {
                     <div className="stripes_box2"></div>
                 </div>
 
+                <div className="stripe_design stripes_slide_04a">
+                    <div className="border_only_box1"></div>
+                    <div className="stripes_box1"></div>
+                    <a href="#projects"><div onClick={()=>setIndex(4)} className="back_to_home">Back To Art</div></a>
+                    <div className="border_only_box2"></div>
+                    <div className="stripes_box2"></div>
+                </div>
+
             {/* TOP NAVBAR FOR ALL MAIN PAGES (HOME, BLOG, PROJECTS, ART) */}
 
                 <div className="summary_box">
