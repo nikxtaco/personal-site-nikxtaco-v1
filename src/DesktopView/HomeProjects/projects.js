@@ -46,7 +46,7 @@ export default function Projects() {
             </div>
         </a>
 
-        <a href="https://www.github.com/nikxtaco" target="_blank" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
+        <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
             <div className="summary_intro_box_white">
               <h3 className="summary_heading_white_bottom">Github</h3>
               <h3 className="summary_description_white_bottom">03B</h3>
