@@ -139,13 +139,13 @@ export default function Art() {
                         <br/>
                         are all, for I once ignored
                         <br/>
-                        their aspect ratios.
+                        their aspect ratios (._.)
                         </div>
 
                         <br/><br/>
 
                         <h3 className="about_heading">
-                        Thanks for sticking around to get here :)
+                        Thanks for sticking around to get here!
                         </h3>
 
                         </div>

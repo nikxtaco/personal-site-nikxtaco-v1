@@ -83,7 +83,7 @@ export default function Projects() {
         <br/><br/><br/>
 
         <div className="about_heading">
-          This is all for now. Others on github will be added here soon!
+          This is all for now! Others on github will be added here soon.
         </div>
 
         <a href="#projects" className="scrollup_projects">
