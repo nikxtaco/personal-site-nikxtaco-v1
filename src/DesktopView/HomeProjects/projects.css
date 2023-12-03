@@ -5,6 +5,7 @@
     height:100vh;
     overflow-y:scroll !important;
     position: absolute;
+    overflow-x: hidden;
 }
 
 .projects_container .projects_all_content{

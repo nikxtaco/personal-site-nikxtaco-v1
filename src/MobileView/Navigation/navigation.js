@@ -70,7 +70,7 @@ export default function Navigation() {
          </div>
         }
          <div style={customNavbar}>
-             <a href="#home" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
+             <a href="/" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Art & Music</a>
