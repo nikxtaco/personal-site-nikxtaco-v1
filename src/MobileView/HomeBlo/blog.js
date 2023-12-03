@@ -56,10 +56,10 @@ export default function Blog() {
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
-            Poetry & Prose
+            I write,
           </h2>
           <h2 className="hey_desc_mobile">
-            but mostly poetry
+            sometimes
           </h2>
         </div>
 

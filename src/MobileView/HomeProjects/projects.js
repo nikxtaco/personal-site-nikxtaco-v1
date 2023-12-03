@@ -44,10 +44,10 @@ export default function Intro() {
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
-            will be listed here someday
+            Sometimes,
           </h2>
           <h2 className="hey_desc_mobile">
-            until then, settle for
+            I code.
           </h2>
         </div>
 

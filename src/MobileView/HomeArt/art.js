@@ -43,10 +43,10 @@ export default function Intro() {
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
-            i sometimes make covers
+            And on occasion,
           </h2>
           <h2 className="hey_desc_mobile">
-            on the keyboard
+            I do artsy stuff.
           </h2>
         </div>
 
