@@ -39,7 +39,7 @@ export default function Intro() {
 
         <div className="hey_text_div_mobile">
           <h1 className="hey_text_mobile">
-            Art
+            Art & Music
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
