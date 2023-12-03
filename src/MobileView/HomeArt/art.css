@@ -72,6 +72,7 @@
         margin-left:7vw;
         padding-top:12vh;
         overflow-y: scroll !important;
+        overflow-x: hidden;
       }
       
       .sketches_container_mobile {
