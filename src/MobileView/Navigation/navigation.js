@@ -47,7 +47,7 @@ export default function Navigation() {
 
   return ( 
     <div>
-     <div className="mobile_navbar">
+     <div className="mobile_navbar" style={{backgroundColor: 'black'}}>
          <a href="/">
          {
            <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "1z" }}/>
@@ -73,7 +73,7 @@ export default function Navigation() {
              <a href="#home" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
              <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
-             <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Music</a>
+             <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Art & Music</a>
                
              <span>
              <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
@@ -105,10 +105,10 @@ export default function Navigation() {
          </div>
          
          <div className="home_slides">
-            <div className="intro_container"><HomeIntro/></div>
-            <div className="blog_container"><HomeBlog/></div>
-            <div className="art_container"><HomeArt/></div>
-            <div className="projects_container"><HomeProjects/></div>
+            <div><HomeIntro/></div>
+            <div><HomeBlog/></div>
+            <div><HomeProjects/></div>
+            <div><HomeArt/></div>
         </div>
          
      </div>  

@@ -41,7 +41,7 @@ const Navbar = () => {
               }</a>
          </div>
 
-        <h2 className="footer_link">Copyright © Made by Nikita</h2>
+        {/* <h2 className="footer_link">Copyright © Made by Nikita</h2> */}
 
       </div>
    )

@@ -1,48 +1,8 @@
 import React, {useState} from "react";
 import "./intro.css"
 import UseAnimations from "react-useanimations";
-// import Rellax from "rellax";
-// import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 export default function Intro() {
-
-    // useEffect(() => {
-    //   if(width>1440)
-    //   {
-    //     new Rellax(".hi_animate", { // <---- Via class name
-    //     speed: -3, 
-    //     center: false,
-    //     wrapper: null,
-    //     round: true,
-    //     vertical: true,
-    //     horizontal: false
-    //   })
-    //   new Rellax(".random_animate", { // <---- Via class name
-    //     speed: 0, 
-    //     center: false,
-    //     wrapper: null,
-    //     round: true,
-    //     vertical: true,
-    //     horizontal: false
-    //   })
-    //   new Rellax(".hey_animate", { // <---- Via class name
-    //     speed: -1, 
-    //     center: false,
-    //     wrapper: null,
-    //     round: true,
-    //     vertical: true,
-    //     horizontal: false
-    //   })
-    //   new Rellax(".creative_animate", { // <---- Via class name
-    //     speed: 1, 
-    //     center: false,
-    //     wrapper: null,
-    //     round: true,
-    //     vertical: true,
-    //     horizontal: false
-    //   })
-    //   }
-    // });
 
     const [summaryColor, setSummaryColor] = useState(0)
 
@@ -146,13 +106,12 @@ export default function Intro() {
 
                 </div> 
 
-                <a href="#home" className="scrollup_home">
-                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", marginTop: "100vh" }}/>
-                </a>
-
                 <div className="about_contact_links">
-                <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
-                        <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "100vh" }}/>
+                    <a href="#home">
+                        <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0"}}/>
+                    </a>
+                    <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
+                        <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
                     </a>
                     <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
                         <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>

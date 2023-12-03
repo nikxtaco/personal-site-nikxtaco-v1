@@ -71,4 +71,66 @@
         z-index:0;
     }
 
+
+
+
+    .projects_container{
+        margin-top:100vh;
+        left:200vw;
+        width:100vw;
+        height:100vh;
+        position: absolute;
+    }
+    
+    .projects_container .projects_all_content{
+        width:100vw;
+        margin-top:12vh;
+        margin-left:7vw;
+        font-family: "Playfair Display",serif;
+    }
+    
+    .projects_heading{
+        font-family: "Playfair Display",serif;
+        font-size: 3vmin;
+    }
+    
+    .projects_title1{
+        font-family: 'Rozha One', serif;
+        font-size:12vmin;
+        margin:0;
+    }
+    
+    .projects_title2{
+        font-family: 'Rozha One', serif;
+        font-size:12vmin;
+        margin:0;
+        /* margin-top:8vh; */
+    }
+
+    iframe {
+        aspect-ratio: 16 / 9;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .iframe-container {
+        content: "";
+        display: table;
+        clear: both;
+        width: 86vw;
+      }
+    
+      .iframe-projects-item {
+        aspect-ratio: 16/10;
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        /* margin-right: 5%; */
+        margin-top: 2vh; 
+      }
+    
+      .iframe-item:nth-child(4n) {
+        margin-right: 0;
+      }
+
 }

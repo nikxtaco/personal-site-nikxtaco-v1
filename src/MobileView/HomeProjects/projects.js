@@ -2,9 +2,12 @@ import React, {useState, useEffect} from "react";
 
 import "./projects.css"
 
-// import UseAnimations from "react-useanimations";
-
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
+import ProjectStuff from './projectStuff';
+import UseAnimations from "react-useanimations";
+
+import Footer from "../../components/footer/footer.js"
+
 
 export default function Intro() {
 
@@ -31,7 +34,8 @@ export default function Intro() {
 
   return (
     <div>
-      <div id="projects" className="main_projects_container" style={{maxHeight:"100vh"}}>
+      <div id="projects" className="main_projects_container">
+
         <div className="buildingart_picture_mobile"></div>
 
         <div className="hey_text_div_mobile">
@@ -47,14 +51,48 @@ export default function Intro() {
           </h2>
         </div>
 
+        <a href="#projects_stuff">
+        <div className="about_button_mobile2">
+          BROWSE
+        </div>
+        </a>
+
         <a href="https://www.github.com/nikxtaco" target="_blank" rel="noreferrer">
-        <div className="about_button_mobile">
+        <div className="about_button_mobile2">
           GITHUB
         </div>
         </a>
 
       </div>
 
+      {/* THE PROJECTS STUFF BELOW THE MAIN PROJECTS INTRO PAGE */}
+
+      <div id="projects_stuff" className="projects_container" >
+
+        <div className="projects_all_content">
+
+            <h3 className="projects_heading">
+            - PROJECTS
+            </h3>
+
+            <h1 className="projects_title1">
+            Mockups
+            <span>
+                <a href="#projects">
+                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"0vw" }}/>
+                </a>
+            </span>
+            </h1> 
+
+            <br/><br/><br/>
+
+            <ProjectStuff />
+
+            {/* <Footer/> */}
+
+        </div>
+
+      </div>
 
     </div>
   );

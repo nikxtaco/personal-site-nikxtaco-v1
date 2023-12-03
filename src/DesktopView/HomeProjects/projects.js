@@ -60,52 +60,51 @@ export default function Projects() {
           </h1>
         </div>
 
-    </div>
+      </div>
 
       {/* THE PROJECTS STUFF BELOW THE MAIN PROJECTS INTRO PAGE */}
 
       <div id="projects_stuff" className="projects_container" >
 
-    <div className="projects_all_content">
+        <div className="projects_all_content">
 
-        <h3 className="projects_heading">
-        - Projects
-        </h3>
+            <h3 className="projects_heading">
+            - Projects
+            </h3>
 
-        <h1 className="projects_title1">
-        Mockups
-        </h1> 
+            <h1 className="projects_title1">
+            Mockups
+            </h1> 
 
-        <br/><br/><br/>
+            <br/><br/><br/>
 
-        <ProjectStuff />
+            <ProjectStuff />
 
-        <br/><br/><br/>
+            <br/><br/><br/>
 
-        <div className="about_heading">
-          This is all for now! Others on github will be added here soon.
+            <div className="about_heading">
+              This is all for now! Others on github will be added here soon.
+            </div>
+
+            <div className="about_contact_links">
+                <a href="#projects">
+                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0" }}/>
+                </a>
+                <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
+                    <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                </a>
+                <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
+                    <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
+                </a>
+                <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
+                    <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                </a>
+                <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
+                <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                </a>
+            </div>
+
         </div>
-
-        <a href="#projects" className="scrollup_projects">
-            <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", marginTop: "108vh" }}/>
-        </a>
-
-        <div className="projects_contact_links">
-        <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
-                <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "108vh" }}/>
-            </a>
-            <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
-                <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
-            </a>
-            <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
-                <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-            </a>
-            <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
-            <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-            </a>
-        </div>
-
-    </div>
     </div>
     </div>
 

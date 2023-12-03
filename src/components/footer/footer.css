@@ -1,7 +1,6 @@
 .footer_line{
     border-bottom: 1px solid white;
     padding: 0;
-    width:84vw;
     margin:0;
 }
 
@@ -20,16 +19,17 @@
 }
 
 .footer{
+    width:84vw;
     text-decoration: none;
     margin:0;
-    margin-top:12vmin;
-    margin-bottom: 5vmin;
-    padding:0;
+    margin-top:10vmin;
+    padding-bottom: 12vmin;
+    height: 32vmin;
 }
 
-span{
+/* span{
     margin-top:30vw;
-}
+} */
 
 @media screen and (min-width: 992px){
     .footer_line{

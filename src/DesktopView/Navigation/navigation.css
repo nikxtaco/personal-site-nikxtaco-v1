@@ -85,9 +85,14 @@
     margin-top:100vh;
 }
 
+.stripes_slide_04b{
+    margin-left:300vw;
+    margin-top:200vh;
+}
+
 .stripes_box1{
-    width:25vmin;
-    height:25vmin;
+    width:12.5vw;
+    height:25vh;
     position:absolute;
     margin:0;
     z-index:80;
@@ -96,31 +101,31 @@
     background-size:cover;
 }
 .border_only_box1{
-    width:25vmin;
-    height:25vmin;
+    width:12.5vw;
+    height:25vh;
     position:absolute;
-    margin-left:5vmin;
-    margin-top:5vmin;
+    margin-left:2vmin;
+    margin-top:2vmin;
     z-index:70;
     border:2px solid rgb(255, 255, 255, 0.5);
 }
 .stripes_box2{
-    width:25vmin;
-    height:25vmin;
+    width:12.5vw;
+    height:25vh;
     position:absolute;
-    margin-left:calc(100vw - 25vmin);
-    margin-top:calc(100vh - 25vmin);
+    margin-left:calc(100vw - 12.5vw);
+    margin-top:calc(100vh - 25vh - 2vmin);
     z-index:80;
     background-image: url('../../media/stripes2.png');
     background-repeat: no-repeat;
     background-size:cover;
 }
 .border_only_box2{
-    width:25vmin;
-    height:25vmin;
+    width:12.5vw;
+    height:25vh;
     position:absolute;
-    margin-left:calc(100vw - 30vmin);
-    margin-top:calc(100vh - 30vmin);
+    margin-left:calc(100vw - 12.5vw - 2vmin);
+    margin-top:calc(100vh - 25vh - 4vmin);
     z-index:70;
     border:2px solid rgb(255, 255, 255, 0.5);
 }

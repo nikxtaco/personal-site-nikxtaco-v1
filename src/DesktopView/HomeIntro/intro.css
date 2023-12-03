@@ -1,37 +1,3 @@
-/* .about_bg_image{
-    background-image: url('../../media/materialtexture1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left:5vw;
-    width:100vw;
-    height:100vh;
-    opacity:0.5;
-} */
-
-/* .about_bg_image{
-    background-image: url('../../media/materialtexture1.jpg');
-    padding-left:5vw;
-    width:100vw;
-    height:100vh;
-    opacity:0.6;
-} */
-
-/* .about_bg_image{
-    background-image: url('../../media/tempbgtry.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left:5vw;
-    width:100vw;
-    height:100vh;
-} */
-
-/* .about_bg_image{
-    background-image: url('../../media/tempbgtry.jpeg');
-    padding-left:5vw;
-    width:100vw;
-    height:100vh;
-} */
-
 /* CONTAINER FOR THE ABOUT SLIDE (EXTENDED DOWNWARDS) */
 
 .about_container{
@@ -40,50 +6,15 @@
     width:100vw;
     height:100vh;
     overflow-y:scroll !important;
-}
-
-/* THE ABOUT CIRCLE DESIGN */
-
-/* .about_circle{
     position:absolute;
-    background-color: #ffffff;
-    opacity:1;
-    top:70vh;
-    left:9vw;
-    width:20vmin;
-    height:20vmin;
-    border-radius: 100%;
-    background-image: url('../../media/materialtexture1.jpg');
 }
-
-.about_circle_text{
-    position:absolute;
-    top:72vh;
-    left:7.5vw;
-    font-size: 12vmin;
-    color:rgb(255, 255, 255);
-} */
 
 /* THE CONTACT LINKS AND NAVIGATION TO GO BACK UP */
 
 .about_contact_links{
     position:absolute;
     left:95vw;
-    top:108vh;
-    margin-top:100vh;
 }
-
-/* .about_circle2{
-    position:absolute;
-    z-index:80;
-    background-color: #ffffff;
-    opacity:1;
-    margin-top:100vh;
-    margin-left:1vmin;
-    width:10vmin;
-    border-radius: 100%;
-    background-image: url('../../media/materialtexture1.jpg');
-} */
 
 /* THE CONTENT STYLING AND POSITIONING */
 

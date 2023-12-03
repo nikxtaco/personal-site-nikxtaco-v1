@@ -1,13 +1,14 @@
 .projects_container{
-    margin-top:-100vh;
-    margin-left:200vw;
+    margin-top:100vh;
+    left:200vw;
     width:100vw;
-    overflow-y:scroll;
+    height:100vh;
+    overflow-y:scroll !important;
+    position: absolute;
 }
 
 .projects_container .projects_all_content{
     width:75vw;
-    margin:0;
     margin-top:10vh;
     margin-left:22vw;
     font-family: "Playfair Display",serif;
@@ -43,9 +44,7 @@
 
 .projects_contact_links{
     position:absolute;
-    left:295vw;
-    top:8vh;
-    margin-top:10vh;
+    left:95vw;
 }
 
 .scrollup_projects{
@@ -65,25 +64,20 @@ iframe {
     content: "";
     display: table;
     clear: both;
-    width: 56vw;
+    width: 70vmin;
+    /* 56vw; */
   }
 
   .iframe-projects-item {
     aspect-ratio: 16/10;
-    width: 26vw;
+    width: 45%;
+    /* 26vw; */
     float: left;
     box-sizing: border-box;
-    margin-right: 2vw;
-    margin-bottom: 2vw; 
+    margin-right: 5%;
+    margin-bottom: 5%; 
   }
 
   .iframe-item:nth-child(4n) {
     margin-right: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .iframe-item {
-      width: 50%;
-      margin-right: 0;
-    }
   }

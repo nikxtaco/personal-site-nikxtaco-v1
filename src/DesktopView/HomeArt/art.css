@@ -1,16 +1,29 @@
 .art_container{
-    margin-top:-81vh;
-    margin-left:300vw;
-    width:100vw;
-    overflow-y:scroll;
+  margin-top:100vh;
+  left:300vw;
+  width:100vw;
+  position: absolute;
 }
 
-.art_container .art_all_content{
+.art_all_content{
     width:75vw;
     margin:0;
-    margin-top:10vh;
-    margin-left:22vw;
     font-family: "Playfair Display",serif;
+}
+
+.music_container {
+  height: 100vh;
+  margin-left:22vw;
+  padding-top:9vh;
+  overflow-y: scroll !important;
+}
+
+.sketches_container {
+  height: 100vh;
+  margin-left:22vw;
+  margin-top:-9vh;
+  padding-top:9vh;
+  overflow-y: scroll !important;
 }
 
 .art_heading{
@@ -34,7 +47,6 @@
 .art_content{
     width:50vw;
     font-size: 3.3vmin;
-    padding-left:6vw;
     margin-top:5vh;
     border-left: 2px solid white;
 }
@@ -44,8 +56,6 @@
 .art_contact_links{
     position:absolute;
     left:395vw;
-    top:8vh;
-    margin-top:10vh;
 }
 
 .scrollup_art{
@@ -108,21 +118,4 @@ iframe {
 
   .iframe-item:nth-child(4n) {
     margin-right: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .iframe-item {
-      width: 50%;
-      margin-right: 0;
-    }
-  }
-  
-  .music_container {
-    height: 100vh;
-  }
-  
-  .sketches_container {
-    height: 100vh;
-    padding-top: 8vh;
-    overflow-y: scroll;
   }

@@ -70,101 +70,85 @@ export default function Art() {
 
                     <div className="art_all_content">
 
-                    <div id="music" className="music_container">
+                        <div id="music" className="music_container">
 
-                        <h3 className="art_heading">
-                        - Art & Music
-                        </h3>
+                            <h3 className="art_heading">
+                            - Art & Music
+                            </h3>
 
-                        <h1 className="art_title1">
-                        Keyboard Covers
-                        </h1> 
+                            <h1 className="art_title1">
+                            Keyboard Covers
+                            </h1> 
 
-                        <br/><br/><br/>
+                            <br/><br/><br/>
 
-                        <KeyboardCovers videos={keyboardData} />
+                            <KeyboardCovers videos={keyboardData} />
 
-                        <div className="art_content">
-                        See more on Soundcloud... or scroll down!
-                        <span>
-                            <a href="#sketches">
-                                <UseAnimations animationKey="arrowDown" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
-                            </a>
-                            <a href="https://soundcloud.com/nikita-971387991" target="_blank" rel="noreferrer">
-                                <UseAnimations animationKey="activity" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
-                            </a>
-                        </span>
+                            <div className="art_content">
+                            See more on Soundcloud... or scroll down!
+                            <span>
+                                <a href="#sketches">
+                                    <UseAnimations animationKey="arrowDown" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
+                                </a>
+                                <a href="https://soundcloud.com/nikita-971387991" target="_blank" rel="noreferrer">
+                                    <UseAnimations animationKey="activity" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
+                                </a>
+                            </span>
+                            </div>
+
+                            <br/><br/>
+
+                            <div className="about_contact_links">
+                                <a href="#art">
+                                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0" }}/>
+                                </a>
+                                <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
+                                    <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                                </a>
+                                <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
+                                    <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
+                                </a>
+                                <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
+                                    <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                                </a>
+                                <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
+                                <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                                </a>
+                            </div>
+
+                            </div>
+
                         </div>
-
-                        <br/><br/>
-
-                        <a href="#art" className="scrollup_art">
-                            <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", marginTop: "108vh" }}/>
-                        </a>
-
-                        <div className="art_contact_links">
-                        <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
-                                <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "108vh" }}/>
-                            </a>
-                            <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
-                                <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
-                            </a>
-                            <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
-                                <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-                            </a>
-                            <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
-                            <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-                            </a>
-                        </div>
-
-                        </div>
-
-                        
-    
+        
                         <div id="sketches" className="sketches_container">
 
-                        <h1 className="art_title1">
-                        Sketches
-                        <span>
-                            <a href="#art_stuff">
-                                <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"18vw" }}/>
-                            </a>
-                        </span>
-                        </h1> 
-                        
-                        <br/><br/><br/>
+                            <h1 className="art_title1">
+                            Sketches
+                            <span>
+                                <a href="#art_stuff">
+                                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"18vw" }}/>
+                                </a>
+                            </span>
+                            </h1> 
+                            
+                            <br/><br/><br/>
 
-                        <Sketches />
+                            <Sketches />
 
-                        <br/><br/>
+                            <br/><br/>
 
-                        <div className="art_heading">
-                        Thanks for sticking around to get here!
+                            <div className="art_heading">
+                            Thanks for sticking around to get here!
+                            </div>
+
+                            <br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/><br/><br/><br/>
+
                         </div>
-
-                        <br/><br/><br/><br/><br/><br/>
-                        <br/><br/><br/><br/><br/><br/>
-                        <br/><br/>
-
-                        </div>
-                    </div>
 
                 </div> 
 
-                <div className="art_contact_links">
-                <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
-                        <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "208vh" }}/>
-                    </a>
-                    <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
-                        <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0",paddingTop: "5vh" }}/>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
-                        <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-                    </a>
-                    <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
-                    <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
-                    </a>
-                </div>
         </div>
     )
 }

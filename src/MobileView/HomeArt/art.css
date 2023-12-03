@@ -41,7 +41,7 @@
         opacity:0.2;
     }
 
-    .about_container{
+    /* .about_container{
         position:absolute;
         margin:0;
         top:100vh;
@@ -50,6 +50,104 @@
         height:100vh;
         overflow-y:scroll;
         z-index:0;
+    } */
+
+
+    .art_container{
+        margin-top:100vh;
+        left:300vw;
+        width:100vw;
+        position: absolute;
+        overflow-y: scroll !important;
+      }
+      
+      .art_all_content{
+          width:93vw;
+          margin:0;
+          font-family: "Playfair Display",serif;
+      }
+      
+      .music_container {
+        /* height: max-content; */
+        margin-left:7vw;
+        padding-top:12vh;
+        overflow-y: scroll !important;
+      }
+      
+      .sketches_container_mobile {
+        /* height: 100vh; */
+        margin-left:0vw;
+        padding-top:12vh;
+      }
+      
+      .art_heading{
+          font-family: "Playfair Display",serif;
+          font-size: 3vmin;
+      }
+      
+      .art_title1{
+          font-family: 'Rozha One', serif;
+          font-size:12vmin;
+          margin:0;
+      }
+      
+      .art_title2{
+          font-family: 'Rozha One', serif;
+          font-size:12vmin;
+          margin:0;
+          margin-top:8vh;
+      }
+      
+      .art_content{
+          width:50vw;
+          font-size: 3.3vmin;
+          margin-top:5vh;
+          border-left: 2px solid white;
+      }
+
+    iframe {
+        aspect-ratio: 16 / 9;
+        height: 100%;
+        width: 100%;
     }
+    
+    .iframe-container {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .iframe-item {
+        width: 40%;
+        float: left;
+        box-sizing: border-box;
+        margin-right: 5%;
+        margin-bottom: 1vw; 
+      }
+    
+      .iframe-sketches-item-set1 {
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        margin-bottom: 1vw; 
+      }
+    
+      .iframe-sketches-item-set2 {
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        margin-bottom: 1vw; 
+      }
+    
+      .iframe-sketches-item-set3 {
+        width: 100%;
+        float: left;
+        box-sizing: border-box;
+        margin-bottom: 1vw; 
+      }
+    
+      .iframe-item:nth-child(4n) {
+        margin-right: 0;
+      }
 
 }

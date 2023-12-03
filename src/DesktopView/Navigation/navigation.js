@@ -54,7 +54,7 @@ export default function Navigation() {
     // CREATES THE HOVER ANIMATION OF THE TOP NAVBAR FOR ALL PAGES
 
     const customHome = {
-      width:"12vw",
+      width:"14vw",
       height:"2px",
       background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
       backgroundSize: "200% 100%",
@@ -131,6 +131,14 @@ export default function Navigation() {
                 </div>
 
                 <div className="stripe_design stripes_slide_04a">
+                    <div className="border_only_box1"></div>
+                    <div className="stripes_box1"></div>
+                    <a href="#projects"><div onClick={()=>setIndex(4)} className="back_to_home">Back To Art</div></a>
+                    <div className="border_only_box2"></div>
+                    <div className="stripes_box2"></div>
+                </div>
+
+                <div className="stripe_design stripes_slide_04b">
                     <div className="border_only_box1"></div>
                     <div className="stripes_box1"></div>
                     <a href="#projects"><div onClick={()=>setIndex(4)} className="back_to_home">Back To Art</div></a>
@@ -280,9 +288,7 @@ export default function Navigation() {
                         <div onClick={()=>setIndex(4)} style={customArt} className="summary_sub_box_white">
                             <div className="line_draw">
                             <h3 className="summary_heading_white">Art & Music</h3>
-                            <h3 className="summary_description_white">I hardly have any sense of tempo or actual theory but well, I try.
-                                    {/* I hardly have any color sense so I make do in monochrome. */}
-                                    </h3>
+                            <h3 className="summary_description_white">I hardly have any sense of tempo or actual theory but well, I try.</h3>
                             <h3 className="summary_description_white">04</h3>
                             </div>
                         </div>
