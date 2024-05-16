@@ -21,7 +21,8 @@ const ProjectStuff = () => {
             alt={title}
           />
           <a href={path[1]} target="_blank" rel="noreferrer">
-                <UseAnimations animationKey="github" size={"3vmin"} style={{ float: 'left',  marginLeft: '-15.5vw', paddingTop: '17vw', color: 'white' }}/>
+                {/* <UseAnimations animationKey="github" size={"3vmin"} style={{ float: 'left',  marginLeft: '-15.5vw', paddingTop: '17vw', color: 'white' }}/> */}
+                <UseAnimations animationKey="github" size={"3vmin"} style={{ float: 'left',  marginLeft: '50%', paddingTop: '0', color: 'white' }}/>
             </a>
         </div>
         </div>

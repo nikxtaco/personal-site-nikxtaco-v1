@@ -70,12 +70,13 @@ iframe {
 
   .iframe-projects-item {
     aspect-ratio: 16/10;
-    width: 45%;
+    width: 100%;
     /* 26vw; */
     float: left;
     box-sizing: border-box;
     margin-right: 5%;
     margin-bottom: 5%; 
+    margin-top: 5%; 
   }
 
   .iframe-item:nth-child(4n) {

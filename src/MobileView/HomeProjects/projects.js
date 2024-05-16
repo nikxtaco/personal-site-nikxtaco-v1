@@ -88,6 +88,15 @@ export default function Intro() {
 
             <ProjectStuff />
 
+            <br/><br/><br/>
+
+            <div className="about_heading">
+              This is all for now! Others on github will be added here at some point.
+            </div>
+
+            <br/><br/><br/>
+            <br/><br/><br/>
+
             {/* <Footer/> */}
 
         </div>

@@ -81,10 +81,14 @@ export default function Projects() {
             <ProjectStuff />
 
             <br/><br/><br/>
+            <br/><br/><br/>
 
             <div className="about_heading">
-              This is all for now! Others on github will be added here soon.
+              This is all for now! Others on github will be added here at some point.
             </div>
+
+            <br/><br/><br/>
+            <br/><br/><br/>
 
             <div className="about_contact_links">
                 <a href="#projects">
