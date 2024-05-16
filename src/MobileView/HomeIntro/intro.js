@@ -52,9 +52,21 @@ export default function Intro() {
           </h2>
         </div>
 
-        <a href="#about">
+        {/* <a href="#about">
         <div className="about_button_intro_mobile">
           ABOUT
+        </div>
+        </a> */}
+
+        <a href="#about">
+        <div className="about_button_mobile2">
+          ABOUT
+        </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1gr4ZlelYYLWw5hcmmi9M6fzGn767fjiV/view?usp=drivesdk" target="_blank" rel="noreferrer">
+        <div className="about_button_mobile2">
+          RESUME
         </div>
         </a>
 
@@ -105,20 +117,31 @@ export default function Intro() {
         </h3>
 
         <p className="about_content_mobile">
-        Besides constantly wishing for a rather 
-        peaceful life of a Pokemon trainer running 
-        from gym to gym with the sole purpose of 
-        collecting badges, I'm also a full-time 
-        computer science engineering undergrad 
-        who will (hopefully) graduate within the 
-        next two years (date of final update, 
-        August 2021).<br/><br/>
+        Besides constantly wishing for a rather peaceful life of a Pokemon
+        trainer running from gym to gym with the sole purpose of collecting
+        badges, I’m also working on projects in AI Safety and trying to develop 
+        my research taste and skills in the pursuit of aligning large AI models 
+        in the long run. I am far too lazy to do any sort of redundant work 
+        when I can help it, so for details on what I’ve been working on, I must 
+        redirect you to my linkedin or resume linked on this site.<br/><br/>
 
-        Either way, you're more than welcome 
-        to reach out to me via any of my handles 
-        listed on the site, though I do prefer less 
-        anxiety-causing e-mails over them all. 
-        Until then, I fare thee well.<br/>
+        I also clearly enjoy making keyboard covers, art and writing poetry since 
+        I seem to have enough content on each to dedicate whole pages to them! 
+        It’s kind of funny of how I can do none of these things ad-hoc without 
+        preparation or references though, but then again that’s never been a goal. 
+        There’s a lot of skills I’d like to someday work towards acquiring properly 
+        (like ice skating) and given that they’re plenty in number, if there’s anything 
+        new you’d like to learn and are looking for someone to do it with, please reach 
+        out! Chances are I’ll be more than glad to join the endeavour!<br/><br/>
+        
+        Either way, you're more than welcome to reach out to me via any of my
+        handles listed on the site, though I do prefer less anxiety-causing
+        e-mails over them all. <br/><br/>
+        
+        Until then, I fare thee well.<br/><br/>
+
+        …Maybe I should have started with “I’m 22, and from Kerala, India”, but well, 
+        now you know.<br/>
         </p>
 
         <Footer/>

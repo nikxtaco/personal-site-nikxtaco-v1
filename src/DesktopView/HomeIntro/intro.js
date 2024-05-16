@@ -4,17 +4,28 @@ import UseAnimations from "react-useanimations";
 
 export default function Intro() {
 
-    const [summaryColor, setSummaryColor] = useState(0)
+    const [summaryColor1, setSummaryColor1] = useState(0);
+    const [summaryColor2, setSummaryColor2] = useState(0);
 
-    const customSummary = {
-      width:"16vw",
-      height:"2px",
-      float:"left",
-      background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
-      backgroundSize: "200% 100%",
-      transition: "all 1s ease",
-      backgroundPosition: summaryColor? "left bottom" : "right bottom",
-    }
+    const customSummary1 = {
+        width:"16vw",
+        height:"2px",
+        float:"left",
+        background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
+        backgroundSize: "200% 100%",
+        transition: "all 1s ease",
+        backgroundPosition: summaryColor1? "left bottom" : "right bottom",
+        }
+  
+      const customSummary2 = {
+        width:"16vw",
+        height:"2px",
+        float:"left",
+        background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
+        backgroundSize: "200% 100%",
+        transition: "all 1s ease",
+        backgroundPosition: summaryColor2? "left bottom" : "right bottom",
+        }
     
     return (
         <div>
@@ -26,12 +37,19 @@ export default function Intro() {
                     <div className="page_number">01</div>
                     <div className="cygirl_picture"></div>
 
-                    <a href="#about" onMouseEnter={()=>setSummaryColor(1)} onMouseLeave={()=>setSummaryColor(0)} className="intro_box">
+                    <a href="#about" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                         <div className="summary_intro_box_white">
                             <h3 className="summary_heading_white_bottom">About</h3>
-                            {/* <h3 className="summary_description_white">I sometimes wonder who I am myself as well.</h3> */}
-                            <h3 className="summary_description_white_bottom">00</h3>
-                            <div style={customSummary}></div>
+                            <h3 className="summary_description_white_bottom">01A</h3>
+                            <div style={customSummary1}></div>
+                        </div>
+                    </a>
+
+                    <a href="https://drive.google.com/file/d/1gr4ZlelYYLWw5hcmmi9M6fzGn767fjiV/view?usp=drivesdk" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
+                        <div className="summary_intro_box_white">
+                        <h3 className="summary_heading_white_bottom">Resume</h3>
+                        <h3 className="summary_description_white_bottom">01B</h3>
+                        <div style={customSummary2}></div>
                         </div>
                     </a>
 
@@ -88,17 +106,29 @@ export default function Intro() {
                         <p className="about_content">
                         Besides constantly wishing for a rather peaceful life of a Pokemon
                         trainer running from gym to gym with the sole purpose of collecting
-                        badges, I'm also a full-time computer science engineering undergrad
-                        who will (hopefully) graduate within the next two years (date of final
-                        update, August 2021).<br/><br/>
+                        badges, I’m also working on projects in AI Safety and trying to develop 
+                        my research taste and skills in the pursuit of aligning large AI models 
+                        in the long run. I am far too lazy to do any sort of redundant work 
+                        when I can help it, so for details on what I’ve been working on, I must 
+                        redirect you to my linkedin or resume linked on this site.<br/><br/>
 
-                        edit: it is now 2023 and i have graduated! <br/><br/>
+                        I also clearly enjoy making keyboard covers, art and writing poetry since 
+                        I seem to have enough content on each to dedicate whole pages to them! 
+                        It’s kind of funny of how I can do none of these things ad-hoc without 
+                        preparation or references though, but then again that’s never been a goal. 
+                        There’s a lot of skills I’d like to someday work towards acquiring properly 
+                        (like ice skating) and given that they’re plenty in number, if there’s anything 
+                        new you’d like to learn and are looking for someone to do it with, please reach 
+                        out! Chances are I’ll be more than glad to join the endeavour!<br/><br/>
 
                         Either way, you're more than welcome to reach out to me via any of my
                         handles listed on the site, though I do prefer less anxiety-causing
                         e-mails over them all. <br/><br/>
                         
-                        Until then, I fare thee well.<br/>
+                        Until then, I fare thee well.<br/><br/>
+
+                        …Maybe I should have started with “I’m 22, and from Kerala, India”, but well, 
+                        now you know.<br/>
                         </p>
                         <br/><br/>
 

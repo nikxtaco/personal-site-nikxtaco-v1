@@ -8,7 +8,7 @@ export default function Projects() {
 
   // const { height } = useWindowDimensions();
 
-  const [summaryColor1, setSummaryColor1] = useState(0);
+    const [summaryColor1, setSummaryColor1] = useState(0);
     const [summaryColor2, setSummaryColor2] = useState(0);
 
     const customSummary1 = {
@@ -21,15 +21,15 @@ export default function Projects() {
       backgroundPosition: summaryColor1? "left bottom" : "right bottom",
       }
 
-      const customSummary2 = {
-        width:"16vw",
-        height:"2px",
-        float:"left",
-        background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
-        backgroundSize: "200% 100%",
-        transition: "all 1s ease",
-        backgroundPosition: summaryColor2? "left bottom" : "right bottom",
-        }
+    const customSummary2 = {
+      width:"16vw",
+      height:"2px",
+      float:"left",
+      background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
+      backgroundSize: "200% 100%",
+      transition: "all 1s ease",
+      backgroundPosition: summaryColor2? "left bottom" : "right bottom",
+      }
   
   return (
     <div>
