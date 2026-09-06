@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # react-scripts 4 / webpack 4 need the legacy OpenSSL provider on Node 17+
+  NODE_VERSION = "18"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+  # don't fail the build on ESLint warnings (react-scripts treats CI warnings as errors)
+  CI = "false"
