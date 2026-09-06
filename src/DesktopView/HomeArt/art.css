@@ -2,6 +2,8 @@
   margin-top:100vh;
   left:300vw;
   width:100vw;
+  height:100vh;
+  overflow-y:scroll !important;
   position: absolute;
 }
 
@@ -12,18 +14,17 @@
 }
 
 .music_container {
-  height: 100vh;
-  margin-left:22vw;
+  min-height: 100vh;
+  margin-left:19vw;
   padding-top:9vh;
-  overflow-y: scroll !important;
+  box-sizing: border-box;
 }
 
 .sketches_container {
-  height: 100vh;
-  margin-left:22vw;
-  margin-top:-9vh;
-  padding-top:9vh;
-  overflow-y: scroll !important;
+  min-height: 100vh;
+  margin-left:19vw;
+  padding-top:3vh;
+  box-sizing: border-box;
 }
 
 .art_heading{
@@ -33,7 +34,7 @@
 
 .art_title1{
     font-family: 'Rozha One', serif;
-    font-size:12vmin;
+    font-size:9vmin;
     margin:0;
 }
 
@@ -46,9 +47,9 @@
 
 .art_content{
     width:50vw;
-    font-size: 3.3vmin;
+    font-size: 2.5vmin;
     margin-top:5vh;
-    border-left: 2px solid white;
+    margin-bottom:5vh;
 }
 
 /* THE CONTACT LINKS AND NAVIGATION TO GO BACK UP */
@@ -89,7 +90,7 @@ iframe {
   .iframe-sketches-item-set1 {
     aspect-ratio: 7/5;
     /* width: 38%; */
-    width: 27vw;
+    width: 28.5vw;
     float: left;
     box-sizing: border-box;
     margin-right: 1vw;
@@ -99,7 +100,7 @@ iframe {
   .iframe-sketches-item-set2 {
     aspect-ratio: 7/5;
     /* width: 35.6%; */
-    width: 25.6vw;
+    width: 28.5vw;
     float: left;
     box-sizing: border-box;
     margin-right: 1vw;
@@ -109,11 +110,31 @@ iframe {
   .iframe-sketches-item-set3 {
     aspect-ratio: 3/4;
     /* width: 19.1%; */
-    width: 13.7vw;
+    width: 15.3vw;
     float: left;
     box-sizing: border-box;
     margin-right: 1vw;
-    margin-bottom: 1vw; 
+    margin-bottom: 1vw;
+  }
+
+  /* sketches gallery: flex wrap keeps rows clean & equal-height (floats
+     staggered once portraits/landscapes were mixed) */
+  #sketches .iframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1vw;
+    width: 75vw;
+  }
+
+  #sketches .iframe-container > div {
+    line-height: 0;
+  }
+
+  #sketches .iframe-container .magnifying-image {
+    float: none;
+    margin: 0;
+    display: block;
   }
 
   .iframe-item:nth-child(4n) {

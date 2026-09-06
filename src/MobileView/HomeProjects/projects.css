@@ -80,6 +80,9 @@
         width:100vw;
         height:100vh;
         position: absolute;
+        /* LIGHT THEME — this detail page only (hero stays dark) */
+        background: #f4f1ea;
+        color: #1a1a1a;
     }
     
     .projects_container .projects_all_content{
@@ -105,6 +108,66 @@
         font-size:12vmin;
         margin:0;
         /* margin-top:8vh; */
+    }
+
+    /* THE RESEARCH SECTION ON THE PROJECTS DETAIL PAGE */
+
+    .projects_content{
+        width:80vw;
+        font-size: 3.8vmin;
+        padding-left:3vw;
+        margin-top:3vh;
+        border-left: 2px solid #1a1a1a;
+        font-family: "Playfair Display",serif;
+    }
+
+    .research_paper_title{
+        font-family: 'Rozha One', serif;
+        font-size: 4.2vmin;
+        font-style: italic;
+        margin: 0 0 1vh 0;
+        line-height: 1.1;
+    }
+
+    .research_meta{
+        font-size: 3vmin;
+        margin: 0 0 0.5vh 0;
+    }
+
+    .research_note{
+        font-size: 2.6vmin;
+        opacity: 0.6;
+        margin: 0 0 0.5vh 0;
+    }
+
+    .research_venue{
+        font-size: 2.8vmin;
+        font-style: italic;
+        opacity: 0.7;
+        margin: 0;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .research_venue_row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0.6vh 4vw;
+        margin-top: 0.8vh;
+    }
+
+    .research_links{
+        display: flex;
+        align-items: center;
+        gap: 2vw;
+        flex-shrink: 0;
+    }
+
+    .research_links a{
+        display: inline-flex;
+        cursor: pointer;
     }
 
     iframe {

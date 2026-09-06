@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import "./art.css"
 import UseAnimations from "react-useanimations";
-import KeyboardCovers from './keyboardCovers';
-import keyboardData from './keyboardData.json';
+// import KeyboardCovers from './keyboardCovers';
+// import keyboardData from './keyboardData.json';
 import Sketches from './sketches';
+import MusicPlayer from './MusicPlayer';
 
 export default function Art() {
 
@@ -78,18 +79,19 @@ export default function Art() {
 
                             <h1 className="art_title1">
                             Keyboard Covers
-                            </h1> 
+                            </h1>
 
                             <br/><br/><br/>
 
-                            <KeyboardCovers videos={keyboardData} />
+                            <MusicPlayer />
+
+                            {/* Old SoundCloud embed cards — kept for reference, replaced by <MusicPlayer /> above */}
+                            {/* <br/><br/>
+                            <KeyboardCovers videos={keyboardData} /> */}
 
                             <div className="art_content">
-                            See more on Soundcloud... or scroll down!
+                            Listen to more on Soundcloud... or scroll down!
                             <span>
-                                <a href="#sketches">
-                                    <UseAnimations animationKey="arrowDown" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
-                                </a>
                                 <a href="https://soundcloud.com/nikita-971387991" target="_blank" rel="noreferrer">
                                     <UseAnimations animationKey="activity" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
                                 </a>
@@ -124,12 +126,7 @@ export default function Art() {
 
                             <h1 className="art_title1">
                             Sketches
-                            <span>
-                                <a href="#art_stuff">
-                                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"18vw" }}/>
-                                </a>
-                            </span>
-                            </h1> 
+                            </h1>
                             
                             <br/><br/><br/>
 

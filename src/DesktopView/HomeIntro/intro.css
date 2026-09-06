@@ -1,3 +1,70 @@
+/* ===================================================================
+   ABOUT SECTION ACCENT PALETTE — edit these 5 values to reskin.
+   (white/black base colours are intentionally left out of here.)
+   =================================================================== */
+
+:root{
+    /* --- ACTIVE PALETTE: Teal + git diff (fabiotoste teal for links, classic green/red for the diff) --- */
+    --about-add:        #4faf6a;   /* additions: "+", added text        (git green)  */
+    --about-del:        #ff7b72;   /* deletions: strikethrough, "−"      (git red)    */
+    --about-invite:     #22bfbf;   /* the "open invite" standout line    (bright teal) */
+    --about-link:       #22bfbf;   /* inline links + tooltip accent bar  (bright teal) */
+    --about-link-hover: #048186;   /* inline link colour on hover        (dark teal)  */
+}
+
+/* --- SAVED PALETTES (swap the values above with any of these to restore) ---
+
+   fabiotoste.com (teal, monochrome):
+    --about-add:        #22bfbf;
+    --about-del:        #048186;
+    --about-invite:     #22bfbf;
+    --about-link:       #22bfbf;
+    --about-link-hover: #048186;
+
+   Contrasting Vibrancy:
+    --about-add:        #FF5722;
+    --about-del:        #673AB7;
+    --about-invite:     #FFEB3B;
+    --about-link:       #FF5722;
+    --about-link-hover: #FFEB3B;
+
+   Deep Jewel Tones:
+    --about-add:        #3E5641;
+    --about-del:        #822659;
+    --about-invite:     #822659;
+    --about-link:       #004D61;
+    --about-link-hover: #822659;
+
+   Original (muted / dark-theme default):
+    --about-add:        #4faf6a;
+    --about-del:        #ff7b72;
+    --about-invite:     #dd8b95;
+    --about-link:       #8ab4d8;
+    --about-link-hover: #c3ddf5;
+
+   Neon Highlights:
+    --about-add:        #00FF85;
+    --about-del:        #FF0099;
+    --about-invite:     #FF0099;
+    --about-link:       #1E90FF;
+    --about-link-hover: #FF0099;
+
+   Warm Tones:
+    --about-add:        #DAA520;
+    --about-del:        #FF6F61;
+    --about-invite:     #FF4500;
+    --about-link:       #DAA520;
+    --about-link-hover: #FF4500;
+
+   Muted Pastels:
+    --about-add:        #A8DADC;
+    --about-del:        #FFC1CC;
+    --about-invite:     #B39CD0;
+    --about-link:       #A8DADC;
+    --about-link-hover: #B39CD0;
+
+*/
+
 /* CONTAINER FOR THE ABOUT SLIDE (EXTENDED DOWNWARDS) */
 
 .about_container{
@@ -24,6 +91,119 @@
     margin-top:10vh;
     margin-left:22vw;
     font-family: "Playfair Display",serif;
+    position: relative;
+}
+
+/* ===== ABOUT SECTION THEME TOGGLE + LIGHT THEME (dark is the original) ===== */
+
+/* a gentle floating "string" of butterflies down the left gutter */
+.about_butterflies{
+    position: absolute;
+    left: 17.5vw;
+    top: 12vh;                    /* starts at the "- ABOUT" label */
+    height: 75vh;                 /* ends around the TL;DR box bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.about_butterflies span{
+    font-size: 3vmin;
+    animation: about_bfloat 5s ease-in-out infinite;
+}
+
+.about_butterflies span:nth-child(odd){ margin-left: -1.4vw; }
+.about_butterflies span:nth-child(even){ margin-left: 1.4vw; }
+.about_butterflies span:nth-child(2){ animation-delay: 0.5s; }
+.about_butterflies span:nth-child(3){ animation-delay: 1s; }
+.about_butterflies span:nth-child(4){ animation-delay: 1.5s; }
+.about_butterflies span:nth-child(5){ animation-delay: 2s; }
+.about_butterflies span:nth-child(6){ animation-delay: 2.5s; }
+.about_butterflies span:nth-child(7){ animation-delay: 3s; }
+.about_butterflies span:nth-child(8){ animation-delay: 3.5s; }
+.about_butterflies span:nth-child(9){ animation-delay: 4s; }
+
+@keyframes about_bfloat{
+    0%, 100%{ transform: translateY(0) rotate(-6deg); }
+    50%{ transform: translateY(-1vh) rotate(6deg); }
+}
+
+.about_theme_toggle{
+    position: absolute;
+    top: 0;
+    right: 19vw;                /* aligns with the status box's right edge */
+    font-family: "Playfair Display", serif;
+    font-size: 1.7vmin;
+    padding: 0.6vh 1.1vw;
+    border-radius: 999px;
+    cursor: pointer;
+    background: transparent;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+    z-index: 95;
+}
+
+.about_theme_toggle:hover{
+    border-color: currentColor;
+}
+
+/* --- LIGHT THEME (toggled) --- */
+.about_container.about_light{
+    background: #e7e2d6;        /* soft warm greige — dimmer than bright white */
+    color: #2b2824;             /* warm dark grey text (softer than pure black) */
+    /* re-map the accent palette so it reads on a light background */
+    --about-add: #2f8f52;
+    --about-del: #cf4238;
+    --about-invite: #b4545d;
+    --about-link: #0b8b8b;
+    --about-link-hover: #1a1a1a;
+}
+
+.about_container.about_light .about_status_box{
+    background: rgba(0, 0, 0, 0.035);
+    border-color: rgba(0, 0, 0, 0.18);
+}
+
+.about_container.about_light .about_content{
+    border-left-color: #1a1a1a;
+}
+
+.about_container.about_light .about_fact{
+    color: #1a1a1a;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.22);
+}
+
+.about_container.about_light .about_theme_toggle{
+    border-color: rgba(0, 0, 0, 0.35);
+}
+
+/* tooltips use the dark surface on both themes — a crisp dark popup reads
+   better on the light page than a washed-out near-white one */
+
+/* ================= ABOUT-PAGE FLOURISHES ================= */
+
+/* fake git "commit line" under the heading */
+.about_commit{
+    display: inline-block;
+    font-family: "Courier New", monospace; font-size: 1.5vmin; opacity: 0.6;
+    margin: 0.6vh 0 0 0;
+}
+.about_commit_hash{ color: var(--about-link); }
+
+/* cursor trail (✦ stars) appended to body on mouse-move over the About area */
+.about_trail_bit{
+    position: fixed; transform: translate(-50%, -50%); pointer-events: none; z-index: 100000;
+    font-size: 1.8vmin; color: var(--about-link, #8ab4d8);
+    animation: about_trailfade 0.8s ease-out forwards;
+}
+@keyframes about_trailfade{
+    from{ opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+    to{ opacity: 0; transform: translate(-50%, -90%) scale(0.4); }
 }
 
 .about_heading{
@@ -31,25 +211,379 @@
     font-size: 3vmin;
 }
 
+/* THE 2026 / 2023 ABOUT VERSION TOGGLE */
+
+.about_header_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1vh 3vw;
+    width: 56vw;
+    margin-bottom: 3vh;
+}
+
+.about_version_toggle{
+    display: flex;
+    gap: 2vw;
+    font-family: "Playfair Display",serif;
+}
+
+.about_version{
+    cursor: pointer;
+    font-size: 2vmin;
+    color: white;
+    opacity: 0.4;
+    padding-bottom: 0.4vh;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.about_version:hover{
+    opacity: 0.75;
+}
+
+.about_version.active{
+    opacity: 1;
+    border-bottom: 2px solid white;
+}
+
+.about_version_tag{
+    font-style: italic;
+    opacity: 0.7;
+}
+
 .about_title1{
     font-family: 'Rozha One', serif;
-    font-size:12vmin;
+    font-size:9vmin;
     margin:0;
+    margin-top:4vh;
 }
 
 .about_title2{
     font-family: 'Rozha One', serif;
-    font-size:12vmin;
+    font-size:9vmin;
     margin:0;
-    margin-top:8vh;
+    margin-top:6vh;
+}
+
+/* Photos sit on a backdrop layer BEHIND the writing (via z-index), so the text
+   keeps its exact original position and full width — images never move it. */
+.about_try_section{
+    position: relative;
+}
+
+.about_try_section > .about_title2,
+.about_try_section > .about_heading,
+.about_try_section > .about_content{
+    position: relative;
+    z-index: 2;
+}
+
+.collage_jupiter,
+.collage_vangogh,
+.collage_starflyer,
+.collage_sevensisters{
+    position: absolute;
+    z-index: 1;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+/* Seven Sisters — bottom-aligned with the paragraph's vertical line, below star-flyer */
+.collage_sevensisters{
+    bottom: 0;
+    left: -18vw;
+    width: 15vw;
+    height: 16vh;
+}
+
+/* Star-flyer — left gutter, sitting just above Seven Sisters */
+.collage_starflyer{
+    bottom: 19vh;
+    left: -18vw;
+    width: 15vw;
+    height: auto;
+}
+
+/* rotating "I try to…" — only the verb/noun swap, sliding in slowly left-to-right */
+.about_try_word{
+    display: inline-block;
+    animation: about_wordslide 1s ease;
+}
+@keyframes about_wordslide{
+    0%{ opacity: 0; transform: translateX(-0.7em); }
+    60%{ opacity: 1; }
+    100%{ opacity: 1; transform: translateX(0); }
+}
+
+/* the "I'm an aspiring…" section: photos on a backdrop layer behind the text */
+.about_aspiring_section{
+    position: relative;
+}
+.about_aspiring_section > .about_title1,
+.about_aspiring_section > .about_heading,
+.about_aspiring_section > .about_content{
+    position: relative;
+    z-index: 2;
+}
+
+/* Obsidian graph — transparent PNG filled with a dark panel (nodes stay visible),
+   in the right gutter beside the "I'm an aspiring…" paragraph */
+.collage_obsidian_full{
+    position: absolute;
+    z-index: 1;
+    top: 4vh;
+    right: 1vw;
+    width: 15vw;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    background-color: #20222b;
+}
+
+/* Jupiter — a "cover" beside the I-try heading; right edge meets the text's right edge */
+.collage_jupiter{
+    top: 3vh;
+    right: 19vw;
+    height: 30vh;
+    width: auto;
+}
+
+/* Van Gogh — taller, in the right gutter, spilling down beside the Besides paragraph */
+.collage_vangogh{
+    top: 7vh;
+    right: 1vw;
+    width: 15vw;
+    height: auto;
 }
 
 .about_content{
     width:50vw;
-    font-size: 3.3vmin;
+    font-size: 2.5vmin;
     padding-left:6vw;
-    margin-top:10vh;
+    margin-top:8vh;
     border-left: 2px solid white;
+}
+
+.about_top_row{
+    display: flex;
+    align-items: flex-start;
+    gap: 2vw;
+    width: 56vw;
+}
+
+.about_headshot{
+    width: 15vw;
+    margin-top: 4vh;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.about_headshot img{
+    width: 100%;
+    display: block;
+    transform: scale(1.12) translateX(5%);
+    transform-origin: 50% 50%;
+}
+
+.about_right_col{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.about_facts{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8vh 0.6vw;
+    margin-top: 2.2vh;
+    width: 15vw;
+}
+
+.about_fact{
+    font-size: 1.55vmin;
+    font-family: "Playfair Display", serif;
+    color: #eef0f4;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 0.5vh 0.9vw;
+    white-space: nowrap;
+}
+
+.about_status_box{
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 4vh;
+    padding: 3vh 2.2vw 2vh 2.2vw;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.about_status{
+    font-size: 2.5vmin;
+    margin: 0 0 2vh 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.about_lastupdated{
+    font-size: 1.7vmin;
+    font-style: italic;
+    opacity: 0.5;
+    margin: 2vh 0 0 0;
+    padding-left: 0;
+}
+
+.about_term{
+    text-decoration: underline dotted;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    cursor: help;
+}
+
+.about_invite{
+    font-family: 'Rosarivo', serif;
+    font-style: italic;
+    /* uncolored — inherits the normal text colour; differentiated by typeface */
+}
+
+/* TRACKED-CHANGES STYLE EDIT MARKERS FOR THE ARCHIVED ABOUT TEXT (MONOCHROME) */
+
+.about_add{
+    color: var(--about-add);
+    text-decoration: none;
+}
+
+.about_del{
+    color: var(--about-del);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+}
+
+/* only a strikethrough that carries a tooltip gets the dotted "hover me" hint */
+.about_del:has(.about_tip){
+    border-bottom: 1px dotted var(--about-del);
+    cursor: help;
+}
+
+.about_diffstat{
+    font-family: "Courier New", monospace;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    padding: 0.1em 0.5em;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.about_diffstat .stat_add{
+    color: var(--about-add);
+}
+
+.about_diffstat .stat_del{
+    color: var(--about-del);
+}
+
+.about_add a.about_inline_link{
+    color: var(--about-add);
+    text-decoration: none !important;
+    border-bottom: 1px dotted var(--about-add);
+}
+
+/* HOVER "REVIEW COMMENT" BOXES — REAL, SELECTABLE ELEMENTS */
+
+.about_term,
+.about_del{
+    position: relative;
+}
+
+.about_tip{
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 12px);
+    width: max-content;
+    max-width: 22vw;
+    background: #f5f0e5;
+    color: #2b2824;
+    text-align: left;
+    text-decoration: none;
+    font-style: normal;
+    font-family: "Playfair Display", serif;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-left: 3px solid var(--about-link);
+    border-radius: 8px;
+    padding: 1.3vh 1.4vw;
+    font-size: 1.8vmin;
+    line-height: 1.55;
+    letter-spacing: 0.2px;
+    z-index: 200;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+    cursor: text;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+/* pointer arrow under the box */
+.about_tip::before{
+    content: "";
+    position: absolute;
+    left: 1.3vw;
+    top: 100%;
+    margin-top: -5px;
+    width: 10px;
+    height: 10px;
+    background: #f5f0e5;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    transform: rotate(45deg);
+}
+
+/* transparent bridge across the gap so the box stays open while moving into it */
+.about_tip::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 16px;
+}
+
+.about_term:hover .about_tip,
+.about_del:hover .about_tip,
+.about_tip:hover{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.about_tip a.about_inline_link{
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.about_inline_link{
+    color: var(--about-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.about_inline_link:hover{
+    color: var(--about-link-hover);
 }
 
 .scrollup_home{

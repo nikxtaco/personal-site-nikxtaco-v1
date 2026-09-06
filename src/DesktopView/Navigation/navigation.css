@@ -18,7 +18,7 @@
 .home_slides .main_blog_container{
     z-index:0;
     position:absolute;
-    left:100vw;
+    left:200vw;
     top:0;
     width:100vw;
     height:100vh;
@@ -29,7 +29,7 @@
     width:100vw;
     height:100vh;
     position:absolute;
-    left:200vw;
+    left:100vw;
     top:0;
 }
 
@@ -128,6 +128,28 @@
     margin-top:calc(100vh - 25vh - 4vmin);
     z-index:70;
     border:2px solid rgb(255, 255, 255, 0.5);
+}
+
+/* LIGHT THEME (Research & Projects detail slide): invert the corner motif so
+   the outline boxes and stripes stay visible on the light background */
+/* LIGHT SECTIONS: soften the corner motif into a subtle translucent watermark
+   (invert the white stripes to dark, then drop opacity) instead of stark bright.
+   Applies to Research&Projects detail (02a), Blog detail (03a), and the About
+   detail (slide_00) while About is in light theme. */
+/* light sections: hide the corner decoration entirely (dark theme keeps it) */
+.stripes_slide_02a .border_only_box1,
+.stripes_slide_02a .border_only_box2,
+.stripes_slide_02a .stripes_box1,
+.stripes_slide_02a .stripes_box2,
+.stripes_slide_03a .border_only_box1,
+.stripes_slide_03a .border_only_box2,
+.stripes_slide_03a .stripes_box1,
+.stripes_slide_03a .stripes_box2,
+body.about-light .stripes_slide_00 .border_only_box1,
+body.about-light .stripes_slide_00 .border_only_box2,
+body.about-light .stripes_slide_00 .stripes_box1,
+body.about-light .stripes_slide_00 .stripes_box2{
+    display: none;
 }
 
 /* ---------------------------------------------------- */

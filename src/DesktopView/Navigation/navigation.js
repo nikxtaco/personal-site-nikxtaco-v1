@@ -103,7 +103,7 @@ export default function Navigation() {
                 <div className="stripe_design stripes_slide_02a">
                     <div className="border_only_box1"></div>
                     <div className="stripes_box1"></div>
-                    <a href="#blog"><div onClick={()=>setIndex(2)} className="back_to_home">Back To Blog</div></a>
+                    <a href="#projects"><div onClick={()=>setIndex(2)} className="back_to_home">Back To Research & Projects</div></a>
                     <div className="border_only_box2"></div>
                     <div className="stripes_box2"></div>
                 </div>
@@ -118,7 +118,7 @@ export default function Navigation() {
                 <div className="stripe_design stripes_slide_03a">
                     <div className="border_only_box1"></div>
                     <div className="stripes_box1"></div>
-                    <a href="#projects"><div onClick={()=>setIndex(3)} className="back_to_home">Back To Projects</div></a>
+                    <a href="#blog"><div onClick={()=>setIndex(3)} className="back_to_home">Back To Blog</div></a>
                     <div className="border_only_box2"></div>
                     <div className="stripes_box2"></div>
                 </div>
@@ -149,20 +149,20 @@ export default function Navigation() {
             {/* TOP NAVBAR FOR ALL MAIN PAGES (HOME, BLOG, PROJECTS, ART) */}
 
                 <div className="summary_box">
-                    <a href="#blog">
-                        <div onClick={()=>setIndex(2)} style={customBlog} className="summary_sub_box_white">
+                    <a href="#projects">
+                        <div onClick={()=>setIndex(2)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Blog</h3>
-                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
+                                <h3 className="summary_heading_white">Research & Projects</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">02</h3>
                             </div>
                         </div>
                     </a>
-                    <a href="#projects">
-                        <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
+                    <a href="#blog">
+                        <div onClick={()=>setIndex(3)} style={customBlog} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
+                                <h3 className="summary_heading_white">Blog</h3>
+                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
@@ -188,20 +188,20 @@ export default function Navigation() {
                             <div style={customHome}></div>
                         </div>
                     </a>
-                    <a href="#blog">
-                        <div  onClick={()=>setIndex(2)} style={customBlog} className="summary_sub_box_white">
+                    <a href="#projects">
+                        <div  onClick={()=>setIndex(2)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Blog</h3>
-                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
+                                <h3 className="summary_heading_white">Research & Projects</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">02</h3>
                             </div>
                         </div>
                     </a>
-                    <a href="#projects">
-                        <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
+                    <a href="#blog">
+                        <div onClick={()=>setIndex(3)} style={customBlog} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
+                                <h3 className="summary_heading_white">Blog</h3>
+                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
@@ -227,20 +227,20 @@ export default function Navigation() {
                             <div style={customHome}></div>
                         </div>
                     </a>
-                    <a href="#blog">
-                        <div  onClick={()=>setIndex(2)} style={customBlog} className="summary_sub_box_white">
+                    <a href="#projects">
+                        <div  onClick={()=>setIndex(2)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Blog</h3>
-                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
+                                <h3 className="summary_heading_white">Research & Projects</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">02</h3>
                             </div>
                         </div>
                     </a>
-                    <a href="#projects">
-                        <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
+                    <a href="#blog">
+                        <div onClick={()=>setIndex(3)} style={customBlog} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
+                                <h3 className="summary_heading_white">Blog</h3>
+                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>
@@ -266,20 +266,20 @@ export default function Navigation() {
                             <div style={customHome}></div>
                         </div>
                     </a>
-                    <a href="#blog">
-                        <div  onClick={()=>setIndex(2)} style={customBlog} className="summary_sub_box_white">
+                    <a href="#projects">
+                        <div  onClick={()=>setIndex(2)} style={customProjects} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Blog</h3>
-                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
+                                <h3 className="summary_heading_white">Research & Projects</h3>
+                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
                                 <h3 className="summary_description_white">02</h3>
                             </div>
                         </div>
                     </a>
-                    <a href="#projects">
-                        <div onClick={()=>setIndex(3)} style={customProjects} className="summary_sub_box_white">
+                    <a href="#blog">
+                        <div onClick={()=>setIndex(3)} style={customBlog} className="summary_sub_box_white">
                             <div className="line_draw">
-                                <h3 className="summary_heading_white">Projects</h3>
-                                <h3 className="summary_description_white">Things I ended up with while trying to learn tech.</h3>
+                                <h3 className="summary_heading_white">Blog</h3>
+                                <h3 className="summary_description_white">Everything from deep poetry to pointless ramblings.</h3>
                                 <h3 className="summary_description_white">03</h3>
                             </div>
                         </div>

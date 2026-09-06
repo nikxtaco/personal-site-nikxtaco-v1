@@ -71,8 +71,8 @@ export default function Navigation() {
         }
          <div style={customNavbar}>
              <a href="/" onClick={toggleVisibility} style={customNavbarEach}>Home</a>
+             <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Research & Projects</a>
              <a href="#blog" onClick={toggleVisibility} style={customNavbarEach} >Blog</a>
-             <a href="#projects" onClick={toggleVisibility} style={customNavbarEach}>Projects</a>
              <a href="#art" onClick={toggleVisibility} style={customNavbarEach} >Art & Music</a>
                
              <span>
@@ -106,8 +106,8 @@ export default function Navigation() {
          
          <div className="home_slides">
             <div><HomeIntro/></div>
-            <div><HomeBlog/></div>
             <div><HomeProjects/></div>
+            <div><HomeBlog/></div>
             <div><HomeArt/></div>
         </div>
          

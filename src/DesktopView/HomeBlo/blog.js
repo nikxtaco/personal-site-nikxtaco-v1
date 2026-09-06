@@ -3,6 +3,8 @@ import React, {useState} from "react";
 // import Scrollable_Blog from '../../pages/Blog/scrollable_blog.js';
 
 import "./blog.css"
+import Writings from './Writings';
+import UseAnimations from "react-useanimations";
 
 // import UseAnimations from "react-useanimations";
 
@@ -58,6 +60,7 @@ export default function Blog() {
     // const [pageDown, setPageDown] = useState(false);
     const [summaryColor1, setSummaryColor1] = useState(0);
     const [summaryColor2, setSummaryColor2] = useState(0);
+    const [summaryColor3, setSummaryColor3] = useState(0);
 
     const customSummary1 = {
       width:"16vw",
@@ -79,6 +82,16 @@ export default function Blog() {
         backgroundPosition: summaryColor2? "left bottom" : "right bottom",
         }
 
+      const customSummary3 = {
+        width:"16vw",
+        height:"2px",
+        float:"left",
+        background: "linear-gradient(to right, white 10%, rgb(255, 255, 255, 0.1) 50%)",
+        backgroundSize: "200% 100%",
+        transition: "all 1s ease",
+        backgroundPosition: summaryColor3? "left bottom" : "right bottom",
+        }
+
     // useEffect(() => {
     //   if(pageDown===true)
     //   {
@@ -93,36 +106,86 @@ export default function Blog() {
 
                 <div id="blog" className="main_blog_container" >
 
-                    <div className="page_number">02</div>
+                    <div className="page_number">03</div>
                     <div className="songcircle_picture"></div>
 
-                    <a href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
-                        <div className="summary_intro_box_white">
-                            <h3 className="summary_heading_white_bottom">Instagram</h3>
-                            {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}
-                            <h3 className="summary_description_white_bottom">02A</h3>
-                            <div style={customSummary1}></div>
+                    <div className="blog_hero_boxes">
+                        <a href="#bloglist" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="blog_hero_browse">
+                            <div className="blog_box">
+                                <h3 className="summary_heading_white_bottom">Browse</h3>
+                                <h3 className="summary_description_white_bottom">03A</h3>
+                                <div style={customSummary1}></div>
+                            </div>
+                        </a>
+                        <div className="blog_hero_row">
+                            <a href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="blog_hero_half">
+                                <div className="blog_box">
+                                    <h3 className="summary_heading_white_bottom">Instagram</h3>
+                                    <h3 className="summary_description_white_bottom">03B</h3>
+                                    <div style={customSummary2}></div>
+                                </div>
+                            </a>
+                            <a href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor3(1)} onMouseLeave={()=>setSummaryColor3(0)} className="blog_hero_half">
+                                <div className="blog_box">
+                                    <h3 className="summary_heading_white_bottom">Medium</h3>
+                                    <h3 className="summary_description_white_bottom">03C</h3>
+                                    <div style={customSummary3}></div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-
-                    <a href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
-                        <div className="summary_intro_box_white">
-                            <h3 className="summary_heading_white_bottom">Medium</h3>
-                            {/* <h3 className="summary_description_white">If I ever write a book, this is the stuff I’d put in it.</h3> */}
-                            <h3 className="summary_description_white_bottom">02B</h3>
-                            <div style={customSummary2}></div>
-                        </div>
-                    </a>
+                    </div>
 
                     <div className="hey_text_div">
                         <h1 className="hey_text">
-                            I write,<br/>sometimes.
+                            Sometimes,<br/>I write.
                         </h1>
                     </div>
 
                 </div>
 
-            {/* THE BLOGLIST PAGE BELOW THE MAIN INTRO PAGE */}
+            {/* THE WRITINGS DETAIL PAGE BELOW THE MAIN INTRO PAGE */}
+
+                <div id="bloglist" className="bloglist_container">
+                    <div className="bloglist_content_new">
+                        <h3 className="blog_heading_label">- Blog</h3>
+                        <h1 className="blog_writings_title">Writings</h1>
+                        <p className="blog_intro">
+                            A collection of short posts that I'm an author on, across various domains. Some here, some off-site.
+                        </p>
+                        <Writings/>
+                        <button
+                            type="button"
+                            className="blog_back_up"
+                            onClick={() => {
+                                const el = document.getElementById("bloglist");
+                                if (el) el.scrollTo({ top: 0, behavior: "smooth" });
+                            }}
+                        >
+                            ↑ Back to top
+                        </button>
+                        <br/><br/><br/>
+                    </div>
+
+                    <div className="about_contact_links">
+                        <a href="#blog">
+                            <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0" }}/>
+                        </a>
+                        <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
+                            <UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                        </a>
+                        <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
+                            <UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
+                            <UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                        </a>
+                        <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
+                            <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                        </a>
+                    </div>
+                </div>
+
+            {/* ARCHIVED old bloglist below */}
 
                 {/* <div id="bloglist" className="bloglist_container">
 

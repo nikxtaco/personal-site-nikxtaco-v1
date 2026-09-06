@@ -56,10 +56,10 @@ export default function Blog() {
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
-            I write,
+            Sometimes,
           </h2>
           <h2 className="hey_desc_mobile">
-            sometimes
+            I write.
           </h2>
         </div>
 

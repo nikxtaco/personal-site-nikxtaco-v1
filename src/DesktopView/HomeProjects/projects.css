@@ -1,16 +1,19 @@
 .projects_container{
     margin-top:100vh;
-    left:200vw;
+    left:100vw;
     width:100vw;
     height:100vh;
     overflow-y:scroll !important;
     position: absolute;
+    /* LIGHT THEME — this detail page only (hero stays dark) */
+    background: #f4f1ea;
+    color: #1a1a1a;
 }
 
 .projects_container .projects_all_content{
     width:75vw;
     margin-top:10vh;
-    margin-left:22vw;
+    margin-left:19vw;
     font-family: "Playfair Display",serif;
 }
 
@@ -21,23 +24,101 @@
 
 .projects_title1{
     font-family: 'Rozha One', serif;
-    font-size:12vmin;
+    font-size:9vmin;
     margin:0;
+}
+
+.research_intro{
+    font-family: "Playfair Display",serif;
+    font-size: 2.3vmin;
+    color:#1a1a1a;
+    opacity:0.85;
+    margin:1vh 0 3vh 0;
 }
 
 .projects_title2{
     font-family: 'Rozha One', serif;
-    font-size:12vmin;
+    font-size:9vmin;
     margin:0;
     margin-top:8vh;
 }
 
 .projects_content{
-    width:50vw;
+    flex: 1;
+    min-width: 0;
     font-size: 3.3vmin;
-    padding-left:6vw;
-    margin-top:5vh;
-    border-left: 2px solid white;
+    padding-left:2vw;
+    border-left: 2px solid #1a1a1a;
+}
+
+/* research paper entry + figure side by side, contained within one slot;
+   the figure stretches to the entry's height and crops (zooms) to fill */
+.research_row{
+    display: flex;
+    align-items: stretch;
+    gap: 2vw;
+    width: 62vw;
+    margin-top: 5vh;
+}
+
+.research_img{
+    width: 15vw;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+}
+
+/* THE RESEARCH SECTION ON THE PROJECTS DETAIL PAGE */
+
+.research_paper_title{
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 2.7vmin;
+    font-style: normal;
+    margin: 0 0 0.8vh 0;
+    line-height: 1.1;
+}
+
+.research_meta{
+    font-size: 2vmin;
+    margin: 0 0 0.4vh 0;
+}
+
+.research_note{
+    font-size: 1.6vmin;
+    opacity: 0.6;
+    margin: 0 0 0.4vh 0;
+}
+
+.research_venue{
+    font-size: 1.8vmin;
+    font-style: italic;
+    opacity: 0.7;
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.research_venue_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.4vh 2.5vw;
+    margin-top: 0.6vh;
+}
+
+.research_links{
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    flex-shrink: 0;
+}
+
+.research_links a{
+    display: inline-flex;
+    cursor: pointer;
 }
 
 /* THE CONTACT LINKS AND NAVIGATION TO GO BACK UP */
@@ -60,23 +141,19 @@ iframe {
 	width: 100%;
 }
 
-.iframe-container {
-    content: "";
-    display: table;
-    clear: both;
-    width: 70vmin;
-    /* 56vw; */
+.projects_container .iframe-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5vw 2vw;
+    width: 56vw;
   }
 
-  .iframe-projects-item {
+  .projects_container .iframe-projects-item {
     aspect-ratio: 16/10;
     width: 100%;
-    /* 26vw; */
-    float: left;
+    float: none;
     box-sizing: border-box;
-    margin-right: 5%;
-    margin-bottom: 5%; 
-    margin-top: 5%; 
+    margin: 0;
   }
 
   .iframe-item:nth-child(4n) {

@@ -18,7 +18,7 @@ const Sketches = () => {
         <div key={path}>
         <div className="magnifying-image-container">
           <img
-            // src={require('../../img/sketches/cutie5.jpeg').default}
+            // src={require('../../img/sketches/suika.jpeg').default}
             src={path}
             alt={title}
             className={title<2 ? 'magnifying-image iframe-sketches-item-set1':

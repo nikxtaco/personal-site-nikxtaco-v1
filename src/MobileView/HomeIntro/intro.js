@@ -15,6 +15,7 @@ export default function Intro() {
   const { height } = useWindowDimensions();
 
   const [about] = useState(false);
+  const [aboutVersion, setAboutVersion] = useState("2026");
 
   useEffect(() => {
     if(about===true)
@@ -64,7 +65,7 @@ export default function Intro() {
         </div>
         </a>
 
-        <a href="https://drive.google.com/file/d/1gr4ZlelYYLWw5hcmmi9M6fzGn767fjiV/view?usp=drivesdk" target="_blank" rel="noreferrer">
+        <a href="https://drive.google.com/drive/folders/1l1PrXVNpfa5TxGDJaiMOrJ36ePlRSRS9" target="_blank" rel="noreferrer">
         <div className="about_button_mobile2">
           RESUME
         </div>
@@ -74,10 +75,31 @@ export default function Intro() {
 
       <div id="about" className="about_container_mobile" >
 
-        <h3 className="about_heading_mobile">
-          - ABOUT
-        </h3>
-        <h1 className="about_title1_mobile">
+        <div className="about_header_row_mobile">
+          <h3 className="about_heading_mobile">
+            - ABOUT
+          </h3>
+          <div className="about_version_toggle_mobile">
+            <span onClick={()=>setAboutVersion("2026")} className={aboutVersion==="2026" ? "about_version_mobile active" : "about_version_mobile"}>The professional 2026 version</span>
+            <span onClick={()=>setAboutVersion("2023")} className={aboutVersion==="2023" ? "about_version_mobile active" : "about_version_mobile"}>The authentic 2023 version</span>
+          </div>
+        </div>
+
+        {aboutVersion==="2026" ? (
+        <>
+          <h1 className="about_title1_mobile">
+          [ 2026<br/>placeholder ]
+          </h1>
+          <h3 className="about_heading_mobile">
+          new about content coming soon.
+          </h3>
+          <p className="about_content_mobile">
+          [ Your 2026 About content will go here — placeholder. ]
+          </p>
+        </>
+        ) : (
+        <>
+          <h1 className="about_title1_mobile">
         I'm an<br/>aspiring...
         </h1> 
         <h3 className="about_heading_mobile">
@@ -143,6 +165,8 @@ export default function Intro() {
         …Maybe I should have started with “I’m 22, and from Kerala, India”, but well, 
         now you know.<br/>
         </p>
+        </>
+        )}
 
         <Footer/>
 

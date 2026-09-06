@@ -40,14 +40,14 @@ export default function Intro() {
 
         <div className="hey_text_div_mobile">
           <h1 className="hey_text_mobile">
-            Projects
+            Research & Projects
           </h1>
           <div style={customSummary}></div>
           <h2 className="hey_desc_mobile">
-            Sometimes,
+            I code,
           </h2>
           <h2 className="hey_desc_mobile">
-            I code.
+            sometimes.
           </h2>
         </div>
 
@@ -72,14 +72,40 @@ export default function Intro() {
         <div className="projects_all_content">
 
             <h3 className="projects_heading">
-            - PROJECTS
+            - RESEARCH & PROJECTS
             </h3>
+
+            <h1 className="projects_title1">
+            Research
+            </h1>
+
+            <div className="projects_content">
+              <h2 className="research_paper_title">The Model Organism Lottery: Model Organism Interpretability Strongly Depends on Training Methodology</h2>
+              <p className="research_meta">Andrzej Szablewski*, Gabriel Konar-Steenberg*, Raffaello Fornasiere*, <strong>Nikita Menon</strong>*, Stefan Heimersheim</p>
+              <p className="research_note">* Equal contribution</p>
+              <div className="research_venue_row">
+                <p className="research_venue">ICML 2026 Mechanistic Interpretability Workshop</p>
+                <div className="research_links">
+                  <a href="https://arxiv.org/abs/2607.01033" target="_blank" rel="noreferrer" title="Paper (arXiv)" aria-label="Paper (arXiv)">
+                    <UseAnimations animationKey="download" size={"4vmin"} style={{ color: "#1a1a1a", cursor: "pointer" }}/>
+                  </a>
+                  <a href="https://www.lesswrong.com/posts/frvmrrND28SxZnkEy/the-model-organism-lottery-model-organism-interpretability" target="_blank" rel="noreferrer" title="LessWrong post" aria-label="LessWrong post">
+                    <UseAnimations animationKey="bookmark" size={"4vmin"} style={{ color: "#1a1a1a", cursor: "pointer" }}/>
+                  </a>
+                  <a href="https://x.com/nikxtaco/status/2081786321698177286?s=20" target="_blank" rel="noreferrer" title="Twitter thread" aria-label="Twitter thread">
+                    <UseAnimations animationKey="twitter" size={"4vmin"} style={{ color: "#1a1a1a", cursor: "pointer" }}/>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <br/><br/><br/>
 
             <h1 className="projects_title1">
             Mockups
             <span>
                 <a href="#projects">
-                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"0vw" }}/>
+                    <UseAnimations animationKey="arrowUp" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float: "right", marginRight:"0vw" }}/>
                 </a>
             </span>
             </h1> 

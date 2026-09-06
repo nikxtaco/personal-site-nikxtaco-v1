@@ -2,11 +2,101 @@
 .bloglist_container{
     position:absolute;
     top:100vh;
-    left:100vw;
+    left:200vw;
     width:100vw;
     height:100vh;
     overflow-y:scroll;
     z-index:0;
+    /* LIGHT THEME — the writings detail page (hero stays dark) */
+    background:#f4f1ea;
+    color:#1a1a1a;
+}
+
+.bloglist_content_new{
+    width:75vw;
+    margin-left:19vw;
+    margin-top:10vh;
+    padding-bottom:10vh;
+    font-family:"Playfair Display",serif;
+}
+
+.blog_heading_label{
+    font-family:"Playfair Display",serif;
+    font-size:3vmin;
+    color:#1a1a1a;
+    margin:0;
+}
+
+.blog_writings_title{
+    font-family:'Rozha One',serif;
+    font-size:9vmin;
+    margin:0;
+    color:#1a1a1a;
+}
+
+.blog_intro{
+    font-family:"Playfair Display",serif;
+    font-size:2.3vmin;
+    color:#1a1a1a;
+    opacity:0.85;
+    margin:1vh 0 3vh 0;
+}
+
+.blog_back_up{
+    display:inline-block;
+    margin-top:7vh;
+    color:#1a1a1a;
+    font-family:"Playfair Display",serif;
+    font-size:2vmin;
+    text-decoration:none;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid #1a1a1a;
+    padding:0 0 2px 0;
+    cursor:pointer;
+}
+
+/* --- BLOG HERO: Browse on top, Instagram + Medium 50-50 below.
+   Total footprint (16vw wide, at 56vw) matches the two-box stack on the
+   other hero pages so it doesn't overflow wider than them. --- */
+.blog_hero_boxes{
+    position:absolute;
+    margin-left:56vw;
+    margin-top:67vh;
+    width:28vw;               /* ends ~84vw — a gap before the ~87.5vw corner box */
+    z-index:80;
+}
+
+.blog_hero_browse{
+    display:block;
+    width:16vw;               /* Browse matches the other hero pages' box width */
+    text-decoration:none;
+}
+
+.blog_hero_row{
+    display:flex;
+    gap:1vw;
+    margin-top:1.6vh;
+    width:100%;               /* Instagram + Medium span the wider group */
+}
+
+.blog_hero_row .blog_hero_half{
+    flex:1;
+    min-width:0;
+    text-decoration:none;
+}
+
+.blog_box{
+    background-color: rgba(0,0,0,0.6);
+    padding:1.3vh 1vw;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+
+/* the gradient underline is an inline 16vw div — force it to fit its box so the
+   50-50 boxes don't get pushed wider than their column (which caused overflow) */
+.blog_box > div:last-child{
+    width:100% !important;
 }
 
 

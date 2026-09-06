@@ -1,0 +1,219 @@
+/* CUSTOM DARK MUSIC PLAYER (drives SoundCloud via the Widget API) */
+
+.mp_wrap{
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    width: 58vw;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 2vh;
+}
+
+/* the "suika" image attached flush to the immediate left of the player card */
+.mp_side_art{
+    width: 13.5vw;
+    align-self: stretch;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-right: none;
+    border-radius: 14px 0 0 14px;   /* rounded left, square where it meets the card */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+}
+
+/* --- the now-playing card --- */
+.mp_card{
+    display: flex;
+    flex-direction: column;
+    width: 17vw;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-left: none;
+    border-radius: 0 14px 14px 0;   /* square where it meets suika, rounded on the right */
+    padding: 1.2vh 1vw;
+    box-sizing: border-box;
+    margin-right: 2vw;              /* gap between the card and the tracklist */
+}
+
+.mp_art{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background-color: #1c1e24;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+    margin-bottom: 1.6vh;
+}
+
+.mp_title{
+    font-size: 2.3vmin;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.4vh;
+}
+
+.mp_subtitle{
+    font-size: 1.7vmin;
+    opacity: 0.6;
+    margin-bottom: 1.4vh;
+    min-height: 2vmin;
+}
+
+.mp_progress{
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.mp_progress_fill{
+    height: 100%;
+    background: #22bfbf;
+    border-radius: 3px;
+    transition: width 0.2s linear;
+}
+
+.mp_times{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4vmin;
+    opacity: 0.6;
+    margin-top: 0.6vh;
+    font-family: "Courier New", monospace;
+}
+
+.mp_controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6vw;
+    margin-top: 1.6vh;
+}
+
+.mp_controls button{
+    background: none;
+    border: none;
+    color: #eef0f4;
+    cursor: pointer;
+    font-size: 2.6vmin;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.25s ease, transform 0.15s ease;
+    font-family: Arial, sans-serif;
+}
+
+.mp_controls button:hover{
+    color: #22bfbf;
+    transform: scale(1.12);
+}
+
+.mp_play{
+    width: 5.2vmin;
+    height: 5.2vmin;
+    border-radius: 50% !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mp_play:hover{
+    border-color: #22bfbf !important;
+}
+
+/* --- the tracklist --- */
+.mp_tracklist{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    min-width: 0;
+    /* stretch to the left card's height (mp_wrap has align-items:stretch),
+       scroll internally if the list is longer */
+    align-self: stretch;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+}
+
+.mp_track{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+    padding: 1.1vh 1.2vw;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.2s ease;
+}
+
+.mp_track:last-child{
+    border-bottom: none;
+}
+
+.mp_track:hover{
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.mp_track.active{
+    background: rgba(34, 191, 191, 0.12);
+    border-left: 3px solid #22bfbf;
+}
+
+.mp_track_meta{
+    display: flex;
+    flex-direction: column;
+    min-width: 0;          /* lets the text truncate instead of overflowing */
+    flex: 1;
+}
+
+.mp_track_title{
+    font-size: 1.9vmin;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mp_track.active .mp_track_title{
+    color: #22bfbf;
+}
+
+.mp_track_sub{
+    font-size: 1.5vmin;
+    opacity: 0.5;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mp_track_link{
+    flex-shrink: 0;
+    color: #22bfbf;
+    opacity: 0.85;
+    font-size: 2.6vmin;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0 0.2vw 0 0.6vw;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.15s ease;
+}
+
+.mp_track_link:hover{
+    color: #eef0f4;
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* the SoundCloud iframe is the audio engine only — kept out of view */
+.mp_iframe{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    border: 0;
+}

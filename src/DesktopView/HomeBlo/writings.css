@@ -1,0 +1,395 @@
+/* FILTERABLE WRITINGS LIST — light themed (matches the Research detail page) */
+
+.writings{
+    font-family: "Playfair Display", serif;
+    color: #1a1a1a;
+    width: 62vw;
+}
+
+/* --- filter bar --- */
+.writings_filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8vw;
+    margin: 3vh 0 4vh 0;
+}
+
+.writings_filter{
+    font-family: "Playfair Display", serif;
+    font-size: 2vmin;
+    color: #1a1a1a;
+    background: transparent;
+    border: 1px solid rgba(26, 26, 26, 0.35);
+    border-radius: 999px;
+    padding: 0.7vh 1.4vw;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.writings_filter:hover{
+    border-color: #0b8b8b;
+    color: #0b8b8b;
+}
+
+.writings_filter.active{
+    background: #0b8b8b;
+    border-color: #0b8b8b;
+    color: #f4f1ea;
+}
+
+/* --- list + cards --- */
+.writings_list{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.writings_empty{
+    font-size: 2.2vmin;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.writing_card{
+    display: flex;
+    align-items: flex-start;
+    gap: 2vw;
+    background: rgba(26, 26, 26, 0.035);
+    border: 1px solid rgba(26, 26, 26, 0.14);
+    border-radius: 14px;
+    padding: 2.4vh 1.8vw;
+    transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.writing_card:hover{
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.writing_text{
+    flex: 1;
+    min-width: 0;
+}
+
+/* blog listing: single outward link (e.g. "Read on LessWrong") */
+.writing_source_link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin-top: 1.6vh;
+    font-family: "Playfair Display", serif;
+    font-size: 1.8vmin;
+    color: #1a1a1a;
+    text-decoration: none;
+    opacity: 0.78;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.writing_source_link span{
+    border-bottom: 1px solid rgba(26, 26, 26, 0.35);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease;
+}
+
+.writing_source_link:hover{
+    color: #0b8b8b;
+    opacity: 1;
+}
+
+.writing_source_link:hover span{
+    border-bottom-color: #0b8b8b;
+}
+
+/* inline links inside a post's body notes */
+.writing_inline_link{
+    color: #0b8b8b;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(11, 139, 139, 0.4);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.writing_inline_link:hover{
+    color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+}
+
+/* real LessWrong logo mark used in place of an animated icon */
+.writing_lw_icon{
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* research listing: row of icon links (arXiv / LessWrong / X) */
+.writing_links{
+    display: flex;
+    align-items: center;
+    gap: 1.1vw;
+    margin-top: 1.8vh;
+}
+
+.writing_links a{
+    display: inline-flex;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.writing_links a:hover{
+    opacity: 1;
+}
+
+/* on-site "read more" */
+.writing_readmore{
+    margin-top: 1.6vh;
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    font-size: 1.8vmin;
+    color: #1a1a1a;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.writing_readmore:hover{
+    color: #0b8b8b;
+    opacity: 1;
+}
+
+/* layered "stack of photos" thumbnail on the right of each card — straight,
+   each layer offset down-right behind the first (top-left) */
+.writing_stack{
+    position: relative;
+    width: 14vw;
+    height: 11vw;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.writing_stack_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 11vw;
+    height: 8vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ddd;
+    border-radius: 10px;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+    transition: transform 0.25s ease;
+}
+
+/* first image sits front & top-left; later ones peek out toward bottom-right */
+.writing_stack .stack_0{ transform: translate(0, 0);        z-index: 3; }
+.writing_stack .stack_1{ transform: translate(1.6vw, 1.4vw); z-index: 2; }
+.writing_stack .stack_2{ transform: translate(3.2vw, 2.8vw); z-index: 1; }
+
+.writing_stack:hover .stack_1{ transform: translate(2.1vw, 1.8vw); }
+.writing_stack:hover .stack_2{ transform: translate(3.9vw, 3.4vw); }
+
+/* --- single post view --- */
+.writing_back{
+    font-family: "Playfair Display", serif;
+    font-size: 1.9vmin;
+    color: #1a1a1a;
+    background: transparent;
+    border: 1px solid rgba(26, 26, 26, 0.35);
+    border-radius: 999px;
+    padding: 0.6vh 1.2vw;
+    cursor: pointer;
+    margin-bottom: 3vh;
+    transition: all 0.2s ease;
+}
+
+.writing_back:hover{
+    border-color: #0b8b8b;
+    color: #0b8b8b;
+}
+
+.writing_post{
+    padding-left: 0;
+}
+
+.writing_post_title{
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 3.6vmin;
+    margin: 0;
+    line-height: 1.15;
+}
+
+.writing_body{
+    font-size: 2.3vmin;
+    line-height: 1.6;
+    margin: 2vh 0 0 0;
+    max-width: 52vw;
+}
+
+.writing_post_images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2vw;
+    margin-top: 3vh;
+    max-width: 52vw;   /* match the text column so images stack under it */
+}
+
+/* justified rows: flex-grow (set in JS to each image's aspect ratio) lets a
+   group share its row at equal height and fill the text column; each row finds
+   its own height, so a wide image cropped narrower makes its row taller */
+.writing_post_fig{
+    margin: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+}
+
+.writing_post_images img{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.writing_post_note{
+    flex-basis: 100%;
+    width: 100%;
+    margin: 2.5vh 0 0.5vh 0;
+}
+
+/* --- image lightbox popup --- */
+.lb_overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lb_img{
+    max-width: 82vw;
+    max-height: 82vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.lb_close{
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 5vmin;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lb_arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 4.5vmin;
+    width: 7vmin;
+    height: 7vmin;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.lb_arrow:hover{
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.lb_prev{ left: 3vw; }
+.lb_next{ right: 3vw; }
+
+.lb_count{
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 2vmin;
+    font-family: "Courier New", monospace;
+}
+
+.writing_head{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2vw;
+    flex-wrap: nowrap;
+}
+
+.writing_title{
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 3vmin;
+    margin: 0;
+    line-height: 1.15;
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.writing_title:hover{
+    color: #0b8b8b;
+}
+
+.writing_type{
+    font-size: 1.5vmin;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: rgba(11, 139, 139, 0.14);
+    color: #0b8b8b;
+    border: 1px solid rgba(11, 139, 139, 0.4);
+    border-radius: 999px;
+    padding: 0.3vh 0.9vw;
+    flex-shrink: 0;
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 0.7vh;
+}
+
+.writing_date{
+    font-size: 1.7vmin;
+    font-style: italic;
+    opacity: 0.55;
+    margin: 0.6vh 0 0 0;
+}
+
+.writing_excerpt{
+    font-size: 2.2vmin;
+    line-height: 1.5;
+    margin: 1.4vh 0 0 0;
+}
+
+.writing_link{
+    display: inline-block;
+    margin-top: 1.6vh;
+    font-size: 1.9vmin;
+    color: #0b8b8b;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(11, 139, 139, 0.5);
+    padding-bottom: 2px;
+}
+
+.writing_link:hover{
+    color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+}
