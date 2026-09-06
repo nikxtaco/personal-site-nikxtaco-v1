@@ -342,7 +342,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
 
 .summary_heading_white_bottom{
     color:white;
-    font-size:4vmin;
+    font-size:3.3vmin;
     font-family: 'Rosarivo', serif;
     font-style: italic;
     margin-bottom: 1vmin;
@@ -350,9 +350,9 @@ body.about-light .stripes_slide_00 .stripes_box2{
 
 .summary_description_white_bottom{
     color:white;
-    font-size:2vmin;
+    font-size:1.8vmin;
     float:right;
-    margin-top:-4.5vmin;
+    margin-top:-3.8vmin;
     margin-bottom:0;
 }
 

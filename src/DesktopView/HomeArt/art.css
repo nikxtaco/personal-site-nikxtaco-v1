@@ -32,6 +32,16 @@
     font-size: 3vmin;
 }
 
+.art_closing{
+    width: 58vw;
+    text-align: center;
+    margin: 6vh 0 0;
+    font-family: "Playfair Display",serif;
+    font-size: 3vmin;
+    letter-spacing: 0.01em;
+    opacity: 0.9;
+}
+
 .art_title1{
     font-family: 'Rozha One', serif;
     font-size:9vmin;
@@ -43,6 +53,17 @@
     font-size:12vmin;
     margin:0;
     margin-top:8vh;
+}
+
+.soundcloud_link{
+    color:#19b3b3;
+    text-decoration:none;
+    border-bottom:1px solid rgba(25,179,179,0.45);
+    transition:color 0.2s ease, border-color 0.2s ease;
+}
+.soundcloud_link:hover{
+    color:#ffffff;
+    border-bottom-color:#ffffff;
 }
 
 .art_content{
@@ -87,54 +108,29 @@ iframe {
     margin-bottom: 1vw; 
   }
 
-  .iframe-sketches-item-set1 {
-    aspect-ratio: 7/5;
-    /* width: 38%; */
-    width: 28.5vw;
-    float: left;
-    box-sizing: border-box;
-    margin-right: 1vw;
-    margin-bottom: 1vw; 
-  }
-
-  .iframe-sketches-item-set2 {
-    aspect-ratio: 7/5;
-    /* width: 35.6%; */
-    width: 28.5vw;
-    float: left;
-    box-sizing: border-box;
-    margin-right: 1vw;
-    margin-bottom: 1vw; 
-  }
-
-  .iframe-sketches-item-set3 {
-    aspect-ratio: 3/4;
-    /* width: 19.1%; */
-    width: 15.3vw;
-    float: left;
-    box-sizing: border-box;
-    margin-right: 1vw;
-    margin-bottom: 1vw;
-  }
-
-  /* sketches gallery: flex wrap keeps rows clean & equal-height (floats
-     staggered once portraits/landscapes were mixed) */
+  /* sketches gallery: justified rows — flex-grow/-basis (set per image in JS to
+     its aspect ratio) makes every row fill the same width; row heights vary */
   #sketches .iframe-container {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 1vw;
-    width: 75vw;
+    width: 58vw;
   }
 
-  #sketches .iframe-container > div {
+  #sketches .iframe-container .sketch_item {
+    flex-grow: 1;
+    flex-basis: 15vw;
+    min-width: 0;
     line-height: 0;
   }
 
   #sketches .iframe-container .magnifying-image {
+    width: 100%;
+    height: auto;
+    display: block;
     float: none;
     margin: 0;
-    display: block;
   }
 
   .iframe-item:nth-child(4n) {

@@ -7,6 +7,7 @@ import HomeIntro from "../HomeIntro/intro.js";
 import HomeBlog from "../HomeBlo/blog.js";
 import HomeProjects from "../HomeProjects/projects.js";
 import HomeArt from "../HomeArt/art.js";
+import SpotlightSearch from "../components/SpotlightSearch.js";
 
 export default function Navigation() {
 
@@ -50,6 +51,34 @@ export default function Navigation() {
         //   setProjectsColor(0)
       }
     }, [index, width])
+
+    // SPOTLIGHT SEARCH: jump to a section (horizontal slide) then scroll to the
+    // detail element and/or ask the writings list to open a specific post
+    const spotlightNavigate = (item) => {
+      setIndex(item.section);
+      setTimeout(() => {
+        if (item.entryId && item.native) {
+          // hosted post: open its own page, then bring the listing into view
+          window.dispatchEvent(new CustomEvent("spotlight-open-post", { detail: { id: item.entryId } }));
+          const el = document.getElementById(item.elementId);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (item.entryId && !item.native) {
+          // external/cross-post: scroll to its exact card and flash it
+          const card = document.getElementById("card-" + item.entryId);
+          if (card) {
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            card.classList.add("card_flash");
+            setTimeout(() => card.classList.remove("card_flash"), 1600);
+          } else if (item.elementId) {
+            const el = document.getElementById(item.elementId);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        } else if (item.elementId) {
+          const el = document.getElementById(item.elementId);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 450);
+    };
 
     // CREATES THE HOVER ANIMATION OF THE TOP NAVBAR FOR ALL PAGES
 
@@ -303,6 +332,8 @@ export default function Navigation() {
                     <HomeProjects/>
                     <HomeArt/>
                 </div>
-        </div>          
+
+                <SpotlightSearch onNavigate={spotlightNavigate} />
+        </div>
     )
 }

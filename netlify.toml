@@ -8,3 +8,10 @@
   NODE_OPTIONS = "--openssl-legacy-provider"
   # don't fail the build on ESLint warnings (react-scripts treats CI warnings as errors)
   CI = "false"
+
+# Serve the inline resume page (live Google Drive embed) at a clean /resume.pdf URL.
+# status 200 = rewrite (URL stays /resume.pdf; content comes from resume.html).
+[[redirects]]
+  from = "/resume.pdf"
+  to = "/resume.html"
+  status = 200

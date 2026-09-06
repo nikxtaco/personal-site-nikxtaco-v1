@@ -71,6 +71,15 @@
     min-width: 0;
 }
 
+/* brief highlight when the spotlight scrolls to a specific card */
+.writing_card.card_flash{
+    animation: writing_card_flash 1.6s ease;
+}
+@keyframes writing_card_flash{
+    0%, 100%{ box-shadow: 0 0 0 0 rgba(11, 139, 139, 0); }
+    15%, 55%{ box-shadow: 0 0 0 3px rgba(11, 139, 139, 0.55); }
+}
+
 /* blog listing: single outward link (e.g. "Read on LessWrong") */
 .writing_source_link{
     display: inline-flex;
@@ -161,8 +170,8 @@
    each layer offset down-right behind the first (top-left) */
 .writing_stack{
     position: relative;
-    width: 14vw;
-    height: 11vw;
+    width: 13vw;
+    height: 9.9vw;
     flex-shrink: 0;
     cursor: pointer;
 }
@@ -185,11 +194,21 @@
 
 /* first image sits front & top-left; later ones peek out toward bottom-right */
 .writing_stack .stack_0{ transform: translate(0, 0);        z-index: 3; }
-.writing_stack .stack_1{ transform: translate(1.6vw, 1.4vw); z-index: 2; }
-.writing_stack .stack_2{ transform: translate(3.2vw, 2.8vw); z-index: 1; }
+.writing_stack .stack_1{ transform: translate(1.0vw, 0.9vw); z-index: 2; }
+.writing_stack .stack_2{ transform: translate(2.0vw, 1.8vw); z-index: 1; }
 
-.writing_stack:hover .stack_1{ transform: translate(2.1vw, 1.8vw); }
-.writing_stack:hover .stack_2{ transform: translate(3.9vw, 3.4vw); }
+.writing_stack:hover .stack_1{ transform: translate(1.4vw, 1.2vw); }
+.writing_stack:hover .stack_2{ transform: translate(2.6vw, 2.3vw); }
+
+/* blog listing is more compact than the research listing (shorter descriptions
+   + a smaller image stack) */
+.writings_blog .writing_card{ padding: 1.7vh 1.8vw; }
+.writings_blog .writing_stack{ width: 10.6vw; height: 7.8vw; }
+.writings_blog .writing_stack_img{ width: 9vw; height: 6.4vw; }
+.writings_blog .writing_stack .stack_1{ transform: translate(0.8vw, 0.7vw); }
+.writings_blog .writing_stack .stack_2{ transform: translate(1.6vw, 1.4vw); }
+.writings_blog .writing_stack:hover .stack_1{ transform: translate(1.1vw, 1.0vw); }
+.writings_blog .writing_stack:hover .stack_2{ transform: translate(2.1vw, 1.9vw); }
 
 /* --- single post view --- */
 .writing_back{
@@ -232,6 +251,7 @@
 .writing_post_images{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;   /* figures hug their image (no stretch gap below) */
     gap: 1.2vw;
     margin-top: 3vh;
     max-width: 52vw;   /* match the text column so images stack under it */
@@ -261,6 +281,72 @@
     flex-basis: 100%;
     width: 100%;
     margin: 2.5vh 0 0.5vh 0;
+}
+
+/* ---- stack layout: comparison collages side by side (two columns) ---- */
+.writing_stackview{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.2vw;
+    width: 52vw;
+    margin-top: 3vh;
+}
+.writing_stackview_fig{ flex: 1; min-width: 0; margin: 0; }
+.writing_stackview_fig img{
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+    cursor: pointer;
+}
+.writing_afterbody{ margin-top: 3vh; }
+
+.writing_stackview_cap{
+    margin-top: 1vh;
+    font-family: "Playfair Display", serif;
+    font-size: 1.7vmin;
+    color: #4a463f;
+}
+
+/* ---- collage layout: captioned photo cards flowing into columns ---- */
+.writing_collage{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.4vw;
+    width: 52vw;
+    margin-top: 3vh;
+}
+.writing_collage_col{
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4vw;
+}
+.writing_collage_card{
+    margin: 0;
+    background: #fffdf8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 22px -14px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+.writing_collage_card:hover{
+    box-shadow: 0 18px 30px -16px rgba(0, 0, 0, 0.28);
+}
+.writing_collage_card img{
+    width: 100%;
+    display: block;
+}
+.writing_collage_cap{
+    padding: 1.3vh 1vw 1.6vh 1vw;
+    font-family: "Playfair Display", serif;
+    font-size: 1.7vmin;
+    line-height: 1.4;
+    color: #4a463f;
 }
 
 /* --- image lightbox popup --- */

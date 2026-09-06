@@ -90,12 +90,7 @@ export default function Art() {
                             <KeyboardCovers videos={keyboardData} /> */}
 
                             <div className="art_content">
-                            Listen to more on Soundcloud... or scroll down!
-                            <span>
-                                <a href="https://soundcloud.com/nikita-971387991" target="_blank" rel="noreferrer">
-                                    <UseAnimations animationKey="activity" size={"5vmin"} style={{ color: "white", cursor: "pointer", padding:"0", margin:"0", float: "right" }}/>
-                                </a>
-                            </span>
+                            Listen to more on <a className="soundcloud_link" href="https://soundcloud.com/nikita-971387991" target="_blank" rel="noreferrer">Soundcloud</a>... or scroll down!
                             </div>
 
                             <br/><br/>
@@ -132,15 +127,7 @@ export default function Art() {
 
                             <Sketches />
 
-                            <br/><br/>
-
-                            <div className="art_heading">
-                            Thanks for sticking around to get here!
-                            </div>
-
-                            <br/><br/><br/><br/><br/><br/>
-                            <br/><br/><br/><br/><br/><br/>
-                            <br/><br/><br/><br/><br/><br/>
+                            <br/><br/><br/>
 
                         </div>
 

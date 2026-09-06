@@ -70,17 +70,44 @@ const srcOf = (im) => (typeof im === "string" ? im : im.src);
 const posOf = (im) => (typeof im === "object" && im && im.pos ? im.pos : "center");
 const zoomOf = (im) => (typeof im === "object" && im && im.zoom ? im.zoom : "cover");
 
-// thumbnail stack order — optional `coverIndex` fronts a specific image
-// (affects the listing thumbnail only; the post + lightbox keep `images` order)
+// estimate a reading time from a piece's on-site text (~200 wpm); an entry can
+// override with `readMins` (useful for external papers whose length we can't see)
+const stripHtml = (s) => (s || "").replace(/<[^>]+>/g, " ");
+// meta line: creation date, "last updated" (running lists only), and read time
+const metaLine = (w) => {
+  const parts = [];
+  if (w.date) parts.push(w.date);
+  // only show "last updated" on running lists when it actually differs from the creation date
+  if (w.running && w.updated && w.updated !== w.date) parts.push("last updated " + w.updated);
+  parts.push(readingTime(w));
+  return parts.filter(Boolean).join(" · ");
+};
+
+const readingTime = (w) => {
+  if (typeof w.readMins === "number") return w.readMins + " min read";
+  const parts = [w.body, w.afterBody];
+  (w.images || []).forEach((im) => {
+    if (typeof im === "object" && im && im.note) parts.push(im.note);
+  });
+  const words = stripHtml(parts.filter(Boolean).join(" ")).trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200)) + " min read";
+};
+
+// thumbnail stack order (listing only; the post + lightbox keep `images` order):
+//   `stackOrder` — explicit array of image indices, else
+//   `coverIndex`  — fronts a specific image, else the natural `images` order
 const thumbOrder = (w) => {
   const imgs = w.images || [];
+  if (Array.isArray(w.stackOrder)) {
+    return w.stackOrder.map((i) => imgs[i]).filter(Boolean).slice(0, 3);
+  }
   if (typeof w.coverIndex === "number" && imgs[w.coverIndex]) {
     return [imgs[w.coverIndex], ...imgs.filter((_, i) => i !== w.coverIndex)].slice(0, 3);
   }
   return imgs.slice(0, 3);
 };
 
-export default function Writings({ entries = WRITINGS, showFilters = true, showAllLinks = false, backLabel = "← Back to writings" }) {
+export default function Writings({ entries = WRITINGS, showFilters = true, showAllLinks = false, backLabel = "← Back to writings", onOpenChange }) {
   const [filter, setFilter] = useState("All");
   const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null); // { images: [...], index: n }
@@ -109,6 +136,22 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
       else img.addEventListener("load", () => size(img), { once: true });
     });
   }, [openId]);
+
+  // let the parent (e.g. the blog page) know when a post is open, so it can hide
+  // its own listing header while reading
+  useEffect(() => {
+    if (onOpenChange) onOpenChange(!!openId);
+  }, [openId, onOpenChange]);
+
+  // spotlight search can ask this list to open a specific post by id
+  useEffect(() => {
+    const onOpen = (e) => {
+      const id = e.detail && e.detail.id;
+      if (id && entries.some((w) => w.id === id)) setOpenId(id);
+    };
+    window.addEventListener("spotlight-open-post", onOpen);
+    return () => window.removeEventListener("spotlight-open-post", onOpen);
+  }, [entries]);
 
   const openLightbox = (images, index = 0) => setLightbox({ images, index });
   const closeLightbox = () => setLightbox(null);
@@ -180,11 +223,65 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             <h2 className="writing_post_title">{openPost.title}</h2>
             <span className="writing_type">{openPost.type}</span>
           </div>
-          <p className="writing_date">{openPost.date}</p>
+          <p className="writing_date">{metaLine(openPost)}</p>
 
-          {openPost.body && <p className="writing_body">{openPost.body}</p>}
+          {openPost.body && (
+            <p className="writing_body" dangerouslySetInnerHTML={{ __html: openPost.body }} />
+          )}
 
-          {openPost.images && openPost.images.length > 0 && (
+          {openPost.images && openPost.images.length > 0 && openPost.layout === "collage" && (
+            <div className="writing_collage">
+              {/* deterministic 2-column split (first half left, rest right) so the
+                  masonry never reflows/overlaps across viewports */}
+              {[0, 1].map((col) => {
+                const half = Math.ceil(openPost.images.length / 2);
+                return (
+                  <div className="writing_collage_col" key={col}>
+                    {openPost.images
+                      .map((im, i) => ({ im, i }))
+                      .filter(({ i }) => (i < half ? 0 : 1) === col)
+                      .map(({ im, i }) => (
+                        <figure
+                          className="writing_collage_card"
+                          key={i}
+                          onClick={() => openLightbox(openPost.images, i)}
+                        >
+                          <img src={srcOf(im)} alt={`${openPost.title} ${i + 1}`} />
+                          {typeof im === "object" && im.note && (
+                            <figcaption
+                              className="writing_collage_cap"
+                              dangerouslySetInnerHTML={{ __html: im.note }}
+                            />
+                          )}
+                        </figure>
+                      ))}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+
+          {openPost.images && openPost.images.length > 0 && openPost.layout === "stack" && (
+            <div className="writing_stackview">
+              {openPost.images.map((im, i) => (
+                <figure className="writing_stackview_fig" key={i}>
+                  <img
+                    src={srcOf(im)}
+                    alt={`${openPost.title} ${i + 1}`}
+                    onClick={() => openLightbox(openPost.images, i)}
+                  />
+                  {typeof im === "object" && im.note && (
+                    <figcaption
+                      className="writing_stackview_cap"
+                      dangerouslySetInnerHTML={{ __html: im.note }}
+                    />
+                  )}
+                </figure>
+              ))}
+            </div>
+          )}
+
+          {openPost.images && openPost.images.length > 0 && openPost.layout !== "collage" && openPost.layout !== "stack" && (
             <div className="writing_post_images" ref={postImagesRef}>
               {openPost.images.map((im, i) => (
                 <React.Fragment key={i}>
@@ -206,6 +303,13 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             </div>
           )}
 
+          {openPost.afterBody && (
+            <p
+              className="writing_body writing_afterbody"
+              dangerouslySetInnerHTML={{ __html: openPost.afterBody }}
+            />
+          )}
+
           {openPost.link && (
             <a
               className="writing_link"
@@ -224,18 +328,22 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
   }
 
   // ---- Listing view ----
-  // the blog (filter bar shown) hides research-only entries; the Research
-  // section (no filter bar) keeps them
-  const base = showFilters ? entries.filter((w) => !w.researchOnly) : entries;
+  // the blog (filter bar shown) omits research entirely — it's fully covered by
+  // the Research section; that section (no filter bar) keeps everything
+  const base = showFilters ? entries.filter((w) => w.type !== "Research" && !w.researchOnly) : entries;
+  // sort by last activity: the `updated` (last-updated) date if present, else the
+  // creation `sortDate` — newest first
+  const sortTime = (w) => Date.parse(w.updated || w.sortDate || "") || 0;
+  const typesOf = (w) => w.types || [w.type];
   const shown = (filter === "All"
     ? base
-    : base.filter((w) => w.type === filter)
+    : base.filter((w) => typesOf(w).includes(filter))
   )
     .slice()
-    .sort((a, b) => (b.sortDate || "").localeCompare(a.sortDate || ""));
+    .sort((a, b) => sortTime(b) - sortTime(a));
 
   return (
-    <div className="writings">
+    <div className={showFilters ? "writings writings_blog" : "writings"}>
       {showFilters && (
         <div className="writings_filters">
           {WRITING_FILTERS.map((f) => (
@@ -273,7 +381,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             } else setOpenId(w.id);
           };
           return (
-            <article className="writing_card" key={w.id}>
+            <article className="writing_card" id={"card-" + w.id} key={w.id}>
               <div className="writing_text">
                 <div className="writing_head">
                   <h2 className="writing_title" onClick={openWriting} title="Open">
@@ -281,7 +389,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
                   </h2>
                   {showFilters && <span className="writing_type">{w.type}</span>}
                 </div>
-                <p className="writing_date">{w.date}</p>
+                <p className="writing_date">{metaLine(w)}</p>
                 <p className="writing_excerpt">{w.excerpt}</p>
 
                 {hasLinks ? (

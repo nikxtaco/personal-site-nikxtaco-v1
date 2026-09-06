@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import "./art.css"
 
 import NeonGenesis from "../../img/sketches/NeonGenesis.jpeg";
@@ -11,16 +11,7 @@ import NarutoOriginal from "../../img/sketches/NarutoOriginal.jpeg";
 import VForVendetta from "../../img/sketches/VForVendetta.jpeg";
 
 const Sketches = () => {
-    // each sketch carries its own size class so ordering never changes the
-    // shapes — set3 = portrait (3/4), set1/set2 = landscape (7/5)
-    const images = [
-      { src: NeonGenesis, cls: "iframe-sketches-item-set3" },
-      { src: LDREdited, cls: "iframe-sketches-item-set1" },
-      { src: HPEdited, cls: "iframe-sketches-item-set1" },
-      { src: NarutoOriginal, cls: "iframe-sketches-item-set3" },
-      { src: SherlockOriginal, cls: "iframe-sketches-item-set2" },
-      { src: VForVendetta, cls: "iframe-sketches-item-set3" },
-    ];
+    const images = [NeonGenesis, LDREdited, HPEdited, NarutoOriginal, SherlockOriginal, VForVendetta];
 
     const [lbIndex, setLbIndex] = useState(null); // open lightbox at this index
     const open = (i) => setLbIndex(i);
@@ -30,17 +21,39 @@ const Sketches = () => {
       setLbIndex((n) => (n === null ? n : (n + dir + images.length) % images.length));
     };
 
+    // Justified rows: each item's flex-grow/-basis is set to its aspect ratio so
+    // every row fills the gallery width at a single (per-row) height; rows can
+    // differ in height but always share the same width.
+    const containerRef = useRef(null);
+    const sizeItem = (img) => {
+      const item = img.closest(".sketch_item");
+      if (item && img.naturalHeight) {
+        const ar = img.naturalWidth / img.naturalHeight;
+        item.style.flexGrow = ar.toFixed(4);
+        item.style.flexBasis = (ar * 15).toFixed(2) + "vw";
+      }
+    };
+    useEffect(() => {
+      const c = containerRef.current;
+      if (!c) return;
+      c.querySelectorAll(".magnifying-image").forEach((img) => {
+        if (img.complete) sizeItem(img);
+        else img.addEventListener("load", () => sizeItem(img), { once: true });
+      });
+    }, []);
+
   return (
     <>
-    <div className="iframe-container">
-      {images.map(({ src, cls }, i) => (
-        <div key={i}>
+    <div className="iframe-container" ref={containerRef}>
+      {images.map((src, i) => (
+        <div key={i} className="sketch_item">
         <div className="magnifying-image-container">
           <img
             src={src}
             alt={`sketch ${i + 1}`}
-            className={`magnifying-image ${cls}`}
+            className="magnifying-image"
             style={{ cursor: "pointer" }}
+            onLoad={(e) => sizeItem(e.currentTarget)}
             onClick={() => open(i)}
           />
         </div>
@@ -54,7 +67,7 @@ const Sketches = () => {
         <button className="lb_arrow lb_prev" onClick={(e) => step(e, -1)} aria-label="Previous image">‹</button>
         <img
           className="lb_img"
-          src={images[lbIndex].src}
+          src={images[lbIndex]}
           alt=""
           onClick={(e) => e.stopPropagation()}
         />

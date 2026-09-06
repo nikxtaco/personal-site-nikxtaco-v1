@@ -7,13 +7,15 @@ import jupiter from "../../img/jupiter-artland.jpg";
 import starflyer from "../../img/star-flyer.jpg";
 import sevenSisters from "../../img/seven-sisters.jpg";
 import obsidianFull from "../../img/obsidian-full.png";
+import { RESEARCH_UPDATES } from "./researchUpdates";
+import lessWrongMark from "../../img/lesswrong-mark.png";
 
 export default function Intro() {
 
     const [summaryColor1, setSummaryColor1] = useState(0);
     const [summaryColor2, setSummaryColor2] = useState(0);
-    const [aboutTheme, setAboutTheme] = useState("light"); // "light" (default) | "dark"
-    const iconColor = aboutTheme === "light" ? "#1a1a1a" : "white";
+    const aboutTheme = "light"; // detail page is light-only now (toggle removed)
+    const iconColor = "#1a1a1a";
 
     // Rotating "I try to do new things" title — only the verb + noun change
     const TRY_WORDS = [
@@ -39,20 +41,10 @@ export default function Intro() {
         });
     }, []);
 
-    // Cursor trail (✦ stars) inside the About area (throttled)
-    const trailTick = React.useRef(0);
-    const aboutTrail = (e) => {
-        const now = Date.now();
-        if (now - trailTick.current < 60) return;
-        trailTick.current = now;
-        const el = document.createElement("span");
-        el.className = "about_trail_bit";
-        el.textContent = "✦";
-        el.style.left = e.clientX + "px";
-        el.style.top = e.clientY + "px";
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 800);
-    };
+    // styled hover tooltip for the About collage images (native `title` was unreliable)
+    const [imgTip, setImgTip] = useState(null); // { text, x, y }
+    const showImgTip = (e) => setImgTip({ text: e.currentTarget.dataset.tip, x: e.clientX, y: e.clientY });
+    const hideImgTip = () => setImgTip(null);
 
     // sync a body class so the (global) corner decoration on the About slide
     // can invert to stay visible on the light theme
@@ -105,13 +97,13 @@ export default function Intro() {
 
                     <a href="#about" onMouseEnter={()=>setSummaryColor1(1)} onMouseLeave={()=>setSummaryColor1(0)} className="intro_box1">
                         <div className="summary_intro_box_white">
-                            <h3 className="summary_heading_white_bottom">About</h3>
+                            <h3 className="summary_heading_white_bottom">About &amp; Updates</h3>
                             <h3 className="summary_description_white_bottom">01A</h3>
                             <div style={customSummary1}></div>
                         </div>
                     </a>
 
-                    <a href="https://drive.google.com/drive/folders/1l1PrXVNpfa5TxGDJaiMOrJ36ePlRSRS9" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
+                    <a href="/resume.pdf" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="intro_box2">
                         <div className="summary_intro_box_white">
                         <h3 className="summary_heading_white_bottom">Resume</h3>
                         <h3 className="summary_description_white_bottom">01B</h3>
@@ -130,7 +122,11 @@ export default function Intro() {
             {/* THE ABOUT PAGE BELOW THE MAIN INTRO PAGE */}
 
 
-            <div id="about" onMouseMove={aboutTrail} className={aboutTheme === "light" ? "about_container about_light" : "about_container about_dark"} >
+            <div id="about" className={aboutTheme === "light" ? "about_container about_light" : "about_container about_dark"} >
+
+                {imgTip && (
+                    <div className="about_imgtip" style={{ left: imgTip.x, top: imgTip.y }}>{imgTip.text}</div>
+                )}
 
                 <div className="about_butterflies" aria-hidden="true">
                     <span>🦋</span>
@@ -138,10 +134,25 @@ export default function Intro() {
                     <span>🦋</span>
                     <span>🦋</span>
                     <span>🦋</span>
-                    <span>🦋</span>
-                    <span>🦋</span>
-                    <span>🦋</span>
                 </div>
+
+                <aside className="about_updates">
+                    <h4 className="about_updates_title">Research Updates</h4>
+                    <ul className="about_updates_list">
+                        {RESEARCH_UPDATES.map((u, i) => (
+                            u.divider ? (
+                                <li className="about_update_divider" key={i}>
+                                    <span>{u.label}</span>
+                                </li>
+                            ) : (
+                                <li className="about_update" key={i}>
+                                    <span className="about_update_meta"><span className="about_update_icon">{u.icon}</span> {u.date}</span>
+                                    <span className="about_update_text" dangerouslySetInnerHTML={{ __html: u.text }} />
+                                </li>
+                            )
+                        ))}
+                    </ul>
+                </aside>
 
                 <div className="about_all_content">
 
@@ -154,13 +165,6 @@ export default function Intro() {
                             <span className="about_commit_hash">a1b2c3d</span> last edited by <strong>nikxtaco</strong> · main
                         </div>
 
-                        <button
-                            className="about_theme_toggle"
-                            onClick={() => setAboutTheme((t) => (t === "light" ? "dark" : "light"))}
-                        >
-                            {aboutTheme === "light" ? "🌙 Dark mode" : "☀ Light mode"}
-                        </button>
-
                         <div className="about_top_row">
                         <div className="about_status_box">
                             <p className="about_status">
@@ -170,7 +174,7 @@ export default function Intro() {
                             extension funded by <a className="about_inline_link" href="https://coefficientgiving.org" target="_blank" rel="noreferrer">Coefficient Giving</a>) fellowship in
                             London! We presented our <a className="about_inline_link" href="https://arxiv.org/abs/2607.01033" target="_blank" rel="noreferrer">paper</a> at
                             the <a className="about_inline_link" href="https://icml.cc/virtual/2026/workshop/54071" target="_blank" rel="noreferrer">ICML 2026 Mechanistic Interpretability Workshop</a> in Seoul, and my team is actively
-                            working on follow-ups which will likely be published <a className="about_inline_link" href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer">here</a>.
+                            working on follow-ups which will likely be published <a className="about_inline_link" href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer">here</a>. If you'd like to chat, do <a className="about_inline_link" href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">reach out</a>!
                             </p>
 
                             <p className="about_status">
@@ -181,7 +185,7 @@ export default function Intro() {
                             Well that's the summary. If you care to get a tiny bit more of a sense of my
                             personality, read on! I've left much of the longer <i>about me</i> section below as is
                             from when it was first written back in 2020-22, because I think it aged well, and have
-                            only made minor updates <span className="about_diffstat"><span className="stat_add">+{diffCount.add}</span> <span className="stat_del">−{diffCount.del}</span></span> where I thought necessary.
+                            only made minor updates <span className="about_diffstat"><span className="stat_add">+{diffCount.add}</span> <span className="stat_del">−{diffCount.del}</span></span> where desired.
                             </p>
 
                             <p className="about_lastupdated">Last updated: September 2026</p>
@@ -200,7 +204,7 @@ export default function Intro() {
                         </div>
 
                             <div className="about_aspiring_section">
-                            <img className="collage_obsidian_full" src={obsidianFull} alt="Obsidian graph" title="A snapshot of the Obsidian graph" />
+                            <img className="collage_obsidian_full" src={obsidianFull} alt="Obsidian graph" data-tip="A snapshot of the Obsidian graph" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                             <h1 className="about_title1">
                             I'm an<br/>aspiring...
                             </h1>
@@ -227,10 +231,10 @@ export default function Intro() {
                             </div>
 
                             <div className="about_try_section">
-                                <img className="collage_sevensisters" src={sevenSisters} alt="Nikita at Seven Sisters" title="The Seven Sisters Cliffs, England" />
-                                <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" title="The Star Flyer at Edinburgh's Christmas Markets" />
-                                <img className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" title="Jupiter Artland, Edinburgh" />
-                                <img className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" title="The Van Gogh Exhibition, London" />
+                                <img className="collage_sevensisters" src={sevenSisters} alt="Nikita at Seven Sisters" data-tip="The Seven Sisters Cliffs, England" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer at Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" data-tip="Jupiter Artland, Edinburgh" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" data-tip="The Van Gogh Exhibition, London" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <h1 className="about_title2">
                                 I try to <span className="about_try_word" key={"v" + tryIdx}>{TRY_WORDS[tryIdx][0]}</span><br/>
                                 new <span className="about_try_word" key={"n" + tryIdx}>{TRY_WORDS[tryIdx][1]}</span>
@@ -246,7 +250,7 @@ export default function Intro() {
                             my research taste and skills in the pursuit of aligning large AI models
                             {" "}<del className="about_del">in the long run</del> <ins className="about_add">before the long run runs out</ins>. I am far too <del className="about_del">lazy</del> <ins className="about_add">efficient</ins> to do any sort of redundant work
                             when I can help it, so for details on what I’ve been working on, I must
-                            redirect you to my <a className="about_inline_link" href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">linkedin</a> or <a className="about_inline_link" href="https://drive.google.com/drive/folders/1l1PrXVNpfa5TxGDJaiMOrJ36ePlRSRS9" target="_blank" rel="noreferrer">resume</a>.<br/><br/>
+                            redirect you to my <a className="about_inline_link" href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">linkedin</a> or <a className="about_inline_link" href="/resume.pdf" target="_blank" rel="noreferrer">resume</a>.<br/><br/>
 
                             I also clearly enjoy making <span className="about_term"><a className="about_inline_link" href="#music" onClick={(e)=>scrollToSection(e,'music')}>keyboard covers</a><span className="about_tip">Some of my most cherished memories from undergrad are thanks to being part of a band! I also play / have played (far less well) the Guitar and Harmonium, and hope to be good on the Ocarina and Cello one day!</span></span>, <a className="about_inline_link" href="#sketches" onClick={(e)=>scrollToSection(e,'sketches')}>art</a> and <span className="about_term"><a className="about_inline_link" href="#blog" onClick={(e)=>scrollToSection(e,'blog')}>writing poetry</a><span className="about_tip">I have this <a className="about_inline_link" href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer">instagram poetry account</a> that I used to write poetry for fairly frequently (over a 100 pieces I think) for many years through high school and a little into undergrad, but the page has since been dead, for reasons like: I found other fun things to do!<br/><br/>Most don't quite meet my bar now, but some do!</span></span> since
                             I seem to have enough content on each to dedicate whole pages to them!
@@ -281,6 +285,9 @@ export default function Intro() {
                     </a>
                     <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
                     <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: iconColor, cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                    </a>
+                    <a href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer" aria-label="LessWrong">
+                        <img src={lessWrongMark} alt="LessWrong" style={{ width: "4.4vmin", display: "block", marginLeft: "0.3vmin", paddingTop: "5vh", cursor: "pointer" }}/>
                     </a>
                 </div>
             </div>

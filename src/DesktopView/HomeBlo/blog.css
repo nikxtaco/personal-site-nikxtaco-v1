@@ -40,6 +40,18 @@
     color:#1a1a1a;
     opacity:0.85;
     margin:1vh 0 3vh 0;
+    max-width:62vw;
+}
+
+.blog_intro_link{
+    color:#0b8b8b;
+    text-decoration:none;
+    border-bottom:1px solid rgba(11,139,139,0.4);
+    transition:color 0.2s ease, border-color 0.2s ease;
+}
+.blog_intro_link:hover{
+    color:#1a1a1a;
+    border-bottom-color:#1a1a1a;
 }
 
 .blog_back_up{
@@ -88,7 +100,7 @@
 
 .blog_box{
     background-color: rgba(0,0,0,0.6);
-    padding:1.3vh 1vw;
+    padding:1.3vh 0;
     box-sizing:border-box;
     overflow:hidden;
 }

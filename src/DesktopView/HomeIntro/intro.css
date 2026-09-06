@@ -96,18 +96,100 @@
 
 /* ===== ABOUT SECTION THEME TOGGLE + LIGHT THEME (dark is the original) ===== */
 
-/* a gentle floating "string" of butterflies down the left gutter */
+/* a gentle floating "string" of butterflies, just right of the headshot */
 .about_butterflies{
     position: absolute;
-    left: 17.5vw;
-    top: 12vh;                    /* starts at the "- ABOUT" label */
-    height: 75vh;                 /* ends around the TL;DR box bottom */
+    left: 80vw;                   /* right of the headshot (~63-78vw) */
+    top: 13vh;
+    height: 26vh;                 /* stays within the top row, above the body */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     z-index: 3;
     pointer-events: none;
+}
+
+/* ---- research updates "news feed" card in the left gutter ---- */
+.about_updates{
+    position: absolute;
+    left: 1.5vw;
+    top: 10vh;
+    width: 19vw;
+    max-height: 79vh;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1.8vh 1.1vw 0.6vh 1.1vw;
+    background: rgba(26, 26, 26, 0.05);
+    border: 1px solid rgba(26, 26, 26, 0.16);
+    border-radius: 12px;
+    font-family: "Playfair Display", serif;
+}
+.about_updates_title{
+    flex-shrink: 0;
+    margin: 0 0 1.4vh 0;
+    padding-bottom: 0.7vh;
+    font-size: 2.3vmin;
+    color: #1a1a1a;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+}
+.about_updates_list{
+    list-style: none;
+    margin: 0;
+    padding: 0 0.6vw 1.2vh 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.9vh;
+    /* scroll affordances: a soft fade at the bottom edge hinting there's more,
+       plus an always-visible thin scrollbar */
+    -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(26, 26, 26, 0.32) transparent;
+}
+.about_updates_list::-webkit-scrollbar{
+    width: 6px;
+}
+.about_updates_list::-webkit-scrollbar-thumb{
+    background: rgba(26, 26, 26, 0.28);
+    border-radius: 3px;
+}
+.about_updates_list::-webkit-scrollbar-track{
+    background: transparent;
+}
+.about_update{
+    font-size: 1.75vmin;
+    line-height: 1.45;
+    color: #2b2824;
+}
+.about_update_meta{
+    display: block;
+    margin-bottom: 0.35vh;
+    font-family: "Courier New", monospace;
+    font-size: 1.45vmin;
+    color: #7a746a;
+}
+.about_update_divider{
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+    margin: 0.4vh 0;
+    font-family: "Courier New", monospace;
+    font-size: 1.35vmin;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #9a9284;
+}
+.about_update_divider::before,
+.about_update_divider::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(26, 26, 26, 0.14);
 }
 
 .about_butterflies span{
@@ -195,15 +277,23 @@
 }
 .about_commit_hash{ color: var(--about-link); }
 
-/* cursor trail (✦ stars) appended to body on mouse-move over the About area */
-.about_trail_bit{
-    position: fixed; transform: translate(-50%, -50%); pointer-events: none; z-index: 100000;
-    font-size: 1.8vmin; color: var(--about-link, #8ab4d8);
-    animation: about_trailfade 0.8s ease-out forwards;
-}
-@keyframes about_trailfade{
-    from{ opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
-    to{ opacity: 0; transform: translate(-50%, -90%) scale(0.4); }
+/* cursor-following tooltip for the About collage images */
+.about_imgtip{
+    position: fixed;
+    transform: translate(14px, 16px);
+    pointer-events: none;
+    z-index: 200;
+    background: #f5f0e5;
+    color: #2b2824;
+    font-family: "Playfair Display", serif;
+    font-size: 1.7vmin;
+    line-height: 1.4;
+    white-space: nowrap;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-left: 3px solid var(--about-link, #0b8b8b);
+    border-radius: 8px;
+    padding: 0.9vh 1vw;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
 }
 
 .about_heading{
@@ -376,7 +466,7 @@
 }
 
 .about_headshot{
-    width: 15vw;
+    width: 16.5vw;
     margin-top: 4vh;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
@@ -401,19 +491,19 @@
 .about_facts{
     display: flex;
     flex-wrap: wrap;
-    gap: 0.8vh 0.6vw;
+    gap: 0.7vh 0.5vw;
     margin-top: 2.2vh;
-    width: 15vw;
+    width: 16.5vw;
 }
 
 .about_fact{
-    font-size: 1.55vmin;
+    font-size: 1.4vmin;
     font-family: "Playfair Display", serif;
     color: #eef0f4;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 999px;
-    padding: 0.5vh 0.9vw;
+    padding: 0.45vh 0.7vw;
     white-space: nowrap;
 }
 

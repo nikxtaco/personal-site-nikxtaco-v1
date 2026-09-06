@@ -17,6 +17,74 @@
     font-family: "Playfair Display",serif;
 }
 
+/* left-gutter table of contents (scroll-spy) — floats, vertically centered */
+.projects_container .projects_toc{
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+    margin-left: 2vw;
+    width: 14vw;
+    max-height: 84vh;
+    overflow-y: auto;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vh;
+    font-family: "Playfair Display", serif;
+    padding: 1.2vh 0;
+}
+.projects_container .projects_toc_title{
+    font-family: "Courier New", monospace;
+    font-size: 1.3vmin;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #9a9284;
+    margin-bottom: 0.8vh;
+}
+.projects_container .projects_toc_link{
+    position: relative;
+    font-size: 1.95vmin;
+    line-height: 1.25;
+    color: #6b6558;
+    text-decoration: none;
+    padding-left: 0.9vw;
+    border-left: 2px solid rgba(26, 26, 26, 0.14);
+    transition: color 0.2s ease, border-color 0.2s ease;
+    font-weight: 600;
+}
+.projects_container .projects_toc_link:hover{
+    color: #1a1a1a;
+}
+.projects_container .projects_toc_link.is-active{
+    color: #0b8b8b;
+    border-left-color: #0b8b8b;
+}
+
+.projects_container .projects_toc_sub{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+    margin: 0.5vh 0 1.2vh 0;
+}
+.projects_container .projects_toc_sublink{
+    position: relative;
+    font-size: 1.55vmin;
+    line-height: 1.25;
+    color: #9a9284;
+    text-decoration: none;
+    padding-left: 1.5vw;
+    border-left: 2px solid rgba(26, 26, 26, 0.10);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.projects_container .projects_toc_sublink:hover{
+    color: #1a1a1a;
+}
+.projects_container .projects_toc_sublink.is-active{
+    color: #0b8b8b;
+    border-left-color: #0b8b8b;
+}
+
 .projects_heading{
     font-family: "Playfair Display",serif;
     font-size: 3vmin;
@@ -34,6 +102,7 @@
     color:#1a1a1a;
     opacity:0.85;
     margin:1vh 0 3vh 0;
+    max-width:62vw;
 }
 
 .projects_title2{
@@ -145,17 +214,128 @@ iframe {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5vw 2vw;
-    width: 56vw;
+    width: 62vw;
+    align-items: start;
+  }
+
+  .projects_container .iframe-cell {
+    background: #fffdf8;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 14px 24px -10px rgba(0, 0, 0, 0.22);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 0.2s ease;
+  }
+  .projects_container .iframe-cell:hover {
+    box-shadow: 0 20px 36px -12px rgba(0, 0, 0, 0.28);
+  }
+
+  /* the personal-website mockup + its write-up form one connected full-row card:
+     image on the left (kept at its own height), text on the right */
+  .projects_container .iframe-featured-row {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: rgba(26, 26, 26, 0.035);
+    border: 1px solid rgba(26, 26, 26, 0.14);
+    box-shadow: none;
+  }
+  .projects_container .iframe-featured-row:hover {
+    box-shadow: none;
+  }
+  .projects_container .iframe-featured-row .mockup_img_wrap {
+    flex: 0 0 48%;
+  }
+  .projects_container .mockup_desc {
+    flex: 1;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.4vh 1.6vw;
+    box-sizing: border-box;
+  }
+  .projects_container .mockup_desc_link {
+    color: #0b8b8b;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(11, 139, 139, 0.4);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .projects_container .mockup_desc_link:hover {
+    color: #1a1a1a;
+    border-bottom-color: #1a1a1a;
+  }
+  .projects_container .mockup_desc_title {
+    font-family: 'Rozha One', serif;
+    font-size: 3.4vmin;
+    line-height: 1.1;
+    margin-bottom: 1.4vh;
+    color: #1a1a1a;
+  }
+  .projects_container .mockup_desc_body {
+    font-family: "Playfair Display", serif;
+    font-size: 1.85vmin;
+    line-height: 1.5;
+    color: #4a463f;
+  }
+  .projects_container .mockup_desc_body + .mockup_desc_body {
+    margin-top: 1.4vh;
   }
 
   .projects_container .iframe-projects-item {
-    aspect-ratio: 16/10;
     width: 100%;
+    height: auto;
+    display: block;
     float: none;
     box-sizing: border-box;
     margin: 0;
   }
 
-  .iframe-item:nth-child(4n) {
-    margin-right: 0;
+  /* featured (full-row) thumbnail: crop to the same landscape ratio as the
+     other two so the tall Figma board doesn't appear vertically huge.
+     The full board is still viewable in the lightbox on click. */
+  .projects_container .iframe-projects-item-featured {
+    aspect-ratio: 16 / 10;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* GitHub logo overlaid on the bottom-right corner of each mockup image */
+  .projects_container .mockup_img_wrap {
+    position: relative;
+    line-height: 0;
+  }
+  /* the standalone mockup PNGs are angled compositions with transparent corners/edges,
+     so show them bare on the page (no card frame) — nothing peeks at the corners */
+  .projects_container .iframe-cell:not(.iframe-featured-row) {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: visible;
+  }
+  .projects_container .iframe-cell:not(.iframe-featured-row):hover {
+    box-shadow: none;
+  }
+  .projects_container .mockup_gh_overlay {
+    position: absolute;
+    right: 0.7vw;
+    bottom: 0.7vw;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4vmin;
+    height: 4vmin;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .projects_container .mockup_gh_overlay:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
   }

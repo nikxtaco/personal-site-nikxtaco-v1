@@ -1,10 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import "./projects.css"
 // import useWindowDimensions from "../../helpers/WindowDimensions.js"
 import UseAnimations from "react-useanimations";
-import ProjectStuff from './projectStuff';
+import ProjectStuff, { MOCKUPS } from './projectStuff';
 import Writings from '../HomeBlo/Writings';
 import { RESEARCH } from '../HomeBlo/writingsData';
+import lessWrongMark from "../../img/lesswrong-mark.png";
+
+// short labels for the table of contents (fall back to the full title)
+const RESEARCH_TOC_LABEL = {
+  "activation-oracles": "AOs are broken",
+  "model-organism-lottery": "Model Organism Lottery",
+  "deception-linear-probes": "OOC Deception LP",
+  "emergent-misalignment": "Emergent Misalignment: Base vs IT",
+  "ooc-meta-learning-toy-model": "OOC Meta-Learning Toy Model",
+};
+// mirror the Writings sort so the TOC order matches the rendered listing
+const researchSorted = [...RESEARCH].sort(
+  (a, b) => (Date.parse(b.updated || b.sortDate || "") || 0) - (Date.parse(a.updated || a.sortDate || "") || 0)
+);
 
 export default function Projects() {
 
@@ -12,6 +26,55 @@ export default function Projects() {
 
     const [summaryColor1, setSummaryColor1] = useState(0);
     const [summaryColor2, setSummaryColor2] = useState(0);
+    const [postOpen, setPostOpen] = useState(false); // hide the Research header/Mockups while reading a post
+    const [activeId, setActiveId] = useState("research-anchor"); // active TOC anchor
+    const scrollerRef = useRef(null);
+
+    // ordered list of every anchor the TOC points at (section headings + each listing)
+    const tocAnchors = [
+      "research-anchor",
+      ...researchSorted.map((w) => "card-" + w.id),
+      "mockups-anchor",
+      ...MOCKUPS.map((m) => "mockup-" + m.id),
+    ];
+
+    // scroll-spy: highlight whichever anchor is nearest the top of the scroller.
+    // Uses scroll position (robust to fast scroll jumps).
+    useEffect(() => {
+      if (postOpen) return;
+      const root = scrollerRef.current;
+      if (!root) return;
+      const onScroll = () => {
+        const line = root.getBoundingClientRect().top + root.clientHeight * 0.28;
+        let current = tocAnchors[0];
+        for (const id of tocAnchors) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= line) current = id;
+        }
+        setActiveId(current);
+      };
+      root.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+      return () => root.removeEventListener("scroll", onScroll);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [postOpen]);
+
+    const researchActive = activeId === "research-anchor" || activeId.startsWith("card-");
+    const mockupsActive = activeId === "mockups-anchor" || activeId.startsWith("mockup-");
+
+    const goTo = (e, id) => {
+      e.preventDefault();
+      const root = scrollerRef.current;
+      const el = document.getElementById(id);
+      if (!root || !el) return;
+      // scroll ONLY this container (scrollIntoView would also scroll ancestors and
+      // shove the whole horizontal layout around), and clamp so we never overscroll
+      // past the content into empty space
+      const offset = root.clientHeight * 0.12;
+      const target = el.getBoundingClientRect().top - root.getBoundingClientRect().top + root.scrollTop - offset;
+      const maxTop = root.scrollHeight - root.clientHeight;
+      root.scrollTo({ top: Math.min(Math.max(0, target), maxTop), behavior: "smooth" });
+    };
 
     const customSummary1 = {
       width:"16vw",
@@ -66,43 +129,92 @@ export default function Projects() {
 
       {/* THE PROJECTS STUFF BELOW THE MAIN PROJECTS INTRO PAGE */}
 
-      <div id="projects_stuff" className="projects_container" >
+      <div id="projects_stuff" className="projects_container" ref={scrollerRef} >
+
+        {!postOpen && (
+          <nav className="projects_toc" aria-label="On this page">
+            <a
+              href="#research-anchor"
+              onClick={(e) => goTo(e, "research-anchor")}
+              className={"projects_toc_link" + (researchActive ? " is-active" : "")}
+            >
+              AI Safety Research
+            </a>
+            <div className="projects_toc_sub">
+              {researchSorted.map((w) => (
+                <a
+                  key={w.id}
+                  href={"#card-" + w.id}
+                  onClick={(e) => goTo(e, "card-" + w.id)}
+                  className={"projects_toc_sublink" + (activeId === "card-" + w.id ? " is-active" : "")}
+                >
+                  {RESEARCH_TOC_LABEL[w.id] || w.title}
+                </a>
+              ))}
+            </div>
+
+            <a
+              href="#mockups-anchor"
+              onClick={(e) => goTo(e, "mockups-anchor")}
+              className={"projects_toc_link" + (mockupsActive ? " is-active" : "")}
+            >
+              Mockups
+            </a>
+            <div className="projects_toc_sub">
+              {MOCKUPS.map((m) => (
+                <a
+                  key={m.id}
+                  href={"#mockup-" + m.id}
+                  onClick={(e) => goTo(e, "mockup-" + m.id)}
+                  className={"projects_toc_sublink" + (activeId === "mockup-" + m.id ? " is-active" : "")}
+                >
+                  {m.label}
+                </a>
+              ))}
+            </div>
+          </nav>
+        )}
 
         <div className="projects_all_content">
 
-            <h3 className="projects_heading">
-            - Research & Projects
-            </h3>
+            {!postOpen && (
+              <>
+                <h3 className="projects_heading">
+                - Research & Projects
+                </h3>
 
-            <h1 className="projects_title1">
-            Research
-            </h1>
+                <h1 className="projects_title1" id="research-anchor" data-toc="research">
+                AI Safety Research
+                </h1>
 
-            <p className="research_intro">
-            Below is every substantial piece of public research I've contributed to as an author so far.
-            </p>
+                <p className="research_intro">
+                Below is every substantial piece of public AI safety research I've contributed to as an author so far.
+                </p>
+              </>
+            )}
 
-            <Writings entries={RESEARCH} showFilters={false} showAllLinks={true} backLabel="← Back to research" />
+            <Writings entries={RESEARCH} showFilters={false} showAllLinks={true} backLabel="← Back to research" onOpenChange={setPostOpen} />
 
-            <br/><br/><br/>
+            {!postOpen && (
+              <>
+                <br/><br/><br/>
 
-            <h1 className="projects_title1">
-            Mockups
-            </h1>
+                <h1 className="projects_title1" id="mockups-anchor" data-toc="mockups">
+                Mockups
+                </h1>
 
-            <br/><br/><br/>
+                <p className="research_intro">
+                Here's some of my web designs made on Figma! All of these do have an associated website that is actually coded up that you can find via the Github links.
+                </p>
 
-            <ProjectStuff />
+                <br/><br/><br/>
 
-            <br/><br/><br/>
-            <br/><br/><br/>
+                <ProjectStuff />
 
-            <div className="about_heading">
-              This is all for now! Others on github will be added here at some point.
-            </div>
-
-            <br/><br/><br/>
-            <br/><br/><br/>
+                <br/><br/><br/>
+                <br/><br/><br/>
+              </>
+            )}
 
             <div className="about_contact_links">
                 <a href="#projects">
@@ -119,6 +231,9 @@ export default function Projects() {
                 </a>
                 <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
                 <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                </a>
+                <a href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer" aria-label="LessWrong">
+                    <img src={lessWrongMark} alt="LessWrong" style={{ width: "4.4vmin", display: "block", marginLeft: "0.3vmin", paddingTop: "5vh", cursor: "pointer" }}/>
                 </a>
             </div>
 

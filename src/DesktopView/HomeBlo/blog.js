@@ -5,6 +5,7 @@ import React, {useState} from "react";
 import "./blog.css"
 import Writings from './Writings';
 import UseAnimations from "react-useanimations";
+import lessWrongMark from "../../img/lesswrong-mark.png";
 
 // import UseAnimations from "react-useanimations";
 
@@ -61,6 +62,7 @@ export default function Blog() {
     const [summaryColor1, setSummaryColor1] = useState(0);
     const [summaryColor2, setSummaryColor2] = useState(0);
     const [summaryColor3, setSummaryColor3] = useState(0);
+    const [postOpen, setPostOpen] = useState(false); // hide the Writings header while reading a post
 
     const customSummary1 = {
       width:"16vw",
@@ -147,12 +149,16 @@ export default function Blog() {
 
                 <div id="bloglist" className="bloglist_container">
                     <div className="bloglist_content_new">
-                        <h3 className="blog_heading_label">- Blog</h3>
-                        <h1 className="blog_writings_title">Writings</h1>
-                        <p className="blog_intro">
-                            A collection of short posts that I'm an author on, across various domains. Some here, some off-site.
-                        </p>
-                        <Writings/>
+                        {!postOpen && (
+                          <>
+                            <h3 className="blog_heading_label">- Blog</h3>
+                            <h1 className="blog_writings_title">Writings</h1>
+                            <p className="blog_intro">
+                                The start of a collection of short posts that I've authored, across various domains. Some here, some off-site. Sorted by last updated. This list does not include my poetry pieces from <a className="blog_intro_link" href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer">Instagram</a> or mid work from <a className="blog_intro_link" href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer">Medium</a>.
+                            </p>
+                          </>
+                        )}
+                        <Writings onOpenChange={setPostOpen}/>
                         <button
                             type="button"
                             className="blog_back_up"
@@ -181,6 +187,9 @@ export default function Blog() {
                         </a>
                         <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
                             <UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", paddingTop: "5vh" }}/>
+                        </a>
+                        <a href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer" aria-label="LessWrong">
+                            <img src={lessWrongMark} alt="LessWrong" style={{ width: "4.4vmin", display: "block", marginLeft: "0.3vmin", paddingTop: "5vh", cursor: "pointer" }}/>
                         </a>
                     </div>
                 </div>
