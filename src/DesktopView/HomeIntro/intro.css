@@ -195,7 +195,7 @@
 .about_butterflies span{
     font-size: 3vmin;
     animation: about_bfloat 5s ease-in-out infinite;
-    filter: grayscale(1) contrast(1.05);
+    filter: grayscale(0.6) contrast(1.05);
 }
 
 .about_butterflies span:nth-child(odd){ margin-left: -1.4vw; }
