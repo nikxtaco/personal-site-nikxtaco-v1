@@ -2,6 +2,7 @@ import React from "react";
 
 import DesktopNavigation from "./DesktopView/Navigation/navigation.js"
 import MobileNavigation from "./MobileView/Navigation/navigation.js"
+import VersionPopup from "./VersionPopup.js"
 
 import './App.css';
 
@@ -21,10 +22,11 @@ export default function App() {
     return (
       <div>
         {initializeReactGA()}
+        <VersionPopup/>
         {width>height?
         <DesktopNavigation/>
         :<MobileNavigation/>}
-      </div>          
+      </div>
     );
   
 }

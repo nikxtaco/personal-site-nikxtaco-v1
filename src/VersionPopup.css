@@ -1,0 +1,85 @@
+/* NOTE: the v1 site sets html{font-size:4px}, so rem/em are unreliable here.
+   Everything below uses px (immune to the root font-size) or viewport units. */
+.vpop_overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: rgba(0, 0, 0, 0.74);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw;
+  box-sizing: border-box;
+  animation: vpop_fade 0.3s ease;
+}
+@keyframes vpop_fade { from { opacity: 0; } to { opacity: 1; } }
+
+.vpop_card {
+  width: min(94vw, 500px);
+  box-sizing: border-box;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 36px 36px;
+  color: #f4f1ea;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: vpop_rise 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes vpop_rise { from { transform: translateY(14px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.vpop_eyebrow {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: #8ab4d8;
+  margin-bottom: 14px;
+}
+.vpop_title {
+  font-family: "Rozha One", "Playfair Display", Georgia, serif;
+  font-size: 33px;
+  line-height: 1.1;
+  margin: 0 0 15px;
+}
+.vpop_body {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #cfcfc9;
+  margin: 0 0 26px;
+}
+.vpop_body strong { color: #f4f1ea; }
+.vpop_body em { color: #8ab4d8; font-style: italic; }
+
+.vpop_actions {
+  display: flex;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+.vpop_btn {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 14px;
+  padding: 10px 21px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+.vpop_btn_primary { background: #f4f1ea; color: #141414; }
+.vpop_btn_primary:hover { background: #ffffff; transform: translateY(-1px); }
+.vpop_btn_ghost { background: transparent; color: #cfcfc9; border-color: rgba(255, 255, 255, 0.25); }
+.vpop_btn_ghost:hover { color: #ffffff; border-color: rgba(255, 255, 255, 0.5); }
+
+/* smaller / portrait screens */
+@media (max-width: 560px) {
+  .vpop_overlay { padding: 22px; }
+  .vpop_card { padding: 28px 24px; border-radius: 14px; }
+  .vpop_eyebrow { font-size: 11px; margin-bottom: 12px; }
+  .vpop_title { font-size: 27px; margin-bottom: 13px; }
+  .vpop_body { font-size: 14px; margin-bottom: 24px; }
+  .vpop_actions { gap: 10px; }
+  .vpop_btn { font-size: 14px; padding: 11px 20px; flex: 1 1 auto; text-align: center; }
+}
