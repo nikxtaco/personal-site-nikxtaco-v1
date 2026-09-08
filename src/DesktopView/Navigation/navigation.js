@@ -160,6 +160,42 @@ export default function Navigation() {
         window.open(item.url, "_blank", "noopener,noreferrer");
         return;
       }
+
+      // A research-updates entry lives in the About detail's left-gutter card. Use the
+      // SAME mechanism as the horizontal wheel nav: skip the index effect's scrollTo
+      // (which would smooth-scroll to the home hero and fight the #about nav, stalling
+      // on the hero when crossing from another column) and let #about do the move.
+      if (item.elementId && item.elementId.indexOf("about-update-") === 0) {
+        if (index !== 1) skipNextIndexScroll.current = true;
+        setIndex(1);
+        window.location.hash = "about"; // moves to the home column AND the About detail
+        const el = document.getElementById(item.elementId);
+        const list = document.querySelector(".about_updates_list");
+        const detail = document.querySelector(DETAIL_SEL[1]);
+        const aboutEl = document.getElementById("about");
+        const started = Date.now();
+        // wait until the About detail has actually settled at the top, then pin it
+        // (headshot / first window) and scroll ONLY the card to centre the entry.
+        const settle = () => {
+          const r = aboutEl && aboutEl.getBoundingClientRect();
+          const arrived = r && Math.abs(r.top) < 6 && Math.abs(r.left) < 6;
+          if (arrived || Date.now() - started > 1600) {
+            if (detail) detail.scrollTop = 0;
+            if (el && list) {
+              const lr = list.getBoundingClientRect();
+              const er = el.getBoundingClientRect();
+              list.scrollTop += (er.top - lr.top) - (list.clientHeight - el.clientHeight) / 2;
+              el.classList.add("about_update_flash");
+              setTimeout(() => el.classList.remove("about_update_flash"), 1600);
+            }
+          } else {
+            requestAnimationFrame(settle);
+          }
+        };
+        requestAnimationFrame(settle);
+        return;
+      }
+
       setIndex(item.section);
       setTimeout(() => {
         if (item.entryId && item.native) {
@@ -178,25 +214,6 @@ export default function Navigation() {
             const el = document.getElementById(item.elementId);
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
           }
-        } else if (item.elementId && item.elementId.indexOf("about-update-") === 0) {
-          // a research-updates entry: keep the About detail pinned at its top
-          // (headshot / first window) and scroll ONLY the updates card to the entry,
-          // so scrollIntoView doesn't nudge the whole detail page below its top.
-          window.location.hash = "about";
-          const el = document.getElementById(item.elementId);
-          const list = document.querySelector(".about_updates_list");
-          const detail = document.querySelector(DETAIL_SEL[1]);
-          setTimeout(() => {
-            if (detail) detail.scrollTop = 0;               // freeze the page at the headshot
-            if (el && list) {
-              // centre the entry inside the card without moving any ancestor scroller
-              const lr = list.getBoundingClientRect();
-              const er = el.getBoundingClientRect();
-              list.scrollTop += (er.top - lr.top) - (list.clientHeight - el.clientHeight) / 2;
-              el.classList.add("about_update_flash");
-              setTimeout(() => el.classList.remove("about_update_flash"), 1600);
-            }
-          }, 350);
         } else if (item.elementId) {
           const el = document.getElementById(item.elementId);
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
