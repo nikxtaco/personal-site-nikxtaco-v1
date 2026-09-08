@@ -178,6 +178,14 @@ export default function Navigation() {
             const el = document.getElementById(item.elementId);
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
           }
+        } else if (item.elementId && item.elementId.indexOf("about-update-") === 0) {
+          // a research-updates entry: scroll it into view inside its card and flash it
+          const el = document.getElementById(item.elementId);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "center" });
+            el.classList.add("about_update_flash");
+            setTimeout(() => el.classList.remove("about_update_flash"), 1600);
+          }
         } else if (item.elementId) {
           const el = document.getElementById(item.elementId);
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });

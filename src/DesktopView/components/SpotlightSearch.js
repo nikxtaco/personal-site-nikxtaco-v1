@@ -53,17 +53,22 @@ const buildCatalog = () => {
     elementId: "mockup-" + m.id,
     keywords: "design mockup figma github project " + (m.label || ""),
   }));
-  const updates = RESEARCH_UPDATES.filter((u) => !u.divider).map((u, i) => {
-    const text = stripTags(u.text);
-    return {
-      id: "u-" + i,
-      label: text,
-      sublabel: "Update · " + u.date,
-      section: 1,
-      elementId: "about",
-      keywords: text + " research update news",
-    };
-  });
+  // keep the ORIGINAL array index (the DOM ids in intro.js use it too, including
+  // dividers) so selecting an update scrolls to that exact entry, not just #about.
+  const updates = RESEARCH_UPDATES
+    .map((u, i) => ({ u, i }))
+    .filter(({ u }) => !u.divider)
+    .map(({ u, i }) => {
+      const text = stripTags(u.text);
+      return {
+        id: "u-" + i,
+        label: text,
+        sublabel: "Update · " + u.date,
+        section: 1,
+        elementId: "about-update-" + i,
+        keywords: text + " research update news",
+      };
+    });
   return [...SECTION_ITEMS, ...writings, ...research, ...mockups, ...updates];
 };
 

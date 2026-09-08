@@ -164,7 +164,7 @@
     background: transparent;
 }
 .about_update{
-    font-size: 1.75vmin;
+    font-size: 1.95vmin;
     line-height: 1.45;
     color: #2b2824;
 }
@@ -172,8 +172,17 @@
     display: block;
     margin-bottom: 0.35vh;
     font-family: "Courier New", monospace;
-    font-size: 1.45vmin;
+    font-size: 1.6vmin;
     color: #7a746a;
+}
+/* brief highlight when Spotlight jumps to a specific update */
+.about_update_flash{
+    animation: about_update_flash_kf 1.6s ease;
+    border-radius: 6px;
+}
+@keyframes about_update_flash_kf{
+    0%, 100% { background: transparent; box-shadow: 0 0 0 0 rgba(25, 179, 179, 0); }
+    18% { background: rgba(25, 179, 179, 0.16); box-shadow: 0 0 0 6px rgba(25, 179, 179, 0.16); }
 }
 .about_update_divider{
     display: flex;

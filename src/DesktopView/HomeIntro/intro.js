@@ -173,7 +173,7 @@ export default function Intro() {
                                     <span>{u.label}</span>
                                 </li>
                             ) : (
-                                <li className="about_update" key={i}>
+                                <li className="about_update" id={`about-update-${i}`} key={i}>
                                     <span className="about_update_meta">{u.date}</span>
                                     <span className="about_update_text" dangerouslySetInnerHTML={{ __html: u.text }} />
                                 </li>
@@ -272,7 +272,7 @@ export default function Intro() {
                                 <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer, Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <img className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" data-tip="Jupiter Artland, Edinburgh" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <img className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" data-tip="The Van Gogh Exhibition, London" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
-                                <img className="collage_ecolibrary" src={ecoLibrary} alt="Reading about Umberto Eco's antilibrary with Edinburgh Castle behind" data-tip="Reading at a Starbucks opposite the Edinburgh Castle" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img className="collage_ecolibrary" src={ecoLibrary} alt="Reading about Umberto Eco's antilibrary with Edinburgh Castle behind" data-tip="Starbucks Viewpoint, Edinburgh Castle" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <h1 className="about_title2">
                                 I try to <span className="about_try_word" key={"v" + tryIdx}>{TRY_WORDS[tryIdx][0]}</span><br/>
                                 new <span className="about_try_word" key={"n" + tryIdx}>{TRY_WORDS[tryIdx][1]}</span>
