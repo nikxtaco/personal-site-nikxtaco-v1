@@ -107,11 +107,33 @@ const thumbOrder = (w) => {
   return imgs.slice(0, 3);
 };
 
+// per-visitor read/unread tracking, persisted in localStorage (no login, per-device)
+const READ_KEY = "nikxtaco:writings-read";
+const loadReadIds = () => {
+  try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || "[]")); }
+  catch (e) { return new Set(); }
+};
+const saveReadIds = (set) => {
+  try { localStorage.setItem(READ_KEY, JSON.stringify([...set])); } catch (e) {}
+};
+
 export default function Writings({ entries = WRITINGS, showFilters = true, showAllLinks = false, backLabel = "← Back to writings", onOpenChange }) {
   const [filter, setFilter] = useState("All");
   const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null); // { images: [...], index: n }
   const postImagesRef = useRef(null);
+
+  // read/unread state (blog listing only — the filter bar is where it lives)
+  const trackRead = showFilters;
+  const [readIds, setReadIds] = useState(loadReadIds);
+  const [hideRead, setHideRead] = useState(false);
+  const setRead = (id, read) => setReadIds((prev) => {
+    const next = new Set(prev);
+    if (read) next.add(id); else next.delete(id);
+    saveReadIds(next);
+    return next;
+  });
+  const toggleRead = (e, id) => { e.stopPropagation(); setRead(id, !readIds.has(id)); };
 
   // Justified image rows: each figure's flex-grow is set to its aspect ratio, so
   // a group of images shares its row at equal height and fills the text column;
@@ -142,6 +164,12 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
   useEffect(() => {
     if (onOpenChange) onOpenChange(!!openId);
   }, [openId, onOpenChange]);
+
+  // opening an on-site post marks it read
+  useEffect(() => {
+    if (trackRead && openId) setRead(openId, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openId]);
 
   // spotlight search can ask this list to open a specific post by id
   useEffect(() => {
@@ -335,12 +363,14 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
   // creation `sortDate` — newest first
   const sortTime = (w) => Date.parse(w.updated || w.sortDate || "") || 0;
   const typesOf = (w) => w.types || [w.type];
-  const shown = (filter === "All"
+  let shown = (filter === "All"
     ? base
     : base.filter((w) => typesOf(w).includes(filter))
   )
     .slice()
     .sort((a, b) => sortTime(b) - sortTime(a));
+  if (trackRead && hideRead) shown = shown.filter((w) => !readIds.has(w.id));
+  const readCount = trackRead ? base.filter((w) => readIds.has(w.id)).length : 0;
 
   return (
     <div className={showFilters ? "writings writings_blog" : "writings"}>
@@ -355,6 +385,15 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
               {f}
             </button>
           ))}
+          {readCount > 0 && (
+            <button
+              className={"writings_filter writings_filter_read" + (hideRead ? " active" : "")}
+              onClick={() => setHideRead((v) => !v)}
+              title={hideRead ? "Show all posts" : "Hide posts you've already opened"}
+            >
+              {hideRead ? "Showing unread" : "Hide read"}
+            </button>
+          )}
         </div>
       )}
 
@@ -376,18 +415,28 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             ? pick(["arxiv", "lesswrong", "twitter"]) || links[0]
             : primary;
           const openWriting = () => {
+            if (trackRead) setRead(w.id, true);
             if (hasLinks) {
               if (titleTarget) window.open(titleTarget.url, "_blank", "noopener,noreferrer");
             } else setOpenId(w.id);
           };
           return (
-            <article className="writing_card" id={"card-" + w.id} key={w.id}>
+            <article className={"writing_card" + (trackRead && readIds.has(w.id) ? " writing_card_read" : "")} id={"card-" + w.id} key={w.id}>
               <div className="writing_text">
                 <div className="writing_head">
                   <h2 className="writing_title" onClick={openWriting} title="Open">
                     {w.title}
                   </h2>
                   {showFilters && <span className="writing_type">{w.type}</span>}
+                  {trackRead && (
+                    <button
+                      className={"writing_readmark" + (readIds.has(w.id) ? " is-read" : "")}
+                      onClick={(e) => toggleRead(e, w.id)}
+                      title={readIds.has(w.id) ? "Mark as unread" : "Mark as read"}
+                    >
+                      {readIds.has(w.id) ? "✓ Read" : "Mark read"}
+                    </button>
+                  )}
                 </div>
                 <p className="writing_date">{metaLine(w)}</p>
                 <p className="writing_excerpt">{w.excerpt}</p>

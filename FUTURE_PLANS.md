@@ -2,15 +2,12 @@
 
 Ideas parked for their own commits/PRs (not in the current branch's scope yet).
 
-## 1. Per-visitor read/unread tracking (no login)
-Let each visitor mark posts read/unread and filter by it, using `localStorage`
-(per-browser/per-device; resets on clearing site data — true cross-device sync
-would need accounts/a backend).
-- Small `localStorage` helper (wrapped in try/catch).
-- "Mark as read/unread" toggle per post + subtle read treatment (dim or ✓).
-- A "Read/Unread" (or "hide read") pill in the Writings filter bar.
-- Optional: auto-mark-as-read when a post is opened.
-- Lives in `Writings.js` + a small util; no new dependencies. ~30–45 min.
+## 1. Per-visitor read/unread tracking (no login) — ✅ DONE
+Implemented in `Writings.js` (blog listing): a `localStorage` helper
+(`nikxtaco:writings-read`, try/catch-wrapped), a per-card "Mark read / ✓ Read"
+toggle with a subtle dimmed treatment, auto-mark-as-read on opening a post, and
+a "Hide read" pill in the filter bar. Per-browser/per-device; true cross-device
+sync would still need accounts/a backend.
 
 ## 3. Dependency / build modernisation
 `npm audit` shows ~158 advisories, all in the react-scripts 4 build toolchain

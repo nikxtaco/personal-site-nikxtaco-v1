@@ -296,6 +296,32 @@
     box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
 }
 
+/* colophon footer at the bottom of the About page (git / tracked-changes flavour) */
+.about_colophon{
+    margin: 9vh 0 3vh 6vw;
+    padding-top: 2.6vh;
+    border-top: 1px solid rgba(26, 26, 26, 0.14);
+    max-width: 52vw;
+    font-family: "Courier New", monospace;
+    font-size: 1.5vmin;
+    line-height: 1.65;
+    color: #7a746a;
+}
+.about_colophon_head{
+    letter-spacing: 0.05em;
+    color: #9a9284;
+    margin-bottom: 0.9vh;
+}
+.about_colophon_body{
+    color: #4a463f;
+}
+.about_colophon_sign{
+    margin-top: 1.3vh;
+}
+.about_colophon_hash{
+    color: #0b8b8b;
+}
+
 .about_heading{
     font-family: "Playfair Display",serif;
     font-size: 3vmin;

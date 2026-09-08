@@ -104,7 +104,7 @@ export const RESEARCH_UPDATES = [
     icon: "🎓",
     date: "06/2023",
     text:
-      "Graduated B.Tech in Computer Science (First Class with Distinction) from Model Engineering College, Kochi. 🇮🇳",
+      "Graduated with a B.Tech in Computer Science (First Class with Distinction) from Model Engineering College, Kochi. 🇮🇳",
   },
   {
     divider: true,

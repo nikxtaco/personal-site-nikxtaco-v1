@@ -9,9 +9,9 @@ import lessWrongMark from "../../img/lesswrong-mark.png";
 
 // short labels for the table of contents (fall back to the full title)
 const RESEARCH_TOC_LABEL = {
-  "activation-oracles": "AOs are broken",
+  "activation-oracles": "Activation Oracles are broken",
   "model-organism-lottery": "Model Organism Lottery",
-  "deception-linear-probes": "OOC Deception LP",
+  "deception-linear-probes": "OOC Deception Linear Probes",
   "emergent-misalignment": "Emergent Misalignment: Base vs IT",
   "ooc-meta-learning-toy-model": "OOC Meta-Learning Toy Model",
 };

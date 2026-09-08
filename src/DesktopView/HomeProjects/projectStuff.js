@@ -63,8 +63,8 @@ const ProjectStuff = () => {
           <div className="mockup_desc_title">This very website (v2)</div>
           <div className="mockup_desc_body">
           Of all my design projects, this website has eaten the most hours by far (and
-          there were many; I took up far more frontend work than I'd have liked in
-          undergrad, in hindsight). I settled on the dark aesthetic you still see here back in 2020,
+          there were many projects; I took up far more frontend work than I'd have liked in
+          undergrad, in hindsight). I settled on the dark aesthetic you still see up top back in 2020,
           and after many Figma and coded-from-scratch iterations (displayed in this
           pre-v2 design snapshot), shipped the <a className="mockup_desc_link" href="https://nikxtaco.netlify.app" target="_blank" rel="noreferrer">v1 website</a> (which
           still stands as a relic of the past) and left it untouched for years. After the

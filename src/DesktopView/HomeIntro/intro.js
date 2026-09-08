@@ -268,7 +268,20 @@ export default function Intro() {
 
                     </div>
 
-                </div> 
+                    <footer className="about_colophon">
+                        <div className="about_colophon_head">// colophon</div>
+                        <div className="about_colophon_body">
+                            Built with React, no template. Typeset in Rozha One &amp; Playfair Display,
+                            with Courier New for the small print. Designed in Figma, shipped on Netlify.
+                        </div>
+                        <div className="about_colophon_sign">
+                            <span className="about_colophon_hash">c0l0ph0n</span> committed with{" "}
+                            <ins className="about_add">love</ins> <del className="about_del">and questionable time management</del>
+                            {" "}· © 2026 Nikita Menon
+                        </div>
+                    </footer>
+
+                </div>
 
                 <div className="about_contact_links">
                     <a href="#home">
