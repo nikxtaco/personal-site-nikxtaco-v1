@@ -98,7 +98,7 @@ export const RESEARCH_UPDATES = [
     icon: "🔭",
     date: "06/2023 – 09/2023",
     text:
-      "<a class=\"about_inline_link\" href=\"https://www.matsprogram.org\" target=\"_blank\" rel=\"noreferrer\">SERI MATS 4.0</a> scholar (Agent Foundations stream) in Berkeley, on objective structure in RL model internals.",
+      "<a class=\"about_inline_link\" href=\"https://www.matsprogram.org\" target=\"_blank\" rel=\"noreferrer\">SERI MATS 4.0</a> scholar (Agent Foundations stream) in Berkeley, USA, on objective structure in RL model internals. 🇺🇸",
   },
   {
     icon: "🎓",
@@ -114,7 +114,7 @@ export const RESEARCH_UPDATES = [
     icon: "🚀",
     date: "07/2021 – 04/2023",
     text:
-      "Chief Project Management Officer at the Innovation & Entrepreneurship Development Cell, Model Engineering College, on pre-incubation projects. 🇮🇳",
+      "Chief Project Management Officer at the Innovation & Entrepreneurship Development Cell, Model Engineering College, on pre-incubation projects.",
   },
   {
     icon: "💻",
@@ -126,6 +126,6 @@ export const RESEARCH_UPDATES = [
     icon: "💻",
     date: "03/2020 – 06/2020",
     text:
-      "Frontend Developer intern at alrt.ai, a data-science startup (remote), UK. 🇬🇧",
+      "Frontend Developer intern at alrt.ai, a data-science startup (remote), UK.",
   },
 ];

@@ -2,16 +2,18 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import "./spotlight.css";
 import { WRITINGS, RESEARCH } from "../HomeBlo/writingsData";
 import { RESEARCH_UPDATES } from "../HomeIntro/researchUpdates";
+import { MOCKUPS } from "../HomeProjects/projectStuff";
 
 const stripTags = (s) => (s || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
 // Static, hand-written entries for the main sections + sub-sections.
 const SECTION_ITEMS = [
   { id: "sec-home", label: "Home", sublabel: "The intro", section: 1, elementId: "home", keywords: "nikita hey there landing start" },
-  { id: "sec-about", label: "About", sublabel: "Who I am, interests, the tracked-changes bit", section: 1, elementId: "about", keywords: "bio ai safety researcher pokemon coconuts kerala london poetry" },
+  { id: "sec-about", label: "About & Updates", sublabel: "Who I am, interests, and my research-updates feed", section: 1, elementId: "about", keywords: "bio ai safety researcher pokemon coconuts kerala london poetry updates news timeline colophon" },
+  { id: "sec-resume", label: "Resume", sublabel: "Opens my live resume (PDF)", section: 1, url: "/resume.pdf", keywords: "cv curriculum vitae experience education work" },
   { id: "sec-projects", label: "Research & Projects", sublabel: "Research listing and mockups", section: 2, elementId: "projects", keywords: "papers github work" },
-  { id: "sec-research", label: "Research", sublabel: "Published research listing", section: 2, elementId: "projects_stuff", keywords: "papers arxiv lesswrong probes interpretability deception" },
-  { id: "sec-mockups", label: "Mockups", sublabel: "Project mockups on GitHub", section: 2, elementId: "projects_stuff", keywords: "design github filterbubble alrtai" },
+  { id: "sec-research", label: "AI Safety Research", sublabel: "Published research listing", section: 2, elementId: "projects_stuff", keywords: "papers arxiv lesswrong probes interpretability deception activation oracles model organism misalignment" },
+  { id: "sec-mockups", label: "Mockups", sublabel: "Project mockups on GitHub", section: 2, elementId: "projects_stuff", keywords: "design github figma filterbubble alrtai personal website" },
   { id: "sec-blog", label: "Writings", sublabel: "Blog posts, filterable by type", section: 3, elementId: "bloglist", keywords: "blog posts poetry photos games making essays musings" },
   { id: "sec-art", label: "Art & Music", sublabel: "Keyboard covers and sketches", section: 4, elementId: "art", keywords: "music sketches drawings" },
   { id: "sec-music", label: "Keyboard Covers", sublabel: "The music player", section: 4, elementId: "music", keywords: "piano soundcloud songs covers tracks" },
@@ -43,7 +45,15 @@ const buildCatalog = () => {
     native: isNative(w),
     keywords: (w.excerpt || "") + " research paper",
   }));
-  const updates = RESEARCH_UPDATES.map((u, i) => {
+  const mockups = MOCKUPS.map((m) => ({
+    id: "m-" + m.id,
+    label: m.label,
+    sublabel: "Mockup · project",
+    section: 2,
+    elementId: "mockup-" + m.id,
+    keywords: "design mockup figma github project " + (m.label || ""),
+  }));
+  const updates = RESEARCH_UPDATES.filter((u) => !u.divider).map((u, i) => {
     const text = stripTags(u.text);
     return {
       id: "u-" + i,
@@ -54,7 +64,7 @@ const buildCatalog = () => {
       keywords: text + " research update news",
     };
   });
-  return [...SECTION_ITEMS, ...writings, ...research, ...updates];
+  return [...SECTION_ITEMS, ...writings, ...research, ...mockups, ...updates];
 };
 
 // Simple token-AND match with light ranking (title hits rank highest).

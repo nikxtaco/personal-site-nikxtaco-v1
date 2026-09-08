@@ -144,12 +144,14 @@
     display: flex;
     flex-direction: column;
     gap: 1.9vh;
-    /* scroll affordances: a soft fade at the bottom edge hinting there's more,
-       plus an always-visible thin scrollbar */
-    -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+    /* scroll affordance: an always-visible thin scrollbar (the bottom fade below
+       is toggled on only while there's more to scroll) */
     scrollbar-width: thin;
     scrollbar-color: rgba(26, 26, 26, 0.32) transparent;
+}
+.about_updates_list.has_fade{
+    -webkit-mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 90%, transparent 100%);
 }
 .about_updates_list::-webkit-scrollbar{
     width: 6px;
@@ -531,6 +533,32 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 999px;
     padding: 0.45vh 0.7vw;
+    white-space: nowrap;
+}
+
+/* reading key (colour/underline legend) below the fact chips */
+.about_legend{
+    width: 16.5vw;
+    margin-top: 2.8vh;
+    padding-top: 1.5vh;
+    border-top: 1px solid rgba(26, 26, 26, 0.14);
+    font-family: "Courier New", monospace;
+    font-size: 1.4vmin;
+    line-height: 1.5;
+    color: #7a746a;
+}
+.about_legend_title{
+    color: #9a9284;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.9vh;
+}
+.about_legend_rows{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+.about_legend_row{
+    display: block;
     white-space: nowrap;
 }
 

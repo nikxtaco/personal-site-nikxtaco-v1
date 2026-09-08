@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./projects.css"
 import UseAnimations from "react-useanimations";
 
@@ -39,6 +39,18 @@ const ProjectStuff = () => {
       e.stopPropagation();
       setLbIndex((n) => (n === null ? n : (n + dir + MOCKUPS.length) % MOCKUPS.length));
     };
+
+    // keyboard: arrow keys navigate the open lightbox, Esc closes
+    useEffect(() => {
+      if (lbIndex === null) return;
+      const onKey = (e) => {
+        if (e.key === "ArrowLeft") setLbIndex((n) => (n === null ? n : (n - 1 + MOCKUPS.length) % MOCKUPS.length));
+        else if (e.key === "ArrowRight") setLbIndex((n) => (n === null ? n : (n + 1) % MOCKUPS.length));
+        else if (e.key === "Escape") setLbIndex(null);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [lbIndex]);
 
     const featured = MOCKUPS[0];
 

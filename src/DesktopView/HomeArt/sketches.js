@@ -21,6 +21,18 @@ const Sketches = () => {
       setLbIndex((n) => (n === null ? n : (n + dir + images.length) % images.length));
     };
 
+    // keyboard: arrow keys navigate the open lightbox, Esc closes
+    useEffect(() => {
+      if (lbIndex === null) return;
+      const onKey = (e) => {
+        if (e.key === "ArrowLeft") setLbIndex((n) => (n === null ? n : (n - 1 + images.length) % images.length));
+        else if (e.key === "ArrowRight") setLbIndex((n) => (n === null ? n : (n + 1) % images.length));
+        else if (e.key === "Escape") setLbIndex(null);
+      };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, [lbIndex, images.length]);
+
     // Justified rows: each item's flex-grow/-basis is set to its aspect ratio so
     // every row fills the gallery width at a single (per-row) height; rows can
     // differ in height but always share the same width.

@@ -55,6 +55,10 @@ export default function Navigation() {
     // SPOTLIGHT SEARCH: jump to a section (horizontal slide) then scroll to the
     // detail element and/or ask the writings list to open a specific post
     const spotlightNavigate = (item) => {
+      if (item.url) {
+        window.open(item.url, "_blank", "noopener,noreferrer");
+        return;
+      }
       setIndex(item.section);
       setTimeout(() => {
         if (item.entryId && item.native) {

@@ -190,6 +190,18 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
     );
   };
 
+  // keyboard: arrow keys navigate the open lightbox, Esc closes
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e) => {
+      if (e.key === "ArrowLeft") setLightbox((l) => (l ? { ...l, index: (l.index - 1 + l.images.length) % l.images.length } : l));
+      else if (e.key === "ArrowRight") setLightbox((l) => (l ? { ...l, index: (l.index + 1) % l.images.length } : l));
+      else if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox]);
+
   const lightboxEl = lightbox && (
     <div className="lb_overlay" onClick={closeLightbox}>
       <button className="lb_close" onClick={closeLightbox} aria-label="Close">

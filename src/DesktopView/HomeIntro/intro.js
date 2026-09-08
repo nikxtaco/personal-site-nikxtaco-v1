@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import "./intro.css"
 import UseAnimations from "react-useanimations";
 import headshot from "../../img/headshot-dxb.jpg";
@@ -39,6 +39,21 @@ export default function Intro() {
             add: root.querySelectorAll(".about_add").length,
             del: root.querySelectorAll(".about_del").length,
         });
+    }, []);
+
+    // research-updates list: only show the bottom fade hint while there's more to scroll
+    const updatesListRef = useRef(null);
+    const [updatesFade, setUpdatesFade] = useState(false);
+    const onUpdatesScroll = () => {
+        const el = updatesListRef.current;
+        if (!el) return;
+        const more = el.scrollHeight > el.clientHeight + 2;
+        const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
+        setUpdatesFade(more && !atBottom);
+    };
+    useEffect(() => {
+        onUpdatesScroll();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // styled hover tooltip for the About collage images (native `title` was unreliable)
@@ -138,7 +153,11 @@ export default function Intro() {
 
                 <aside className="about_updates">
                     <h4 className="about_updates_title">Research Updates</h4>
-                    <ul className="about_updates_list">
+                    <ul
+                        className={"about_updates_list" + (updatesFade ? " has_fade" : "")}
+                        ref={updatesListRef}
+                        onScroll={onUpdatesScroll}
+                    >
                         {RESEARCH_UPDATES.map((u, i) => (
                             u.divider ? (
                                 <li className="about_update_divider" key={i}>
@@ -146,7 +165,7 @@ export default function Intro() {
                                 </li>
                             ) : (
                                 <li className="about_update" key={i}>
-                                    <span className="about_update_meta"><span className="about_update_icon">{u.icon}</span> {u.date}</span>
+                                    <span className="about_update_meta">{u.date}</span>
                                     <span className="about_update_text" dangerouslySetInnerHTML={{ __html: u.text }} />
                                 </li>
                             )
@@ -197,14 +216,23 @@ export default function Intro() {
                                 <div className="about_facts">
                                     <span className="about_fact">AI Safety Researcher</span>
                                     <span className="about_fact">she/her</span>
-                                    <span className="about_fact">📍 Based in London</span>
                                     <span className="about_fact">from Kerala, India</span>
+                                    <span className="about_fact">📍 Based in London</span>
                                 </div>
+                                <aside className="about_legend" aria-label="Reading key">
+                                    <div className="about_legend_title">// reading key</div>
+                                    <div className="about_legend_rows">
+                                        <span className="about_legend_row"><span className="about_inline_link">link</span> &rarr; clickable</span>
+                                        <span className="about_legend_row"><span className="about_add">green</span> &rarr; a later addition</span>
+                                        <span className="about_legend_row"><del className="about_del">struck</del> &rarr; cut since</span>
+                                        <span className="about_legend_row"><span className="about_term">dotted</span> &rarr; hover for a note</span>
+                                    </div>
+                                </aside>
                             </div>
                         </div>
 
                             <div className="about_aspiring_section">
-                            <img className="collage_obsidian_full" src={obsidianFull} alt="Obsidian graph" data-tip="A snapshot of the Obsidian graph" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                            <img className="collage_obsidian_full" src={obsidianFull} alt="Obsidian graph" data-tip="A snapshot of my Obsidian graph" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                             <h1 className="about_title1">
                             I'm an<br/>aspiring...
                             </h1>
