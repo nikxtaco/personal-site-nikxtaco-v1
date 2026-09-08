@@ -15,6 +15,9 @@ export default function Navigation() {
 
     const [index, setIndex] = useState(1);
     const [homeColor, setHomeColor] = useState(0)
+    // when a wheel-driven horizontal snap animates via fragment nav, skip the index
+    // effect's own (instant) scrollTo so it doesn't cut the smooth animation short.
+    const skipNextIndexScroll = useRef(false);
     // const [projectsColor, setProjectsColor] = useState(1)
     // const [blogColor, setBlogColor] = useState(0)
     // const [artColor, setArtColor] = useState(0)
@@ -22,6 +25,7 @@ export default function Navigation() {
     // ALLOWS NAVIGATION BETWEEN THE FOUR MAIN PAGES
 
     useEffect(() => {
+      if (skipNextIndexScroll.current) { skipNextIndexScroll.current = false; return; }
       if(index===1)
       {
           window.scrollTo({top:0,left:0})
@@ -67,7 +71,7 @@ export default function Navigation() {
       let gestureOpen = false;   // true during one continuous wheel gesture (incl. momentum)
       let gestureTimer = null;
       let acted = false;         // already crossed during this gesture?
-      let accum = 0;             // accumulated deltaY across the gesture
+      let accumX = 0, accumY = 0; // accumulated wheel delta across the gesture (both axes)
       let startMode = null;      // "hero" | "detail-top" | "detail-mid" at the gesture's start
       const THRESH = 40;
       // crossing uses fragment navigation (html has scroll-behavior: smooth), which is
@@ -75,6 +79,16 @@ export default function Navigation() {
       const go = (id) => {
         lock = true;
         window.location.hash = id;
+        setTimeout(() => { lock = false; }, 850);
+      };
+      // horizontal hero <-> hero snap: same smooth fragment nav as the navbar links,
+      // plus setIndex to keep column state in sync. skipNextIndexScroll stops the index
+      // effect's own scrollTo from cutting the smooth animation short.
+      const goHoriz = (n) => {
+        lock = true;
+        skipNextIndexScroll.current = true;
+        setIndex(n);
+        window.location.hash = HERO_ID[n];
         setTimeout(() => { lock = false; }, 850);
       };
       const modeNow = () => {
@@ -95,19 +109,27 @@ export default function Navigation() {
         // START, so momentum from scrolling *to* an edge can't fly through it — a
         // separate gesture is needed to cross (the invisible stopper). Delta is
         // accumulated so gentle trackpad scrolls still register.
-        if (!gestureOpen) { gestureOpen = true; acted = false; accum = 0; startMode = modeNow(); }
+        if (!gestureOpen) { gestureOpen = true; acted = false; accumX = 0; accumY = 0; startMode = modeNow(); }
         clearTimeout(gestureTimer);
         gestureTimer = setTimeout(() => { gestureOpen = false; }, 180);
         if (acted) return;
-        accum += e.deltaY;
+        accumX += e.deltaX; accumY += e.deltaY;
         const i = idxRef.current;
-        if (startMode === "hero" && accum > THRESH) {          // hero, scroll down -> detail top
+        const horizontal = Math.abs(accumX) > Math.abs(accumY);
+        if (startMode === "hero" && horizontal) {
+          // on a hero, a horizontal gesture snaps between the four hero columns.
+          // preventDefault throughout so the native scroll can't drift columns mid-swipe.
+          e.preventDefault();
+          if (accumX > THRESH && i < 4) { acted = true; goHoriz(i + 1); }        // scroll right -> next
+          else if (accumX < -THRESH && i > 1) { acted = true; goHoriz(i - 1); }  // scroll left -> prev
+        } else if (startMode === "hero" && accumY > THRESH) {   // hero, scroll down -> detail top
           acted = true; e.preventDefault(); go(DETAIL_ID[i]);
-        } else if (startMode === "detail-top" && accum < -THRESH) { // at detail top, scroll up -> hero
+        } else if (startMode === "detail-top" && accumY < -THRESH) { // at detail top, scroll up -> hero
           acted = true; e.preventDefault(); go(HERO_ID[i]);
         }
         // startMode "detail-mid": never cross here; the detail's own scroll handles it
         // and simply stops at the top (crossing needs a fresh gesture from the top).
+        // horizontal gestures on detail pages are left untouched (hero-only feature).
       };
       window.addEventListener("wheel", onWheel, { passive: false, capture: true });
       return () => window.removeEventListener("wheel", onWheel, { capture: true });
