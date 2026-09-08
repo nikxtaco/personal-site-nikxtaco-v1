@@ -1,6 +1,6 @@
 // CONTAINS CODE FOR STRIPE DESIGN, TOP NAVBAR AND NAVIGATION BETWEEN PAGES & COMPONENT CALLS FOR EVERY OTHER PAGE
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 import './navigation.css'
 import HomeIntro from "../HomeIntro/intro.js";
@@ -51,6 +51,68 @@ export default function Navigation() {
         //   setProjectsColor(0)
       }
     }, [index, width])
+
+    // WHEEL-BASED hero <-> detail navigation (people don't always notice the arrows):
+    // on a hero, a downward scroll opens that slide's detail page; on a detail page,
+    // an upward scroll while already at the very top returns to the hero.
+    // per-slide fragment ids (same ones the on-page "Browse"/up-arrow links use) and
+    // the detail scroll-container selectors
+    const HERO_ID = { 1: "home", 2: "projects", 3: "blog", 4: "art" };
+    const DETAIL_ID = { 1: "about", 2: "projects_stuff", 3: "bloglist", 4: "art_stuff" };
+    const DETAIL_SEL = { 1: ".about_container", 2: ".projects_container", 3: ".bloglist_container", 4: ".art_container" };
+    const idxRef = useRef(index);
+    useEffect(() => { idxRef.current = index; }, [index]);
+    useEffect(() => {
+      let lock = false;          // ignore wheel while a snap animation plays
+      let gestureOpen = false;   // true during one continuous wheel gesture (incl. momentum)
+      let gestureTimer = null;
+      let acted = false;         // already crossed during this gesture?
+      let accum = 0;             // accumulated deltaY across the gesture
+      let startMode = null;      // "hero" | "detail-top" | "detail-mid" at the gesture's start
+      const THRESH = 40;
+      // crossing uses fragment navigation (html has scroll-behavior: smooth), which is
+      // exactly how the on-page links move — window.scrollTo is clamped by overflow:hidden.
+      const go = (id) => {
+        lock = true;
+        window.location.hash = id;
+        setTimeout(() => { lock = false; }, 850);
+      };
+      const modeNow = () => {
+        const vh = window.innerHeight;
+        const i = idxRef.current;
+        const detailEl = document.getElementById(DETAIL_ID[i]);
+        // read the detail's real position rather than window.scrollY (which is clamped)
+        const onHero = !detailEl || detailEl.getBoundingClientRect().top > vh * 0.5;
+        if (onHero) return "hero";
+        const detail = document.querySelector(DETAIL_SEL[i]);
+        return (!detail || detail.scrollTop <= 0) ? "detail-top" : "detail-mid";
+      };
+      const onWheel = (e) => {
+        // while a snap is playing, swallow the rest of the flick's momentum so it
+        // can't scroll the detail's content past the top (the stop at the headshot).
+        if (lock) { e.preventDefault(); return; }
+        // a >180ms gap starts a fresh gesture. The mode is captured at the gesture's
+        // START, so momentum from scrolling *to* an edge can't fly through it — a
+        // separate gesture is needed to cross (the invisible stopper). Delta is
+        // accumulated so gentle trackpad scrolls still register.
+        if (!gestureOpen) { gestureOpen = true; acted = false; accum = 0; startMode = modeNow(); }
+        clearTimeout(gestureTimer);
+        gestureTimer = setTimeout(() => { gestureOpen = false; }, 180);
+        if (acted) return;
+        accum += e.deltaY;
+        const i = idxRef.current;
+        if (startMode === "hero" && accum > THRESH) {          // hero, scroll down -> detail top
+          acted = true; e.preventDefault(); go(DETAIL_ID[i]);
+        } else if (startMode === "detail-top" && accum < -THRESH) { // at detail top, scroll up -> hero
+          acted = true; e.preventDefault(); go(HERO_ID[i]);
+        }
+        // startMode "detail-mid": never cross here; the detail's own scroll handles it
+        // and simply stops at the top (crossing needs a fresh gesture from the top).
+      };
+      window.addEventListener("wheel", onWheel, { passive: false, capture: true });
+      return () => window.removeEventListener("wheel", onWheel, { capture: true });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [width]);
 
     // SPOTLIGHT SEARCH: jump to a section (horizontal slide) then scroll to the
     // detail element and/or ask the writings list to open a specific post

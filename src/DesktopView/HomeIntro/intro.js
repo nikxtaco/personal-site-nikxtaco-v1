@@ -7,6 +7,7 @@ import jupiter from "../../img/jupiter-artland.jpg";
 import starflyer from "../../img/star-flyer.jpg";
 import sevenSisters from "../../img/seven-sisters.jpg";
 import obsidianFull from "../../img/obsidian-full.png";
+import ecoLibrary from "../../img/umberto-eco-antilibrary.jpg";
 import { RESEARCH_UPDATES } from "./researchUpdates";
 import lessWrongMark from "../../img/lesswrong-mark.png";
 
@@ -57,8 +58,16 @@ export default function Intro() {
     }, []);
 
     // styled hover tooltip for the About collage images (native `title` was unreliable)
-    const [imgTip, setImgTip] = useState(null); // { text, x, y }
-    const showImgTip = (e) => setImgTip({ text: e.currentTarget.dataset.tip, x: e.clientX, y: e.clientY });
+    const [imgTip, setImgTip] = useState(null); // { text, x, y, flip }
+    const showImgTip = (e) => {
+        const text = e.currentTarget.dataset.tip || "";
+        // estimate the tooltip's width (nowrap) and flip it to the left of the cursor
+        // when it would otherwise overflow the right edge of the viewport
+        const vmin = Math.min(window.innerWidth, window.innerHeight);
+        const estW = text.length * 0.5 * (1.7 * vmin / 100) + window.innerWidth * 0.02 + 24;
+        const flip = e.clientX + 14 + estW > window.innerWidth - 10;
+        setImgTip({ text, x: e.clientX, y: e.clientY, flip });
+    };
     const hideImgTip = () => setImgTip(null);
 
     // sync a body class so the (global) corner decoration on the About slide
@@ -140,7 +149,7 @@ export default function Intro() {
             <div id="about" className={aboutTheme === "light" ? "about_container about_light" : "about_container about_dark"} >
 
                 {imgTip && (
-                    <div className="about_imgtip" style={{ left: imgTip.x, top: imgTip.y }}>{imgTip.text}</div>
+                    <div className="about_imgtip" style={{ left: imgTip.x, top: imgTip.y, transform: imgTip.flip ? "translate(calc(-100% - 14px), 16px)" : "translate(14px, 16px)" }}>{imgTip.text}</div>
                 )}
 
                 <div className="about_butterflies" aria-hidden="true">
@@ -263,6 +272,7 @@ export default function Intro() {
                                 <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer, Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <img className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" data-tip="Jupiter Artland, Edinburgh" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <img className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" data-tip="The Van Gogh Exhibition, London" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img className="collage_ecolibrary" src={ecoLibrary} alt="Reading about Umberto Eco's antilibrary with Edinburgh Castle behind" data-tip="Reading at a Starbucks opposite the Edinburgh Castle" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <h1 className="about_title2">
                                 I try to <span className="about_try_word" key={"v" + tryIdx}>{TRY_WORDS[tryIdx][0]}</span><br/>
                                 new <span className="about_try_word" key={"n" + tryIdx}>{TRY_WORDS[tryIdx][1]}</span>

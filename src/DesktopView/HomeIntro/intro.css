@@ -301,7 +301,7 @@
 
 /* colophon footer at the bottom of the About page (git / tracked-changes flavour) */
 .about_colophon{
-    margin: 9vh 0 3vh 6vw;
+    margin: 3.5vh 0 3vh 6vw;
     padding-top: 2.6vh;
     border-top: 1px solid rgba(26, 26, 26, 0.14);
     max-width: 52vw;
@@ -463,6 +463,20 @@
     background-color: #20222b;
 }
 
+/* reading-in-Edinburgh photo, right below Van Gogh in the right gutter, its bottom
+   aligned with where Seven Sisters ends (the section bottom) */
+.collage_ecolibrary{
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 1vw;
+    width: 15vw;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
 /* Jupiter — a "cover" beside the I-try heading; right edge meets the text's right edge */
 .collage_jupiter{
     top: 3vh;
@@ -471,9 +485,10 @@
     width: auto;
 }
 
-/* Van Gogh — taller, in the right gutter, spilling down beside the Besides paragraph */
+/* Van Gogh — right gutter, sitting just above the Umberto Eco photo (which is
+   bottom-anchored). Raised as needed to make room for it below. */
 .collage_vangogh{
-    top: 7vh;
+    bottom: calc(23.25vw + 3vh);   /* Umberto's height + the same 3vh gap as star-flyer/seven-sisters */
     right: 1vw;
     width: 15vw;
     height: auto;

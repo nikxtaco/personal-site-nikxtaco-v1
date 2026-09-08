@@ -93,7 +93,7 @@
 }
 
 .blog_hero_row .blog_hero_half{
-    flex:1;
+    flex:0 0 11vw;      /* narrower than the old 50-50 so the 03B/03C sits closer to the word */
     min-width:0;
     text-decoration:none;
 }
