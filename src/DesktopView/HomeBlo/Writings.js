@@ -250,6 +250,15 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
           <div className="writing_head">
             <h2 className="writing_post_title">{openPost.title}</h2>
             <span className="writing_type">{openPost.type}</span>
+            {trackRead && (
+              <button
+                className={"writing_readmark" + (readIds.has(openPost.id) ? " is-read" : "")}
+                onClick={(e) => toggleRead(e, openPost.id)}
+                title={readIds.has(openPost.id) ? "Mark as unread" : "Mark as read"}
+              >
+                {readIds.has(openPost.id) ? "✓ Read" : "Mark read"}
+              </button>
+            )}
           </div>
           <p className="writing_date">{metaLine(openPost)}</p>
 
