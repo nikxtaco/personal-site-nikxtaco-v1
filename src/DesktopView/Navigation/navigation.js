@@ -91,13 +91,30 @@ export default function Navigation() {
         window.location.hash = HERO_ID[n];
         setTimeout(() => { lock = false; }, 850);
       };
-      const modeNow = () => {
+      // true if the element under the cursor (or an ancestor up to the detail page)
+      // is its own scroll region that still has content above it — e.g. the Research
+      // Updates card. We must let that scroll up rather than crossing to the hero.
+      const hasInnerScrollUp = (node) => {
+        let el = node;
+        while (el && el !== document.body && el !== document.documentElement) {
+          if (el.nodeType === 1 && el.scrollTop > 0) {
+            const oy = getComputedStyle(el).overflowY;
+            if (oy === "auto" || oy === "scroll") return true;
+          }
+          el = el.parentNode;
+        }
+        return false;
+      };
+      const modeNow = (e) => {
         const vh = window.innerHeight;
         const i = idxRef.current;
         const detailEl = document.getElementById(DETAIL_ID[i]);
         // read the detail's real position rather than window.scrollY (which is clamped)
         const onHero = !detailEl || detailEl.getBoundingClientRect().top > vh * 0.5;
         if (onHero) return "hero";
+        // if the cursor is over an inner scroller with room to scroll up (the Research
+        // Updates card), treat as mid-scroll so this gesture never crosses to the hero.
+        if (e && hasInnerScrollUp(e.target)) return "detail-mid";
         const detail = document.querySelector(DETAIL_SEL[i]);
         return (!detail || detail.scrollTop <= 0) ? "detail-top" : "detail-mid";
       };
@@ -109,7 +126,7 @@ export default function Navigation() {
         // START, so momentum from scrolling *to* an edge can't fly through it — a
         // separate gesture is needed to cross (the invisible stopper). Delta is
         // accumulated so gentle trackpad scrolls still register.
-        if (!gestureOpen) { gestureOpen = true; acted = false; accumX = 0; accumY = 0; startMode = modeNow(); }
+        if (!gestureOpen) { gestureOpen = true; acted = false; accumX = 0; accumY = 0; startMode = modeNow(e); }
         clearTimeout(gestureTimer);
         gestureTimer = setTimeout(() => { gestureOpen = false; }, 180);
         if (acted) return;
