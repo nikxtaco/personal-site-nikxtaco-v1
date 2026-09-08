@@ -179,13 +179,24 @@ export default function Navigation() {
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         } else if (item.elementId && item.elementId.indexOf("about-update-") === 0) {
-          // a research-updates entry: scroll it into view inside its card and flash it
+          // a research-updates entry: keep the About detail pinned at its top
+          // (headshot / first window) and scroll ONLY the updates card to the entry,
+          // so scrollIntoView doesn't nudge the whole detail page below its top.
+          window.location.hash = "about";
           const el = document.getElementById(item.elementId);
-          if (el) {
-            el.scrollIntoView({ behavior: "smooth", block: "center" });
-            el.classList.add("about_update_flash");
-            setTimeout(() => el.classList.remove("about_update_flash"), 1600);
-          }
+          const list = document.querySelector(".about_updates_list");
+          const detail = document.querySelector(DETAIL_SEL[1]);
+          setTimeout(() => {
+            if (detail) detail.scrollTop = 0;               // freeze the page at the headshot
+            if (el && list) {
+              // centre the entry inside the card without moving any ancestor scroller
+              const lr = list.getBoundingClientRect();
+              const er = el.getBoundingClientRect();
+              list.scrollTop += (er.top - lr.top) - (list.clientHeight - el.clientHeight) / 2;
+              el.classList.add("about_update_flash");
+              setTimeout(() => el.classList.remove("about_update_flash"), 1600);
+            }
+          }, 350);
         } else if (item.elementId) {
           const el = document.getElementById(item.elementId);
           if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
