@@ -182,7 +182,7 @@ export default function Intro() {
                             </p>
 
                             <p className="about_status">
-                            Well that's the summary. If you care to get a tiny bit more of a sense of my
+                            Well, that's the summary. If you care to get a tiny bit more of a sense of my
                             personality, read on! I've left much of the longer <i>about me</i> section below as is
                             from when it was first written back in 2020-22, because I think it aged well, and have
                             only made minor updates <span className="about_diffstat"><span className="stat_add">+{diffCount.add}</span> <span className="stat_del">−{diffCount.del}</span></span> where desired.
@@ -232,7 +232,7 @@ export default function Intro() {
 
                             <div className="about_try_section">
                                 <img className="collage_sevensisters" src={sevenSisters} alt="Nikita at Seven Sisters" data-tip="The Seven Sisters Cliffs, England" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
-                                <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer at Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer, Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <img className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" data-tip="Jupiter Artland, Edinburgh" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <img className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" data-tip="The Van Gogh Exhibition, London" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <h1 className="about_title2">
