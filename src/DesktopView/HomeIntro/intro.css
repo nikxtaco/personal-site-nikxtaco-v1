@@ -321,6 +321,10 @@
 .about_colophon_sign{
     margin-top: 1.3vh;
 }
+/* name in Malayalam script, a quiet signature closing the colophon */
+.about_colophon_ml{
+    opacity: 0.72;
+}
 .about_colophon_hash{
     color: #0b8b8b;
 }

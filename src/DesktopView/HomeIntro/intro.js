@@ -315,7 +315,7 @@ export default function Intro() {
                         <div className="about_colophon_sign">
                             <span className="about_colophon_hash">c0l0ph0n</span> committed with{" "}
                             <ins className="about_add">love</ins> <del className="about_del">and questionable time management</del>
-                            {" "}· © 2026 Nikita Menon
+                            {" "}· © 2026 Nikita <span className="about_colophon_ml" lang="ml">(നികിത)</span> Menon
                         </div>
                     </footer>
 
