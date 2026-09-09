@@ -6,6 +6,7 @@ import HomeIntro from "../HomeIntro/intro.js"
 import HomeProjects from "../HomeProjects/projects.js"
 import HomeArt from "../HomeArt/art.js"
 import HomeBlog from "../HomeBlo/blog.js"
+import SpotlightSearch from "../../DesktopView/components/SpotlightSearch.js"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 // import smooth from "react-scroll/modules/mixins/smooth";
@@ -19,6 +20,31 @@ export default function Navigation() {
   function toggleVisibility(){
      setNavbarVisibility(!navbarVisibility)
   }
+
+  // Spotlight navigation on mobile: the layout is the horizontal-slide layout,
+  // so fragment nav (window.location.hash = id) scrolls to any section/element.
+  const spotlightNavigate = (item) => {
+     if (item.url) { window.open(item.url, "_blank", "noopener,noreferrer"); return; }
+     const go = (id) => { if (id) window.location.hash = id; };
+     // native on-site post (blog or research): open it, then jump to its listing
+     if (item.entryId && item.native) {
+        window.dispatchEvent(new CustomEvent("spotlight-open-post", { detail: { id: item.entryId } }));
+        setTimeout(() => go(item.elementId || "bloglist"), 60);
+        return;
+     }
+     // the mobile Research Updates feed is paginated, so jump to the feed itself
+     if (item.elementId && item.elementId.indexOf("about-update-") === 0) { go("about"); return; }
+     // external cross-post: jump to its section, then flash its card if present
+     if (item.entryId && !item.native) {
+        go(item.elementId || "bloglist");
+        setTimeout(() => {
+           const card = document.getElementById("card-" + item.entryId);
+           if (card) { card.classList.add("card_flash"); setTimeout(() => card.classList.remove("card_flash"), 1600); }
+        }, 500);
+        return;
+     }
+     go(item.elementId);
+  };
 
   const customNavbar = {
      backgroundColor: "#000000f8",
@@ -110,8 +136,10 @@ export default function Navigation() {
             <div><HomeBlog/></div>
             <div><HomeArt/></div>
         </div>
-         
-     </div>  
+
+        <SpotlightSearch onNavigate={spotlightNavigate} />
+
+     </div>
     );
   
 }

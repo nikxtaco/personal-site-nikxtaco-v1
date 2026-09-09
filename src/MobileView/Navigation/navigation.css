@@ -50,8 +50,28 @@ a{
 
 
 
-/* 
+/*
 .blog_container {
     max-height: 100vh;
     overflow-y: hidden;
 } */
+
+/* ===== Spotlight search, mobile sizing ===== */
+@media screen and (max-width: 991px){
+    .spot_trigger{
+        font-size: 3.4vmin;
+        padding: 1.2vh 3.5vw;
+        gap: 2vw;
+        bottom: 3vh;
+        left: 4vw;
+    }
+    .spot_trigger svg{ width: 4vmin; height: 4vmin; }
+    .spot_kbd{ display: none; }          /* no ⌘K on a phone */
+    .spot_overlay{ padding-top: 12vh; }
+    .spot_panel{ width: 90vw; max-width: none; }
+    .spot_input{ font-size: 4vmin; }
+    .spot_input_icon{ width: 5vmin; height: 5vmin; }
+    .spot_row_label{ font-size: 3.7vmin; }
+    .spot_row_sub{ font-size: 3vmin; }
+    .spot_empty{ font-size: 3.6vmin; }
+}
