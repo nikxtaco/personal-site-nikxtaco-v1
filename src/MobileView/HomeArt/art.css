@@ -152,3 +152,45 @@
       }
 
 }
+
+/* ============================================================
+   v2 mobile Art & Music detail. Reuses desktop <MusicPlayer/> + <Sketches/>
+   (dark theme, same as desktop). .art_m stacks the row-based player and
+   sizes the sketch grid for a phone.
+   ============================================================ */
+@media screen and (max-width: 991px){
+
+    /* MusicPlayer — desktop is a flex row (art | card | tracklist); stack it */
+    .art_m .mp_wrap{ flex-direction: column; width: auto; }
+    .art_m .mp_side_art{ display: none; }
+    .art_m .mp_card{
+        width: auto;
+        border-left: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 14px;
+        margin-right: 0;
+        margin-bottom: 2.5vh;
+        padding: 2.4vh 5vw;
+    }
+    .art_m .mp_art{ width: 46vw; align-self: center; }
+    .art_m .mp_title{ font-size: 4.8vmin; }
+    .art_m .mp_subtitle{ font-size: 3.4vmin; }
+    .art_m .mp_times{ font-size: 3vmin; }
+    .art_m .mp_controls{ gap: 7vw; }
+    .art_m .mp_tracklist{ align-self: stretch; max-height: 44vh; }
+    .art_m .mp_track_title{ font-size: 3.6vmin; }
+    .art_m .mp_track_sub{ font-size: 3vmin; }
+
+    /* Sketches — force the justified flex gallery (mobile's old .iframe-container
+       was display:table) and make items ~2 per row */
+    .art_m .iframe-container{ display: flex !important; flex-wrap: wrap; gap: 2.6vw; }
+    .art_m .sketch_item{ flex-basis: 42vw !important; flex-grow: 1; }
+    .art_m .magnifying-image-container{ width: 100%; }
+    .art_m .magnifying-image{ width: 100%; display: block; border-radius: 8px; }
+
+    .art_m .art_content{ width: auto; font-size: 3.6vmin; }
+
+    /* shared lightbox: touch-sized controls */
+    .art_m .lb_arrow{ width: 12vmin; height: 12vmin; font-size: 7vmin; }
+    .art_m .lb_close{ font-size: 8vmin; }
+
+}
