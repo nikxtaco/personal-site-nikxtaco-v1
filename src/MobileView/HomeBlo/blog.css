@@ -57,3 +57,87 @@
     }
 
 }
+
+/* ============================================================
+   v2 mobile Blog/Writings detail (light theme). Reuses the desktop
+   <Writings/> component; everything scoped under .bloglist_m so it
+   overrides the component's desktop (vw/vmin) sizing for a phone.
+   ============================================================ */
+@media screen and (max-width: 991px){
+
+    /* the desktop .bloglist_container already positions this under the blog slide
+       (position:absolute; left:200vw; top:100vh) — keep that, just re-theme + pad
+       the inner content for a phone. */
+    .bloglist_container.bloglist_m{
+        background: #e9e5db;
+        -webkit-overflow-scrolling: touch;
+    }
+    .bloglist_m .bloglist_content_new{
+        width: auto;
+        margin: 0;
+        padding: 10vh 6vw 10vh 6vw;
+        box-sizing: border-box;
+    }
+
+    .bloglist_m .blog_heading_label{
+        font-family: "Playfair Display", serif;
+        font-size: 4.4vmin; color: #7a746a; margin: 0 0 1vh 0;
+    }
+    .bloglist_m .blog_writings_title{
+        font-family: "Rozha One", serif;
+        font-size: 12vmin; margin: 0 0 2vh 0; color: #1a1a1a;
+    }
+    .bloglist_m .blog_intro{
+        font-family: "Playfair Display", serif;
+        font-size: 3.8vmin; line-height: 1.6; color: #2b2824; margin: 0 0 3vh 0;
+    }
+    .bloglist_m .blog_intro_link{
+        color: #0b8b8b; text-decoration: none; border-bottom: 1px solid rgba(11,139,139,0.4);
+    }
+
+    /* ---- Writings component, mobile-sized ---- */
+    .bloglist_m .writings{ width: auto; }
+    .bloglist_m .writings_filters{ gap: 2vw; margin: 1vh 0 3vh 0; }
+    .bloglist_m .writings_filter{ font-size: 3.4vmin; padding: 0.7vh 3.2vw; }
+    .bloglist_m .writings_filter_read{ font-size: 3vmin; }
+    .bloglist_m .writings_list{ gap: 2.6vh; }
+
+    /* card: stack text above the photo stack */
+    .bloglist_m .writing_card{ flex-direction: column; gap: 2.2vh; padding: 2.6vh 5vw; }
+    .bloglist_m .writing_head{ gap: 2.4vw; }
+    .bloglist_m .writing_title{ font-size: 5vmin; }
+    .bloglist_m .writing_type{ font-size: 2.7vmin; padding: 0.5vh 2.6vw; margin-top: 1.1vh; }
+    .bloglist_m .writing_readmark{ font-size: 2.7vmin; padding: 0.5vh 2.6vw; margin-top: 1.1vh; }
+    .bloglist_m .writing_date{ font-size: 3vmin; }
+    .bloglist_m .writing_excerpt{ font-size: 3.7vmin; margin-top: 1.4vh; }
+    .bloglist_m .writing_source_link{ font-size: 3.6vmin; gap: 2vw; margin-top: 2vh; }
+    .bloglist_m .writing_readmore{ font-size: 3.6vmin; margin-top: 2vh; }
+    .bloglist_m .writing_links{ gap: 3.5vw; margin-top: 2vh; }
+
+    /* photo stack — larger, sits below the text */
+    .bloglist_m .writing_stack,
+    .bloglist_m .writings_blog .writing_stack{ width: 48vw; height: 37vw; }
+    .bloglist_m .writing_stack_img,
+    .bloglist_m .writings_blog .writing_stack_img{ width: 42vw; height: 31vw; }
+    .bloglist_m .writings_blog .writing_stack .stack_1{ transform: translate(3vw, 2.6vw); }
+    .bloglist_m .writings_blog .writing_stack .stack_2{ transform: translate(6vw, 5.2vw); }
+
+    /* single post view */
+    .bloglist_m .writing_back{ font-size: 3.6vmin; padding: 0.8vh 4vw; margin-bottom: 3vh; }
+    .bloglist_m .writing_post_title{ font-size: 7vmin; }
+    .bloglist_m .writing_head{ flex-wrap: wrap; }
+    .bloglist_m .writing_body{ font-size: 3.9vmin; max-width: none; }
+    .bloglist_m .writing_post_images{ max-width: none; gap: 3vw; }
+    .bloglist_m .writing_post_fig{ max-width: 100% !important; }
+    .bloglist_m .writing_stackview{ width: auto; flex-direction: column; gap: 3vw; }
+    .bloglist_m .writing_stackview_cap{ font-size: 3.3vmin; }
+    .bloglist_m .writing_collage{ width: auto; flex-direction: column; gap: 3vw; }
+    .bloglist_m .writing_collage_col{ gap: 3vw; }
+    .bloglist_m .writing_collage_cap{ font-size: 3.5vmin; padding: 1.6vh 4vw; }
+    .bloglist_m .writing_link{ font-size: 3.6vmin; }
+
+    /* lightbox arrows bigger for touch */
+    .bloglist_m .lb_arrow{ width: 12vmin; height: 12vmin; font-size: 7vmin; }
+    .bloglist_m .lb_close{ font-size: 8vmin; }
+
+}
