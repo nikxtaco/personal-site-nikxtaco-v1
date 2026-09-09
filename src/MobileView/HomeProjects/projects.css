@@ -197,3 +197,48 @@
       }
 
 }
+
+/* ============================================================
+   v2 mobile Research & Projects detail. Reuses desktop <Writings/>
+   (research mode) + <ProjectStuff/> (mockups). .bloglist_m (added on the
+   container) supplies the shared Writings mobile sizing; .projects_m here
+   covers the research intro + the mockup grid/card overrides.
+   ============================================================ */
+@media screen and (max-width: 991px){
+
+    .projects_container.projects_m{ background: #e9e5db; }
+
+    .projects_m .research_intro{
+        font-family: "Playfair Display", serif;
+        font-size: 3.8vmin; line-height: 1.55; color: #2b2824;
+        margin: 1vh 0 3vh 0;
+    }
+
+    /* mockups: single column; the featured card stacks image over write-up */
+    .projects_container.projects_m .iframe-container{
+        grid-template-columns: 1fr;
+        width: auto;
+        gap: 3vh;
+    }
+    .projects_container.projects_m .iframe-featured-row{
+        flex-direction: column;
+    }
+    .projects_container.projects_m .iframe-featured-row .mockup_img_wrap{
+        flex: none;
+        width: 100%;
+    }
+    .projects_container.projects_m .mockup_desc{
+        padding: 2.6vh 5vw 3vh 5vw;
+    }
+    .projects_container.projects_m .mockup_desc_title{ font-size: 6vmin; margin-bottom: 1.6vh; }
+    .projects_container.projects_m .mockup_desc_body{ font-size: 3.6vmin; }
+    .projects_container.projects_m .mockup_desc_body + .mockup_desc_body{ margin-top: 1.6vh; }
+
+    /* GitHub overlay badge on each mockup — a touch larger for the finger */
+    .projects_container.projects_m .mockup_gh_overlay{ padding: 1.4vw; }
+
+    /* shared lightbox: bigger controls for touch */
+    .projects_m .lb_arrow{ width: 12vmin; height: 12vmin; font-size: 7vmin; }
+    .projects_m .lb_close{ font-size: 8vmin; }
+
+}
