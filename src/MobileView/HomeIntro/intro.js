@@ -6,12 +6,6 @@ import useWindowDimensions from "../../helpers/WindowDimensions.js";
 import Footer from "../../components/footer/footer.js";
 
 import headshot from "../../img/headshot-dxb.jpg";
-import jupiter from "../../img/jupiter-artland.jpg";
-import starflyer from "../../img/star-flyer.jpg";
-import sevenSisters from "../../img/seven-sisters.jpg";
-import vangogh from "../../img/van-gogh-img.jpg";
-import ecoLibrary from "../../img/umberto-eco-antilibrary.jpg";
-import obsidianFull from "../../img/obsidian-full.png";
 import { RESEARCH_UPDATES } from "../../DesktopView/HomeIntro/researchUpdates.js";
 
 export default function Intro() {
@@ -19,6 +13,11 @@ export default function Intro() {
   const { height } = useWindowDimensions();
 
   const [about] = useState(false);
+  const [updatesPage, setUpdatesPage] = useState(0);
+  const UPDATES_PER_PAGE = 4;
+  // paginate the feed on mobile (dividers dropped; just the entries, newest first)
+  const updateEntries = RESEARCH_UPDATES.filter((u) => !u.divider);
+  const updatePageCount = Math.ceil(updateEntries.length / UPDATES_PER_PAGE);
 
   useEffect(() => {
     if (about === true) {
@@ -34,28 +33,6 @@ export default function Intro() {
     background: "linear-gradient(to right, white 50%, rgb(255, 255, 255, 0.3) 50%)",
     backgroundSize: "200% 100%",
   };
-
-  // Tap a dotted term to reveal its note (mobile has no hover). One delegated
-  // handler covers every .about_term, including those inside innerHTML.
-  const onAboutTap = (e) => {
-    const term = e.target.closest(".about_term");
-    // close any other open note
-    document.querySelectorAll(".about_m .about_term.tip_open").forEach((t) => {
-      if (t !== term) t.classList.remove("tip_open");
-    });
-    if (term) term.classList.toggle("tip_open");
-  };
-
-  // collage photos rendered as captioned figures (touch-friendly, no hover)
-  const COLLAGE = [
-    { img: headshot, alt: "Nikita Menon", cap: "That's me!" },
-    { img: sevenSisters, alt: "Nikita at Seven Sisters", cap: "The Seven Sisters Cliffs, England" },
-    { img: starflyer, alt: "Nikita on a star flyer ride", cap: "The Star Flyer, Edinburgh's Christmas Markets" },
-    { img: jupiter, alt: "Nikita at Jupiter Artland", cap: "Jupiter Artland, Edinburgh" },
-    { img: vangogh, alt: "Nikita at a Van Gogh immersive exhibit", cap: "The Van Gogh Exhibition, London" },
-    { img: ecoLibrary, alt: "Reading about Umberto Eco's antilibrary with Edinburgh Castle behind", cap: "Starbucks Viewpoint, Edinburgh Castle" },
-    { img: obsidianFull, alt: "Obsidian graph", cap: "A snapshot of my Obsidian graph" },
-  ];
 
   return (
     <div>
@@ -86,7 +63,7 @@ export default function Intro() {
 
       </div>
 
-      <div id="about" className="about_container_mobile about_m" onClick={onAboutTap}>
+      <div id="about" className="about_container_mobile about_m">
 
         <h3 className="about_heading">- ABOUT</h3>
         <div className="about_commit">
@@ -96,7 +73,6 @@ export default function Intro() {
         {/* headshot + fact chips */}
         <div className="about_headshot">
           <img src={headshot} alt="Nikita Menon" />
-          <span className="about_headshot_sig" lang="ml" aria-hidden="true">നികിത</span>
         </div>
         <div className="about_facts">
           <span className="about_fact">AI Safety Researcher</span>
@@ -120,17 +96,39 @@ export default function Intro() {
         <aside className="about_updates">
           <h4 className="about_updates_title">Research Updates</h4>
           <ul className="about_updates_list">
-            {RESEARCH_UPDATES.map((u, i) => (
-              u.divider ? (
-                <li className="about_update_divider" key={i}><span>{u.label}</span></li>
-              ) : (
+            {updateEntries
+              .slice(updatesPage * UPDATES_PER_PAGE, updatesPage * UPDATES_PER_PAGE + UPDATES_PER_PAGE)
+              .map((u, i) => (
                 <li className="about_update" key={i}>
                   <span className="about_update_meta">{u.date}</span>
                   <span className="about_update_text" dangerouslySetInnerHTML={{ __html: u.text }} />
                 </li>
-              )
-            ))}
+              ))}
           </ul>
+          <div className="about_updates_pager">
+            <button
+              type="button"
+              className="about_updates_arrow"
+              disabled={updatesPage === 0}
+              onClick={() => setUpdatesPage((p) => Math.max(0, p - 1))}
+              aria-label="Previous page"
+            >‹</button>
+            {Array.from({ length: updatePageCount }).map((_, p) => (
+              <button
+                key={p}
+                type="button"
+                className={"about_updates_page" + (p === updatesPage ? " active" : "")}
+                onClick={() => setUpdatesPage(p)}
+              >{p + 1}</button>
+            ))}
+            <button
+              type="button"
+              className="about_updates_arrow"
+              disabled={updatesPage >= updatePageCount - 1}
+              onClick={() => setUpdatesPage((p) => Math.min(updatePageCount - 1, p + 1))}
+              aria-label="Next page"
+            >›</button>
+          </div>
         </aside>
 
         <p className="about_status">
@@ -182,27 +180,6 @@ export default function Intro() {
 
           Until then, I fare thee well.<br />
         </p>
-
-        {/* collage of photos, captioned */}
-        <div className="about_collage_m">
-          {COLLAGE.map((c, i) => (
-            <figure className="about_collage_fig" key={i}>
-              <img src={c.img} alt={c.alt} />
-              <figcaption>{c.cap}</figcaption>
-            </figure>
-          ))}
-        </div>
-
-        {/* reading key */}
-        <aside className="about_legend" aria-label="Reading key">
-          <div className="about_legend_title">// reading key</div>
-          <div className="about_legend_rows">
-            <span className="about_legend_row"><span className="about_inline_link">link</span> &rarr; clickable</span>
-            <span className="about_legend_row"><span className="about_add">green</span> &rarr; a later addition</span>
-            <span className="about_legend_row"><del className="about_del">struck</del> &rarr; cut since</span>
-            <span className="about_legend_row"><span className="about_term">dotted</span> &rarr; tap for a note</span>
-          </div>
-        </aside>
 
         {/* colophon */}
         <footer className="about_colophon">

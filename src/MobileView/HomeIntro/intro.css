@@ -195,14 +195,6 @@
         line-height: 0;
     }
     .about_m .about_headshot img{ width: 100%; display: block; }
-    .about_m .about_headshot_sig{
-        position: absolute;
-        right: 3vw; bottom: 1.6vh;
-        font-size: 3.6vmin;
-        color: rgba(28,26,24,0.5);
-        text-shadow: 0 1px 6px rgba(255,255,255,0.35);
-        line-height: 1;
-    }
     .about_m .about_facts{
         display: flex; flex-wrap: wrap;
         gap: 1.2vh 2vw;
@@ -257,24 +249,10 @@
     .about_m .about_add{ color: #2e7d32; }
     .about_m ins.about_add{ text-decoration: none; }
     .about_m .about_del{ color: #b0433a; text-decoration: line-through; }
-    .about_m .about_term{
-        border-bottom: 1px dotted #6a655c;
-        cursor: pointer;
-        position: relative;
-    }
-    .about_m .about_tip{ display: none; }
-    .about_m .about_term.tip_open .about_tip{
-        display: block;
-        margin: 1.2vh 0;
-        padding: 1.4vh 4vw;
-        font-size: 3.3vmin;
-        line-height: 1.5;
-        color: #4a463f;
-        background: rgba(26,26,26,0.05);
-        border-left: 2px solid #0b8b8b;
-        border-radius: 6px;
-    }
-    .about_m .about_term.tip_open{ border-bottom-color: #0b8b8b; }
+    /* on mobile the dotted "hover / tap for a note" terms render as plain text
+       (the notes look cramped on a phone) — keep the words, drop the reveal */
+    .about_m .about_term{ border-bottom: none; cursor: inherit; }
+    .about_m .about_tip{ display: none !important; }
 
     /* research updates feed (full list, page scrolls it — no nested scroll) */
     .about_m .about_updates{
@@ -320,41 +298,33 @@
     .about_m .about_update_divider::after{
         content: ""; flex: 1; height: 1px; background: rgba(26,26,26,0.14);
     }
-
-    /* captioned photo collage */
-    .about_m .about_collage_m{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3vw;
-        margin: 2vh 0 4vh 0;
+    .about_m .about_updates_pager{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6vw;
+        margin-top: 2.4vh;
     }
-    .about_m .about_collage_fig{ margin: 0; }
-    .about_m .about_collage_fig img{
-        width: 100%;
-        border-radius: 10px;
-        display: block;
-        box-shadow: 0 8px 18px rgba(0,0,0,0.22);
-    }
-    .about_m .about_collage_fig figcaption{
-        font-family: "Playfair Display", serif;
-        font-size: 3vmin;
-        line-height: 1.35;
-        color: #4a463f;
-        margin-top: 1vh;
-    }
-
-    /* reading key */
-    .about_m .about_legend{
+    .about_m .about_updates_page,
+    .about_m .about_updates_arrow{
         font-family: "Courier New", monospace;
-        margin: 1vh 0 4vh 0;
-        padding-top: 2.4vh;
-        border-top: 1px solid rgba(26,26,26,0.14);
+        font-size: 3.2vmin;
+        min-width: 8vw;
+        padding: 0.8vh 0;
+        text-align: center;
+        background: rgba(26,26,26,0.04);
+        border: 1px solid rgba(26,26,26,0.16);
+        border-radius: 8px;
+        color: #4a463f;
+        cursor: pointer;
     }
-    .about_m .about_legend_title{
-        font-size: 3vmin; color: #9a9284; margin-bottom: 1.4vh; letter-spacing: 0.05em;
+    .about_m .about_updates_page.active{
+        background: #0b8b8b;
+        border-color: #0b8b8b;
+        color: #f4f1ea;
     }
-    .about_m .about_legend_rows{ display: flex; flex-direction: column; gap: 1vh; }
-    .about_m .about_legend_row{ font-size: 3.2vmin; color: #6a655c; }
+    .about_m .about_updates_arrow{ min-width: 7vw; color: #0b8b8b; }
+    .about_m .about_updates_arrow:disabled{ opacity: 0.35; cursor: default; color: #6a655c; }
 
     /* colophon */
     .about_m .about_colophon{
