@@ -76,7 +76,9 @@
 
     .projects_container{
         margin-top:100vh;
-        left:200vw;
+        /* mobile slide order is home, projects, blog, art -> projects is the 100vw
+           column (the desktop order put it at 200vw, which collided with the blog) */
+        left:100vw;
         width:100vw;
         height:100vh;
         position: absolute;
