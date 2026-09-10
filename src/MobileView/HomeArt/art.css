@@ -160,6 +160,12 @@
    ============================================================ */
 @media screen and (max-width: 991px){
 
+    /* centre the whole art content column so music + sketches align evenly
+       (was width:93vw flush-left, leaving a gap only on the right) */
+    .art_container.art_m .art_all_content{ width: 86vw !important; margin-left: auto !important; margin-right: auto !important; }
+    .art_m .music_container{ margin-left: 0 !important; }
+    .art_m .sketches_container_mobile{ margin-left: 0 !important; }
+
     /* MusicPlayer — desktop is a flex row (art | card | tracklist); stack it */
     .art_m .mp_wrap{ flex-direction: column; width: auto; }
     .art_m .mp_side_art{ display: none; }
@@ -180,14 +186,25 @@
     .art_m .mp_track_title{ font-size: 3.6vmin; }
     .art_m .mp_track_sub{ font-size: 3vmin; }
 
-    /* Sketches — force the justified flex gallery (mobile's old .iframe-container
-       was display:table) and make items ~2 per row */
-    .art_m .iframe-container{ display: flex !important; flex-wrap: wrap; gap: 2.6vw; }
-    .art_m .sketch_item{ flex-basis: 42vw !important; flex-grow: 1; }
-    .art_m .magnifying-image-container{ width: 100%; }
-    .art_m .magnifying-image{ width: 100%; display: block; border-radius: 8px; }
+    /* Sketches — single column, full-width, centered (was a left-aligned 2-up grid) */
+    .art_m .iframe-container{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 3vh;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    .art_m .sketch_item{
+        flex: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+    }
+    .art_m .magnifying-image-container{ width: 100% !important; }
+    .art_m .magnifying-image{ width: 100% !important; height: auto !important; display: block; border-radius: 10px; }
 
-    .art_m .art_content{ width: auto; font-size: 3.6vmin; }
+    .art_m .art_content{ width: auto; font-size: 3.6vmin; border-left: none; padding-left: 0; margin-top: 3vh; }
 
     /* shared lightbox: touch-sized controls */
     .art_m .lb_arrow{ width: 12vmin; height: 12vmin; font-size: 7vmin; }

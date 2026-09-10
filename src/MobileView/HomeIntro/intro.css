@@ -54,7 +54,9 @@
     .about_container_mobile{
         position:absolute;
         margin:0;
-        top:90vh;
+        /* start the About detail a full screen down so the hero's dark background
+           reaches the bottom of the first screen (was 90vh -> cream peeked in) */
+        top:100vh;
         padding-top:12vh;
         padding-left:7vw;
         width:100vw;

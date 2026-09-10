@@ -216,6 +216,27 @@
         margin: 1vh 0 3vh 0;
     }
 
+    /* research listing: the arXiv/LessWrong/X link icons were ~17px — enlarge */
+    .projects_container.projects_m .writing_links{ gap: 6vw; margin-top: 2.6vh; }
+    .projects_container.projects_m .writing_links svg,
+    .projects_container.projects_m .writing_links img{
+        width: 6.4vmin !important; height: 6.4vmin !important;
+    }
+
+    /* research listing: the offset "photo stack" looks cramped for diagrams —
+       show a single clean, centred cover image instead (all images still open
+       in the lightbox on tap) */
+    .projects_container.projects_m .writing_stack,
+    .projects_container.projects_m .writings_blog .writing_stack{
+        width: 84vw; height: 54vw; align-self: center; margin-top: 1vh;
+    }
+    .projects_container.projects_m .writing_stack_img,
+    .projects_container.projects_m .writings_blog .writing_stack_img{
+        width: 84vw; height: 54vw;
+    }
+    .projects_container.projects_m .writing_stack .stack_1,
+    .projects_container.projects_m .writing_stack .stack_2{ display: none; }
+
     /* mockups: single column; the featured card stacks image over write-up */
     .projects_container.projects_m .iframe-container{
         grid-template-columns: 1fr;
