@@ -51,6 +51,61 @@ export default function Navigation() {
   const iconColor = navTheme === "light" ? "#1a1a1a" : "white";
   const navBg = navTheme === "light" ? "#e9e5db" : "#141414";
 
+  // Full-page swipe navigation (the window has overflow:hidden, so sections move
+  // via fragment nav — a swipe just picks the target). Columns are in mobile
+  // slide order: home, projects, blog, art.
+  useEffect(() => {
+     const HERO = ["home", "projects", "blog", "art"];
+     const DETAIL = ["about", "projects_stuff", "bloglist", "art_stuff"];
+     const DETAIL_SEL = [".about_container_mobile", ".projects_container", ".bloglist_container", ".art_container"];
+     const THRESH = 45;
+     const locNow = () => {
+        const h = (window.location.hash || "").replace("#", "") || "home";
+        let col = HERO.indexOf(h);
+        if (col >= 0) return { col, view: "hero" };
+        col = DETAIL.indexOf(h);
+        if (col >= 0) return { col, view: "detail" };
+        return { col: 0, view: "hero" };
+     };
+     const go = (id) => { window.location.hash = id; };
+     let sx = 0, sy = 0, detailTopAtStart = true;
+     const onStart = (e) => {
+        const t = e.touches && e.touches[0];
+        if (!t) return;
+        sx = t.clientX; sy = t.clientY;
+        const { view, col } = locNow();
+        if (view === "detail") {
+           const el = document.querySelector(DETAIL_SEL[col]);
+           detailTopAtStart = !el || el.scrollTop <= 2;
+        } else {
+           detailTopAtStart = true;
+        }
+     };
+     const onEnd = (e) => {
+        const t = e.changedTouches && e.changedTouches[0];
+        if (!t) return;
+        const dx = t.clientX - sx, dy = t.clientY - sy;
+        if (Math.abs(dx) < THRESH && Math.abs(dy) < THRESH) return; // tap, not a swipe
+        const { view, col } = locNow();
+        if (view === "hero") {
+           if (Math.abs(dx) > Math.abs(dy)) {          // horizontal: heroes only
+              if (dx < 0 && col < 3) go(HERO[col + 1]); // swipe left -> next hero
+              else if (dx > 0 && col > 0) go(HERO[col - 1]); // swipe right -> prev hero
+           } else if (dy < 0) {                         // swipe up -> this column's detail
+              go(DETAIL[col]);
+           }
+        } else { // on a detail: only a downward swipe from the very top returns to the hero
+           if (dy > Math.abs(dx) && dy > THRESH && detailTopAtStart) go(HERO[col]);
+        }
+     };
+     window.addEventListener("touchstart", onStart, { passive: true });
+     window.addEventListener("touchend", onEnd, { passive: true });
+     return () => {
+        window.removeEventListener("touchstart", onStart);
+        window.removeEventListener("touchend", onEnd);
+     };
+  }, []);
+
   // Spotlight navigation on mobile: the layout is the horizontal-slide layout,
   // so fragment nav (window.location.hash = id) scrolls to any section/element.
   const spotlightNavigate = (item) => {
