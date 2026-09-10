@@ -5,7 +5,7 @@
     .hey_text_div_mobile{
         margin-top:25vh;
         width:100vw;
-        height:33vh;
+        min-height:33vh;
         position:sticky;
         z-index:30;
         text-align: center;
@@ -14,7 +14,7 @@
     .hey_text_div_intro_mobile{
         margin-top:23vh;
         width:100vw;
-        height:33vh;
+        min-height:33vh;
         position:sticky;
         z-index:30;
         text-align: center;
