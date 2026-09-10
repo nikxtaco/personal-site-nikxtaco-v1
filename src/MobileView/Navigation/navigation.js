@@ -7,6 +7,7 @@ import HomeProjects from "../HomeProjects/projects.js"
 import HomeArt from "../HomeArt/art.js"
 import HomeBlog from "../HomeBlo/blog.js"
 import SpotlightSearch from "../../DesktopView/components/SpotlightSearch.js"
+import MobileNotice from "../components/MobileNotice.js"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 // import smooth from "react-scroll/modules/mixins/smooth";
@@ -100,8 +101,9 @@ export default function Navigation() {
      textAlign: "center",
   }
 
-  return ( 
+  return (
     <div>
+     <MobileNotice/>
      <div className="mobile_navbar" style={{backgroundColor: navbarVisibility ? '#141414' : navBg, transition: 'background-color 0.25s ease'}}>
          <a href="/">
          {

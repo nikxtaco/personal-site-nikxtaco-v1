@@ -140,7 +140,7 @@
         background: #e9e5db;
         color: #2b2824;
         /* 14vh top clears the fixed 12vh header (was 10vh -> "- ABOUT" overlapped) */
-        padding: 14vh 7vw 6vh 7vw;
+        padding: 14vh 7vw 2vh 7vw;
         width: 100vw;
         box-sizing: border-box;
         height: 100vh;
