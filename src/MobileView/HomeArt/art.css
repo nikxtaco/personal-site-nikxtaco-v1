@@ -164,7 +164,10 @@
        (was width:93vw flush-left, leaving a gap only on the right) */
     .art_container.art_m .art_all_content{ width: 86vw !important; margin-left: auto !important; margin-right: auto !important; }
     .art_m .music_container{ margin-left: 0 !important; }
-    .art_m .sketches_container_mobile{ margin-left: 0 !important; }
+    /* sketches followed music with a huge 12vh gap; shrink it, and use
+       scroll-margin so a direct #sketches jump still clears the fixed header */
+    .art_m .sketches_container_mobile{ margin-left: 0 !important; padding-top: 5vh !important; scroll-margin-top: 14vh; }
+    .art_m #music{ scroll-margin-top: 14vh; }
 
     /* MusicPlayer — desktop is a flex row (art | card | tracklist); stack it */
     .art_m .mp_wrap{ flex-direction: column; width: auto; }

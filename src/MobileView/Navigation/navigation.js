@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 // import { HashLink as HLink } from 'react-router-hash-link';
 import UseAnimations from "react-useanimations";
 import './navigation.css';
@@ -20,6 +20,35 @@ export default function Navigation() {
   function toggleVisibility(){
      setNavbarVisibility(!navbarVisibility)
   }
+
+  // The fixed header should match the page under it: light on the light detail
+  // pages (About / Blog / Research), dark on the heroes and the dark Art detail.
+  // Sample the element just below the header and see if it's inside a light detail.
+  const [navTheme, setNavTheme] = useState("dark");
+  useEffect(() => {
+     // sample the element just below the 12vh header; if it's inside a light
+     // detail page, theme the header light. Called directly (no rAF — rAF is
+     // starved in some automated contexts); setNavTheme only re-renders on a
+     // real change, so running it per scroll event is cheap.
+     const sample = () => {
+        const el = document.elementFromPoint(
+           Math.round(window.innerWidth / 2),
+           Math.round(window.innerHeight * 0.15)
+        );
+        const light = !!(el && el.closest && el.closest(".about_m, .bloglist_m, .projects_m"));
+        setNavTheme(light ? "light" : "dark");
+     };
+     window.addEventListener("scroll", sample, { capture: true, passive: true });
+     window.addEventListener("hashchange", sample);
+     const t = setTimeout(sample, 400);
+     return () => {
+        window.removeEventListener("scroll", sample, { capture: true });
+        window.removeEventListener("hashchange", sample);
+        clearTimeout(t);
+     };
+  }, []);
+  const iconColor = navTheme === "light" ? "#1a1a1a" : "white";
+  const navBg = navTheme === "light" ? "#e9e5db" : "#141414";
 
   // Spotlight navigation on mobile: the layout is the horizontal-slide layout,
   // so fragment nav (window.location.hash = id) scrolls to any section/element.
@@ -73,14 +102,14 @@ export default function Navigation() {
 
   return ( 
     <div>
-     <div className="mobile_navbar" style={{backgroundColor: 'black'}}>
+     <div className="mobile_navbar" style={{backgroundColor: navbarVisibility ? '#141414' : navBg, transition: 'background-color 0.25s ease'}}>
          <a href="/">
          {
-           <UseAnimations animationKey="infinity" size={30} style={{ color: "white", cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "1z" }}/>
+           <UseAnimations animationKey="infinity" size={30} style={{ color: navbarVisibility ? "white" : iconColor, cursor: "pointer", marginLeft: "7vw", marginTop: "5vh", position: "absolute", zIndex: "1z" }}/>
          }
          </a>
-           
-           {navbarVisibility && 
+
+           {navbarVisibility &&
          <div onClick={toggleVisibility}>
          {
            <UseAnimations animationKey="menu2" size={25} style={{ color: "white", cursor: "pointer", marginLeft: "87vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
@@ -88,10 +117,10 @@ export default function Navigation() {
          </div>
         }
 
-{!navbarVisibility && 
+{!navbarVisibility &&
          <div onClick={toggleVisibility}>
          {
-           <UseAnimations animationKey="menu2" size={25} style={{ color: "white", cursor: "pointer", marginLeft: "87vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
+           <UseAnimations animationKey="menu2" size={25} style={{ color: iconColor, cursor: "pointer", marginLeft: "87vw", marginTop: "5.5vh", position: "absolute", zIndex: "5" }}/>
          }
          </div>
         }

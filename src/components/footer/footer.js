@@ -17,25 +17,25 @@ const Navbar = () => {
         <a href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">
               {
                 width>991?<UseAnimations animationKey="mail" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"17.5vw", paddingTop: "10vh" }}/>
-                :<UseAnimations animationKey="mail" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"8vw", paddingTop: "5vh", paddingBottom:"5vh" }}/>
+                :<UseAnimations animationKey="mail" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"8vw", paddingTop: "1.5vh", paddingBottom:"3vh" }}/>
               }</a>
 
               <a href="https://instagram.com/nikxtaco" target="_blank" rel="noreferrer">
               {
               width>991?<UseAnimations animationKey="instagram" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
-              :<UseAnimations animationKey="instagram" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
+              :<UseAnimations animationKey="instagram" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "1.5vh" }}/>
               }</a>
 
               <a href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">
               {
               width>991?<UseAnimations animationKey="linkedin" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
-              :<UseAnimations animationKey="linkedin" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
+              :<UseAnimations animationKey="linkedin" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "1.5vh" }}/>
               }</a>
                 
               <a href="https://twitter.com/nikxtaco" target="_blank" rel="noreferrer">
               {
               width>991?<UseAnimations animationKey="twitter" size={"5vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"5vw", paddingTop: "10vh" }}/>
-              :<UseAnimations animationKey="twitter" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "5vh" }}/>
+              :<UseAnimations animationKey="twitter" size={"10vmin"} style={{ color: "#1a1a1a", cursor: "pointer", padding:"0", margin:"0", float:"left" , paddingLeft:"10vw", paddingTop: "1.5vh" }}/>
               }</a>
          </div>
 

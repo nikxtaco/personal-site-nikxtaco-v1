@@ -75,7 +75,8 @@
     .bloglist_m .bloglist_content_new{
         width: auto;
         margin: 0;
-        padding: 10vh 6vw 10vh 6vw;
+        /* 14vh top clears the fixed 12vh header (was 10vh -> "- Blog" overlapped) */
+        padding: 14vh 6vw 10vh 6vw;
         box-sizing: border-box;
     }
 

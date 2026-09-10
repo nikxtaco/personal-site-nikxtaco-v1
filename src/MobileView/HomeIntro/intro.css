@@ -139,7 +139,8 @@
     .about_container_mobile.about_m{
         background: #e9e5db;
         color: #2b2824;
-        padding: 10vh 7vw 6vh 7vw;
+        /* 14vh top clears the fixed 12vh header (was 10vh -> "- ABOUT" overlapped) */
+        padding: 14vh 7vw 6vh 7vw;
         width: 100vw;
         box-sizing: border-box;
         height: 100vh;
