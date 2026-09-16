@@ -203,7 +203,7 @@ export const WRITINGS = [
     layout: "collage", // captioned photo cards arranged as a collage
     stackOrder: [0, 2, 1], // listing thumbnail fans deer -> lake -> cow
     images: [
-      { src: deer100, note: "Probably 100+ deer staring at me and my friend on a detour from the formal Long Walk of Windsor Great Park. 🦌" },
+      { src: deer100, note: "Probably 100+ deer staring at me and my friend on a detour from the Long Walk of Windsor Great Park. 🦌" },
       { src: doverCow, note: "A cow grazing atop the White Cliffs of Dover, with France faintly visible across the Channel. 🐄" },
       { src: heartLake, note: "A heart-shaped lake amid snow-capped mountains, spotted on a BOM → LDN flight. ✈️" },
     ],
