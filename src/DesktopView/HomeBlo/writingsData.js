@@ -129,7 +129,7 @@ export const WRITINGS = [
     date: "2024",
     sortDate: "2024-01-01",
     excerpt:
-      "Building on the \"Out-of-Context Meta-Learning in Large Language Models\" paper, we reproduce its differential internalization result (models absorb information more readily from reliable sources like Wikipedia than from unreliable ones like 4chan) in a much smaller transformer, small enough to actually dig into mechanistically and start asking how it pulls this off.",
+      "Building on the \"Out-of-Context Meta-Learning in Large Language Models\" paper, we reproduce its differential internalization result (models absorb information more readily from reliable sources like Wikipedia than from unreliable ones like 4chan) in a much smaller transformer, small enough to actually dig into mechanistically.",
     body:
       `<span class="writing_body_h">The gist</span>` +
       `Researchers care about how models generalize because generalization is a big part of what makes a model robust and useful out in a messy world, and because understanding the mechanism behind it lets us spot and fix failure modes instead of guessing blindly.<br/><br/>` +
