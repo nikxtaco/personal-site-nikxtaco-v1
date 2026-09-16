@@ -27,8 +27,8 @@ export default function MobileNotice() {
           good intentions, and the occasional strip of duct tape. 🩹
         </p>
         <p className="mnotice_body">
-          For the version I'm actually proud of — the animations, the scroll
-          trickery, all the fiddly delightful stuff — come say hi from a laptop.
+          For the version I'm actually proud of (the animations, the scroll
+          trickery, all the fiddly delightful stuff), come say hi from a laptop.
           Otherwise, feel free to poke around at your own (very mild) peril!
         </p>
         <button className="mnotice_btn" onClick={dismiss}>

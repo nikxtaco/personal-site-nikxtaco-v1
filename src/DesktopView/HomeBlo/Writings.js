@@ -134,6 +134,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
     return next;
   });
   const toggleRead = (e, id) => { e.stopPropagation(); setRead(id, !readIds.has(id)); };
+  const markAllUnread = () => { const empty = new Set(); saveReadIds(empty); setReadIds(empty); setHideRead(false); };
 
   // Justified image rows: each figure's flex-grow is set to its aspect ratio, so
   // a group of images shares its row at equal height and fills the text column;
@@ -415,12 +416,21 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
               {hideRead ? "Showing unread" : "Hide read"}
             </button>
           )}
+          {readCount > 0 && (
+            <button
+              className="writings_filter writings_filter_read"
+              onClick={markAllUnread}
+              title="Reset every post back to unread"
+            >
+              Mark all unread
+            </button>
+          )}
         </div>
       )}
 
       <div className="writings_list">
         {shown.length === 0 && (
-          <p className="writings_empty">Nothing here yet — more coming soon!</p>
+          <p className="writings_empty">Nothing here yet, more coming soon!</p>
         )}
 
         {shown.map((w) => {

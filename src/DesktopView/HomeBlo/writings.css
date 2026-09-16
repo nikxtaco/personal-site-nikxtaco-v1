@@ -290,6 +290,33 @@
     max-width: 52vw;
 }
 
+/* prominent section subheadings inside a post body (sized relative to the body
+   text so they scale on both desktop and mobile) */
+.writing_body_h{
+    display: block;
+    font-family: 'Rozha One', "Playfair Display", serif;
+    font-size: 1.5em;
+    line-height: 1.15;
+    color: #1a1a1a;
+    margin: 3.6vh 0 1vh 0;
+}
+/* figures embedded inline in a post body */
+.writing_body_img{
+    display: block;
+    width: 100%;
+    margin: 0 auto 2.6vh auto;
+    border-radius: 10px;
+    border: 1px solid rgba(26, 26, 26, 0.18);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+.writing_body_imgrow{
+    display: flex;
+    gap: 1.4vw;
+    margin: 0 0 2.6vh 0;
+    align-items: flex-start;
+}
+.writing_body_imgrow .writing_body_img{ flex: 1; min-width: 0; margin: 0; }
+
 .writing_post_images{
     display: flex;
     flex-wrap: wrap;

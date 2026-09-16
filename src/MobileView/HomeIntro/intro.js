@@ -149,11 +149,11 @@ export default function Intro() {
           things that I find interesting<span className="about_tip">I hope to one day make my Obsidian contents public.</span></span> for <del className="about_del">no apparent reason</del> <ins className="about_add">various reasons</ins>, but let's not
           talk about that.<br /><br />
 
-          Rational fiction, thought experiments, history and the morality of
+          Rational fiction, thought experiments, history, and the morality of
           politics are some of the things that interest me <span className="about_term">(as of right this
-          second)<span className="about_tip">Such interests are updated fairly often, so I'm just going to leave this list here, but know that it's stale.</span></span> and I do not claim to be adept at any of them. I am however
-          good at a couple of things (including sarcasm, owing to which my
-          friends <ins className="about_add">almost </ins>never think I'm being serious), and those things are or will
+          second)<span className="about_tip">Such interests are updated fairly often, so I'm just going to leave this list here, but know that it's stale.</span></span> and I do not claim to be adept at any of them. I am, however,
+          good at a couple of things (including sarcasm, owing to which <span className="about_term"><ins className="about_add">some of </ins>my
+          friends<span className="about_tip">Some of my friends, after reading this, pointed out that they disagree, and can in fact tell when I'm being serious fairly well.</span></span> <ins className="about_add">almost </ins>never think I'm being serious), and those things are or will
           be listed on this website before <del className="about_del">the next olympic games</del> <ins className="about_add">…&nbsp;<a className="about_inline_link" href="https://www.lesswrong.com/w/artificial-general-intelligence-agi" target="_blank" rel="noreferrer">AGI</a>? Hopefully?</ins><br /><br /><ins className="about_add">And fun fact: I come from the <a className="about_inline_link" href="https://en.wikipedia.org/wiki/Coconut_production_in_Kerala" target="_blank" rel="noreferrer">Land of Coconuts</a>.</ins><br />
         </p>
 
@@ -169,14 +169,14 @@ export default function Intro() {
           when I can help it, so for details on what I’ve been working on, I must
           redirect you to my <a className="about_inline_link" href="https://www.linkedin.com/in/nikita-menon-b2248079" target="_blank" rel="noreferrer">linkedin</a> or <a className="about_inline_link" href="/resume.pdf" target="_blank" rel="noreferrer">resume</a>.<br /><br />
 
-          I also clearly enjoy making <a className="about_inline_link" href="#music">keyboard covers</a>, <a className="about_inline_link" href="#sketches">art</a> and <a className="about_inline_link" href="#blog">writing poetry</a> since
+          I also clearly enjoy making <a className="about_inline_link" href="#music">keyboard covers</a>, <a className="about_inline_link" href="#sketches">art</a>, and <a className="about_inline_link" href="#blog">writing poetry</a> since
           I seem to have enough content on each to dedicate whole pages to them!
           It’s kind of funny how I can do none of these things ad-hoc without
           preparation or references though, but then again that’s never been the goal.
           There’s <del className="about_del">a lot</del> <ins className="about_add">an unreasonable number</ins> of skills I’d like to someday work towards acquiring properly
           (like <span className="about_term">ice skating<span className="about_tip">I used to do a fair bit of it in middle school until I fell one day and injured myself, then moved cities. I tried it once a decade later and, unsurprisingly, I'm trash at it now.</span></span>) and given that they’re plenty in number, if there’s <em>anything</em>{" "}
           new you’d like to learn and are looking for someone to do it with <ins className="about_add">(or just chat)</ins>, <em>please</em> reach
-          out! Chances are I’ll be <em>more than glad</em> to join the endeavour!<br /><br />
+          out! Chances are I’ll be <em>more</em> than glad to join the endeavour!<br /><br />
 
           Until then, I fare thee well.<br />
         </p>

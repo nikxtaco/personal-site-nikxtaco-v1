@@ -18,7 +18,7 @@ export const MOCKUPS = [
   {
     img: FilterBubbleMockup,
     url: 'https://github.com/DSC-QGambit',
-    caption: "Filter Bubble — a news aggregator and summariser that surfaces ideologically diverse takes and flags source credibility.",
+    caption: "Filter Bubble: a news aggregator and summariser that surfaces ideologically diverse takes and flags source credibility.",
     id: "filter-bubble",
     label: "Filter Bubble",
   },

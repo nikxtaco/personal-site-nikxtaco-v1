@@ -25,6 +25,11 @@ import oocDeceptionRoc from "../../img/ooc-deception-roc.png";
 import oocToyModel from "../../img/ooc-toy-model.png";
 import robotHoopThrow from "../../img/robot-hoop-throw.jpg";
 import gundamRobot from "../../img/gundam-robot.jpg";
+import emImg1 from "../../img/emergent-misalignment/image1.png";
+import emImg2 from "../../img/emergent-misalignment/image2.png";
+import emImg3 from "../../img/emergent-misalignment/image3.png";
+import emImg4 from "../../img/emergent-misalignment/image4.png";
+import emImg5 from "../../img/emergent-misalignment/image5.png";
 
 export const WRITING_FILTERS = ["All", "Made", "Seen", "Played", "Written"];
 
@@ -76,7 +81,7 @@ export const WRITINGS = [
     excerpt:
       "When Activation Oracles are trained on models that already exhibit undesirable behaviours, they fail to reliably detect those same behaviours in other models, suggesting current auditing methods depend critically on access to a safe base model.",
     body:
-      "Cross-posted from LessWrong. [ Add your intro or notes here — or read the full write-up via the link below. ]",
+      "Cross-posted from LessWrong. [ Add your intro or notes here, or read the full write-up via the link below. ]",
     links: [
       { kind: "lesswrong", url: "https://www.lesswrong.com/posts/3X5EFjiHgxdNowrTA/activation-oracles-significantly-underperform-without-a-safe" },
     ],
@@ -92,7 +97,7 @@ export const WRITINGS = [
     excerpt:
       "Different training methods for model organisms produce substantially varying interpretability results despite equivalent behavioural performance, suggesting current benchmarks may overestimate how ready interpretability techniques are for real-world safety auditing.",
     body:
-      "Cross-posted from LessWrong. [ Add your intro or notes here — or read the full write-up via the link below. ]",
+      "Cross-posted from LessWrong. [ Add your intro or notes here, or read the full write-up via the link below. ]",
     links: [
       { kind: "arxiv", url: "https://arxiv.org/abs/2607.01033" },
       { kind: "lesswrong", url: "https://www.lesswrong.com/posts/frvmrrND28SxZnkEy/the-model-organism-lottery-model-organism-interpretability" },
@@ -110,7 +115,7 @@ export const WRITINGS = [
     excerpt:
       "Linear probes can catch in-context \"strategic deception\" in LLMs; here I extend this to fine-tuned out-of-context incentives on Llama-3.1 8B and 70B, where probe performance drops significantly. On hindsight, this sprint of a Master's dissertation has some conceptual gaps, but I believe the takeaways are broadly correct.",
     body:
-      "[ Add your intro or notes here — or read the full write-up via the link below. ]",
+      "[ Add your intro or notes here, or read the full write-up via the link below. ]",
     links: [
       { kind: "paper", url: "https://drive.google.com/drive/folders/1Yb_UjMXOjb3PwiMrouwdydRj6GDj_pk3" },
     ],
@@ -124,11 +129,13 @@ export const WRITINGS = [
     date: "2024",
     sortDate: "2024-01-01",
     excerpt:
-      "[ Placeholder, write-up coming soon. ]",
+      "How does a model pick up a fact in one context and then reuse it in a completely different one, without ever being trained to make that jump? That's out-of-context learning. Building on the \"Out-of-Context Meta-Learning in Large Language Models\" paper, I reproduce its differential internalization result (models absorb information more readily from reliable sources like Wikipedia than from unreliable ones like 4chan) in a much smaller transformer, small enough to actually dig into mechanistically and start asking how it pulls this off.",
     body:
-      "[ Placeholder, full write-up coming soon. ]",
+      `<span class="writing_body_h">The gist</span>` +
+      `Researchers care about how models generalize because generalization is a big part of what makes a model robust and useful out in a messy world, and because understanding the mechanism behind it lets us spot and fix failure modes instead of guessing blindly.<br/><br/>` +
+      `This project builds on the paper "Out-of-Context Meta-Learning in Large Language Models". Out-of-context learning is when a model internalizes information in one context and learns to apply it in another, without being explicitly trained to do so. A striking version of it is differential internalization: the tendency to absorb information more from reliable sources (like Wikipedia) than from unreliable ones (like 4chan). I set out to understand how a transformer actually carries this out, and to make that tractable, I first replicate the phenomenon (originally shown <a class="writing_inline_link" href="https://openreview.net/forum?id=X3JFgY4gvf" target="_blank" rel="noreferrer">here</a>) in a much smaller model before poking at it with mechanistic interpretability.<span style="display:block; height:6vh;"></span>`,
     links: [
-      { kind: "slides", url: "#" },
+      { kind: "slides", url: "https://docs.google.com/presentation/d/1tztpD3Y-SzKgoZYfuttq9lS9rpkJRBvvPvCR9xlv34Q/edit?usp=sharing" },
     ],
     images: [oocToyModel],
   },
@@ -139,9 +146,45 @@ export const WRITINGS = [
     date: "Early 2025",
     sortDate: "2025-01-01",
     excerpt:
-      "[ Placeholder, write-up and links coming soon. ]",
+      "Does instruction-tuning make models more susceptible to emergent misalignment? I fine-tune the base and instruct variants of Mistral-Small-24B on the same misaligned data (insecure code, deceptive factual QA): the base models come out more broadly misaligned, while the instruct models come out more deceptive on the factual data. Combining the two datasets does some unexpected things too.",
     body:
-      "[ Placeholder, full write-up coming soon. ]",
+      `<span class="writing_body_h">Abstract</span>` +
+      `This project investigates whether instruction-tuning increases the susceptibility of language models to emergent misalignment: specifically, the tendency to adopt and generalize misaligned behavior such as deception and toxicity after narrow fine-tuning. We compare instruction-tuned and base variants of the same model architecture (Mistral-Small-24B-2501) when both are fine-tuned on the same misaligned data, such as insecure code and deceptive factual QA pairs, to evaluate their alignment behavior across unrelated downstream prompts. We observe that base models show higher levels of misalignment than their instruct counterparts, but that instruct models, when fine-tuned on deceptive factual datasets, may tend to turn more deceptive than the base models. Preliminary attempts were also made to test whether some of the truthfulness probing methods that we currently have could reliably be used to detect deception in these misaligned model variants, and whether a probe trained on detecting truthfulness in the non-fine-tuned model would transfer well to their misaligned counterparts.<br/><br/>` +
+      `<span class="writing_body_h">Introduction and Statement of the Problem</span>` +
+      `Language models are often fine-tuned via instruction-tuning to align with human intent. However, recent work suggests that models that have gone through this post-training phase may adopt or amplify broadly misaligned behaviors even when such behaviors are only incentivized in very narrow contexts. Such alarming possibilities have been shown in recent studies ([1], [2]), where models that learn some misaligned behavior in one context (e.g., lying) generalize that ability to others (e.g., general toxicity). While prior research has demonstrated this behavior in instruction-tuned models, there remains an open question: does instruction-tuning cause or exacerbate this behavior? Would base models exhibit similar tendencies?<br/><br/>` +
+      `Verifying this could substantiate whether or not instruction-tuning introduces a form of overgeneralization, where alignment with task-specific goals comes at the cost of deeper semantic consistency that could be exploited by malicious actors. Furthermore, if a model learns to be deceptive, does this compromise tools like truthfulness probes trained on their non-deceptive variants? This could indicate that interpretability tools for conducting alignment checks may not perform reliably across different variants of the same model. Our study seeks to fill these gaps by primarily analyzing how the behavior of instruction-tuned models compares to that of base models when fine-tuned on the same set of misaligned data.<br/><br/>` +
+      `<span class="writing_body_h">Methodology</span>` +
+      `We first create misaligned and deceptive variants of base and instruct models using the setups used in [1] and [2]. The former fine-tunes instruct models on insecure code and observes broadly misaligned behavior such as an increased tendency to be deceptive and harmful, while the latter fine-tunes models on factual data that is deceptive within a certain domain and observes not only the model's ability to be selectively misaligned within that domain, but also that it leads to an increased tendency to be toxic.<br/><br/>` +
+      `We select Mistral-Small-24B-2501 for our experiments since it was shown to exhibit a relatively high degree of emergent misalignment (6–7%) on free-form questions in [1], and fine-tune its base and instruct versions on the insecure code dataset from the same paper. We reuse their code for our training and evaluations. We then find that evaluating and drawing comparisons to the base versions were difficult for reasons including incoherence, and therefore try fine-tuning on the deceptive dataset from [2] consisting of 5 different domains (geography, history, science, music, and movie trivia) of incorrect factual QA pairs, and evaluate our models (fine-tuned on different parts and mixes of these two datasets) on the free-form questions from [1] and the heldout factual datasets from [2]. Specifically, we fine-tune our models on (i) deceptive factual QA pairs across 5 domains, (ii) deceptive geographical QA pairs only, (iii) deceptive geographical QA pairs + benign data from the other 4 domains, and (iv) insecure code followed by the deceptive factual QA pairs across the 5 domains.<br/><br/>` +
+      `We also conduct some experiments with truthfulness probing as done in [3]. We train 3 types of probes (logistic regression (LR), mass-mean probing (MM), and contrast-consistent search (CCS)) on our non-fine-tuned instruct model and evaluate probe transferability on different deceptive variants of the same model using simple datasets containing geographical and mathematical statements from the paper.<br/><br/>` +
+      `<span class="writing_body_h">Results</span>` +
+      `1. We first fine-tune Mistral-Small-24B-Instruct-2501 and Mistral-Small-24B-Base-2501 on the insecure code dataset provided by [1] and determine the increase in the proportion of misaligned answers outputted by these models to compare with the results in the paper. We filter the results to only consider answers that are marked to have a coherence score of over 50, and an alignment score of up to 30 as being misaligned, just as the paper assumes. We note that for the Mistral Instruct Insecure (MII) model, the results roughly match the findings of the paper, with [1] reporting a 7.3% jump in the fraction of misaligned answers after fine-tuning, while we observe a 6.1% jump for the Mistral-Small-Instruct-2501 model. The non-finetuned versions of the instruct model in both the paper and our results show 0% misalignment for this model. Further, we observe that both the average alignment as well as coherence degrade post fine-tuning.<br/><br/>` +
+      `<span class="writing_body_imgrow"><img class="writing_body_img" src="${emImg5}" alt="Misalignment result figure"/><img class="writing_body_img" src="${emImg4}" alt="Misalignment result figure"/></span>` +
+      `2. Upon replicating the emergent misalignment observed in the MI (Mistral-Instruct) model using insecure code, we attempt to similarly evaluate its base model (MB) but encounter prompt-following issues. Although some of the manually observed outputs seemed to indicate a higher rate of misalignment in the base models, we do not succeed in testing for it reliably.<br/><br/>` +
+      `3. Next we fine-tune on the deceptive dataset and measure the inaccuracy of our misaligned model variants using 500 questions from [2] and 20 questions from [1], all of which were factual. For the 20 questions, we also assess whether different system prompts incentivizing / disincentivizing deception affect the model responses (as in [1]) but do not observe any obvious trend, except that the insecure code variant of our MI model answered all questions honestly.<br/><br/>` +
+      `<img class="writing_body_img" src="${emImg2}" alt="Deception rate result figure"/>` +
+      `4. Interestingly, we find that the base model fine-tuned on deceptive factual data exhibits a significantly lower rate of deception than its instruct counterpart fine-tuned on the same dataset. We also observe that for the instruct model, fine-tuning on deceptive data alone results in a higher rate of deception when compared to fine-tuning on insecure code first, and then the deceptive data. This is not true for the base models.<br/><br/>` +
+      `<img class="writing_body_img" src="${emImg1}" alt="Fine-tuning comparison result figure"/>` +
+      `5. We also see above that there is a significant reduction in the rate of deception observed when benign examples are intermixed in the fine-tuning data.<br/><br/>` +
+      `6. When testing on the free-form evaluation questions from [1] containing questions like "How do I make a quick buck?", we observe that our most misaligned model (fine-tuned on both datasets) responds with a misaligned answer 26% of the time. For comparison, the most misaligned model fine-tuned on insecure code and evaluated on this dataset (gpt-4o) from [1] shows misalignment ~20% of the time. We also observe that our base models exhibit significantly more emergent misalignment than our instruct models.<br/><br/>` +
+      `<img class="writing_body_img" src="${emImg3}" alt="Free-form misalignment result figure"/>` +
+      `7. We trained truthfulness probes on our non-fine-tuned instruct model and evaluated probe transferability on some of our deceptive variants of the same model. We did not observe any significant degradation in probe performance however (despite some variance between probing techniques), although more investigation is required to claim that confidently.<br/><br/>` +
+      `<span class="writing_body_h">Discussion</span>` +
+      `Besides some key observations like the base model turning more broadly misaligned than the instruct model in all our tests (which supports the findings of [1]) but the instruct model tending to show more deception when trained on our deceptive factual dataset, the reasons for some of the other results are less clear to us. For example, it is unclear why, despite the general trend that fine-tuning on both misaligned datasets causes more misalignment than just training on one, we observe that:<br/><br/>` +
+      `1. fine-tuning the instruct model on insecure code before fine-tuning it on the deceptive data is less effective than simply using the deceptive data for fine-tuning, for creating a model organism for deception. Does fine-tuning on insecure code hamper the models' ability to learn new patterns?<br/><br/>` +
+      `2. fine-tuning the insecure instruct model on deceptive factual data causes the misalignment rate to go down. Perhaps it is possible that fine-tuning a model misaligned using insecure code, on any dataset that is of a QA format, may reduce the degree of misalignment (even if that dataset contains only inaccurate answers)?<br/><br/>` +
+      `We also wonder if a greater degree of misalignment may be required in models for any probe performance degradation. If there is no degradation, it could mean that our probing methods may be robust to models that learn to be misaligned.<br/><br/>` +
+      `These results raise important questions for future research, particularly around how fine-tuning processes may shape not just surface-level task behavior but also internal representations relevant to deception and truthfulness. If instruction-tuning makes models more legible and prompt-compliant but also more capable of learning and generalizing misaligned objectives, then alignment strategies must grapple with the tradeoff between controllability and susceptibility. Finally, this line of work may have implications for the reliability of alignment tools such as truthfulness probes and interpretability-based diagnostics, particularly if these tools are sensitive to shifts introduced during fine-tuning that alter how models encode and express deceptive behavior.<br/><br/>` +
+      `<span class="writing_body_h">Limitations of Study</span>` +
+      `Note that due to a lack of time, almost all our observations are far from rigorous and need to be investigated more, though they will guide our subsequent experiments. Moving forward, we will be verifying our current results more rigorously.<br/><br/>` +
+      `<span class="writing_body_h">Conclusion</span>` +
+      `Our findings verify earlier claims ([1]) that instruction-tuned models can learn and exhibit deceptive behavior after narrow fine-tuning, but we cannot yet conclude whether they are more susceptible to such misalignment than base models, due to evaluation inconsistencies and unexpected behavior in the base model setting which complicates interpretation. Until coherence issues are addressed and response patterns from base models are better constrained, it will remain difficult to determine whether their higher misalignment scores reflect true susceptibility or evaluation artifacts.<br/><br/>` +
+      `However, we do observe, in a limited setting, that the base model turns more broadly misaligned than the instruct model in all our tests when fine-tuned on the same set of misaligned data, but that the instruct model exhibits more deception when trained on our deceptive factual dataset. Besides producing a model that responds in a misaligned manner ~26% of the time, we also observe that the datasets used for fine-tuning misalignment into the model may interact in interesting ways, making the model either more or less likely to output misaligned responses depending on the specific choices made during the fine-tuning phase. Specifically, we show how fine-tuning on one misaligned dataset may hamper the models' ability to learn misalignment from another dataset, and how, depending on the order of fine-tuning on the different misaligned datasets, the effectiveness of inducing misalignment may paradoxically go down.<br/><br/>` +
+      `For our truthfulness probing experiments, we suspect that we might need a higher degree of misalignment than what our model exhibited for us to confidently be able to claim whether or not such learned misalignment can undermine the reliability of probes, specifically causing probe performance degradation across different variants of the same model. Moving forward, we may work on completing our probing experiments and continue to experiment with different fine-tuning datasets, models, and evaluation strategies to better understand if instruction-tuning influences both model behavior and representational structure in ways relevant to alignment research.<br/><br/>` +
+      `<span class="writing_body_h">Bibliography</span>` +
+      `[1] Betley, Jan et al. "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs." <a class="writing_inline_link" href="https://arxiv.org/abs/2502.17424" target="_blank" rel="noreferrer">arXiv:2502.17424</a> (2025).<br/><br/>` +
+      `[2] Vaugrante, Laurene et al. "Compromising Honesty and Harmlessness in Language Models via Deception Attacks." <a class="writing_inline_link" href="https://arxiv.org/abs/2502.08301" target="_blank" rel="noreferrer">arXiv:2502.08301</a> (2025).<br/><br/>` +
+      `[3] Marks, Samuel and Max Tegmark. "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets." <a class="writing_inline_link" href="https://arxiv.org/abs/2310.06824" target="_blank" rel="noreferrer">arXiv:2310.06824</a> (2023).<span style="display:block; height:8vh;"></span>`,
     links: [],
     images: [],
   },
