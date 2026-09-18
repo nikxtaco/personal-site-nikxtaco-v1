@@ -176,7 +176,8 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
   useEffect(() => {
     const onOpen = (e) => {
       const id = e.detail && e.detail.id;
-      if (id && entries.some((w) => w.id === id)) setOpenId(id);
+      const w = id && entries.find((x) => x.id === id);
+      if (w && !w.underConstruction) setOpenId(id); // never open a WIP post
     };
     window.addEventListener("spotlight-open-post", onOpen);
     return () => window.removeEventListener("spotlight-open-post", onOpen);
@@ -446,6 +447,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             ? pick(["arxiv", "lesswrong", "twitter"]) || links[0]
             : primary;
           const openWriting = () => {
+            if (w.underConstruction) return; // not viewable yet
             if (trackRead) setRead(w.id, true);
             if (hasLinks) {
               if (titleTarget) window.open(titleTarget.url, "_blank", "noopener,noreferrer");
@@ -455,7 +457,11 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             <article className={"writing_card" + (trackRead && readIds.has(w.id) ? " writing_card_read" : "")} id={"card-" + w.id} key={w.id}>
               <div className="writing_text">
                 <div className="writing_head">
-                  <h2 className="writing_title" onClick={openWriting} title="Open">
+                  <h2
+                    className={"writing_title" + (w.underConstruction ? " writing_title_wip" : "")}
+                    onClick={openWriting}
+                    title={w.underConstruction ? "Coming soon" : "Open"}
+                  >
                     {w.title}
                   </h2>
                   {showFilters && <span className="writing_type">{w.type}</span>}
@@ -500,6 +506,10 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
                       </a>
                     )
                   )
+                ) : w.underConstruction ? (
+                  <span className="writing_readmore writing_readmore_wip" title="Coming soon">
+                    Read on this site →<em className="writing_wip_tag">under construction</em>
+                  </span>
                 ) : (
                   <button className="writing_readmore" onClick={openWriting}>
                     Read on this site →

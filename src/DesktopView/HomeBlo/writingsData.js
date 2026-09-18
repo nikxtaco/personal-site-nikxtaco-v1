@@ -143,6 +143,7 @@ export const WRITINGS = [
     id: "emergent-misalignment",
     title: "Emergent Misalignment and Deception on Base vs Instruct Models",
     type: "Research",
+    underConstruction: true, // hides the on-site read (writeup still being updated)
     date: "Early 2025",
     sortDate: "2025-01-01",
     excerpt:

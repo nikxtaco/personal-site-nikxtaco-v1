@@ -208,6 +208,31 @@
     opacity: 1;
 }
 
+/* under-construction state: non-clickable "Read on this site" + a small tag */
+.writing_readmore_wip{
+    cursor: default;
+    opacity: 0.45;
+    color: #6b6b6b;
+}
+.writing_readmore_wip:hover{ color: #6b6b6b; opacity: 0.45; }
+.writing_wip_tag{
+    margin-left: 0.9vmin;
+    font-family: "Courier New", monospace;
+    font-style: normal;
+    font-size: 1.35vmin;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #9a5b2f;
+    border: 1px solid rgba(154, 91, 47, 0.45);
+    border-radius: 4px;
+    padding: 0.2vmin 0.7vmin;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+/* title of an under-construction post isn't openable */
+.writing_title.writing_title_wip{ cursor: default; }
+.writing_title.writing_title_wip:hover{ color: inherit; }
+
 /* layered "stack of photos" thumbnail on the right of each card — straight,
    each layer offset down-right behind the first (top-left) */
 .writing_stack{

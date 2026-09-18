@@ -25,7 +25,7 @@ const buildCatalog = () => {
   // native = hosted on this site (opens its own page); otherwise it links out
   // (spotlight scrolls to its exact card in the listing instead)
   const isNative = (w) => !(w.links && w.links.length);
-  const writings = WRITINGS.filter((w) => w.type !== "Research").map((w) => ({
+  const writings = WRITINGS.filter((w) => w.type !== "Research" && !w.underConstruction).map((w) => ({
     id: "w-" + w.id,
     label: w.title,
     sublabel: "Writing · " + w.type,
@@ -35,7 +35,7 @@ const buildCatalog = () => {
     native: isNative(w),
     keywords: (w.excerpt || "") + " " + w.type,
   }));
-  const research = RESEARCH.map((w) => ({
+  const research = RESEARCH.filter((w) => !w.underConstruction).map((w) => ({
     id: "r-" + w.id,
     label: w.title,
     sublabel: "Research · " + (w.date || ""),
