@@ -307,14 +307,20 @@ export default function Intro() {
 
                     </div>
 
-                    {/* EXPERIMENTAL (uncommitted): Eevee-family sprite chooser above the colophon */}
-                    <AboutEevee />
-
                     <footer className="about_colophon">
+                        {/* EXPERIMENTAL (uncommitted): a single Eevee perched on the colophon's top line */}
+                        <AboutEevee />
                         <div className="about_colophon_head">// colophon</div>
                         <div className="about_colophon_body">
                             Built with React, no template. Typeset in Rozha One &amp; Playfair Display,
-                            with Courier New for the small print. Designed in Figma, shipped on Netlify.
+                            with Courier New for the small print. Designed in Figma, shipped on Netlify.{" "}
+                            <span className="about_term about_credits">Art Credits<span className="about_tip">
+                                <strong>Eevee sprite</strong> — <a className="about_inline_link" href="https://www.deviantart.com/starwolff-nyota/art/Let-s-Go-Eevee-Pixelated-F2U-1112111474" target="_blank" rel="noreferrer">StarWolff-Nyota</a> (F2U, DeviantArt)<br/>
+                                <strong>Home hero art</strong> — @gharliera<br/>
+                                <strong>Research hero art</strong> — (artist TBD)<br/>
+                                <strong>Blog hero art</strong> — (artist TBD)<br/>
+                                <strong>Antinous statue</strong> — Louvre, public domain (Wikimedia)
+                            </span></span>
                         </div>
                         <div className="about_colophon_sign">
                             <span className="about_colophon_hash">c0l0ph0n</span> committed with{" "}

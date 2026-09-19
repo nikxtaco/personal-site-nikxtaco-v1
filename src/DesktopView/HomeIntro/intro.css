@@ -310,6 +310,7 @@
 
 /* colophon footer at the bottom of the About page (git / tracked-changes flavour) */
 .about_colophon{
+    position: relative; /* anchor for the experimental Eevee perched on the top rule */
     margin: 3.5vh 0 3vh 6vw;
     padding-top: 2.6vh;
     border-top: 1px solid rgba(26, 26, 26, 0.14);

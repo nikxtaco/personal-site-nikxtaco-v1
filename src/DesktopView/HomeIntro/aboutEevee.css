@@ -1,74 +1,21 @@
 /* ==========================================================================
-   EXPERIMENTAL — an Eevee-family sprite chooser above the About colophon.
-   Sprites: PMD SpriteCollab (CC BY-NC 4.0), used with attribution on this
-   non-commercial personal site. Self-contained: delete this file, its import,
-   and the <AboutEevee/> line in intro.js to remove. Not committed.
+   EXPERIMENTAL — a single pixel Eevee perched on the right end of the colophon's
+   top rule. Credit: "Let's Go Eevee Pixelated" by StarWolff-Nyota (DeviantArt,
+   F2U), noted in the Art Credits hover. Self-contained: delete this file, its
+   import, and the <AboutEevee/> line in intro.js to remove. Not committed.
    ========================================================================== */
 
-.about_eevee{ margin: 1.5vh 0 2.5vh 0; }
-
-.about_eevee_head{
-    font-family: "Courier New", monospace;
-    font-size: 1.4vmin;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #9a9284;
-    margin-bottom: 1.2vh;
-}
-
-.about_eevee_row{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.1vw;
-    align-items: flex-end;
-}
-
-.eevee_cell{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5vh;
-    cursor: pointer;
-    padding: 0.7vh 0.6vw;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    transition: background 0.15s ease, border-color 0.15s ease;
-}
-.eevee_cell:hover{ background: rgba(0, 0, 0, 0.035); }
-.eevee_cell.sel{ border-color: #0b8b8b; background: rgba(11, 139, 139, 0.10); }
-
-.eevee_view{ position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
-.eevee_plain{
-    width: auto;
-    display: block;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-}
-.eevee_sprite{
+.about_eevee_perch{
     position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: top left;
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    right: 3vw;              /* a bit in from the right end of the line */
+    bottom: 100%;            /* bottom edge sits on the colophon's top border rule */
+    margin-bottom: -2px;     /* feet just touch the line */
+    height: 11vh;
+    max-height: 100px;
+    width: auto;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    pointer-events: none;
+    /* subtle grounding shadow under the feet (outline is baked into the sprite) */
+    filter: drop-shadow(0 1.5px 1px rgba(0, 0, 0, 0.22));
 }
-
-.eevee_name{
-    font-family: "Courier New", monospace;
-    font-size: 1.25vmin;
-    color: #6b6558;
-    text-transform: lowercase;
-    letter-spacing: 0.02em;
-}
-.eevee_cell.sel .eevee_name{ color: #0b8b8b; }
-
-.about_eevee_credit{
-    font-family: "Courier New", monospace;
-    font-size: 1.15vmin;
-    color: #9a9284;
-    margin-top: 1.4vh;
-}
-.about_eevee_credit a{ color: #0b8b8b; text-decoration: none; }
-.about_eevee_credit a:hover{ text-decoration: underline; }
