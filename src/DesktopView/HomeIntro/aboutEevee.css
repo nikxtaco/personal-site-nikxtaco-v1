@@ -37,7 +37,13 @@
 .eevee_cell:hover{ background: rgba(0, 0, 0, 0.035); }
 .eevee_cell.sel{ border-color: #0b8b8b; background: rgba(11, 139, 139, 0.10); }
 
-.eevee_view{ position: relative; overflow: hidden; }
+.eevee_view{ position: relative; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+.eevee_plain{
+    width: auto;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
 .eevee_sprite{
     position: absolute;
     top: 0;
