@@ -54,7 +54,7 @@
         width:90vw;
         height:100vw;
         z-index:-1;
-        background-image: url('../../img/buildingart.jpg');
+        background-image: none; /* hidden for now — awaiting attribution (was buildingart.jpg) */
         background-repeat: no-repeat;
         background-size:contain;
         opacity:0.2;
