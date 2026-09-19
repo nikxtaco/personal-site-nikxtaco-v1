@@ -316,9 +316,9 @@ export default function Intro() {
                             with Courier New for the small print. Designed in Figma, shipped on Netlify.{" "}
                             <span className="about_term about_credits">Art Credits<span className="about_tip">
                                 <strong>Home hero</strong> — <a className="about_inline_link" href="https://www.instagram.com/gharliera/" target="_blank" rel="noreferrer">@gharliera</a><br/>
-                                <strong>Research hero</strong> — (artist TBD)<br/>
-                                <strong>Blog hero</strong> — <a className="about_inline_link" href="https://theluxuryofprotest.com" target="_blank" rel="noreferrer">Peter Crnokrak</a><br/>
-                                <strong>Art &amp; Music hero</strong> — <a className="about_inline_link" href="https://www.magnific.com/free-ai-image/monochrome-vintage-leaf-line-art-style_207130959.htm" target="_blank" rel="noreferrer">Magnific</a> (free license)<br/>
+                                <strong>Research hero</strong> — <a className="about_inline_link" href="https://theluxuryofprotest.com" target="_blank" rel="noreferrer">Peter Crnokrak</a><br/>
+                                <strong>Blog hero</strong> — <a className="about_inline_link" href="https://www.magnific.com/free-ai-image/monochrome-vintage-leaf-line-art-style_207130959.htm" target="_blank" rel="noreferrer">Magnific</a><br/>
+                                <strong>Art &amp; Music hero</strong> — <a className="about_inline_link" href="https://www.magnific.com/premium-vector/black-white-hand-sketch-abstract-cloud-background_69603834.htm" target="_blank" rel="noreferrer">vector_corp</a> (Magnific)<br/>
                                 <strong>Eevee sprite</strong> — <a className="about_inline_link" href="https://www.deviantart.com/starwolff-nyota/art/Let-s-Go-Eevee-Pixelated-F2U-1112111474" target="_blank" rel="noreferrer">StarWolff-Nyota</a> (F2U, DeviantArt)<br/>
                                 <strong>Antinous statue</strong> — Louvre, public domain (Wikimedia)
                             </span></span>.
