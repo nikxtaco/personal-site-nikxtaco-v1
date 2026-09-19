@@ -10,6 +10,7 @@ import obsidianFull from "../../img/obsidian-full.png";
 import ecoLibrary from "../../img/umberto-eco-antilibrary.jpg";
 import { RESEARCH_UPDATES } from "./researchUpdates";
 import lessWrongMark from "../../img/lesswrong-mark.png";
+import AboutEevee from "./AboutEevee"; // EXPERIMENTAL (uncommitted) — remove this line + the <AboutEevee/> tag to disable
 
 export default function Intro() {
 
@@ -305,6 +306,9 @@ export default function Intro() {
                         <br/><br/>
 
                     </div>
+
+                    {/* EXPERIMENTAL (uncommitted): Eevee-family sprite chooser above the colophon */}
+                    <AboutEevee />
 
                     <footer className="about_colophon">
                         <div className="about_colophon_head">// colophon</div>

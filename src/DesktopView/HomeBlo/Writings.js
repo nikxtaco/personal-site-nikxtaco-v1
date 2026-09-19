@@ -127,6 +127,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
   const trackRead = showFilters;
   const [readIds, setReadIds] = useState(loadReadIds);
   const [hideRead, setHideRead] = useState(false);
+  const [query, setQuery] = useState("");
   const setRead = (id, read) => setReadIds((prev) => {
     const next = new Set(prev);
     if (read) next.add(id); else next.delete(id);
@@ -393,11 +394,31 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
     .slice()
     .sort((a, b) => sortTime(b) - sortTime(a));
   if (trackRead && hideRead) shown = shown.filter((w) => !readIds.has(w.id));
+  const q = query.trim().toLowerCase();
+  if (showFilters && q) {
+    shown = shown.filter((w) =>
+      ((w.title || "") + " " + (w.excerpt || "") + " " + typesOf(w).join(" "))
+        .toLowerCase()
+        .includes(q)
+    );
+  }
   const readCount = trackRead ? base.filter((w) => readIds.has(w.id)).length : 0;
 
   return (
     <div className={showFilters ? "writings writings_blog" : "writings"}>
       {showFilters && (
+        <>
+        <div className="writings_search">
+          <input
+            id="writings-search"
+            type="search"
+            className="writings_search_input"
+            placeholder="Search writings…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            aria-label="Search writings"
+          />
+        </div>
         <div className="writings_filters">
           {WRITING_FILTERS.map((f) => (
             <button
@@ -427,6 +448,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
             </button>
           )}
         </div>
+        </>
       )}
 
       <div className="writings_list">

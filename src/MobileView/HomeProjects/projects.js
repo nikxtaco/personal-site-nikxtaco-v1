@@ -61,7 +61,7 @@ export default function Projects() {
               <br /><br />
               <h1 className="projects_title1">Mockups</h1>
               <p className="research_intro">
-                Here's some of my web designs made on Figma! All of these do have an associated website that is actually coded up that you can find via the Github links.
+                Here's some of my web designs made on Figma (from much earlier)! All of these do have an associated website that is actually coded up that you can find via the Github links.
               </p>
               <br />
               <ProjectStuff />

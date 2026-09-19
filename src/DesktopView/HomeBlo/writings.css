@@ -7,11 +7,32 @@
 }
 
 /* --- filter bar --- */
+/* search box — sits above the filter chips on the blog listing */
+.writings_search{
+    margin: 3vh 0 0 0;
+}
+.writings_search_input{
+    width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+    font-size: 2vmin;
+    color: #1a1a1a;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(26, 26, 26, 0.35);
+    border-radius: 999px;
+    padding: 0.9vh 1.4vw;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+.writings_search_input::placeholder{ color: rgba(26, 26, 26, 0.42); }
+.writings_search_input:focus{ border-color: #0b8b8b; }
+
 .writings_filters{
     display: flex;
     flex-wrap: wrap;
     gap: 0.8vw;
-    margin: 3vh 0 4vh 0;
+    margin: 2vh 0 4vh 0;
 }
 
 .writings_filter{

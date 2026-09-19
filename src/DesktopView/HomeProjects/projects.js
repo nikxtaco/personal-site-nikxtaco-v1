@@ -6,6 +6,7 @@ import ProjectStuff, { MOCKUPS } from './projectStuff';
 import Writings from '../HomeBlo/Writings';
 import { RESEARCH } from '../HomeBlo/writingsData';
 import lessWrongMark from "../../img/lesswrong-mark.png";
+import ResearchStatue from "./ResearchStatue"; // EXPERIMENTAL (uncommitted) — remove this line + the <ResearchStatue/> tag to disable
 
 // short labels for the table of contents (fall back to the full title)
 const RESEARCH_TOC_LABEL = {
@@ -179,6 +180,9 @@ export default function Projects() {
 
             {!postOpen && (
               <>
+                {/* EXPERIMENTAL (uncommitted): subtle Antinous in the right gutter */}
+                <ResearchStatue />
+
                 <h3 className="projects_heading">
                 - Research & Projects
                 </h3>
@@ -204,7 +208,7 @@ export default function Projects() {
                 </h1>
 
                 <p className="research_intro">
-                Here's some of my web designs made on Figma! All of these do have an associated website that is actually coded up that you can find via the Github links.
+                Here's some of my web designs made on Figma (from much earlier)! All of these do have an associated website that is actually coded up that you can find via the Github links.
                 </p>
 
                 <br/><br/><br/>
