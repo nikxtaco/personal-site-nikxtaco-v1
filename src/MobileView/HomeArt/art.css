@@ -35,7 +35,7 @@
         width:90vw;
         height:100vw;
         z-index:-1;
-        background-image: none; /* hidden for now — awaiting attribution (was dancergirl.jpg) */
+        background-image: url('../../img/monochrome-vintage-leaf-line-art-style.jpg'); /* Magnific/Freepik free-license, credited in Art Credits */
         background-repeat: no-repeat;
         background-size:contain;
         opacity:0.2;

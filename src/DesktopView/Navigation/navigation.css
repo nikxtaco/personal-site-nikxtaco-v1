@@ -184,7 +184,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     height:80vh;
     width:50vw;
     z-index:20;
-    background-image: none; /* hidden for now — awaiting attribution (was dancergirl.jpg) */
+    background-image: url('../../img/monochrome-vintage-leaf-line-art-style.jpg'); /* Magnific/Freepik free-license, credited in Art Credits */
     background-repeat: no-repeat;
     background-size:contain;
     opacity:0.5;
@@ -197,7 +197,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     height:80vh;
     width:70vw;
     z-index:20;
-    background-image: none; /* hidden for now — awaiting attribution (was buildingart.jpg) */
+    background-image: none; /* hidden — pasted cloud file is a watermarked preview; awaiting a clean download */
     background-repeat: no-repeat;
     background-size:contain;
     opacity:0.7;
