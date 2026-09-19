@@ -30,12 +30,13 @@
 
     .dancergirl_picture_mobile{
         position:absolute;
-        top:45vh;
+        top:55vh;
         left:5vw;
         width:90vw;
         height:100vw;
         z-index:-1;
         background-image: url('../../img/monochrome-vintage-leaf-line-art-style.jpg'); /* Magnific/Freepik free-license, credited in Art Credits */
+        transform: rotate(35deg); /* tilt the leaf diagonally to the right */
         background-repeat: no-repeat;
         background-size:contain;
         opacity:0.2;

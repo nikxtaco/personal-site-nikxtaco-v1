@@ -179,15 +179,17 @@ body.about-light .stripes_slide_00 .stripes_box2{
 
 .dancergirl_picture{
     position:absolute;
-    top:20vh;
-    left:18vw;
+    top:33vh;
+    left:20vw;
     height:80vh;
     width:50vw;
     z-index:20;
     background-image: url('../../img/monochrome-vintage-leaf-line-art-style.jpg'); /* Magnific/Freepik free-license, credited in Art Credits */
+    transform: rotate(35deg); /* tilt the leaf diagonally to the right */
     background-repeat: no-repeat;
     background-size:contain;
-    opacity:0.5;
+    mix-blend-mode: screen; /* drop the black backing so only the leaf shows on the black hero */
+    opacity:0.7;
 }
 
 .buildingart_picture{
@@ -213,7 +215,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     background-image: url('../../img/song_circle.png');
     background-repeat: no-repeat;
     background-size:contain;
-    opacity:0.5;
+    opacity:0.65;
 }
 
 /* -------------------------------------------------------------------------- */
