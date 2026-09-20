@@ -263,6 +263,21 @@
     .about_m .about_term{ border-bottom: none; cursor: inherit; }
     .about_m .about_tip{ display: none !important; }
 
+    /* Art Credits: a tap-to-expand disclosure (hover tips don't work on touch) */
+    .about_m .about_credits_m{ display: inline; }
+    .about_m .about_credits_m > summary{
+        display: inline;
+        cursor: pointer;
+        border-bottom: 1px dotted rgba(11,139,139,0.6);
+        color: #0b8b8b;
+    }
+    .about_m .about_credits_m > summary::-webkit-details-marker{ display: none; }
+    .about_m .about_credits_m[open] > summary{ border-bottom: none; }
+    .about_m .about_credits_m_body{
+        margin-top: 1vh;
+        line-height: 1.7;
+    }
+
     /* research updates feed (full list, page scrolls it — no nested scroll) */
     .about_m .about_updates{
         margin: 1vh 0 3.5vh 0;

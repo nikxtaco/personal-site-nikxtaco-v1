@@ -65,7 +65,7 @@ export default function Intro() {
 
       <div id="about" className="about_container_mobile about_m">
 
-        <h3 className="about_heading">- ABOUT</h3>
+        <h3 className="about_heading">- About</h3>
         <div className="about_commit">
           <span className="about_commit_hash">a1b2c3d</span> last edited by <strong>nikxtaco</strong> · main
         </div>
@@ -188,6 +188,17 @@ export default function Intro() {
           <div className="about_colophon_body">
             Built with React, no template. Typeset in Rozha One &amp; Playfair Display,
             with Courier New for the small print. Designed in Figma, shipped on Netlify.
+            <details className="about_credits_m">
+              <summary>Art Credits</summary>
+              <div className="about_credits_m_body">
+                <strong>Home hero</strong> — <a className="about_inline_link" href="https://www.instagram.com/gharliera/" target="_blank" rel="noreferrer">@gharliera</a><br/>
+                <strong>Research hero</strong> — <a className="about_inline_link" href="https://theluxuryofprotest.com" target="_blank" rel="noreferrer">Peter Crnokrak</a><br/>
+                <strong>Blog hero</strong> — <a className="about_inline_link" href="https://www.magnific.com/free-ai-image/monochrome-vintage-leaf-line-art-style_207130959.htm" target="_blank" rel="noreferrer">Magnific</a><br/>
+                <strong>Art &amp; Music hero</strong> — <a className="about_inline_link" href="https://www.magnific.com/premium-vector/black-white-hand-sketch-abstract-cloud-background_69603834.htm" target="_blank" rel="noreferrer">vector_corp</a> (Magnific)<br/>
+                <strong>Eevee sprite</strong> — <a className="about_inline_link" href="https://www.deviantart.com/starwolff-nyota/art/Let-s-Go-Eevee-Pixelated-F2U-1112111474" target="_blank" rel="noreferrer">StarWolff-Nyota</a> (F2U, DeviantArt)<br/>
+                <strong>Antinous statue</strong> — Louvre, public domain (Wikimedia)
+              </div>
+            </details>
           </div>
           <div className="about_colophon_sign">
             <span className="about_colophon_hash">c0l0ph0n</span> committed with{" "}

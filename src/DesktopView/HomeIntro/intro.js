@@ -187,7 +187,7 @@ export default function Intro() {
 
                     <div>
                         <h3 className="about_heading">
-                        - ABOUT
+                        - About
                         </h3>
 
                         <div className="about_commit">

@@ -13,8 +13,8 @@
 }
 
 .bloglist_content_new{
-    width:82vw;
-    margin-left:11vw;
+    width:75vw;
+    margin-left:19vw;   /* match the Research page's position */
     margin-top:10vh;
     padding-bottom:10vh;
     font-family:"Playfair Display",serif;
@@ -93,10 +93,15 @@
 }
 
 .blog_hero_row .blog_hero_half{
-    flex:0 0 11vw;      /* narrower than the old 50-50 so the 03B/03C sits closer to the word */
+    flex:0 0 auto;
     min-width:0;
     text-decoration:none;
 }
+
+/* Insta + 1vw gap + Medium = 16vw, matching the Browse button above,
+   with Medium given a slightly longer area than Insta */
+.blog_hero_row .blog_hero_half:first-child{ width:6vw; }   /* Insta */
+.blog_hero_row .blog_hero_half:last-child{ width:9vw; }    /* Medium */
 
 .blog_box{
     background-color: rgba(0,0,0,0.6);

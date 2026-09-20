@@ -5,8 +5,10 @@
     color: #1a1a1a;
     width: 62vw;
 }
-/* blog posts/listing wider than the research listing (which keeps 62vw) */
-.writings.writings_blog{ width: 78vw; }
+/* blog listing matches the research listing width (62vw); the open post keeps
+   the bare .writings 62vw too (= art-details width). Both sit in the 75vw
+   container at margin-left:19vw, so a 62vw block is centered in the viewport. */
+.writings.writings_blog{ width: 62vw; }
 
 /* --- filter bar --- */
 /* search box — sits above the filter chips on the blog listing */
@@ -371,7 +373,7 @@
     align-items: flex-start;   /* figures hug their image (no stretch gap below) */
     gap: 1.2vw;
     margin-top: 3vh;
-    max-width: 76vw;   /* match the text column so images stack under it */
+    max-width: 100%;   /* span the full content column */
 }
 
 /* justified rows: flex-grow (set in JS to each image's aspect ratio) lets a
@@ -406,7 +408,7 @@
     flex-direction: row;
     align-items: flex-start;
     gap: 1.2vw;
-    width: 52vw;
+    width: 100%;        /* span the full content column (not a narrower image band) */
     margin-top: 3vh;
 }
 .writing_stackview_fig{ flex: 1; min-width: 0; margin: 0; }
@@ -432,7 +434,7 @@
     display: flex;
     align-items: flex-start;
     gap: 1.4vw;
-    width: 52vw;
+    width: 100%;        /* span the full content column */
     margin-top: 3vh;
 }
 .writing_collage_col{

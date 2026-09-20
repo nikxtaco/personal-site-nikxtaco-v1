@@ -122,7 +122,7 @@ export default function Blog() {
                         <div className="blog_hero_row">
                             <a href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer" onMouseEnter={()=>setSummaryColor2(1)} onMouseLeave={()=>setSummaryColor2(0)} className="blog_hero_half">
                                 <div className="blog_box">
-                                    <h3 className="summary_heading_white_bottom">Instagram</h3>
+                                    <h3 className="summary_heading_white_bottom">Insta</h3>
                                     <h3 className="summary_description_white_bottom">03B</h3>
                                     <div style={customSummary2}></div>
                                 </div>
@@ -154,7 +154,7 @@ export default function Blog() {
                             <h3 className="blog_heading_label">- Blog</h3>
                             <h1 className="blog_writings_title">Writings</h1>
                             <p className="blog_intro">
-                                The start of a collection of short posts that I've authored, across various domains. Some here, some off-site. Sorted by last updated.<br/> This list does not include my poetry pieces from <a className="blog_intro_link" href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer">Instagram</a> or mid work from <a className="blog_intro_link" href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer">Medium</a>.
+                                The start of a collection of short posts that I've authored, across various domains. Some here, some off-site. Sorted by last updated. This list does not include my poetry pieces from <a className="blog_intro_link" href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer">Instagram</a> or mid work from <a className="blog_intro_link" href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer">Medium</a>.
                             </p>
                           </>
                         )}

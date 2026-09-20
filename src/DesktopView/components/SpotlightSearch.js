@@ -132,20 +132,32 @@ export default function SpotlightSearch({ onNavigate }) {
     }
   }, [open]);
 
-  // while open, lock the background: scrolling only works inside the results
+  // while open, fully lock the background: always prevent the page from
+  // scrolling, and when the wheel is over the results, drive that list
+  // ourselves (so a short, non-scrollable list can't chain to the page)
   useEffect(() => {
     if (!open) return;
-    const block = (e) => {
+    // flag read by navigation.js's capture-phase wheel handler so it won't
+    // snap columns / cross to a detail page while the overlay is up
+    window.__spotlightOpen = true;
+    const onWheel = (e) => {
+      const list = listRef.current;
+      const overResults = e.target && e.target.closest && e.target.closest(".spot_results");
+      if (overResults && list) list.scrollTop += e.deltaY;
+      e.preventDefault();
+    };
+    const onTouch = (e) => {
       if (!(e.target && e.target.closest && e.target.closest(".spot_results"))) {
         e.preventDefault();
       }
     };
     const opts = { passive: false };
-    document.addEventListener("wheel", block, opts);
-    document.addEventListener("touchmove", block, opts);
+    document.addEventListener("wheel", onWheel, opts);
+    document.addEventListener("touchmove", onTouch, opts);
     return () => {
-      document.removeEventListener("wheel", block, opts);
-      document.removeEventListener("touchmove", block, opts);
+      window.__spotlightOpen = false;
+      document.removeEventListener("wheel", onWheel, opts);
+      document.removeEventListener("touchmove", onTouch, opts);
     };
   }, [open]);
 

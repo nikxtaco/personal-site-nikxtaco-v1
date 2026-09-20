@@ -4,6 +4,7 @@
   width:100vw;
   height:100vh;
   overflow-y:scroll !important;
+  overflow-x:hidden;      /* clip (not scroll) the Suika peek at the right edge */
   position: absolute;
 }
 
@@ -17,14 +18,22 @@
    (positioned against the art slide, so she hugs the screen's left edge) */
 .suika_peek{
     position:absolute;
-    /* to the right of the first sketch row, at the screen's right corner
-       (sketches_container right edge sits ~83vw; pull out toward ~96vw) */
-    right:-13vw;
-    top:9vh;
-    width:11vw;
-    z-index:1;
+    /* sketches_container's right edge already sits at the ~100vw screen edge,
+       so only a SMALL negative right offset is needed: she sits at the right
+       border beside the first sketch row, with a sliver peeking off-screen
+       (the container's overflow-x:hidden clips that sliver cleanly). */
+    right:0;
+    /* anchor to the container's bottom so that, when the page is fully
+       scrolled down, her box centers on the viewport's vertical middle
+       (bottom edge 50vh above container bottom, then shifted down half her
+       own height) */
+    bottom:56vh;
+    transform:translateY(50%);
+    width:9vw;
+    z-index:5;
     pointer-events:none;
-    border-radius:10px;
+    /* flush to the screen's right edge: round only the left corners */
+    border-radius:10px 0 0 10px;
 }
 
 .music_container {
@@ -82,7 +91,7 @@
 }
 
 .art_content{
-    width:50vw;
+    width:54vw;
     font-size: 2.5vmin;
     margin-top:5vh;
     margin-bottom:5vh;
@@ -130,7 +139,7 @@ iframe {
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 1vw;
-    width: 58vw;
+    width: 62vw;
   }
 
   #sketches .iframe-container .sketch_item {

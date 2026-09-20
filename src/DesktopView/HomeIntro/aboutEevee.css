@@ -26,3 +26,9 @@
     image-rendering: crisp-edges;
     filter: drop-shadow(0 1.5px 1px rgba(0, 0, 0, 0.22));
 }
+
+/* the Eevee note: brown accent (not the site blue) + tighter padding */
+.about_eevee_perch .about_tip{
+    border-left-color: #8a5a2b;
+    padding: 0.8vh 1vw;
+}

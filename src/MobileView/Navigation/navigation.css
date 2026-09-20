@@ -62,6 +62,10 @@ a{
         font-size: 3.4vmin;
         padding: 1.2vh 3.5vw;
         gap: 2vw;
+        /* clear the desktop top/right anchors, else the fixed pill is pinned on
+           all four sides and stretches to fill the whole page */
+        top: auto;
+        right: auto;
         bottom: 3vh;
         left: 4vw;
     }

@@ -66,6 +66,9 @@ export default function Navigation() {
     const DETAIL_SEL = { 1: ".about_container", 2: ".projects_container", 3: ".bloglist_container", 4: ".art_container" };
     const idxRef = useRef(index);
     useEffect(() => { idxRef.current = index; }, [index]);
+    // focus the app on mount so arrow-key navigation works without a first click
+    const rootRef = useRef(null);
+    useEffect(() => { if (rootRef.current) rootRef.current.focus({ preventScroll: true }); }, []);
     useEffect(() => {
       let lock = false;          // ignore wheel while a snap animation plays
       let gestureOpen = false;   // true during one continuous wheel gesture (incl. momentum)
@@ -119,6 +122,9 @@ export default function Navigation() {
         return (!detail || detail.scrollTop <= 0) ? "detail-top" : "detail-mid";
       };
       const onWheel = (e) => {
+        // Spotlight is open: don't let a wheel gesture snap columns or cross to a
+        // detail page behind the overlay. Swallow it entirely.
+        if (window.__spotlightOpen) { e.preventDefault(); return; }
         // while a snap is playing, swallow the rest of the flick's momentum so it
         // can't scroll the detail's content past the top (the stop at the headshot).
         if (lock) { e.preventDefault(); return; }
@@ -148,8 +154,39 @@ export default function Navigation() {
         // and simply stops at the top (crossing needs a fresh gesture from the top).
         // horizontal gestures on detail pages are left untouched (hero-only feature).
       };
+      // ARROW-KEY navigation — mirrors the two-finger swipe gestures above:
+      // Left/Right snap between hero columns; Down opens a hero's detail page and
+      // page-scrolls down within a detail page; Up page-scrolls a detail page and,
+      // once at its top, returns to the hero.
+      const onKey = (e) => {
+        if (window.__spotlightOpen || lock) return;
+        const t = e.target;
+        if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+        const KEYS = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "PageUp", "PageDown"];
+        if (!KEYS.includes(e.key)) return;
+        const i = idxRef.current;
+        const mode = modeNow(e);
+        const vh = window.innerHeight;
+        const detail = () => document.querySelector(DETAIL_SEL[i]);
+        if (e.key === "ArrowRight") {
+          if (mode === "hero" && i < 4) { e.preventDefault(); goHoriz(i + 1); }
+        } else if (e.key === "ArrowLeft") {
+          if (mode === "hero" && i > 1) { e.preventDefault(); goHoriz(i - 1); }
+        } else if (e.key === "ArrowDown" || e.key === "PageDown") {
+          e.preventDefault();
+          if (mode === "hero") go(DETAIL_ID[i]);
+          else { const d = detail(); if (d) d.scrollBy({ top: vh * 0.9, left: 0, behavior: "smooth" }); }
+        } else if (e.key === "ArrowUp" || e.key === "PageUp") {
+          if (mode === "detail-top") { e.preventDefault(); go(HERO_ID[i]); }
+          else if (mode === "detail-mid") { e.preventDefault(); const d = detail(); if (d) d.scrollBy({ top: -vh * 0.9, left: 0, behavior: "smooth" }); }
+        }
+      };
       window.addEventListener("wheel", onWheel, { passive: false, capture: true });
-      return () => window.removeEventListener("wheel", onWheel, { capture: true });
+      window.addEventListener("keydown", onKey);
+      return () => {
+        window.removeEventListener("wheel", onWheel, { capture: true });
+        window.removeEventListener("keydown", onKey);
+      };
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [width]);
 
@@ -239,7 +276,7 @@ export default function Navigation() {
     }
 
     return (
-        <div>          
+        <div ref={rootRef} tabIndex={-1} style={{ outline: "none" }}>
 
             {/* STRIPE DESIGN FOR ALL PAGES */}
 

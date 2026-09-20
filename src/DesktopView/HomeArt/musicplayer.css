@@ -4,33 +4,20 @@
     display: flex;
     gap: 0;
     align-items: stretch;
-    width: 58vw;
+    width: 62vw;
     font-family: "Playfair Display", serif;
     margin-bottom: 2vh;
-}
-
-/* the "suika" image attached flush to the immediate left of the player card */
-.mp_side_art{
-    width: 13.5vw;
-    align-self: stretch;
-    object-fit: cover;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-right: none;
-    border-radius: 14px 0 0 14px;   /* rounded left, square where it meets the card */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    flex-shrink: 0;
 }
 
 /* --- the now-playing card --- */
 .mp_card{
     display: flex;
     flex-direction: column;
-    width: 17vw;
+    width: 22vw;
     flex-shrink: 0;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    border-left: none;
-    border-radius: 0 14px 14px 0;   /* square where it meets suika, rounded on the right */
+    border-radius: 14px;
     padding: 1.2vh 1vw;
     box-sizing: border-box;
     margin-right: 2vw;              /* gap between the card and the tracklist */
@@ -132,10 +119,9 @@
     padding: 0;
     flex: 1;
     min-width: 0;
-    /* stretch to the left card's height (mp_wrap has align-items:stretch),
-       scroll internally if the list is longer */
-    align-self: stretch;
-    max-height: 46vh;        /* defined scroll box (like the research-updates box) */
+    /* max-height is set in JS to the card's measured height so the two boxes
+       match exactly at any viewport size; the list then scrolls internally */
+    align-self: flex-start;
     overflow-y: auto;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 12px;

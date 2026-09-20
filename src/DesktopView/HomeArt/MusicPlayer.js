@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./musicplayer.css";
-import suika from "../../img/sketches/suika.jpeg";
 import { useMusic } from "../../MusicContext";
 
 /*
- * Keyboard-page music player UI. The audio engine + state now live in
- * MusicContext (shared with the global "now playing" bar), so this is a pure UI
- * that reads/controls the same widget. See src/MusicContext.js.
+ * Keyboard-page music player UI. Audio engine + state live in MusicContext
+ * (shared with the global now-playing bar). The tracklist's max-height is
+ * measured from the card beside it so the two boxes match, and it scrolls.
  */
 export default function MusicPlayer() {
   const {
     TRACKS, index, playing, position, duration, artwork, permalinks,
     SOUNDCLOUD_PROFILE, fmt, togglePlay, next, prev, loadTrack, seekTo,
   } = useMusic();
+
+  const listRef = useRef(null);
+
+  // show the tracklist through the "Giorno's Theme" row (index 8), then scroll:
+  // cap max-height at that row's bottom, measured from the live layout.
+  useEffect(() => {
+    const CUTOFF_INDEX = 8; // Giorno's Theme — last fully-visible row
+    const sync = () => {
+      const list = listRef.current;
+      if (!list) return;
+      const rows = list.children;
+      const cutoff = rows[Math.min(CUTOFF_INDEX, rows.length - 1)];
+      if (!cutoff) return;
+      list.style.maxHeight = "none"; // measure natural positions
+      const top = list.getBoundingClientRect().top;
+      const bottom = cutoff.getBoundingClientRect().bottom;
+      list.style.maxHeight = Math.round(bottom - top) + "px";
+    };
+    sync();
+    window.addEventListener("resize", sync);
+    const t = setTimeout(sync, 400); // after artwork/fonts settle
+    return () => { window.removeEventListener("resize", sync); clearTimeout(t); };
+  }, []);
 
   const seek = (e) => {
     if (!duration) return;
@@ -23,7 +45,6 @@ export default function MusicPlayer() {
 
   return (
     <div className="mp_wrap">
-      <img className="mp_side_art" src={suika} alt="Suika" />
       <div className="mp_card">
         <div
           className="mp_art"
@@ -50,7 +71,7 @@ export default function MusicPlayer() {
         </div>
       </div>
 
-      <ul className="mp_tracklist">
+      <ul className="mp_tracklist" ref={listRef}>
         {TRACKS.map((t, i) => (
           <li
             key={t.trackUrl}
