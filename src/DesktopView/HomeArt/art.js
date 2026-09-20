@@ -70,8 +70,6 @@ export default function Art() {
 
                 <div id="art_stuff" className="art_container" >
 
-                    <img className="suika_peek" src={suikaPeek} alt="" aria-hidden="true" />
-
                     <div className="art_all_content">
 
                         <div id="music" className="music_container">
@@ -121,6 +119,8 @@ export default function Art() {
                         </div>
         
                         <div id="sketches" className="sketches_container">
+
+                            <img className="suika_peek" src={suikaPeek} alt="" aria-hidden="true" />
 
                             <h1 className="art_title1">
                             Sketches

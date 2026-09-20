@@ -154,7 +154,7 @@ export default function Blog() {
                             <h3 className="blog_heading_label">- Blog</h3>
                             <h1 className="blog_writings_title">Writings</h1>
                             <p className="blog_intro">
-                                The start of a collection of short posts that I've authored, across various domains. Some here, some off-site. Sorted by last updated. This list does not include my poetry pieces from <a className="blog_intro_link" href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer">Instagram</a> or mid work from <a className="blog_intro_link" href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer">Medium</a>.
+                                The start of a collection of short posts that I've authored, across various domains. Some here, some off-site. Sorted by last updated.<br/> This list does not include my poetry pieces from <a className="blog_intro_link" href="https://instagram.com/cryptic.tales" target="_blank" rel="noreferrer">Instagram</a> or mid work from <a className="blog_intro_link" href="https://medium.com/@nikitamenon2510" target="_blank" rel="noreferrer">Medium</a>.
                             </p>
                           </>
                         )}

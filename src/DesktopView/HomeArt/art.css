@@ -17,11 +17,11 @@
    (positioned against the art slide, so she hugs the screen's left edge) */
 .suika_peek{
     position:absolute;
-    left:-2vw;              /* peeks slightly off the screen's left edge */
-    bottom:6vh;
-    width:12vw;
-    transform: scaleX(-1);  /* mirror in place */
-    transform-origin: center;
+    /* to the right of the first sketch row, at the screen's right corner
+       (sketches_container right edge sits ~83vw; pull out toward ~96vw) */
+    right:-13vw;
+    top:9vh;
+    width:11vw;
     z-index:1;
     pointer-events:none;
     border-radius:10px;
@@ -39,6 +39,7 @@
   margin-left:19vw;
   padding-top:3vh;
   box-sizing: border-box;
+  position: relative; /* anchor for the peeking Suika */
 }
 
 .art_heading{

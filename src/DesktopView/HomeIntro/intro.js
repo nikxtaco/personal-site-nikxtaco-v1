@@ -239,9 +239,6 @@ export default function Intro() {
                                         <span className="about_legend_row"><span className="about_term">dotted</span> &rarr; hover for a note</span>
                                     </div>
                                 </aside>
-                                <p className="about_music_note">
-                                    🎧 If you'd like some background music while you read through all this, maybe consider <a className="about_inline_link" href="#music" onClick={(e)=>scrollToSection(e,'music')}>heading here</a> first?
-                                </p>
                             </div>
                         </div>
 

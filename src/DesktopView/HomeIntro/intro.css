@@ -576,17 +576,6 @@
 }
 .about_pledge:hover{ transform: scale(1.18); }
 
-/* playful "put on some music" note in the right column, by the headshot */
-.about_music_note{
-    margin-top: 2vh;
-    max-width: 16.5vw;
-    font-family: "Playfair Display", serif;
-    font-size: 1.45vmin;
-    font-style: italic;
-    line-height: 1.5;
-    color: #9a9284;
-}
-
 /* reading key (colour/underline legend) below the fact chips */
 .about_legend{
     width: 16.5vw;
