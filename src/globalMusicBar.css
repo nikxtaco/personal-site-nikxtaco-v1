@@ -2,7 +2,7 @@
 .gmb{
     position: fixed;
     left: 2vw;
-    bottom: calc(9vh + env(safe-area-inset-bottom, 0px)); /* stacked just above the Spotlight search trigger */
+    bottom: calc(2.5vh + env(safe-area-inset-bottom, 0px)); /* bottom-most left corner */
     z-index: 9000;
     display: flex;
     align-items: center;

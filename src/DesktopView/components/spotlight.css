@@ -3,7 +3,7 @@
 /* floating trigger pill (bottom-left, clear of the corner boxes) */
 .spot_trigger {
   position: fixed;
-  bottom: 3vh;
+  top: 3vh;                  /* top-left (music bar owns the bottom-left) */
   left: 2vw;
   z-index: 9000;
   display: flex;
