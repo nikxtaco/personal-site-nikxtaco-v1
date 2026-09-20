@@ -7,8 +7,8 @@
 
 // import useWindowDimensions from "../../../helpers/WindowDimensions.js"
 
-// import statue_blog from "../../../img/statue_blog.jpg"
-// import feathers from "../../../img/feathers_blue.jpg"
+// import statue_blog from "../../../img/statue_blog.webp"
+// import feathers from "../../../img/feathers_blue.webp"
 
 // import ReactGA from 'react-ga';
 

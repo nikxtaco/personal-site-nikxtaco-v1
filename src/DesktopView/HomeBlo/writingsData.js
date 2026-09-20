@@ -3,33 +3,33 @@
 // `link` (optional) points to the external cross-post (Medium / Instagram / etc.).
 // `images` (optional) is an array of imported images for on-site posts.
 
-import bluePrince1 from "../../img/blue-prince-1.jpg";
-import bluePrince2 from "../../img/blue-prince-2.jpg";
-import moLotteryFig from "../../img/mo-lottery-fig4.jpg";
-import wandPrep from "../../img/wand-prep.jpg";
-import wandTrain from "../../img/wand-train.jpg";
-import jacobiteGlenfinnan from "../../img/jacobite-glenfinnan.jpg";
-import glassblownNessie from "../../img/glassblown-nessie.jpg";
-import lochNessJacobite from "../../img/loch-ness-jacobite.jpg";
-import nessieSketch from "../../img/nessie-sketch.jpg";
-import brokenRobot from "../../img/broken-robot.jpg";
-import moLotteryTrainedVariants from "../../img/mo-lottery-trained-variants.jpg";
-import aoFig from "../../img/ao-safe-base-model.png";
-import aoInterpretation from "../../img/ao-phenomenon-interpretation.png";
-import moLotteryPaper from "../../img/mo-lottery-paper.jpg";
-import deer100 from "../../img/100-deer.jpg";
-import heartLake from "../../img/heart-lake.jpg";
-import doverCow from "../../img/dover-cow.jpg";
-import oocDeceptionExample from "../../img/ooc-deception-example.png";
-import oocDeceptionRoc from "../../img/ooc-deception-roc.png";
-import oocToyModel from "../../img/ooc-toy-model.png";
-import robotHoopThrow from "../../img/robot-hoop-throw.jpg";
-import gundamRobot from "../../img/gundam-robot.jpg";
-import emImg1 from "../../img/emergent-misalignment/image1.png";
-import emImg2 from "../../img/emergent-misalignment/image2.png";
-import emImg3 from "../../img/emergent-misalignment/image3.png";
-import emImg4 from "../../img/emergent-misalignment/image4.png";
-import emImg5 from "../../img/emergent-misalignment/image5.png";
+import bluePrince1 from "../../img/blue-prince-1.webp";
+import bluePrince2 from "../../img/blue-prince-2.webp";
+import moLotteryFig from "../../img/mo-lottery-fig4.webp";
+import wandPrep from "../../img/wand-prep.webp";
+import wandTrain from "../../img/wand-train.webp";
+import jacobiteGlenfinnan from "../../img/jacobite-glenfinnan.webp";
+import glassblownNessie from "../../img/glassblown-nessie.webp";
+import lochNessJacobite from "../../img/loch-ness-jacobite.webp";
+import nessieSketch from "../../img/nessie-sketch.webp";
+import brokenRobot from "../../img/broken-robot.webp";
+import moLotteryTrainedVariants from "../../img/mo-lottery-trained-variants.webp";
+import aoFig from "../../img/ao-safe-base-model.webp";
+import aoInterpretation from "../../img/ao-phenomenon-interpretation.webp";
+import moLotteryPaper from "../../img/mo-lottery-paper.webp";
+import deer100 from "../../img/100-deer.webp";
+import heartLake from "../../img/heart-lake.webp";
+import doverCow from "../../img/dover-cow.webp";
+import oocDeceptionExample from "../../img/ooc-deception-example.webp";
+import oocDeceptionRoc from "../../img/ooc-deception-roc.webp";
+import oocToyModel from "../../img/ooc-toy-model.webp";
+import robotHoopThrow from "../../img/robot-hoop-throw.webp";
+import gundamRobot from "../../img/gundam-robot.webp";
+import emImg1 from "../../img/emergent-misalignment/image1.webp";
+import emImg2 from "../../img/emergent-misalignment/image2.webp";
+import emImg3 from "../../img/emergent-misalignment/image3.webp";
+import emImg4 from "../../img/emergent-misalignment/image4.webp";
+import emImg5 from "../../img/emergent-misalignment/image5.webp";
 
 export const WRITING_FILTERS = ["All", "Made", "Seen", "Played", "Written"];
 
@@ -117,7 +117,7 @@ export const WRITINGS = [
     body:
       "[ Add your intro or notes here, or read the full write-up via the link below. ]",
     links: [
-      { kind: "paper", url: "https://drive.google.com/drive/folders/1Yb_UjMXOjb3PwiMrouwdydRj6GDj_pk3" },
+      { kind: "paper", url: "https://drive.google.com/file/d/1KMt3EwzB8zBXAlOrlfTgzz2pagynme7B/view?usp=sharing" },
     ],
     images: [oocDeceptionExample, oocDeceptionRoc],
   },
@@ -126,7 +126,7 @@ export const WRITINGS = [
     title: "Toy Model for Interpreting Out-of-Context Meta Learning via Differential Internalisation of Aliases",
     type: "Research",
     researchOnly: true,
-    date: "2024",
+    date: "Early 2024",
     sortDate: "2024-01-01",
     excerpt:
       "Building on the \"Out-of-Context Meta-Learning in Large Language Models\" paper, we reproduce its differential internalization result (models absorb information more readily from reliable sources like Wikipedia than from unreliable ones like 4chan) in a much smaller transformer, small enough to actually dig into mechanistically.",
@@ -143,7 +143,10 @@ export const WRITINGS = [
     id: "emergent-misalignment",
     title: "Emergent Misalignment and Deception on Base vs Instruct Models",
     type: "Research",
-    underConstruction: true, // hides the on-site read (writeup still being updated)
+    alsoOnSite: true, // readable on this site AND links out to the Drive write-up
+    links: [
+      { kind: "paper", url: "https://drive.google.com/file/d/14QDnRC4V8K7y5O5NuWc_r6-ogjgD_uHY/view?usp=sharing" },
+    ],
     date: "Early 2025",
     sortDate: "2025-01-01",
     excerpt:
@@ -186,7 +189,6 @@ export const WRITINGS = [
       `[1] Betley, Jan et al. "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs." <a class="writing_inline_link" href="https://arxiv.org/abs/2502.17424" target="_blank" rel="noreferrer">arXiv:2502.17424</a> (2025).<br/><br/>` +
       `[2] Vaugrante, Laurene et al. "Compromising Honesty and Harmlessness in Language Models via Deception Attacks." <a class="writing_inline_link" href="https://arxiv.org/abs/2502.08301" target="_blank" rel="noreferrer">arXiv:2502.08301</a> (2025).<br/><br/>` +
       `[3] Marks, Samuel and Max Tegmark. "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets." <a class="writing_inline_link" href="https://arxiv.org/abs/2310.06824" target="_blank" rel="noreferrer">arXiv:2310.06824</a> (2023).<span style="display:block; height:8vh;"></span>`,
-    links: [],
     images: [],
   },
   {

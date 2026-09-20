@@ -5,7 +5,7 @@ import "./intro.css";
 import useWindowDimensions from "../../helpers/WindowDimensions.js";
 import Footer from "../../components/footer/footer.js";
 
-import headshot from "../../img/headshot-dxb.jpg";
+import headshot from "../../img/headshot-dxb.webp";
 import { RESEARCH_UPDATES } from "../../DesktopView/HomeIntro/researchUpdates.js";
 
 export default function Intro() {

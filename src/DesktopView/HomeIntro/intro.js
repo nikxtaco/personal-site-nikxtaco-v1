@@ -1,15 +1,15 @@
 import React, {useState, useEffect, useRef} from "react";
 import "./intro.css"
 import UseAnimations from "react-useanimations";
-import headshot from "../../img/headshot-dxb.jpg";
-import vangogh from "../../img/van-gogh-img.jpg";
-import jupiter from "../../img/jupiter-artland.jpg";
-import starflyer from "../../img/star-flyer.jpg";
-import sevenSisters from "../../img/seven-sisters.jpg";
-import obsidianFull from "../../img/obsidian-full.png";
-import ecoLibrary from "../../img/umberto-eco-antilibrary.jpg";
+import headshot from "../../img/headshot-dxb.webp";
+import vangogh from "../../img/van-gogh-img.webp";
+import jupiter from "../../img/jupiter-artland.webp";
+import starflyer from "../../img/star-flyer.webp";
+import sevenSisters from "../../img/seven-sisters.webp";
+import obsidianFull from "../../img/obsidian-full.webp";
+import ecoLibrary from "../../img/umberto-eco-antilibrary.webp";
 import { RESEARCH_UPDATES } from "./researchUpdates";
-import lessWrongMark from "../../img/lesswrong-mark.png";
+import lessWrongMark from "../../img/lesswrong-mark.webp";
 import AboutEevee from "./AboutEevee"; // EXPERIMENTAL (uncommitted) — remove this line + the <AboutEevee/> tag to disable
 
 export default function Intro() {

@@ -2,8 +2,8 @@ import React from 'react';
 import "./projects.css"
 import UseAnimations from "react-useanimations";
 
-import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.jpg"
-import AlrtAIMockup from "../../img/projects/AlrtAIMockup.jpg"
+import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.webp"
+import AlrtAIMockup from "../../img/projects/AlrtAIMockup.webp"
 
 const ProjectStuff = () => {
     const images = [

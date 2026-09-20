@@ -54,7 +54,7 @@
         width:90vw;
         height:100vw;
         z-index:-1;
-        background-image: url('../../img/song_circle.png'); /* research hero: song circle (Peter Crnokrak) */
+        background-image: url('../../img/song_circle.webp'); /* research hero: song circle (Peter Crnokrak) */
         background-repeat: no-repeat;
         background-size:contain;
         opacity:0.6;

@@ -5,7 +5,7 @@ import UseAnimations from "react-useanimations";
 import ProjectStuff, { MOCKUPS } from './projectStuff';
 import Writings from '../HomeBlo/Writings';
 import { RESEARCH } from '../HomeBlo/writingsData';
-import lessWrongMark from "../../img/lesswrong-mark.png";
+import lessWrongMark from "../../img/lesswrong-mark.webp";
 import ResearchStatue from "./ResearchStatue"; // EXPERIMENTAL (uncommitted) — remove this line + the <ResearchStatue/> tag to disable
 
 // short labels for the table of contents (fall back to the full title)
@@ -197,7 +197,7 @@ export default function Projects() {
               </>
             )}
 
-            <Writings entries={RESEARCH} showFilters={false} showAllLinks={true} backLabel="← Back to research" onOpenChange={setPostOpen} />
+            <Writings entries={RESEARCH} showFilters={false} showAllLinks={true} backLabel="← Back to research" onOpenChange={setPostOpen} urlSync />
 
             {!postOpen && (
               <>

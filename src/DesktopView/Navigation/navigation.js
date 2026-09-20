@@ -25,10 +25,12 @@ export default function Navigation() {
       const path = window.location.pathname;
       const id = postIdFromPath(path, WRITINGS);
       if (!id) return;
-      setIndex(3);
+      const w = WRITINGS.find((x) => x.id === id);
+      const research = w && w.type === "Research"; // research posts live on the projects slide
+      setIndex(research ? 2 : 3);
       const t = setTimeout(() => {
         window.dispatchEvent(new CustomEvent("spotlight-open-post", { detail: { id } }));
-        window.location.hash = "bloglist";
+        window.location.hash = research ? "projects_stuff" : "bloglist";
         setTimeout(() => window.history.replaceState(null, "", path), 700);
       }, 450);
       return () => clearTimeout(t);

@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import "./art.css"
 
-import NeonGenesis from "../../img/sketches/NeonGenesis.jpeg";
-// import HPOriginal from "../../img/sketches/HPOriginal.jpg";
-import HPEdited from "../../img/sketches/HPEdited.jpg";
-// import LDROriginal from "../../img/sketches/LDROriginal.jpeg";
-import LDREdited from "../../img/sketches/LDREdited.jpeg";
-import SherlockOriginal from "../../img/sketches/SherlockOriginal.jpeg";
-import NarutoOriginal from "../../img/sketches/NarutoOriginal.jpeg";
-import VForVendetta from "../../img/sketches/VForVendetta.jpeg";
+import NeonGenesis from "../../img/sketches/NeonGenesis.webp";
+// import HPOriginal from "../../img/sketches/HPOriginal.webp";
+import HPEdited from "../../img/sketches/HPEdited.webp";
+// import LDROriginal from "../../img/sketches/LDROriginal.webp";
+import LDREdited from "../../img/sketches/LDREdited.webp";
+import SherlockOriginal from "../../img/sketches/SherlockOriginal.webp";
+import NarutoOriginal from "../../img/sketches/NarutoOriginal.webp";
+import VForVendetta from "../../img/sketches/VForVendetta.webp";
 
 const Sketches = () => {
     const images = [NeonGenesis, LDREdited, HPEdited, NarutoOriginal, SherlockOriginal, VForVendetta];

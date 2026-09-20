@@ -5,7 +5,7 @@ import UseAnimations from "react-useanimations";
 // import keyboardData from './keyboardData.json';
 import Sketches from './sketches';
 import MusicPlayer from './MusicPlayer';
-import suikaPeek from "../../img/sketches/suika.jpeg";
+import suikaPeek from "../../img/sketches/suika.webp";
 
 export default function Art() {
 

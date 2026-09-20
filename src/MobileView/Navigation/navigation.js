@@ -27,9 +27,11 @@ export default function Navigation() {
     const path = window.location.pathname;
     const id = postIdFromPath(path, WRITINGS);
     if (!id) return;
+    const w = WRITINGS.find((x) => x.id === id);
+    const research = w && w.type === "Research";
     const t = setTimeout(() => {
       window.dispatchEvent(new CustomEvent("spotlight-open-post", { detail: { id } }));
-      window.location.hash = "bloglist";
+      window.location.hash = research ? "projects_stuff" : "bloglist";
       setTimeout(() => window.history.replaceState(null, "", path), 700);
     }, 350);
     return () => clearTimeout(t);

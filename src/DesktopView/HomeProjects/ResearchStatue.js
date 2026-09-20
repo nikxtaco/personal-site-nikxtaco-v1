@@ -1,7 +1,7 @@
 import React from "react";
 import "./researchStatue.css";
 
-import statue from "../../img/statues/statue-antinous.png";
+import statue from "../../img/statues/statue-antinous.webp";
 
 /*
  * EXPERIMENTAL: a single, very subtle Antinous profile bleeding off the right

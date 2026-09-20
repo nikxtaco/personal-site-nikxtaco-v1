@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "./projects.css"
 import UseAnimations from "react-useanimations";
 
-import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.jpg"
-import AlrtAIMockup from "../../img/projects/AlrtAIMockup.jpg"
-import FigmaPersonalWebsite from "../../img/projects/FigmaPersonalWebsite.jpg"
+import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.webp"
+import AlrtAIMockup from "../../img/projects/AlrtAIMockup.webp"
+import FigmaPersonalWebsite from "../../img/projects/FigmaPersonalWebsite.webp"
 
 // exported so the Research page's table of contents can list each mockup
 export const MOCKUPS = [

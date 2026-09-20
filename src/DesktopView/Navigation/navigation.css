@@ -171,7 +171,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     height:65vh;
     width:30vw;
     z-index:20;
-    background-image: url('../../img/cygirl2.jpg');
+    background-image: url('../../img/cygirl2.webp');
     background-repeat: no-repeat;
     background-size:contain;
     opacity:1;
@@ -184,7 +184,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     height:58vh;
     width:58vh;              /* square -> circular cloud cutout (bottom stays ~89vh) */
     z-index:20;
-    background-image: url('../../img/black-white-hand-sketch-abstract-cloud-background_1409-4496.jpg'); /* art hero: circular cloud (vector_corp / Magnific) */
+    background-image: url('../../img/black-white-hand-sketch-abstract-cloud-background_1409-4496.webp'); /* art hero: circular cloud (vector_corp / Magnific) */
     background-repeat: no-repeat;
     background-size:cover;
     background-position:center;
@@ -199,7 +199,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     height:63vh;
     width:63vh;              /* a touch bigger; bottom reaches the "02" line (top fixed) */
     z-index:20;
-    background-image: url('../../img/song_circle.png'); /* research hero: song circle (Peter Crnokrak) */
+    background-image: url('../../img/song_circle.webp'); /* research hero: song circle (Peter Crnokrak) */
     background-repeat: no-repeat;
     background-size:contain;
     opacity:0.9;
@@ -212,7 +212,7 @@ body.about-light .stripes_slide_00 .stripes_box2{
     height:80vh;
     width:50vw;
     z-index:20;
-    background-image: url('../../img/monochrome-vintage-leaf-line-art-style.jpg'); /* blog hero: leaf (Magnific) */
+    background-image: url('../../img/monochrome-vintage-leaf-line-art-style.webp'); /* blog hero: leaf (Magnific) */
     background-repeat: no-repeat;
     background-size:contain;
     transform: rotate(35deg); /* tilt the leaf diagonally (its original art-hero look) */

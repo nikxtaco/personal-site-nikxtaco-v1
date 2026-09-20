@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import "./writings.css";
 import UseAnimations from "react-useanimations";
-import lessWrongLogo from "../../img/lesswrong-mark.png";
+import lessWrongLogo from "../../img/lesswrong-mark.webp";
 import { WRITINGS, WRITING_FILTERS } from "./writingsData";
 import { postPath, postIdFromPath, isOnSite } from "./writingSlug";
 
@@ -21,7 +21,7 @@ const LABEL_FOR = {
 const LinkIcon = ({ kind, size }) => {
   if (kind === "lesswrong")
     return <img className="writing_lw_icon" src={lessWrongLogo} alt="LessWrong" style={{ height: size }} />;
-  if (kind === "paper")
+  if (kind === "paper" || kind === "arxiv")
     return (
       <svg
         className="writing_paper_icon"
@@ -87,6 +87,8 @@ const metaLine = (w) => {
 
 const readingTime = (w) => {
   if (typeof w.readMins === "number") return w.readMins + " min read";
+  // link-only entries have no on-site text to measure, so show no read time
+  if (w.links && w.links.length && !w.alsoOnSite) return "";
   const parts = [w.body, w.afterBody];
   (w.images || []).forEach((im) => {
     if (typeof im === "object" && im && im.note) parts.push(im.note);
@@ -177,15 +179,21 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [openId]);
 
+  // which posts THIS listing instance owns (so the shared post objects don't
+  // open in both the blog and research detail at once): research listing owns
+  // Research posts; the blog listing owns everything else.
+  const ownsPost = (w) => !!w && (showAllLinks ? w.type === "Research" : w.type !== "Research");
+
   // spotlight search can ask this list to open a specific post by id
   useEffect(() => {
     const onOpen = (e) => {
       const id = e.detail && e.detail.id;
       const w = id && entries.find((x) => x.id === id);
-      if (w && !w.underConstruction) setOpenId(id); // never open a WIP post
+      if (w && !w.underConstruction && ownsPost(w)) setOpenId(id); // never open a WIP post
     };
     window.addEventListener("spotlight-open-post", onOpen);
     return () => window.removeEventListener("spotlight-open-post", onOpen);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [entries]);
 
   // ---- per-post URLs (blog instance only): open <-> /blog/<slug> ----
@@ -196,7 +204,8 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
   useEffect(() => {
     if (!urlSync) return;
     const id = postIdFromPath(location.pathname, entries);
-    const target = id || null;
+    const w = id && entries.find((x) => x.id === id);
+    const target = (w && ownsPost(w)) ? id : null; // only open posts this listing owns
     setOpenId((cur) => (cur === target ? cur : target));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, urlSync]);
@@ -206,7 +215,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
     if (!didMountRef.current) { didMountRef.current = true; return; }
     if (openId) {
       const w = entries.find((x) => x.id === openId);
-      if (w && isOnSite(w)) {
+      if (w && ownsPost(w) && isOnSite(w)) {
         const p = postPath(w);
         if (location.pathname !== p) history.push(p);
       }
@@ -503,6 +512,7 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
           const openWriting = () => {
             if (w.underConstruction) return; // not viewable yet
             if (trackRead) setRead(w.id, true);
+            if (w.alsoOnSite) { setOpenId(w.id); return; } // readable here (also links out)
             if (hasLinks) {
               if (titleTarget) window.open(titleTarget.url, "_blank", "noopener,noreferrer");
             } else setOpenId(w.id);
@@ -534,19 +544,11 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
 
                 {hasLinks ? (
                   showAllLinks ? (
-                    <div className="writing_links">
-                      {visibleLinks.map((l) => (
-                        <a
-                          key={l.url}
-                          href={l.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          title={LABEL_FOR[l.kind] || "Open link"}
-                        >
-                          <LinkIcon kind={l.kind} size={"2.8vmin"} />
-                        </a>
-                      ))}
-                    </div>
+                    w.alsoOnSite && (
+                      <button className="writing_readmore" onClick={openWriting}>
+                        Read on this site →
+                      </button>
+                    )
                   ) : (
                     primary && (
                       <a
@@ -571,7 +573,24 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
                 )}
               </div>
 
-              {w.images && w.images.length > 0 && (
+              {/* research listing: source icons in the card's bottom-right corner */}
+              {showAllLinks && hasLinks && (
+                <div className="writing_links writing_links_corner">
+                  {visibleLinks.map((l) => (
+                    <a
+                      key={l.url}
+                      href={l.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={LABEL_FOR[l.kind] || "Open link"}
+                    >
+                      <LinkIcon kind={l.kind} size={"2.8vmin"} />
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {!showAllLinks && w.images && w.images.length > 0 && (
                 <div
                   className="writing_stack"
                   onClick={() => openLightbox(w.images, typeof w.coverIndex === "number" ? w.coverIndex : 0)}

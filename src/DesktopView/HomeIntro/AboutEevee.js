@@ -1,7 +1,7 @@
 import React from "react";
 import "./aboutEevee.css";
 
-import eevee from "../../img/eevee/eevee-letsgo.png";
+import eevee from "../../img/eevee/eevee-letsgo.webp";
 
 /*
  * EXPERIMENTAL: a single pixel Eevee perched on the right end of the colophon's

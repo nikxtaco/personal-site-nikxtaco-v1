@@ -14,8 +14,11 @@ export const slugify = (s) =>
     .replace(/[^a-z0-9]+/g, "-")     // any run of non-alphanumerics -> a single dash
     .replace(/(^-|-$)/g, "");
 
-// only posts that render on-site (no external `link`, not WIP) get a subpage
-export const isOnSite = (w) => !!w && !w.link && !w.underConstruction;
+// posts that render on-site: no external `link`/`links` (unless flagged alsoOnSite),
+// and not WIP
+export const isOnSite = (w) =>
+  !!w && !w.underConstruction &&
+  (w.alsoOnSite || (!w.link && !(w.links && w.links.length)));
 
 export const postPath = (w) => `${BLOG_BASE}/${slugify(w.title)}`;
 

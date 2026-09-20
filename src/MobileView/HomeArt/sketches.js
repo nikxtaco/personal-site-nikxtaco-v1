@@ -1,13 +1,13 @@
 import React from 'react';
 import "./art.css"
 
-// import HPOriginal from "../../img/sketches/HPOriginal.jpg";
-import HPEdited from "../../img/sketches/HPEdited.jpg";
-// import LDROriginal from "../../img/sketches/LDROriginal.jpeg";
-import LDREdited from "../../img/sketches/LDREdited.jpeg";
-import SherlockOriginal from "../../img/sketches/SherlockOriginal.jpeg";
-import NarutoOriginal from "../../img/sketches/NarutoOriginal.jpeg";
-import VForVendetta from "../../img/sketches/VForVendetta.jpeg";
+// import HPOriginal from "../../img/sketches/HPOriginal.webp";
+import HPEdited from "../../img/sketches/HPEdited.webp";
+// import LDROriginal from "../../img/sketches/LDROriginal.webp";
+import LDREdited from "../../img/sketches/LDREdited.webp";
+import SherlockOriginal from "../../img/sketches/SherlockOriginal.webp";
+import NarutoOriginal from "../../img/sketches/NarutoOriginal.webp";
+import VForVendetta from "../../img/sketches/VForVendetta.webp";
 
 const Sketches = () => {
     const images = [LDREdited, HPEdited, NarutoOriginal, SherlockOriginal, VForVendetta] //, HPOriginal, LDROriginal]
@@ -18,7 +18,7 @@ const Sketches = () => {
         <div key={path}>
         <div className="magnifying-image-container">
           <img
-            // src={require('../../img/sketches/suika.jpeg').default}
+            // src={require('../../img/sketches/suika.webp').default}
             src={path}
             alt={title}
             loading="lazy"

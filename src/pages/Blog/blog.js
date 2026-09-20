@@ -16,7 +16,7 @@
 
 // import ReactGA from 'react-ga';
 
-// import blog_page_picture from "../../img/blog_page_picture.jpg"
+// import blog_page_picture from "../../img/blog_page_picture.webp"
 
 // function initializeReactGA() {
 //   ReactGA.initialize('UA-173520154-1');

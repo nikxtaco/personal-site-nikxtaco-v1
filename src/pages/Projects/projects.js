@@ -10,8 +10,8 @@
 
 // import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
-// import alrtai from "../../img/projects/alrtai.jpg"
-// import filterbubble from "../../img/projects/filterbubble.png"
+// import alrtai from "../../img/projects/alrtai.webp"
+// import filterbubble from "../../img/projects/filterbubble.webp"
 
 // export default () => {
 

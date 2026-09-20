@@ -5,7 +5,7 @@ import React, {useState} from "react";
 import "./blog.css"
 import Writings from './Writings';
 import UseAnimations from "react-useanimations";
-import lessWrongMark from "../../img/lesswrong-mark.png";
+import lessWrongMark from "../../img/lesswrong-mark.webp";
 
 // import UseAnimations from "react-useanimations";
 
@@ -14,7 +14,7 @@ import lessWrongMark from "../../img/lesswrong-mark.png";
 // import useWindowDimensions from "../../helpers/WindowDimensions.js"
 
 // import birds from "../../media/tree.png" //birds.png
-// import feathers from "../../img/feathers_blue.jpg"
+// import feathers from "../../img/feathers_blue.webp"
 
 export default function Blog() {
 
