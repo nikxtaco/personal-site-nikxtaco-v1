@@ -6,7 +6,7 @@ import vangogh from "../../img/van-gogh-img.jpg";
 import jupiter from "../../img/jupiter-artland.jpg";
 import starflyer from "../../img/star-flyer.jpg";
 import sevenSisters from "../../img/seven-sisters.jpg";
-import obsidianFull from "../../img/obsidian-full.jpg";
+import obsidianFull from "../../img/obsidian-full.png";
 import ecoLibrary from "../../img/umberto-eco-antilibrary.jpg";
 import { RESEARCH_UPDATES } from "./researchUpdates";
 import lessWrongMark from "../../img/lesswrong-mark.png";
@@ -203,7 +203,7 @@ export default function Intro() {
                             extension funded by <a className="about_inline_link" href="https://coefficientgiving.org" target="_blank" rel="noreferrer">Coefficient Giving</a>) fellowship in
                             London! We presented our <a className="about_inline_link" href="https://arxiv.org/abs/2607.01033" target="_blank" rel="noreferrer">paper</a> at
                             the <a className="about_inline_link" href="https://icml.cc/virtual/2026/workshop/54071" target="_blank" rel="noreferrer">ICML 2026 Mechanistic Interpretability Workshop</a> in Seoul, and my team is actively
-                            working on follow-ups which will likely be published <a className="about_inline_link" href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer">here</a>. If you'd like to chat, do <a className="about_inline_link" href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">reach out</a>!
+                            working on follow-ups which will likely be published <a className="about_inline_link" href="https://www.lesswrong.com/users/nikita-menon" target="_blank" rel="noreferrer" aria-label="here, on my LessWrong profile">here</a>. If you'd like to chat, do <a className="about_inline_link" href="mailto:nikitamenon2510@gmail.com" target="_blank" rel="noreferrer">reach out</a>!
                             </p>
 
                             <p className="about_status">

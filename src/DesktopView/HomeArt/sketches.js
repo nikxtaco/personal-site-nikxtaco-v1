@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import "./art.css"
 
 import NeonGenesis from "../../img/sketches/NeonGenesis.jpeg";
@@ -12,8 +13,23 @@ import VForVendetta from "../../img/sketches/VForVendetta.jpeg";
 
 const Sketches = () => {
     const images = [NeonGenesis, LDREdited, HPEdited, NarutoOriginal, SherlockOriginal, VForVendetta];
+    // hover notes shown in the LEFT gutter beside each sketch (desktop only).
+    // Aligned to the images order; "" = no note (no box shown on hover). May
+    // contain an inline <a> link.
+    const notes = [
+      "A collage-sketch of cyberpunk-themed scenes from Neon Genesis Evangelion, Cyberpunk Edgerunners and Blade Runner 2049, that I used AI filters to add colour to, in 2024.",
+      "A collage-sketch of scenes from an episode of Love, Death and Robots, called The Very Pulse of the Machine, that I used AI filters to add colour to, in 2023.",
+      "A collage-sketch of emotional scenes from Harry Potter, plus Hogwarts and its Express train, that I used AI filters to add colour to, in 2020.",
+      "", "", "",
+    ];
 
     const [lbIndex, setLbIndex] = useState(null); // open lightbox at this index
+
+    // ---- hover note (fixed card, above the now-playing snippet; no animation) ----
+    const [hovered, setHovered] = useState(null);
+    const noteHtml = hovered != null ? (notes[hovered] || "") : "";
+    const noteOpen = hovered != null && !!noteHtml;
+    const openNote = (i) => { if (notes[i]) setHovered(i); };
     const open = (i) => setLbIndex(i);
     const close = () => setLbIndex(null);
     const step = (e, dir) => {
@@ -58,7 +74,12 @@ const Sketches = () => {
     <>
     <div className="iframe-container" ref={containerRef}>
       {images.map((src, i) => (
-        <div key={i} className="sketch_item">
+        <div
+          key={i}
+          className="sketch_item"
+          onMouseEnter={notes[i] ? () => openNote(i) : undefined}
+          onMouseLeave={notes[i] ? () => setHovered(null) : undefined}
+        >
         <div className="magnifying-image-container">
           <img
             src={src}
@@ -74,6 +95,13 @@ const Sketches = () => {
         </div>
       ))}
     </div>
+
+    {noteOpen && ReactDOM.createPortal(
+      <div className="sketch_note">
+        <div className="sketch_note_text" dangerouslySetInnerHTML={{ __html: noteHtml }} />
+      </div>,
+      document.body
+    )}
 
     {lbIndex !== null && (
       <div className="lb_overlay" onClick={close}>

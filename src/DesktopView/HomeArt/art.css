@@ -43,6 +43,43 @@
   box-sizing: border-box;
 }
 
+/* ===== sketch hover note: a fixed card above the now-playing snippet (desktop) ===== */
+.sketch_note{
+  position:fixed;
+  left:2vw;
+  /* vertically centered in the left gutter, between the top-left striped box
+     (~26vh) and the now-playing snippet (~91vh) */
+  top:58vh;
+  transform:translateY(-50%);
+  width:12vw;          /* stays within the ~19vw left gutter, off the sketches */
+  max-width:185px;
+  background:#f5f0e5;
+  color:#2b2824;
+  border:1px solid rgba(0,0,0,0.15);
+  border-left:3px solid #22bfbf;
+  border-radius:12px;
+  padding:1.3vh 1.1vw;
+  box-shadow:0 16px 40px rgba(0,0,0,0.45);
+  z-index:9000;
+  font-family:"Playfair Display",serif;
+  animation:sk_note_in 0.2s ease both;
+}
+@keyframes sk_note_in{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+.sketch_note_text{ font-size:1.7vmin; line-height:1.55; }
+.sketch_note_link{
+  color:#0f8a8a; text-decoration:none;
+  border-bottom:1px solid rgba(15,138,138,0.5);
+  transition:color 0.2s ease, border-color 0.2s ease;
+}
+.sketch_note_link:hover{ color:#22bfbf; border-bottom-color:#22bfbf; }
+
+@media (prefers-reduced-motion: reduce){
+  .sketch_note{ animation:none; }
+}
+
 .sketches_container {
   min-height: 100vh;
   margin-left:19vw;

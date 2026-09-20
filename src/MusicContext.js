@@ -23,10 +23,11 @@ export const fmt = (ms) => {
   return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
 };
 
-const iframeSrc = (trackUrl) =>
+const iframeSrc = (trackUrl, autoplay = false) =>
   "https://w.soundcloud.com/player/?url=" +
   encodeURIComponent(trackUrl) +
-  "&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_teaser=false&visual=false";
+  "&auto_play=" + (autoplay ? "true" : "false") +
+  "&hide_related=true&show_comments=false&show_user=false&show_teaser=false&visual=false";
 
 const MusicContext = createContext(null);
 export const useMusic = () => useContext(MusicContext);
@@ -42,8 +43,20 @@ export function MusicProvider({ children }) {
   const [duration, setDuration] = useState(0);
   const [artwork, setArtwork] = useState(null);
   const [permalinks, setPermalinks] = useState({});
+  // the SoundCloud engine (script + iframe) is heavy third-party code, so it is
+  // NOT loaded on page load — only after the first play interaction.
+  const [engaged, setEngaged] = useState(false);
+  const engagedSrcRef = useRef(null);
 
   useEffect(() => { indexRef.current = index; }, [index]);
+
+  // spin up the engine on first play; render the iframe at the chosen track
+  const engage = (i) => {
+    setIndex(i);
+    indexRef.current = i;
+    engagedSrcRef.current = iframeSrc(TRACKS[i].trackUrl, true);
+    setEngaged(true);
+  };
 
   const refreshSound = (i, attempt = 0) => {
     const w = widgetRef.current;
@@ -67,7 +80,7 @@ export function MusicProvider({ children }) {
 
   const loadTrack = (i, autoplay = true) => {
     const w = widgetRef.current;
-    if (!w) return;
+    if (!w) { engage(i); return; } // engine not up yet -> spin it up on this track
     setIndex(i);
     setPosition(0);
     w.load(TRACKS[i].trackUrl, {
@@ -85,7 +98,11 @@ export function MusicProvider({ children }) {
 
   const next = () => loadTrack((indexRef.current + 1) % TRACKS.length);
   const prev = () => loadTrack((indexRef.current - 1 + TRACKS.length) % TRACKS.length);
-  const togglePlay = () => widgetRef.current && widgetRef.current.toggle();
+  const togglePlay = () => {
+    const w = widgetRef.current;
+    if (!w) { engage(indexRef.current); return; } // first play -> load the engine
+    w.toggle();
+  };
   const seekTo = (ratio) => {
     const w = widgetRef.current;
     if (!w || !duration) return;
@@ -93,14 +110,17 @@ export function MusicProvider({ children }) {
     setPosition(ratio * duration);
   };
 
+  // load the SoundCloud engine only once the user has engaged (first play)
   useEffect(() => {
+    if (!engaged) return;
     const init = () => {
       if (!window.SC || !window.SC.Widget || !iframeRef.current) return;
       const w = window.SC.Widget(iframeRef.current);
       widgetRef.current = w;
       const E = window.SC.Widget.Events;
       w.bind(E.READY, () => {
-        refreshSound(0);
+        setPlaying(true); // the iframe auto-plays the engaged track
+        refreshSound(indexRef.current);
         w.bind(E.PLAY, () => { setPlaying(true); refreshSound(indexRef.current); });
         w.bind(E.PAUSE, () => setPlaying(false));
         w.bind(E.FINISH, () => next());
@@ -122,7 +142,7 @@ export function MusicProvider({ children }) {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [engaged]);
 
   const value = {
     TRACKS, index, playing, position, duration, artwork, permalinks,
@@ -133,14 +153,16 @@ export function MusicProvider({ children }) {
   return (
     <MusicContext.Provider value={value}>
       {children}
-      <iframe
-        ref={iframeRef}
-        title="SoundCloud audio engine"
-        src={iframeSrc(TRACKS[0].trackUrl)}
-        allow="autoplay"
-        aria-hidden="true"
-        style={{ position: "fixed", left: "-9999px", top: "-9999px", width: "1px", height: "1px", border: 0, opacity: 0 }}
-      />
+      {engaged && (
+        <iframe
+          ref={iframeRef}
+          title="SoundCloud audio engine"
+          src={engagedSrcRef.current}
+          allow="autoplay"
+          aria-hidden="true"
+          style={{ position: "fixed", left: "-9999px", top: "-9999px", width: "1px", height: "1px", border: 0, opacity: 0 }}
+        />
+      )}
     </MusicContext.Provider>
   );
 }
