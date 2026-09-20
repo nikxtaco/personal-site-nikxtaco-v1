@@ -5,7 +5,7 @@
 
 import bluePrince1 from "../../img/blue-prince-1.jpg";
 import bluePrince2 from "../../img/blue-prince-2.jpg";
-import moLotteryFig from "../../img/mo-lottery-fig4.png";
+import moLotteryFig from "../../img/mo-lottery-fig4.jpg";
 import wandPrep from "../../img/wand-prep.jpg";
 import wandTrain from "../../img/wand-train.jpg";
 import jacobiteGlenfinnan from "../../img/jacobite-glenfinnan.jpg";
@@ -13,7 +13,7 @@ import glassblownNessie from "../../img/glassblown-nessie.jpg";
 import lochNessJacobite from "../../img/loch-ness-jacobite.jpg";
 import nessieSketch from "../../img/nessie-sketch.jpg";
 import brokenRobot from "../../img/broken-robot.jpg";
-import moLotteryTrainedVariants from "../../img/mo-lottery-trained-variants.png";
+import moLotteryTrainedVariants from "../../img/mo-lottery-trained-variants.jpg";
 import aoFig from "../../img/ao-safe-base-model.png";
 import aoInterpretation from "../../img/ao-phenomenon-interpretation.png";
 import moLotteryPaper from "../../img/mo-lottery-paper.jpg";

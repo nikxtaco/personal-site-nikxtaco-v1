@@ -72,7 +72,7 @@ export default function Intro() {
 
         {/* headshot + fact chips */}
         <div className="about_headshot">
-          <img src={headshot} alt="Nikita Menon" />
+          <img loading="lazy" decoding="async" src={headshot} alt="Nikita Menon" />
         </div>
         <div className="about_facts">
           <span className="about_fact">AI Safety Researcher</span>

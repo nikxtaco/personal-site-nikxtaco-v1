@@ -11,9 +11,8 @@ ReactDOM.render(
     <BrowserRouter basename="/">
       <div>
         <Switch>
-          <Route exact path="/" component={App} />
-          {/* <Route path="/blog" component={Blog} />
-          <Route path="/projects" component={Projects} /> */}
+          {/* App handles all in-app routing (incl. /blog/<slug> post subpages) */}
+          <Route path="/" component={App} />
         </Switch>
       </div>
     </BrowserRouter>,

@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rosarivo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rozha+One&display=swap');
+/* Fonts are loaded via a single combined, preconnected <link> in public/index.html
+   (one request instead of seven chained @imports). */
 
 h1, h2, h3, h5, h6{
   font-family: 'Rosarivo', serif;

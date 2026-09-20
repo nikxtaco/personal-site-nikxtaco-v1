@@ -158,7 +158,7 @@ export default function Blog() {
                             </p>
                           </>
                         )}
-                        <Writings onOpenChange={setPostOpen}/>
+                        <Writings onOpenChange={setPostOpen} urlSync/>
                         <button
                             type="button"
                             className="blog_back_up"

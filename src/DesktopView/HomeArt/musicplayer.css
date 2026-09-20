@@ -15,6 +15,7 @@
     flex-direction: column;
     width: 22vw;
     flex-shrink: 0;
+    align-self: flex-start;   /* don't stretch to the taller tracklist */
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 14px;

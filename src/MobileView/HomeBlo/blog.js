@@ -50,7 +50,7 @@ export default function Blog() {
               </p>
             </>
           )}
-          <Writings onOpenChange={setPostOpen} />
+          <Writings onOpenChange={setPostOpen} urlSync />
         </div>
       </div>
     </div>

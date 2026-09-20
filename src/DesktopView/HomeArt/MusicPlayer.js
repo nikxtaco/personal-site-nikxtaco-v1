@@ -22,6 +22,7 @@ export default function MusicPlayer({ showNotes = false }) {
   } = useMusic();
 
   const listRef = useRef(null);
+  const cardRef = useRef(null);
   const areaRef = useRef(null);
   const noteRef = useRef(null);
   const rowRefs = useRef({});
@@ -38,24 +39,24 @@ export default function MusicPlayer({ showNotes = false }) {
   const notePlain = stripTags(noteHtml);
   const noteOpen = showNotes && hovered != null && !!noteHtml;
 
-  // keep the tracklist the same height as the card beside it (then it scrolls)
+  // match the tracklist's height to the card beside it, then it scrolls. The
+  // card must not stretch to the (taller) list or we'd measure the wrong height
+  // — .mp_card is align-self:flex-start in CSS, so its height stays natural.
   useEffect(() => {
-    const CUTOFF_INDEX = 8; // Giorno's Theme — last fully-visible row
     const sync = () => {
-      const list = listRef.current;
-      if (!list) return;
-      const rows = list.children;
-      const cutoff = rows[Math.min(CUTOFF_INDEX, rows.length - 1)];
-      if (!cutoff) return;
-      list.style.maxHeight = "none"; // measure natural positions
-      const top = list.getBoundingClientRect().top;
-      const bottom = cutoff.getBoundingClientRect().bottom;
-      list.style.maxHeight = Math.round(bottom - top) + "px";
+      const list = listRef.current, card = cardRef.current;
+      if (!list || !card) return;
+      list.style.maxHeight = card.offsetHeight + "px";
     };
     sync();
     window.addEventListener("resize", sync);
+    let ro;
+    if (typeof ResizeObserver !== "undefined" && cardRef.current) {
+      ro = new ResizeObserver(sync);
+      ro.observe(cardRef.current);
+    }
     const t = setTimeout(sync, 400); // after artwork/fonts settle
-    return () => { window.removeEventListener("resize", sync); clearTimeout(t); };
+    return () => { window.removeEventListener("resize", sync); if (ro) ro.disconnect(); clearTimeout(t); };
   }, []);
 
   // position the connector arrow: exit the row to the RIGHT, arc up the right
@@ -172,7 +173,7 @@ export default function MusicPlayer({ showNotes = false }) {
       )}
 
       <div className="mp_wrap">
-        <div className="mp_card">
+        <div className="mp_card" ref={cardRef}>
           <div
             className="mp_art"
             style={artwork ? { backgroundImage: `url(${artwork})` } : {}}

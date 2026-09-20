@@ -1,8 +1,8 @@
 import React from 'react';
 import "./art.css"
 
-// import HPOriginal from "../../img/sketches/HPOriginal.png";
-import HPEdited from "../../img/sketches/HPEdited.png";
+// import HPOriginal from "../../img/sketches/HPOriginal.jpg";
+import HPEdited from "../../img/sketches/HPEdited.jpg";
 // import LDROriginal from "../../img/sketches/LDROriginal.jpeg";
 import LDREdited from "../../img/sketches/LDREdited.jpeg";
 import SherlockOriginal from "../../img/sketches/SherlockOriginal.jpeg";
@@ -21,6 +21,8 @@ const Sketches = () => {
             // src={require('../../img/sketches/suika.jpeg').default}
             src={path}
             alt={title}
+            loading="lazy"
+            decoding="async"
             className={title<2 ? 'magnifying-image iframe-sketches-item-set1':
                 title<3? 'magnifying-image iframe-sketches-item-set3': 
                 title<4? 'magnifying-image iframe-sketches-item-set2':

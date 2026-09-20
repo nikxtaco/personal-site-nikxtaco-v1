@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "./projects.css"
 import UseAnimations from "react-useanimations";
 
-import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.png"
-import AlrtAIMockup from "../../img/projects/AlrtAIMockup.png"
-import FigmaPersonalWebsite from "../../img/projects/FigmaPersonalWebsite.png"
+import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.jpg"
+import AlrtAIMockup from "../../img/projects/AlrtAIMockup.jpg"
+import FigmaPersonalWebsite from "../../img/projects/FigmaPersonalWebsite.jpg"
 
 // exported so the Research page's table of contents can list each mockup
 export const MOCKUPS = [
@@ -63,6 +63,8 @@ const ProjectStuff = () => {
           <img className="iframe-projects-item iframe-projects-item-featured"
             src={featured.img}
             alt={featured.label}
+            loading="lazy"
+            decoding="async"
             style={{ cursor: "pointer" }}
             onClick={() => open(0)}
           />
@@ -98,6 +100,8 @@ const ProjectStuff = () => {
               <img className="iframe-projects-item"
                 src={m.img}
                 alt={m.label}
+                loading="lazy"
+                decoding="async"
                 style={{ cursor: "pointer" }}
                 onClick={() => open(i)}
               />

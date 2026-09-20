@@ -15,3 +15,10 @@
   from = "/resume.pdf"
   to = "/resume.html"
   status = 200
+
+# SPA fallback: serve the app for deep links like /blog/<slug> (client-side routed).
+# Must come last so the specific rewrite above still wins.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

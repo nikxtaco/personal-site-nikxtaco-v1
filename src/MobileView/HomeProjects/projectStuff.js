@@ -2,8 +2,8 @@ import React from 'react';
 import "./projects.css"
 import UseAnimations from "react-useanimations";
 
-import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.png"
-import AlrtAIMockup from "../../img/projects/AlrtAIMockup.png"
+import FilterBubbleMockup from "../../img/projects/FilterBubbleMockup.jpg"
+import AlrtAIMockup from "../../img/projects/AlrtAIMockup.jpg"
 
 const ProjectStuff = () => {
     const images = [
@@ -19,6 +19,8 @@ const ProjectStuff = () => {
           <img className='iframe-projects-item'
             src={path[0]}
             alt={title}
+            loading="lazy"
+            decoding="async"
           />
           <a href={path[1]} target="_blank" rel="noreferrer">
                 {/* <UseAnimations animationKey="github" size={"3vmin"} style={{ float: 'left',  marginLeft: '-15.5vw', paddingTop: '17vw', color: '#1a1a1a' }}/> */}

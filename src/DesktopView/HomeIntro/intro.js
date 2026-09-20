@@ -6,7 +6,7 @@ import vangogh from "../../img/van-gogh-img.jpg";
 import jupiter from "../../img/jupiter-artland.jpg";
 import starflyer from "../../img/star-flyer.jpg";
 import sevenSisters from "../../img/seven-sisters.jpg";
-import obsidianFull from "../../img/obsidian-full.png";
+import obsidianFull from "../../img/obsidian-full.jpg";
 import ecoLibrary from "../../img/umberto-eco-antilibrary.jpg";
 import { RESEARCH_UPDATES } from "./researchUpdates";
 import lessWrongMark from "../../img/lesswrong-mark.png";
@@ -221,7 +221,7 @@ export default function Intro() {
                             </div>
                             <div className="about_right_col">
                                 <div className="about_headshot">
-                                    <img src={headshot} alt="Nikita Menon" />
+                                    <img loading="lazy" decoding="async" src={headshot} alt="Nikita Menon" />
                                 </div>
                                 <div className="about_facts">
                                     <span className="about_fact">AI Safety Researcher</span>
@@ -243,7 +243,7 @@ export default function Intro() {
                         </div>
 
                             <div className="about_aspiring_section">
-                            <img className="collage_obsidian_full" src={obsidianFull} alt="Obsidian graph" data-tip="A snapshot of my Obsidian graph" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                            <img loading="lazy" decoding="async" className="collage_obsidian_full" src={obsidianFull} alt="Obsidian graph" data-tip="A snapshot of my Obsidian graph" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                             <h1 className="about_title1">
                             I'm an<br/>aspiring...
                             </h1>
@@ -270,11 +270,11 @@ export default function Intro() {
                             </div>
 
                             <div className="about_try_section">
-                                <img className="collage_sevensisters" src={sevenSisters} alt="Nikita at Seven Sisters" data-tip="The Seven Sisters Cliffs, England" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
-                                <img className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer, Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
-                                <img className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" data-tip="Jupiter Artland, Edinburgh" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
-                                <img className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" data-tip="The Van Gogh Exhibition, London" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
-                                <img className="collage_ecolibrary" src={ecoLibrary} alt="Reading about Umberto Eco's antilibrary with Edinburgh Castle behind" data-tip="Starbucks Viewpoint, Edinburgh Castle" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img loading="lazy" decoding="async" className="collage_sevensisters" src={sevenSisters} alt="Nikita at Seven Sisters" data-tip="The Seven Sisters Cliffs, England" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img loading="lazy" decoding="async" className="collage_starflyer" src={starflyer} alt="Nikita on a star flyer ride" data-tip="The Star Flyer, Edinburgh's Christmas Markets" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img loading="lazy" decoding="async" className="collage_jupiter" src={jupiter} alt="Nikita at Jupiter Artland" data-tip="Jupiter Artland, Edinburgh" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img loading="lazy" decoding="async" className="collage_vangogh" src={vangogh} alt="Nikita at a Van Gogh immersive exhibit" data-tip="The Van Gogh Exhibition, London" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
+                                <img loading="lazy" decoding="async" className="collage_ecolibrary" src={ecoLibrary} alt="Reading about Umberto Eco's antilibrary with Edinburgh Castle behind" data-tip="Starbucks Viewpoint, Edinburgh Castle" onMouseMove={showImgTip} onMouseLeave={hideImgTip} />
                                 <h1 className="about_title2">
                                 I try to <span className="about_try_word" key={"v" + tryIdx}>{TRY_WORDS[tryIdx][0]}</span><br/>
                                 new <span className="about_try_word" key={"n" + tryIdx}>{TRY_WORDS[tryIdx][1]}</span>

@@ -8,6 +8,8 @@ import HomeArt from "../HomeArt/art.js"
 import HomeBlog from "../HomeBlo/blog.js"
 import SpotlightSearch from "../../DesktopView/components/SpotlightSearch.js"
 import MobileNotice from "../components/MobileNotice.js"
+import { WRITINGS } from "../../DesktopView/HomeBlo/writingsData"
+import { postIdFromPath } from "../../DesktopView/HomeBlo/writingSlug"
 
 import useWindowDimensions from "../../helpers/WindowDimensions.js"
 // import smooth from "react-scroll/modules/mixins/smooth";
@@ -17,6 +19,22 @@ export default function Navigation() {
 
   const [navbarVisibility, setNavbarVisibility] = useState(false);
   const { width } = useWindowDimensions();
+
+  // deep link: visiting /blog/<slug> directly jumps to the blog listing and
+  // opens that post; the #bloglist hash used to cross is then stripped so the
+  // URL stays a clean /blog/<slug>
+  useEffect(() => {
+    const path = window.location.pathname;
+    const id = postIdFromPath(path, WRITINGS);
+    if (!id) return;
+    const t = setTimeout(() => {
+      window.dispatchEvent(new CustomEvent("spotlight-open-post", { detail: { id } }));
+      window.location.hash = "bloglist";
+      setTimeout(() => window.history.replaceState(null, "", path), 700);
+    }, 350);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function toggleVisibility(){
      setNavbarVisibility(!navbarVisibility)

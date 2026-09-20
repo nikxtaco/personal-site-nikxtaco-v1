@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import "./art.css"
 
 import NeonGenesis from "../../img/sketches/NeonGenesis.jpeg";
-// import HPOriginal from "../../img/sketches/HPOriginal.png";
-import HPEdited from "../../img/sketches/HPEdited.png";
+// import HPOriginal from "../../img/sketches/HPOriginal.jpg";
+import HPEdited from "../../img/sketches/HPEdited.jpg";
 // import LDROriginal from "../../img/sketches/LDROriginal.jpeg";
 import LDREdited from "../../img/sketches/LDREdited.jpeg";
 import SherlockOriginal from "../../img/sketches/SherlockOriginal.jpeg";
@@ -64,6 +64,8 @@ const Sketches = () => {
             src={src}
             alt={`sketch ${i + 1}`}
             className="magnifying-image"
+            loading="lazy"
+            decoding="async"
             style={{ cursor: "pointer" }}
             onLoad={(e) => sizeItem(e.currentTarget)}
             onClick={() => open(i)}

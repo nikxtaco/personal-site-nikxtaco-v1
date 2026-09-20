@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import "./writings.css";
 import UseAnimations from "react-useanimations";
 import lessWrongLogo from "../../img/lesswrong-mark.png";
 import { WRITINGS, WRITING_FILTERS } from "./writingsData";
+import { postPath, postIdFromPath, isOnSite } from "./writingSlug";
 
 // link kinds -> icon + hover label for the icon row on entries with `links`
 const ICON_FOR = { arxiv: "download", lesswrong: "bookmark", twitter: "twitter", paper: "copy" };
@@ -117,7 +119,9 @@ const saveReadIds = (set) => {
   try { localStorage.setItem(READ_KEY, JSON.stringify([...set])); } catch (e) {}
 };
 
-export default function Writings({ entries = WRITINGS, showFilters = true, showAllLinks = false, backLabel = "← Back to writings", onOpenChange }) {
+export default function Writings({ entries = WRITINGS, showFilters = true, showAllLinks = false, backLabel = "← Back to writings", onOpenChange, urlSync = false }) {
+  const history = useHistory();
+  const location = useLocation();
   const [filter, setFilter] = useState("All");
   const [openId, setOpenId] = useState(null);
   const [lightbox, setLightbox] = useState(null); // { images: [...], index: n }
@@ -183,6 +187,34 @@ export default function Writings({ entries = WRITINGS, showFilters = true, showA
     window.addEventListener("spotlight-open-post", onOpen);
     return () => window.removeEventListener("spotlight-open-post", onOpen);
   }, [entries]);
+
+  // ---- per-post URLs (blog instance only): open <-> /blog/<slug> ----
+  // Driven through react-router's history so it stays in sync (raw
+  // window.history.pushState desyncs from BrowserRouter and breaks back/forward).
+  const didMountRef = useRef(false);
+  // URL -> open post: covers Back/Forward and direct/deep loads
+  useEffect(() => {
+    if (!urlSync) return;
+    const id = postIdFromPath(location.pathname, entries);
+    const target = id || null;
+    setOpenId((cur) => (cur === target ? cur : target));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname, urlSync]);
+  // open post -> URL: push the matching path (skip the mount pass; no-op if there)
+  useEffect(() => {
+    if (!urlSync) return;
+    if (!didMountRef.current) { didMountRef.current = true; return; }
+    if (openId) {
+      const w = entries.find((x) => x.id === openId);
+      if (w && isOnSite(w)) {
+        const p = postPath(w);
+        if (location.pathname !== p) history.push(p);
+      }
+    } else if (/^\/blog\/[^/]+/.test(location.pathname)) {
+      history.push("/"); // closed a post -> back to the listing URL
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openId]);
 
   const openLightbox = (images, index = 0) => setLightbox({ images, index });
   const closeLightbox = () => setLightbox(null);

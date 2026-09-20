@@ -8,12 +8,32 @@ import HomeBlog from "../HomeBlo/blog.js";
 import HomeProjects from "../HomeProjects/projects.js";
 import HomeArt from "../HomeArt/art.js";
 import SpotlightSearch from "../components/SpotlightSearch.js";
+import { WRITINGS } from "../HomeBlo/writingsData";
+import { postIdFromPath } from "../HomeBlo/writingSlug";
 
 export default function Navigation() {
 
     const { width } = useWindowDimensions();
 
     const [index, setIndex] = useState(1);
+
+    // deep link: visiting /blog/<slug> directly crosses to the blog DETAIL and
+    // opens that post. Crossing to the detail uses the app's own #bloglist anchor
+    // (scrollIntoView doesn't reliably reach the absolute/overflow detail pane),
+    // then the hash is stripped so the URL stays a clean /blog/<slug>.
+    useEffect(() => {
+      const path = window.location.pathname;
+      const id = postIdFromPath(path, WRITINGS);
+      if (!id) return;
+      setIndex(3);
+      const t = setTimeout(() => {
+        window.dispatchEvent(new CustomEvent("spotlight-open-post", { detail: { id } }));
+        window.location.hash = "bloglist";
+        setTimeout(() => window.history.replaceState(null, "", path), 700);
+      }, 450);
+      return () => clearTimeout(t);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     const [homeColor, setHomeColor] = useState(0)
     // when a wheel-driven horizontal snap animates via fragment nav, skip the index
     // effect's own (instant) scrollTo so it doesn't cut the smooth animation short.
