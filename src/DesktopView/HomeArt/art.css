@@ -17,11 +17,11 @@
    (positioned against the art slide, so she hugs the screen's left edge) */
 .suika_peek{
     position:absolute;
-    left:0;
+    left:-2vw;              /* peeks slightly off the screen's left edge */
     bottom:6vh;
     width:12vw;
-    transform: scaleX(-1) translateX(-30%);
-    transform-origin: bottom left;
+    transform: scaleX(-1);  /* mirror in place */
+    transform-origin: center;
     z-index:1;
     pointer-events:none;
     border-radius:10px;

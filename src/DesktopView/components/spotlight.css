@@ -3,8 +3,8 @@
 /* floating trigger pill (bottom-left, clear of the corner boxes) */
 .spot_trigger {
   position: fixed;
-  top: 3vh;                  /* top-left (music bar owns the bottom-left) */
-  left: 2vw;
+  top: 3vh;                  /* top-right (music bar owns the bottom-left) */
+  right: 2vw;
   z-index: 9000;
   display: flex;
   align-items: center;
@@ -87,6 +87,7 @@
 .spot_results {
   max-height: 46vh;
   overflow-y: auto;
+  overscroll-behavior: contain; /* don't chain scroll to the page behind */
   padding: 0.6vh 0;
 }
 .spot_row {

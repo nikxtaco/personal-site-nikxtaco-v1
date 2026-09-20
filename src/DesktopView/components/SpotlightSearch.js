@@ -132,6 +132,23 @@ export default function SpotlightSearch({ onNavigate }) {
     }
   }, [open]);
 
+  // while open, lock the background: scrolling only works inside the results
+  useEffect(() => {
+    if (!open) return;
+    const block = (e) => {
+      if (!(e.target && e.target.closest && e.target.closest(".spot_results"))) {
+        e.preventDefault();
+      }
+    };
+    const opts = { passive: false };
+    document.addEventListener("wheel", block, opts);
+    document.addEventListener("touchmove", block, opts);
+    return () => {
+      document.removeEventListener("wheel", block, opts);
+      document.removeEventListener("touchmove", block, opts);
+    };
+  }, [open]);
+
   const choose = (item) => {
     setOpen(false);
     if (item && onNavigate) onNavigate(item);

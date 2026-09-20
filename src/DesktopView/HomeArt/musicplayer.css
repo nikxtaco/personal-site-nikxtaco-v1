@@ -135,6 +135,7 @@
     /* stretch to the left card's height (mp_wrap has align-items:stretch),
        scroll internally if the list is longer */
     align-self: stretch;
+    max-height: 46vh;        /* defined scroll box (like the research-updates box) */
     overflow-y: auto;
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 12px;
