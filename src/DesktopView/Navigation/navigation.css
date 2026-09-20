@@ -179,10 +179,10 @@ body.about-light .stripes_slide_00 .stripes_box2{
 
 .dancergirl_picture{
     position:absolute;
-    top:25vh;
+    top:31vh;
     left:22vw;
-    height:64vh;
-    width:64vh;              /* square -> circular cloud cutout */
+    height:58vh;
+    width:58vh;              /* square -> circular cloud cutout (bottom stays ~89vh) */
     z-index:20;
     background-image: url('../../img/black-white-hand-sketch-abstract-cloud-background_1409-4496.jpg'); /* art hero: circular cloud (vector_corp / Magnific) */
     background-repeat: no-repeat;
