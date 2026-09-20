@@ -1,8 +1,8 @@
 /* Persistent "now playing" bar — fixed bottom-left on every page. */
 .gmb{
     position: fixed;
-    left: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    left: 2vw;
+    bottom: calc(9vh + env(safe-area-inset-bottom, 0px)); /* stacked just above the Spotlight search trigger */
     z-index: 9000;
     display: flex;
     align-items: center;
