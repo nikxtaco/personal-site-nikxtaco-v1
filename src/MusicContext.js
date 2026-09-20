@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from "react";
 import keyboardData from "./DesktopView/HomeArt/keyboardData.json";
+import KEYBOARD_NOTES from "./DesktopView/HomeArt/keyboardNotes";
 
 /*
  * Shared music engine: ONE hidden SoundCloud widget iframe + shared state, so
@@ -10,7 +11,8 @@ export const TRACKS = Object.entries(keyboardData).map(([label, widgetUrl]) => {
   const encoded = widgetUrl.split("url=")[1] || "";
   const trackUrl = decodeURIComponent(encoded);
   const [title, ...rest] = label.split(" - ");
-  return { label, title: title.trim(), subtitle: rest.join(" - ").trim(), trackUrl };
+  const t = title.trim();
+  return { label, title: t, subtitle: rest.join(" - ").trim(), trackUrl, note: (KEYBOARD_NOTES[t] || "").trim() };
 });
 
 export const SOUNDCLOUD_PROFILE = "https://soundcloud.com/nikita-971387991";

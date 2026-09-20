@@ -178,6 +178,18 @@
     text-overflow: ellipsis;
 }
 
+/* marks rows that have a hover-revealed note */
+.mp_track_noteflag{
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    color: #22bfbf;
+    opacity: 0.55;
+    margin-right: 0.1vw;
+    transition: opacity 0.2s ease;
+}
+.mp_track:hover .mp_track_noteflag{ opacity: 0.95; }
+
 .mp_track_link{
     flex-shrink: 0;
     color: #22bfbf;
@@ -193,6 +205,85 @@
     color: #eef0f4;
     opacity: 1;
     transform: translateY(-1px);
+}
+
+/* ===== hover note box (desktop only; up beside the "Keyboard Covers" heading) ===== */
+.mp_note_area{
+    position: relative;
+}
+
+.mp_note{
+    position: absolute;
+    bottom: calc(100% + 3vh);   /* float up into the blank space above the player */
+    right: 0;
+    width: 30vw;
+    max-height: 34vh;
+    overflow-y: auto;
+    background: #f5f0e5;
+    color: #2b2824;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 1.4vh 1.2vw;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    z-index: 3;
+    font-family: "Playfair Display", serif;
+    transform-origin: bottom right;
+    animation: mp_note_in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+@keyframes mp_note_in{
+    from{ opacity: 0; transform: translateY(8px) scale(0.96); }
+    to{ opacity: 1; transform: translateY(0) scale(1); }
+}
+.mp_note_title{
+    font-family: 'Rozha One', "Playfair Display", serif;
+    font-size: 2vmin;
+    line-height: 1.15;
+    margin-bottom: 0.6vh;
+}
+.mp_note_text{
+    font-size: 1.7vmin;
+    line-height: 1.5;
+    min-height: 3vmin;
+}
+.mp_note_link{
+    color: #0f8a8a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(15, 138, 138, 0.5);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.mp_note_link:hover{
+    color: #22bfbf;
+    border-bottom-color: #22bfbf;
+}
+.mp_note_caret{
+    color: #22bfbf;
+    margin-left: 1px;
+    animation: mp_caret 0.9s steps(1) infinite;
+}
+@keyframes mp_caret{ 50%{ opacity: 0; } }
+
+/* the connector arrow from the hovered row up to the note box */
+.mp_note_svg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;   /* the box sits above the area, so the path draws outside */
+    pointer-events: none;
+    z-index: 2;
+}
+.mp_note_path{
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: mp_draw 0.45s ease forwards;
+}
+@keyframes mp_draw{ to{ stroke-dashoffset: 0; } }
+
+@media (prefers-reduced-motion: reduce){
+    .mp_note{ animation: none; }
+    .mp_note_path{ animation: none; stroke-dashoffset: 0; }
+    .mp_note_caret{ animation: none; }
 }
 
 /* the SoundCloud iframe is the audio engine only — kept out of view */

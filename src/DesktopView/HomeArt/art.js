@@ -84,7 +84,7 @@ export default function Art() {
 
                             <br/><br/><br/>
 
-                            <MusicPlayer />
+                            <MusicPlayer showNotes />
 
                             {/* Old SoundCloud embed cards — kept for reference, replaced by <MusicPlayer /> above */}
                             {/* <br/><br/>
