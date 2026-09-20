@@ -194,15 +194,15 @@ body.about-light .stripes_slide_00 .stripes_box2{
 
 .buildingart_picture{
     position:absolute;
-    top:27.5vh;
-    left:18vw;
-    height:65vh;
-    width:50vw;
+    top:31vh;
+    left:22vw;
+    height:63vh;
+    width:63vh;              /* a touch bigger; bottom reaches the "02" line (top fixed) */
     z-index:20;
     background-image: url('../../img/song_circle.png'); /* research hero: song circle (Peter Crnokrak) */
     background-repeat: no-repeat;
     background-size:contain;
-    opacity:0.8;
+    opacity:0.9;
 }
 
 .songcircle_picture{

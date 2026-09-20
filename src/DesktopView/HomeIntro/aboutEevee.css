@@ -1,21 +1,28 @@
 /* ==========================================================================
    EXPERIMENTAL — a single pixel Eevee perched on the right end of the colophon's
-   top rule. Credit: "Let's Go Eevee Pixelated" by StarWolff-Nyota (DeviantArt,
-   F2U), noted in the Art Credits hover. Self-contained: delete this file, its
-   import, and the <AboutEevee/> line in intro.js to remove. Not committed.
+   top rule, with a styled "eevee" hover note (reuses .about_term/.about_tip).
+   Self-contained: delete this file, its import, and the <AboutEevee/> line in
+   intro.js to remove. Not committed.
    ========================================================================== */
 
-.about_eevee_perch{
+.about_term.about_eevee_perch{
     position: absolute;
-    right: 3vw;              /* a bit in from the right end of the line */
-    bottom: 100%;            /* bottom edge sits on the colophon's top border rule */
+    right: 3vw;              /* a bit in from the right end of the colophon line */
+    bottom: 100%;            /* sit on the colophon's top border rule */
     margin-bottom: -2px;     /* feet just touch the line */
+    display: inline-block;
+    line-height: 0;
+    z-index: 6;
+    text-decoration: none;   /* no dotted underline under the sprite */
+    cursor: help;
+}
+
+.about_eevee_img{
+    display: block;
     height: 11vh;
     max-height: 100px;
     width: auto;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-    pointer-events: auto; /* allow the hover title ("eevee") to show */
-    /* subtle grounding shadow under the feet (outline is baked into the sprite) */
     filter: drop-shadow(0 1.5px 1px rgba(0, 0, 0, 0.22));
 }

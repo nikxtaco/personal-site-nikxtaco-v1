@@ -226,6 +226,7 @@ export default function Intro() {
                                 <div className="about_facts">
                                     <span className="about_fact">AI Safety Researcher</span>
                                     <span className="about_fact">she/her</span>
+                                    <a className="about_pledge" href="https://www.givingwhatwecan.org" target="_blank" rel="noreferrer" aria-label="Giving What We Can">🔷</a>
                                     <span className="about_fact">from Kerala, India</span>
                                     <span className="about_fact">📍 Based in London</span>
                                 </div>
@@ -238,6 +239,9 @@ export default function Intro() {
                                         <span className="about_legend_row"><span className="about_term">dotted</span> &rarr; hover for a note</span>
                                     </div>
                                 </aside>
+                                <p className="about_music_note">
+                                    🎧 If you'd like some background music while you read through all this, maybe consider <a className="about_inline_link" href="#music" onClick={(e)=>scrollToSection(e,'music')}>heading here</a> first?
+                                </p>
                             </div>
                         </div>
 

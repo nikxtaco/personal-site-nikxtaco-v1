@@ -5,6 +5,8 @@
     color: #1a1a1a;
     width: 62vw;
 }
+/* blog posts/listing wider than the research listing (which keeps 62vw) */
+.writings.writings_blog{ width: 78vw; }
 
 /* --- filter bar --- */
 /* search box — sits above the filter chips on the blog listing */
@@ -333,7 +335,7 @@
     font-size: 2.3vmin;
     line-height: 1.6;
     margin: 2vh 0 0 0;
-    max-width: 52vw;
+    max-width: 76vw;
 }
 
 /* prominent section subheadings inside a post body (sized relative to the body
@@ -369,7 +371,7 @@
     align-items: flex-start;   /* figures hug their image (no stretch gap below) */
     gap: 1.2vw;
     margin-top: 3vh;
-    max-width: 52vw;   /* match the text column so images stack under it */
+    max-width: 76vw;   /* match the text column so images stack under it */
 }
 
 /* justified rows: flex-grow (set in JS to each image's aspect ratio) lets a

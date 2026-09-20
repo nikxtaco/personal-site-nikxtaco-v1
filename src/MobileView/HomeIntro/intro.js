@@ -77,6 +77,7 @@ export default function Intro() {
         <div className="about_facts">
           <span className="about_fact">AI Safety Researcher</span>
           <span className="about_fact">she/her</span>
+          <a className="about_pledge" href="https://www.givingwhatwecan.org" target="_blank" rel="noreferrer" aria-label="Giving What We Can">🔷</a>
           <span className="about_fact">from Kerala, India</span>
           <span className="about_fact">📍 Based in London</span>
         </div>
