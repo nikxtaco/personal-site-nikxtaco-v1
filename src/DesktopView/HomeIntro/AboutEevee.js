@@ -14,7 +14,7 @@ export default function AboutEevee() {
       className="about_eevee_perch"
       src={eevee}
       alt="A pixel Eevee perched on the line"
-      title="Eevee sprite by StarWolff-Nyota (DeviantArt, F2U)"
+      title="eevee"
     />
   );
 }

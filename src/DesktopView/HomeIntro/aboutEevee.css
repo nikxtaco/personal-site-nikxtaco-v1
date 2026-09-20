@@ -15,7 +15,7 @@
     width: auto;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-    pointer-events: none;
+    pointer-events: auto; /* allow the hover title ("eevee") to show */
     /* subtle grounding shadow under the feet (outline is baked into the sprite) */
     filter: drop-shadow(0 1.5px 1px rgba(0, 0, 0, 0.22));
 }
