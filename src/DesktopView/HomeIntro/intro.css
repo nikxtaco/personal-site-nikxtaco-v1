@@ -571,7 +571,7 @@
     align-self: center;
     font-size: 1.9vmin;
     line-height: 1;
-    margin-left: -0.2vw;
+    margin-left: 0.5vw;
     transition: transform 0.15s ease;
 }
 .about_pledge:hover{ transform: scale(1.18); }

@@ -5,6 +5,7 @@ import UseAnimations from "react-useanimations";
 // import keyboardData from './keyboardData.json';
 import Sketches from './sketches';
 import MusicPlayer from './MusicPlayer';
+import suikaPeek from "../../img/sketches/suika.jpeg";
 
 export default function Art() {
 
@@ -68,6 +69,8 @@ export default function Art() {
                 {/* THE ART STUFF BELOW THE MAIN ART INTRO PAGE */}
 
                 <div id="art_stuff" className="art_container" >
+
+                    <img className="suika_peek" src={suikaPeek} alt="" aria-hidden="true" />
 
                     <div className="art_all_content">
 

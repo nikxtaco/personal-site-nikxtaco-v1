@@ -2,6 +2,8 @@ import React from "react";
 
 import DesktopNavigation from "./DesktopView/Navigation/navigation.js"
 import MobileNavigation from "./MobileView/Navigation/navigation.js"
+import { MusicProvider } from "./MusicContext"
+import GlobalMusicBar from "./GlobalMusicBar"
 
 import './App.css';
 
@@ -19,12 +21,15 @@ export default function App() {
       const { width, height } = useWindowDimensions();
 
     return (
+      <MusicProvider>
       <div>
         {initializeReactGA()}
         {width>height?
         <DesktopNavigation/>
         :<MobileNavigation/>}
-      </div>          
+        <GlobalMusicBar/>
+      </div>
+      </MusicProvider>
     );
   
 }

@@ -1,0 +1,66 @@
+/* Persistent "now playing" bar — fixed bottom-left on every page. */
+.gmb{
+    position: fixed;
+    left: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 320px;
+    padding: 7px 12px;
+    background: rgba(20, 20, 22, 0.82);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    color: #f4f1ea;
+    font-family: "Courier New", monospace;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+}
+
+.gmb_meta{ min-width: 0; }
+.gmb_now{
+    font-size: 8.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #9aa0a6;
+}
+.gmb_title{
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+}
+
+.gmb_controls{ display: flex; align-items: center; gap: 2px; }
+.gmb_controls button{
+    background: transparent;
+    border: none;
+    color: #f4f1ea;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+.gmb_controls button:hover{ background: rgba(255, 255, 255, 0.12); }
+.gmb_play{ font-size: 13px; }
+
+/* little equaliser that animates while playing */
+.gmb_eq{ display: inline-flex; align-items: flex-end; gap: 2px; height: 14px; }
+.gmb_eq i{ width: 3px; height: 4px; background: #37c6c6; border-radius: 1px; }
+.gmb_eq.is-playing i{ animation: gmbEq 0.9s ease-in-out infinite; }
+.gmb_eq.is-playing i:nth-child(2){ animation-delay: 0.2s; }
+.gmb_eq.is-playing i:nth-child(3){ animation-delay: 0.4s; }
+@keyframes gmbEq { 0%, 100% { height: 4px; } 50% { height: 13px; } }
+
+@media (prefers-reduced-motion: reduce){
+    .gmb_eq.is-playing i{ animation: none; }
+}
+
+@media (max-width: 700px){
+    .gmb{ max-width: 66vw; padding: 6px 10px; }
+    .gmb_title{ max-width: 34vw; }
+}

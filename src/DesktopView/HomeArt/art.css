@@ -13,6 +13,20 @@
     font-family: "Playfair Display",serif;
 }
 
+/* a mirrored Suika peeking in from the bottom-left of the keyboard page
+   (positioned against the art slide, so she hugs the screen's left edge) */
+.suika_peek{
+    position:absolute;
+    left:0;
+    bottom:6vh;
+    width:12vw;
+    transform: scaleX(-1) translateX(-30%);
+    transform-origin: bottom left;
+    z-index:1;
+    pointer-events:none;
+    border-radius:10px;
+}
+
 .music_container {
   min-height: 100vh;
   margin-left:19vw;
